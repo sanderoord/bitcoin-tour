@@ -17,6 +17,8 @@ PAGES = {  # source file -> (artifact id, folder in site)
     "bitboy": ("LTzfAnd8n9J7U3J6jNWUZi", "bitboy"),
 }
 
+WRAP = '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>'  # artifact page skeleton (doctype = standards mode; quirks mode breaks Lenis scrolling)
+
 SHIM = """<script>/* static-hosting shim: downloads fallback, no db/user */
 if(!window.claude){window.claude={use:async function(n){if(n!=="downloads")return null;return{save:async function(o){var u=URL.createObjectURL(o.data),a=document.createElement("a");a.href=u;a.download=o.filename||"download";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);}};}};}
 </script>"""
@@ -49,7 +51,11 @@ def build():
             return fn
         html = re.sub(r"data:image/(jpeg|png|webp|gif|avif);base64,([A-Za-z0-9+/=]+)", extract, html)
 
-        # 3. shim before first script
+        # 3. raw artifact source? wrap it in the page skeleton
+        if not html.lstrip().lower().startswith("<!doctype"):
+            html = WRAP + "\n" + html + "\n\n</body></html>"
+
+        # 4. shim before first script
         html = html.replace("<script", SHIM + "<script", 1)
 
         if not any((dest / "img").iterdir()):
