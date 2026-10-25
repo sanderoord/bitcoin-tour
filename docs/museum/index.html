@@ -325,7 +325,10 @@ html.no-gl .intro{position:relative;bottom:auto;padding-block:120px 40px}
 <script>
 (function(){
 "use strict";
-const LIJN="../", SELF="../museum/";
+/* Links: op claude.ai naar de artifacts, op de eigen site (GitHub/bitcointour.nl) naar de eigen pagina's */
+const ONSITE=/(^|\.)(bitcointour\.nl|github\.io)$/.test(location.hostname)||/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const SITE=location.origin+location.pathname.replace(/museum\/.*$|[^\/]*$/,""); /* map waarin /museum/ staat */
+const LIJN=ONSITE?SITE:"../", SELF=ONSITE?SITE+"museum/":"../museum/", GAME=ONSITE?SITE+"bitboy/":"../bitboy/";
 const IMG_B="img/6f3a5b7499d3.jpg", IMG_C="img/63cc1ff9f252.jpg", IMG_BB="img/ec4423900fdd.webp", IMG_BBL="img/d400207fb873.webp";
 const RENDERS={"001": ["img/5081d8237988.webp", 1.3494, 0.0313], "002": ["img/11b5fb14c02d.webp", 1.1667, 0.09], "003": ["img/1a5345942bee.webp", 1.0707, 0.2447], "004": ["img/b2f351e469a0.webp", 1.1667, 0.09], "005": ["img/2df9f9d60dc7.webp", 1.0108, 0.1949], "006": ["img/0a6e8cba8736.webp", 1.194, 0.0256], "007": ["img/11c36bbc3dcc.webp", 1.1546, 0.1361], "008": ["img/fcd4699a2042.webp", 0.9929, 0.0857], "009": ["img/caa49c4e1409.webp", 1.6046, 0.106], "010": ["img/226966674432.webp", 1.3115, 0.0468], "011": ["img/588772a12e51.webp", 0.9411, 0.1], "012": ["img/e5864270c9ba.webp", 1.5385, 0.2198], "013": ["img/f0fd039f738f.webp", 1.6327, 0.1166], "014": ["img/670e984266a7.webp", 1.2963, 0.3056], "015": ["img/c2d78ae28b59.webp", 1.2925, 0.2288], "016": ["img/7d4de0a53721.webp", 1.4933, 0.208], "017": ["img/3d1cbecf6b0e.webp", 0.8946, 0.1089], "018": ["img/ebfb1ed33021.webp", 1.1405, 0.0387], "019": ["img/ef957a13b690.webp", 0.7107, 0.0911], "020": ["img/49d0152b1246.webp", 1.2641, 0.3002], "021": ["img/8cabb9e343ff.webp", 1.0895, 0.1537], "022": ["img/8fc4fb498e08.webp", 1.1359, 0.1704], "023": ["img/14c9db3fa505.webp", 1.3176, 0.2941], "024": ["img/b757db4d36e7.webp", 1.2556, 0.2444], "025": ["img/c5ededac92f8.webp", 1.2903, 0.2143], "026": ["img/708e54c54956.webp", 1.3208, 0.0307], "027": ["img/4a2152e92679.webp", 1.25, 0.1183], "028": ["img/929ebf429cd8.webp", 0.6875, 0.1696], "029": ["img/9ccddaf4e61e.webp", 1.0332, 0.1863], "030": ["img/439995bc646d.webp", 0.4875, 0.0179], "031": ["img/5ab244d9679f.webp", 0.9259, 0.1563]};
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
@@ -353,7 +356,7 @@ const UI={
   c2h:"Beeld",c2:"Alle objecten zijn digitaal nagemaakt en zo gelabeld. Het zijn geen historische originelen. Teksten, codes en citaten zijn echt.",
   c3h:"Bronnen",c3:"Whitepaper: bitcoin.org. Blokdata: mempool.space. Verder: CoinDesk, CBC, Cointelegraph, Mariblock, FXStreet, NL Times, DNB, AFM. Bloknummers met ± zijn geschat op datum.",
   close:"Sluiten ✕",orig:"Origineel",treat:"Museumbehandeling",origin:"Herkomst",shareObj:"Deel dit stuk",copied:"Link gekopieerd",copy:"Kopieer de link:",taken:"Meegenomen. Bedankt voor je bezoek aan de winkel!",hold:"Houd de afbeelding ingedrukt of klik er met rechts op om hem op te slaan.",holdS:"Lukt opslaan niet? Houd de afbeelding ingedrukt of klik er met rechts op.",
-  free:"gratis · 0 sat",shopMeta:"Giftshop · 0 sat",walk:"Wandeling door het museum",photoAlt:"Stapel papieren, objectbeeld",obj:"Obj.",brand:"Museum ₿, naar de entree",buy:"Zo koop je bitcoin",buyS:"Zo koop je ₿",bbWho:"Bitboy · gids",bbTap:"Bitboy, je gids. Tik voor het menu",joke:"Vertel een grap",jokeS:"grap",replay:"Speel je intro nog eens",bbPage:"Speel het Bitboy-spel ↗",bbPageS:"21 munten · hier en nu",pkClose:"Sluit",pkAgain:"Nog een keer",pkBoard:"Zet je score op het scorebord ↗",pkLost:"KWIJT",pkGo:"Daar ga ik!",pkKeys:"← → of tik links/rechts op het scherm",pkReady:"KLAAR?",replayS:"intro",skip:"Overslaan",pkMax:"MAX SUPPLY",pkLabel:"Intro van Bitboy"},
+  free:"gratis · 0 sat",shopMeta:"Giftshop · 0 sat",walk:"Wandeling door het museum",photoAlt:"Stapel papieren, objectbeeld",obj:"Obj.",brand:"Museum ₿, naar de entree",buy:"Zo koop je bitcoin",buyS:"Zo koop je ₿",bbWho:"Bitboy · gids",bbTap:"Bitboy, je gids. Tik voor het menu",joke:"Vertel een grap",jokeS:"grap",replay:"Speel je intro nog eens",bbPage:"Speel het Bitboy-spel ↗",bbPageS:"21 munten · hier en nu",pkClose:"Sluit",pkAgain:"Nog een keer",pkBoard:"Naar de spelpagina ↗",pkBest:"JOUW BESTE",pkRec:"NIEUW RECORD!",pkLost:"KWIJT",pkGo:"Daar ga ik!",pkKeys:"← → of tik links/rechts op het scherm",pkReady:"KLAAR?",replayS:"intro",skip:"Overslaan",pkMax:"MAX SUPPLY",pkLabel:"Intro van Bitboy"},
  en:{snd:"Sound",sndOn:"Sound on",sndOff:"Sound off",share:"Share",lang:"Language: English. Wissel naar Nederlands",introLabel:"Museum ₿ · Since block 0",introH:"Bitcoin <em>museum</em>.",introP:"From a nine-page pdf to money whole countries run on. The real moments from bitcoin's history, as holograms in an old building. Scroll to step inside.",hint:"Scroll to walk through the museum",
   ai:"Image: AI (Gemini) · sample object",rdr:"Recreated object · not the original",showPhoto:"Show the object",backHolo:"Back to hologram",take:"Take it · free",open:"View",how:"How it works: ",talk:"Talk to me",
   where:"Where would you like to go? I'll take you there.",fact:"Tell me something",factS:"fun fact",bye:"Thanks",byeS:"close",follow:"Follow me to ",toLang:"In het Nederlands, graag",toLangS:"taal",edTo:"Show the wing: ",edS:"wing",
@@ -363,7 +366,7 @@ const UI={
   c2h:"Images",c2:"All objects are digitally recreated and labelled as such. They are not historical originals. Texts, codes and quotes are real.",
   c3h:"Sources",c3:"Whitepaper: bitcoin.org. Block data: mempool.space. Also: CoinDesk, CBC, Cointelegraph, Mariblock, FXStreet, NL Times, DNB, AFM. Block numbers with ± are estimated from the date.",
   close:"Close ✕",orig:"Original",treat:"Museum treatment",origin:"Provenance",shareObj:"Share this piece",copied:"Link copied",copy:"Copy the link:",taken:"Taken. Thanks for visiting the shop!",hold:"Press and hold the image, or right-click it, to save it.",holdS:"Saving doesn't work? Press and hold the image, or right-click it.",
-  free:"free · 0 sat",shopMeta:"Gift shop · 0 sat",walk:"Walk through the museum",photoAlt:"Stack of papers, object image",obj:"Obj.",brand:"Museum ₿, to the entrance",buy:"How to buy bitcoin",buyS:"How to buy ₿",bbWho:"Bitboy · guide",bbTap:"Bitboy, your guide. Tap for the menu",joke:"Tell me a joke",jokeS:"joke",replay:"Play your intro again",bbPage:"Play the Bitboy game ↗",bbPageS:"21 coins · right here",pkClose:"Close",pkAgain:"Play again",pkBoard:"Put your score on the leaderboard ↗",pkLost:"LOST",pkGo:"Here I go!",pkKeys:"← → or tap left/right on the screen",pkReady:"READY?",replayS:"intro",skip:"Skip",pkMax:"MAX SUPPLY",pkLabel:"Bitboy intro"}
+  free:"free · 0 sat",shopMeta:"Gift shop · 0 sat",walk:"Walk through the museum",photoAlt:"Stack of papers, object image",obj:"Obj.",brand:"Museum ₿, to the entrance",buy:"How to buy bitcoin",buyS:"How to buy ₿",bbWho:"Bitboy · guide",bbTap:"Bitboy, your guide. Tap for the menu",joke:"Tell me a joke",jokeS:"joke",replay:"Play your intro again",bbPage:"Play the Bitboy game ↗",bbPageS:"21 coins · right here",pkClose:"Close",pkAgain:"Play again",pkBoard:"To the game page ↗",pkBest:"YOUR BEST",pkRec:"NEW RECORD!",pkLost:"LOST",pkGo:"Here I go!",pkKeys:"← → or tap left/right on the screen",pkReady:"READY?",replayS:"intro",skip:"Skip",pkMax:"MAX SUPPLY",pkLabel:"Bitboy intro"}
 };
 const U=k=>(UI[LANG]&&UI[LANG][k])||UI.nl[k]||k;
 
@@ -1220,8 +1223,9 @@ function gmStep(){ if(GM.mode!=="play") return;
 function gmMove(d){ if(GM.mode!=="play") return; const n=Math.max(0,Math.min(4,GM.pos+d)); if(n===GM.pos) return; GM.pos=n; gmLcd(); Sound.beep(d<0?740:820); }
 function gmEnd(){ GM.mode="end"; clearTimeout(GM.timer); const c=GM.caught; gmBig(`${c}/21<small>${GM.lost} ${U("pkLost")}</small>`); $("#pkMsg").textContent=c===21?U("pkMax"):"BITBOY";
   if(c===21){ pk.classList.add("max"); Sound.till(); } else Sound.pop();
-  try{ const b=+(GET("bitboy.best")||0); if(c>b) PUT("bitboy.best",String(c)); }catch(e){}
-  $("#pkBoard").href="../bitboy/#"+LANG; $("#pkAfter").hidden=false; }
+  let best=0; try{ best=+(GET("bitboy.best")||0); if(c>best){ PUT("bitboy.best",String(c)); } }catch(e){} const rec=c>best&&c>0; best=Math.max(best,c);
+  gmBig(`${c}/21<small>${rec?U("pkRec"):U("pkBest")+" "+best+"/21"}</small>`);
+  $("#pkBoard").href=GAME+"#"+LANG; $("#pkAfter").hidden=false; }
 function gameClose(){ clearTimeout(GM.timer); GM.msg=GM.spawned?(LANG==="en"?`${GM.caught} out of 21. Nice try! Back to the museum.`:`${GM.caught} van de 21. Lekker gespeeld! Terug naar het museum.`):(LANG==="en"?"Next time then. Back to the museum.":"Dan een andere keer. Terug naar het museum."); GM.mode=""; GM.on=false; pk.classList.add("glitch"); Sound.laser();
   setTimeout(()=>{ pk.classList.remove("play"); $("#pkSkip").textContent=U("skip"); $("#pkAfter").hidden=true; $("#pkKeys").hidden=true; gmBig(""); $("#pkLost").textContent="";
     const bs=$$("#pkLanes .pk-b"); bs.forEach((b,i)=>b.classList.toggle("on",i===GM.pos)); pkOut(true); },350); }
@@ -1344,7 +1348,7 @@ const AFF="https://bitvavo.com/invite?a=99BD60227B", ESMA="https://www.esma.euro
 try{ new IntersectionObserver(es=>es.forEach(e=>document.documentElement.classList.toggle("at-exit",e.isIntersecting)),{threshold:0}).observe(document.getElementById("uitgang")); }catch(e){}
 function renderExit(){ const ec=$("#exCards"); if(!ec) return;
   const card=(cls,n,h,t,href)=>`<a class="ex-card${cls}" href="${href}" target="_blank" rel="noopener"><span class="n">${n}</span><b>${U(h)}</b><span>${U(t)}</span><i>${U("exGo")}</i></a>`;
-  ec.innerHTML=card(" main","13",  "exBuy","exBuyS",LIJN+"#kopen&lang="+LANG)+card("","01–14","exHow","exHowS",LIJN+"#lang="+LANG)+card("","₿","exPlay","exPlayS","../bitboy/#"+LANG);
+  ec.innerHTML=card(" main","13",  "exBuy","exBuyS",LIJN+"#kopen&lang="+LANG)+card("","01–14","exHow","exHowS",LIJN+"#lang="+LANG)+card("","₿","exPlay","exPlayS",GAME+"#"+LANG);
   $("#exAff").innerHTML=LANG==="nl"?`<div class="cta-aff"><span class="aff-tag">Advertentie · affiliatelink</span><br><a class="cta-btn" href="${AFF}" target="_blank" rel="noopener sponsored"><span>Open een account bij Bitvavo</span><span class="arr" aria-hidden="true">↗</span></a><p class="aff-note"><b>Eerlijk is eerlijk:</b> dit is mijn affiliatelink. Handel je via deze link, dan krijg ik een vergoeding van Bitvavo. Jij betaalt niets extra. Bitvavo is een Nederlandse beurs met Europese vergunning (MiCA), onder toezicht van de AFM. Kosten: 0,25% per aankoop, storten met iDEAL gratis. Je kunt (een deel van) je inleg verliezen. Geen beleggingsadvies.</p></div>`
    :`<div class="cta-aff"><a class="cta-btn" href="${ESMA}" target="_blank" rel="noopener"><span>Find a licensed exchange</span><span class="arr" aria-hidden="true">↗</span></a><p class="aff-note">Check the official EU register of licensed providers, or your own country's financial regulator. You can lose (part of) what you put in. Not investment advice.</p></div>`; }
 function renderColl(){
@@ -1366,7 +1370,5 @@ function jump(){ const h=HASH(); if(!GL) return; let i=-1, oid=null;
 if(document.fonts&&document.fonts.load){ Promise.all(['40px "Geist Pixel Square"','600 40px Geist','700 40px Geist','500 40px "Geist Mono"'].map(f=>document.fonts.load(f).catch(()=>0))).then(()=>document.fonts.ready).then(()=>{ if(GL) GL.redraw(); jump(); }); } else addEventListener("load",jump);
 })();
 </script>
-
-
 
 </body></html>

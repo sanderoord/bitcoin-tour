@@ -1,4 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta charset="utf-8">
 <title>Bitcoin Tour</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <script>/* static-hosting shim: downloads fallback, no db/user */
@@ -1398,7 +1399,13 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 <script>
 (function(){
 "use strict";
-const SHARE_BASE="./";
+const ONSITE=/(^|\.)(bitcointour\.nl|github\.io)$/.test(location.hostname)||/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const SITE=location.origin+location.pathname.replace(/[^\/]*$/,""); /* map van de tour; museum/ en bitboy/ staan hieronder */
+const SHARE_BASE=ONSITE?SITE:"./";
+/* op de eigen site: artifact-links omzetten naar /museum/ en /bitboy/ (ook voor links die later worden gebouwd) */
+if(ONSITE){ const MAP={K8fbvwiKExETBWXmh5t5iP:"museum/",LTzfAnd8n9J7U3J6jNWUZi:"bitboy/"};
+  const fix=a=>{ const h=a.getAttribute("href")||""; const m=h.match(/^https:\/\/claude\.ai\/artifact\/(K8fbvwiKExETBWXmh5t5iP|LTzfAnd8n9J7U3J6jNWUZi)(#.*)?$/); if(m) a.setAttribute("href",SITE+MAP[m[1]]+(m[2]||"")); };
+  ["click","auxclick","contextmenu","focusin","pointerdown"].forEach(t=>document.addEventListener(t,e=>{ const a=e.target.closest&&e.target.closest("a[href]"); if(a) fix(a); },true)); }
 /* ===== Taal: NL / EN ===== */
 const LANG=(()=>{ try{ for(const t of decodeURIComponent(location.hash.slice(1)).split("&")){ if(t==="lang=en") return "en"; if(t==="lang=nl") return "nl"; } }catch(e){}
   let v=null; try{ v=localStorage.getItem("lijn.lang"); }catch(e){} if(v==="en"||v==="nl") return v;
@@ -2650,7 +2657,8 @@ function goTo(id,instant){
   const pin=pe&&pe.classList.contains("pin-spacer")?pe:null;
   if(pin) y=pin.getBoundingClientRect().top+scrollY;
   if(id==="geld") y=0;
-  if(lenis) lenis.scrollTo(y,{duration:instant?0:2,immediate:!!instant});
+  if(instant){ scrollTo(0,y); if(lenis){ try{ lenis.resize(); }catch(e){} lenis.scrollTo(y,{immediate:true,force:true}); } return; } /* direct springen: eerst native, dan Lenis bijwerken (Lenis kent de paginahoogte soms nog niet) */
+  if(lenis) lenis.scrollTo(y,{duration:2});
   else scrollTo({top:y,behavior:(instant||REDUCED)?"auto":"smooth"});
 }
 document.addEventListener("click",e=>{
@@ -3284,7 +3292,11 @@ track();
 goLive();
 document.getElementById("langBtn").addEventListener("click",()=>{ const nx=LANG==="nl"?"en":"nl"; try{ localStorage.setItem("lijn.lang",nx); }catch(e){} const id=curId&&curId!=="geld"?curId+"&":""; history.replaceState(null,"","#"+id+"lang="+nx); location.reload(); });
 const jump=()=>{const h=decodeURIComponent(location.hash.slice(1)).split("&").find(t=>t&&t.indexOf("=")<0); if(h&&byId[h]&&byId[h].built&&h!=="geld") goTo(h,true);};
-const ready=()=>{ if(GL) GL.stair.redraw(); if(window.ScrollTrigger) ScrollTrigger.refresh(); jump(); track(); setTimeout(()=>{booted=true;},400); };
+const ready=()=>{ if(GL) GL.stair.redraw(); if(window.ScrollTrigger) ScrollTrigger.refresh(); jump(); track(); setTimeout(()=>{booted=true;},400);
+  /* layout kan na het laden nog verschuiven (beelden, pins): anker nog eens vastzetten */
+  [350,1200].forEach(d=>setTimeout(()=>{ if(window.ScrollTrigger) ScrollTrigger.refresh(); jump(); },d)); };
+try{ history.scrollRestoration="manual"; }catch(e){}
+addEventListener("hashchange",jump);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(ready); else addEventListener("load",ready);
 })();
 </script>
