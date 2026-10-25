@@ -23,6 +23,29 @@ SHIM = """<script>/* static-hosting shim: downloads fallback, no db/user */
 if(!window.claude){window.claude={use:async function(n){if(n!=="downloads")return null;return{save:async function(o){var u=URL.createObjectURL(o.data),a=document.createElement("a");a.href=u;a.download=o.filename||"download";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);}};}};}
 </script>"""
 
+SHARE = {  # link previews (WhatsApp, LinkedIn, X ...): title, description; image = og/<page>.jpg (1200x630)
+    "tour":   ("Bitcoin Tour: snap bitcoin in zestien werelden",
+               "Een reis langs geld dat niemand kan bijdrukken. Geen jargon, wel diepgang. Er komen nooit meer dan 21 miljoen bitcoin."),
+    "museum": ("Museum ₿: de geschiedenis van bitcoin",
+               "Van een pdf'je van negen pagina's tot geld waar hele landen op draaien. De echte momenten, als hologram in een oud gebouw."),
+    "bitboy": ("Bitboy: vang de 21 munten",
+               "Speel het pocketspel van Museum ₿. Vang de 21 munten die er ooit komen. Mis je er een, dan is hij voorgoed weg."),
+}
+
+
+def share_tags(name, folder):
+    t, d = (x.replace("&", "&amp;").replace('"', "&quot;") for x in SHARE[name])
+    url = f"https://{DOMAIN}/" + (folder + "/" if folder else "")
+    img = f"https://{DOMAIN}/og/{name}.jpg"
+    return (f'<meta name="description" content="{d}">'
+            f'<meta property="og:type" content="website"><meta property="og:site_name" content="Bitcoin Tour">'
+            f'<meta property="og:locale" content="nl_NL"><meta property="og:url" content="{url}">'
+            f'<meta property="og:title" content="{t}"><meta property="og:description" content="{d}">'
+            f'<meta property="og:image" content="{img}"><meta property="og:image:secure_url" content="{img}">'
+            f'<meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200">'
+            f'<meta property="og:image:height" content="630"><meta property="og:image:alt" content="{t}">'
+            f'<meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="{url}">')
+
 
 def rel(from_dir, to_dir):
     up = "../" if from_dir else ""
@@ -55,7 +78,11 @@ def build():
         if not html.lstrip().lower().startswith("<!doctype"):
             html = WRAP + "\n" + html + "\n\n</body></html>"
 
-        # 4. shim before first script
+        # 4. link-preview tags in <head>
+        if name in SHARE:
+            html = html.replace("</head>", share_tags(name, folder) + "</head>", 1)
+
+        # 5. shim before first script
         html = html.replace("<script", SHIM + "<script", 1)
 
         if not any((dest / "img").iterdir()):
@@ -64,6 +91,8 @@ def build():
         left = re.findall(r"claude\.ai/artifact/\w+", html)
         print(f"{name:7} -> {dest.relative_to(ROOT)}/index.html  {len(html)//1024} KB  unmapped links: {sorted(set(left)) or 'none'}")
     (OUT / ".nojekyll").write_text("")
+    if (ROOT / "og").exists():
+        shutil.copytree(ROOT / "og", OUT / "og")
     (OUT / "CNAME").write_text(DOMAIN + "\n")
 
 
