@@ -864,7 +864,7 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
     <div class="hero-front">
       <h1 class="mega split" id="h-geld" data-i18n="k4">Welkom bij de <em>Bitcoin</em> <span class="nw"><em>Tour</em>.</span></h1>
       <div class="hero-row">
-        <p class="hero-sub" data-i18n="k5">Een reis door zeventien werelden over geld dat niemand kan bijdrukken. Er komen nooit meer dan 21 miljoen bitcoin. Instappen?</p>
+        <p class="hero-sub" data-i18n="k5">Een reis door zestien werelden over geld dat niemand kan bijdrukken. Er komen nooit meer dan 21 miljoen bitcoin. Instappen?</p>
         <button class="readmore" type="button" data-more="geld" data-i18n="k6"><span>Wat is bitcoin?</span><span class="arr" aria-hidden="true">↗</span></button>
       </div>
     </div>
@@ -1134,13 +1134,118 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 .sc-dao b{color:#D93025}
 @media (max-width:899px){.sc-vend{grid-template-columns:1fr;width:15rem;gap:.6rem}.sc-mach{padding:.6rem}.sc-glass{gap:.35rem;padding:.45rem}.sc-tray{height:2.2rem;margin-top:.5rem}.sc-panel{width:auto;grid-template-columns:1fr 1fr;align-items:center}.sc-vault{width:8rem;height:8rem}.sc-dial{width:3.6rem;height:3.6rem}.sc-vs{grid-template-columns:1fr 1fr;gap:.5rem}.sc-vs .cv-card{padding:.8rem}.sc-vs h4{font-size:1.05rem}.sc-vs ul{font-size:.74rem}.sc-vs li:nth-child(n+3){display:none}.sc-dao{font-size:.74rem;padding:.6rem .7rem}.sc-rule,.sc-ok{display:none}}
 </style>
-  <section class="camp camp-2" id="contract" data-ch="contract" aria-labelledby="h-contract"><div class="camp-pin" data-camp="contract"></div></section>
+<style>
+.wissel{position:relative;z-index:2;background:var(--paper);padding-block:clamp(90px,14vh,150px)}
+.wissel .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
+.wissel h2{font-size:clamp(2.6rem,6vw,6rem);line-height:.92;letter-spacing:-.06em;margin:.9rem 0 0}
+.wissel p{font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.5;max-width:28em;margin:1.1rem 0 0}
+.wissel .acts{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.wissel .acts button{font:600 .95rem var(--f-sans,inherit);border-radius:999px;padding:.95rem 1.3rem;cursor:pointer;border:2px solid var(--ink);background:transparent;color:var(--ink)}
+.wissel .acts button.hot{background:var(--orange);border-color:var(--orange);color:#fff}
+.wissel svg{width:100%;height:auto}
+.wissel .main{stroke:var(--orange);stroke-width:14;fill:none;stroke-linecap:round}.wissel .side{stroke:var(--ink);stroke-width:10;fill:none;stroke-linecap:round;stroke-dasharray:2 18}
+.wissel .st{fill:var(--paper-2);stroke:var(--ink);stroke-width:6}.wissel .tx{font:500 22px var(--f-mono);fill:var(--ink)}.wissel .tx.or{fill:var(--orange)}
+.pro-b{display:inline-block;font:600 .62rem/1 var(--f-mono);font-style:normal;letter-spacing:.1em;padding:.32em .5em;border-radius:5px;background:var(--ink);color:var(--paper-2);vertical-align:middle}
+.pro-sw{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.2rem 0 1.6rem;padding:1rem 1.1rem;border-radius:16px;background:rgba(35,21,14,.06)}
+.pro-sw b{display:block;font-size:1rem;margin-bottom:.25rem}.pro-sw span{font-size:.86rem;color:var(--ink-2);line-height:1.4}
+.pro-sw .sw{flex:none;width:52px;height:30px;border-radius:999px;border:0;background:rgba(35,21,14,.25);position:relative;cursor:pointer;transition:.25s}
+.pro-sw .sw i{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.25s}
+.pro-sw .sw.on{background:var(--orange)}.pro-sw .sw.on i{left:25px}
+.ix-pro .ix-n{color:var(--orange)}
+.mm li.pro .dot{transform:translateX(8px)}.mm li.pro .dot::after{width:8px;height:8px;border-width:2px;border-style:solid}
+.mm li.pro::after{content:"";position:absolute;left:8px;top:50%;width:8px;height:2px;background:var(--line-c);opacity:.6}
+#jumpFx{position:fixed;inset:0;z-index:60;pointer-events:none;background:var(--ink);opacity:0;transition:opacity .2s}
+#jumpFx.on{opacity:1}
+@media (max-width:899px){.wissel .wrap{grid-template-columns:1fr}.wissel svg{max-width:22rem}}
+</style>
+  <section class="wissel pro-junction" id="wissel-a" data-ch="ketting" aria-labelledby="h-wissel-a"><div class="wrap">
+    <div><span class="cs-l" data-wl>Wissel · zijlijn PRO</span><h2 id="h-wissel-a" data-wh>Verder de diepte in?</h2>
+    <p data-wp>Hier takt de zijlijn af: smart contracts en DAO's. Wat kun je nog meer bouwen met een blockchain? Ongeveer 4 minuten. Je kunt ook rechtdoor en later terugkomen via de index.</p>
+    <div class="acts"><button class="hot" type="button" data-go="contract" data-wa>Neem de zijlijn ↓</button><button type="button" data-skip="halvering" data-wb>Rechtdoor naar wereld 9 →</button></div></div>
+    <div class="rails" data-rails="split" data-a="08" data-b="09" data-s="08a · 08b"></div>
+  </div></section>
+  <section class="camp camp-2 pro-sec" id="contract" data-ch="contract" aria-labelledby="h-contract"><div class="camp-pin" data-camp="contract"></div></section>
+<style>
+.dv{width:min(26rem,100%)}
+.dv-prop{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}.dv-prop b{font-size:1.15rem;letter-spacing:-.02em;line-height:1.25}
+.dv-kas{margin-top:.9rem;display:flex;justify-content:space-between;align-items:baseline;padding:.7rem .9rem;border-radius:12px;background:var(--paper-2)}
+.dv-kas b{font:400 1.6rem var(--f-px);transition:color .3s}.dv.paid .dv-kas b{color:var(--orange)}
+.dv-mem{display:grid;grid-template-columns:repeat(10,1fr);gap:.3rem;margin:1rem 0 .6rem}
+.dv-mem i{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:600 .58rem var(--f-mono);font-style:normal;background:rgba(35,21,14,.1);color:var(--ink-2)}
+.dv-mem i.y{background:#2E8B57;color:#fff}.dv-mem i.n{background:#D93025;color:#fff}.dv-mem i.me{box-shadow:0 0 0 2px var(--orange)}
+.dv-bar{height:10px;border-radius:5px;background:rgba(35,21,14,.1);display:flex;overflow:hidden}.dv-bar .y{background:#2E8B57;transition:width .3s}.dv-bar .n{background:#D93025;transition:width .3s}
+.dv-st{display:flex;justify-content:space-between;font:.74rem var(--f-mono);color:var(--ink-2);margin:.45rem 0 .9rem}
+.dv-btn{display:flex;gap:.5rem}.dv-btn button{flex:1;font:600 .82rem var(--f-mono);border-radius:999px;padding:.7rem;cursor:pointer;border:2px solid var(--ink);background:#fff;color:var(--ink)}
+.dv-btn button.on{background:var(--ink);color:var(--paper-2)}
+.dv-out{margin-top:.8rem;font-size:.86rem;min-height:2.6em;color:var(--ink-2)}.dv.paid .dv-out{color:#2E8B57;font-weight:600}
+.dc{width:min(27rem,100%);display:grid;gap:.6rem}
+.dc .cv-card{width:auto;padding:.9rem 1rem;display:grid;grid-template-columns:auto 1fr;gap:.1rem .9rem;align-items:start;opacity:.3;transform:translateX(14px);transition:.45s}
+.s1 .dc .a1,.s2 .dc .a2,.s3 .dc .a3,.s2 .dc .a1,.s3 .dc .a1,.s3 .dc .a2,.s4 .dc .cv-card{opacity:1;transform:none}
+.dc .yr{grid-row:span 2;font:400 1.5rem var(--f-px);color:var(--orange);line-height:1}.dc b{font-size:1rem}.dc span{font-size:.82rem;line-height:1.4;color:var(--ink-2)}
+.dc .tag{display:inline-block;font:600 .6rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:.2em .45em;border-radius:4px;margin-left:.3rem;vertical-align:middle}
+.dc .bad{background:rgba(217,48,37,.12);color:#D93025}.dc .ok{background:rgba(46,139,87,.14);color:#2E8B57}.dc .mid{background:rgba(255,77,0,.12);color:var(--orange)}
+.bg3{width:min(27rem,100%)}
+.bg3 .row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.bg3 .grp{background:#fff;border-radius:16px;padding:.9rem .7rem;text-align:center;box-shadow:0 0 0 1px rgba(35,21,14,.08);transition:.4s}
+.bg3 .grp i{display:block;font:400 1.5rem var(--f-px);font-style:normal;color:var(--orange)}.bg3 .grp b{display:block;font-size:.9rem;margin:.35rem 0 .2rem}.bg3 .grp span{font-size:.74rem;color:var(--ink-2);line-height:1.35}
+.s3 .bg3 .grp.users{box-shadow:0 0 0 3px var(--orange);transform:translateY(-6px)}
+.bg3 .case{margin-top:.9rem;padding:.9rem 1rem;border-radius:14px;background:var(--ink);color:var(--paper-2);font-size:.84rem;line-height:1.45;opacity:0;transform:translateY(8px);transition:.45s}.s2 .bg3 .case{opacity:1;transform:none}
+.bg3 .case b{color:#FF7A3D}
+.bg3 .rule{margin-top:.7rem;text-align:center;font:600 .78rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;opacity:0;transition:.45s}.s4 .bg3 .rule{opacity:1}
+.da{width:min(26rem,100%)}
+.da .fu-log li{color:var(--ink)}.da .fu-log li b{background:rgba(35,21,14,.08)}.da .fu-log li.pay b{background:var(--orange);color:#fff}.da .fu-log li.ok b{background:#2E8B57;color:#fff}
+.da .fu-log li em{color:var(--orange)}
+.da .note{margin-top:.9rem;font-size:.8rem;line-height:1.45;color:var(--ink-2);padding-top:.7rem;border-top:1px dashed rgba(35,21,14,.2);opacity:0;transition:.45s}.s4 .da .note{opacity:1}
+.dr{width:min(26rem,100%);display:grid;gap:.6rem}
+.dr .cv-card{width:auto;padding:.9rem 1rem;display:grid;grid-template-columns:5.2rem 1fr;gap:.9rem;align-items:center}
+.dr .big{font:400 1.7rem var(--f-px);color:#D93025;line-height:1}.dr b{display:block;font-size:.95rem}.dr span{font-size:.8rem;color:var(--ink-2);line-height:1.4}
+@media (max-width:899px){.dc span,.bg3 .grp span,.dr .cv-card>div>span{display:none}.dv .dv-st,.dv .bc-k{display:none}.dv-prop b{font-size:.92rem}.dv-kas{margin-top:.5rem;padding:.35rem .7rem}.dv-kas b{font-size:1.2rem}.dv-mem{margin:.6rem 0 .4rem}.dv-out{font-size:.76rem;min-height:0}.dv-btn button{padding:.5rem}.dc .cv-card{padding:.6rem .8rem}.bg3 .case{font-size:.74rem}.dr .cv-card{padding:.6rem .8rem;grid-template-columns:4rem 1fr}.dr .big{font-size:1.3rem}.dv-mem{gap:.2rem}}
+</style>
+  <section class="camp pro-sec" id="dao" data-ch="dao" aria-labelledby="h-dao"><div class="camp-pin" data-camp="dao"></div></section>
+<style>
+.rails svg{width:100%;height:auto;display:block;overflow:visible}
+.rails .rl{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.rails .rl.or{stroke:var(--orange);stroke-width:5}
+.rails .sl{stroke:var(--ink);stroke-width:5;opacity:.35;stroke-linecap:round}
+.rails .sl.or{stroke:var(--orange);opacity:.55}
+.rails .lb{font:500 20px var(--f-mono);fill:var(--ink)}.rails .lb.or{fill:var(--orange)}
+.rails .pt{fill:var(--orange)}
+.rails .train{fill:var(--ink)}.rails .train .w{fill:var(--orange)}
+.rails .tr{offset-rotate:auto;animation:railgo 6s cubic-bezier(.5,0,.5,1) infinite}
+@keyframes railgo{0%{offset-distance:0%;opacity:0}8%{opacity:1}88%{opacity:1}100%{offset-distance:100%;opacity:0}}
+@media (prefers-reduced-motion:reduce){.rails .tr{animation:none;offset-distance:40%}}
+.lineh[data-line="pro"]{--lc:var(--ink)}
+.lineh[data-line="pro"] .lh-bar{height:14px;border-radius:0;background:repeating-linear-gradient(90deg,var(--orange) 0 4px,transparent 4px 16px) center/100% 14px no-repeat,linear-gradient(var(--ink),var(--ink)) top/100% 2px no-repeat,linear-gradient(var(--ink),var(--ink)) bottom/100% 2px no-repeat}
+.lineh[data-line="pro"] .lh-node{border-style:dashed;border-color:var(--orange);color:var(--orange)}
+.pro-rejoin{position:relative;z-index:2;background:var(--paper-2);padding-block:clamp(60px,10vh,110px)}
+.pro-rejoin .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px);align-items:center}
+.pro-rejoin h2{font-size:clamp(2rem,4.4vw,4.2rem);line-height:.95;letter-spacing:-.05em;margin:.8rem 0 0}
+.pro-rejoin p{font-size:1.05rem;line-height:1.5;margin:.9rem 0 0;max-width:28em}
+#sideBadge{position:fixed;z-index:40;left:50%;bottom:104px;transform:translate(-50%,20px);opacity:0;pointer-events:none;display:flex;align-items:center;gap:.7rem;padding:.45rem .5rem .45rem .9rem;border-radius:999px;background:var(--ink);color:var(--paper-2);box-shadow:0 12px 30px -10px rgba(35,21,14,.5);transition:.35s;font:600 .72rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+#sideBadge.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#sideBadge .trk{width:34px;height:10px;background:repeating-linear-gradient(90deg,var(--orange) 0 3px,transparent 3px 9px) center/100% 10px no-repeat,linear-gradient(var(--paper-2),var(--paper-2)) top/100% 1.5px no-repeat,linear-gradient(var(--paper-2),var(--paper-2)) bottom/100% 1.5px no-repeat}
+#sideBadge button{font:600 .7rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;border:0;border-radius:999px;padding:.5rem .8rem;background:var(--orange);color:#fff;cursor:pointer}
+.minimap{padding:12px 14px}.mm .lbl{right:36px}.mm .dot{z-index:2}.mm li .sw{z-index:1}
+.mm li.pro .dot{transform:translateX(11px)}
+.mm li.pro::after{content:"";z-index:0;position:absolute;left:17px;top:0;bottom:0;width:0;border-left:3px dotted var(--orange);opacity:.9}
+.mm li.pro.pf::after{top:50%}.mm li.pro.pl::after{bottom:50%}
+.mm li.pro.pf::before,.mm li.pro.pl::before{opacity:.7}
+.mm li .sw{position:absolute;left:6px;width:13px;height:13px;pointer-events:none}
+.mm li .sw path{fill:none;stroke:var(--orange);stroke-width:2.5;stroke-dasharray:2 3}
+.mm li.pro .lbl{font-style:italic}
+.mbar-dots i.pro{width:7px;height:7px;border-style:dashed;transform:translateY(5px)}
+@media (max-width:899px){.pro-rejoin .wrap{grid-template-columns:1fr}#sideBadge{display:none}body.on-pro #mbCode{background:var(--orange);color:#fff;border-radius:6px;padding:.1em .4em}body.on-pro #mbCode::after{content:" · PRO";font-size:.8em}#sideBadge .lbl2{display:none}}
+</style>
+  <section class="pro-rejoin pro-junction" id="rejoin-a" data-ch="dao"><div class="wrap">
+    <div><span class="cs-l" data-rl>Einde zijspoor</span><h2 data-rh>Terug op de hoofdlijn.</h2><p data-rp>Je kent nu smart contracts en DAO's. De trein rijdt verder naar wereld 9: de halvering.</p></div>
+    <div class="rails" data-rails="merge" data-a="08b" data-b="09"></div></div></section>
+  <script>(function(){ try{ if(localStorage.getItem("tour.pro")==="0") document.querySelectorAll(".pro-sec,.pro-junction").forEach(function(e){ e.remove(); }); }catch(e){} })();</script>
 
-  <section class="flood" aria-label="Overgang naar hoofdstuk 10">
+  <section class="flood" aria-label="Overgang naar hoofdstuk 9">
     <div class="flood-bg" aria-hidden="true"></div>
     <div class="plate p1 glass" aria-hidden="true"></div><div class="plate p2 glass" aria-hidden="true"></div><div class="plate p3 glass" aria-hidden="true"></div>
     <div class="flood-in">
-      <p class="label" data-i18n="k81">Op naar wereld 10</p>
+      <p class="label" data-i18n="k81">Op naar wereld 9</p>
       <p class="flood-txt split" data-i18n="k82">De winnaar krijgt nieuwe <span class="nw"><em>bitcoin</em>.</span></p>
       <p class="flood-sub" data-i18n="k83">Zo komen er bitcoin bij. Maar steeds minder.</p>
     </div>
@@ -1151,7 +1256,7 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
     <div class="hv-pin">
       <div class="hv-head">
         <div>
-          <div class="lineh" data-line="orange"><span class="lh-node">10</span><span class="lh-bar"></span><p class="lh-name label" data-i18n="k84">De trap · <span class="term" tabindex="0" role="button" data-term="halvering">halvering</span></p></div>
+          <div class="lineh" data-line="orange"><span class="lh-node">09</span><span class="lh-bar"></span><p class="lh-name label" data-i18n="k84">De trap · <span class="term" tabindex="0" role="button" data-term="halvering">halvering</span></p></div>
           <h2 class="h2 split" id="h-halvering" data-i18n="k85">Elke 4 jaar de <span class="nw"><em>helft</em>.</span></h2>
         </div>
         <div class="ring glass" id="ring">
@@ -1173,9 +1278,9 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 
   <section class="world dark" id="kosten" data-ch="kosten" aria-labelledby="h-kosten">
     <div class="w-pin">
-      <div class="w-top"><div class="lineh" data-line="orange"><span class="lh-node">11</span><span class="lh-bar"></span><p class="lh-name label" id="h-kosten" data-i18n="k88">De energie · <span class="term" tabindex="0" role="button" data-term="twh">terawattuur</span></p></div></div>
+      <div class="w-top"><div class="lineh" data-line="orange"><span class="lh-node">10</span><span class="lh-bar"></span><p class="lh-name label" id="h-kosten" data-i18n="k88">De energie · <span class="term" tabindex="0" role="button" data-term="twh">terawattuur</span></p></div></div>
       <div class="w-copy">
-        <p class="occ glass split" data-a="0" data-b="0.18" data-i18n="k89"><span class="label">Wereld 11 · De energie</span>Al dat gokken kost stroom. Heel veel <span class="nw"><em>stroom</em>.</span></p>
+        <p class="occ glass split" data-a="0" data-b="0.18" data-i18n="k89"><span class="label">Wereld 10 · De energie</span>Al dat gokken kost stroom. Heel veel <span class="nw"><em>stroom</em>.</span></p>
         <p class="occ glass" data-a="0.2" data-b="0.38" data-i18n="k90">Zo'n 140 tot 190 <span class="term" tabindex="0" role="button" data-term="twh">terawattuur</span> per jaar, afhankelijk van wie meet.</p>
         <p class="occ glass split" data-a="0.4" data-b="0.58" data-i18n="k91"><span class="label">52,4% duurzaam · Cambridge 2025</span>Ruim de helft is duurzaam: water, wind, zon en kernenergie. En dat aandeel <span class="nw"><em>groeit</em>.</span></p>
         <p class="occ glass split" data-a="0.6" data-b="0.78" data-i18n="k92"><span class="label">Waarde verplaatsen</span>Een miljard versturen kost evenveel stroom als tien euro. Zonder vrachtwagen, kluis of <span class="nw"><em>vliegtuig</em>.</span></p>
@@ -1188,7 +1293,7 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 
   <!-- 11 -->
   <section class="closing wrap" id="slot" data-ch="slot" aria-labelledby="h-slot">
-    <div class="lineh" data-line="orange"><span class="lh-node">12</span><span class="lh-bar"></span><p class="lh-name label" data-i18n="k98">Wereld 12 · 2140</p></div>
+    <div class="lineh" data-line="orange"><span class="lh-node">11</span><span class="lh-bar"></span><p class="lh-name label" data-i18n="k98">Wereld 11 · 2140</p></div>
     <h2 class="h2 split" id="h-slot" data-i18n="k99">Dat is <span class="nw"><em>bitcoin</em>.</span></h2>
     <p class="lead" style="margin-top:2rem" data-i18n="k100">Eén kasboek van iedereen, en een loterij die nooit stopt. Rond 2140 komt de laatste bitcoin erbij.</p>
     <p class="lead" data-i18n="k101">Maar waarom doet dat ertoe? Daar gaat de laatste wereld over. Scroll verder.</p>
@@ -1196,7 +1301,7 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
   <!-- 12 -->
   <section class="world dark" id="fix" data-ch="fix" aria-labelledby="h-fix">
     <div class="w-pin">
-      <div class="w-top"><div class="lineh" data-line="orange"><span class="lh-node">13</span><span class="lh-bar"></span><p class="lh-name label" id="h-fix" data-i18n="k195">Wereld 13 · Fix the money</p></div></div>
+      <div class="w-top"><div class="lineh" data-line="orange"><span class="lh-node">12</span><span class="lh-bar"></span><p class="lh-name label" id="h-fix" data-i18n="k195">Wereld 12 · Fix the money</p></div></div>
       <div class="w-copy">
         <p class="occ glass split" data-a="0" data-b="0.18" data-i18n="k196"><span class="label">Principe 1 · De smeltende euro</span>Sinds de euro is alles ruim 60% duurder. Wie spaart, wordt elk jaar <span class="nw"><em>armer</em>.</span></p>
         <p class="occ glass split" data-a="0.2" data-b="0.38" data-i18n="k197"><span class="label">Principe 2 · Dicht bij de kraan</span>Nieuw geld komt eerst bij banken en bij wie al bezit. Als het jouw loon bereikt, zijn de prijzen al <span class="nw"><em>gestegen</em>.</span></p>
@@ -1224,7 +1329,7 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 
   <section class="finale" id="finale" data-ch="fix" aria-labelledby="h-finale">
     <div class="fin-head wrap">
-      <span class="label" data-i18n="k210">Wereld 13 · De finale</span>
+      <span class="label" data-i18n="k210">Wereld 12 · De finale</span>
       <h2 class="fin-mega" id="h-finale"><span>Fix the money.</span><span>Fix the <em>world</em>.</span></h2>
       <p class="lead fin-sub" data-i18n="k211">Eerlijk geld is de basis van een eerlijke wereld. Geld dat niemand kan bijdrukken, beschermt het werk van iedereen. Vooral van wie weinig heeft.</p>
     </div>
@@ -1242,16 +1347,20 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
         <div class="glass fd"><span class="label" data-i18n="k223">Begin bij jezelf · 1</span><b data-i18n="k224">Leer hoe het werkt</b><p data-i18n="k246">Snap je het? Leg het uit aan iemand anders. Daar leer je zelf het meest van.</p>
           <div class="fd-acts"><button class="act hot" type="button" data-share data-i18n="k247">Deel dit verhaal</button><a class="act ghost" href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" data-i18n="k248">Lees het whitepaper ↗</a></div></div>
         <div class="glass fd"><span class="label" data-i18n="k226">Begin bij jezelf · 2</span><b data-i18n="k311">Zo koop je bitcoin</b><p data-i18n="k312">Eerlijk uitgelegd, stap voor stap. Ook als je nog nooit iets met crypto deed.</p>
-          <div class="fd-acts"><button class="act hot" type="button" data-go="kopen" data-i18n="k313">Naar wereld 15 →</button></div></div>
+          <div class="fd-acts"><button class="act hot" type="button" data-go="kopen" data-i18n="k313">Naar wereld 14 →</button></div></div>
         <div class="glass fd"><span class="label" data-i18n="k229">Begin bij jezelf · 3</span><b data-i18n="k230">Denk in jaren</b><p data-i18n="k251">De koers schommelt flink. Zo zorg je dat dat je geen pijn doet.</p>
-          <div class="fd-acts"><button class="act hot" type="button" data-go="jaren" data-i18n="k314">Naar wereld 16 →</button></div></div>
+          <div class="fd-acts"><button class="act hot" type="button" data-go="jaren" data-i18n="k314">Naar wereld 15 →</button></div></div>
       </div>
     </div>
   </section>
 
 <style>
-.camp-fu{background:#1B110B;color:var(--paper-2)}
-.camp-fu .camp-bg line{stroke:#FF7A3D;opacity:.18}
+.camp-fu{background:transparent;color:var(--paper-2)}html.no-gl .camp-fu{background:#1B110B}
+.camp-fu .cs-vis{align-items:flex-end;justify-content:flex-end;padding-bottom:1rem}.camp-fu .fu-card{width:min(18.5rem,100%);padding:1rem 1.1rem;background:rgba(20,11,7,.55);backdrop-filter:blur(10px)}.camp-fu .fu-why,.camp-fu .fu-vs{width:min(25rem,100%)}
+.camp-fu .fu-why{grid-template-columns:repeat(4,1fr);gap:.45rem}.camp-fu .fu-why div{padding:.7rem .6rem;text-align:center}.camp-fu .fu-why div span{display:none}.camp-fu .fu-why b{font-size:.78rem;margin:.35rem 0 0}
+.camp-fu .fu-vs{gap:.45rem}.camp-fu .fu-vs .fu-card{padding:.7rem .8rem}.camp-fu .fu-vs h4{font-size:.98rem;margin:.15rem 0 .35rem}.camp-fu .fu-vs ul{font-size:.72rem;gap:.25rem}.camp-fu .fu-vs li:nth-child(n+3){display:none}.camp-fu .fu-verdict{font-size:.76rem;padding:.6rem .75rem}
+.camp-fu .fu-row small{display:none}.camp-fu .fu-tot{margin-top:.6rem}.camp-fu .fu-why div,.camp-fu .fu-vs .fu-card{background:rgba(20,11,7,.6);backdrop-filter:blur(10px)}
+.camp-fu .camp-bg{display:none}
 .camp-fu .cs-p,.camp-fu .lh-name{color:rgba(247,240,227,.86)}
 .camp-fu .fpath li span{color:rgba(247,240,227,.6)}.camp-fu .fpath li.cur span{color:var(--paper-2)}
 .camp-fu .fpath::before{background:repeating-linear-gradient(90deg,var(--paper-2) 0 10px,transparent 10px 18px)}
@@ -1282,7 +1391,7 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 .fu-gar .bolt{fill:var(--orange);opacity:0}.s3 .fu-gar .bolt{animation:fubolt 1.2s infinite}
 @keyframes fubolt{0%,100%{opacity:.2}50%{opacity:1}}
 .fu-bill{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1rem}
-.fu-bill .fu-k{display:block}.fu-sats{font:400 clamp(1.8rem,3vw,2.6rem) var(--f-px);color:var(--paper-2)}
+.fu-bill .fu-k{display:block}.fu-sats{font:400 clamp(1.4rem,2.1vw,1.9rem) var(--f-px);color:var(--paper-2);white-space:nowrap}
 .fu-paid{font:600 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:.55rem .8rem;border-radius:999px;background:rgba(247,240,227,.1);color:rgba(247,240,227,.6);transition:.4s}.s4 .fu-paid{background:#2E8B57;color:#fff}
 .fu-steps{display:flex;gap:.4rem;margin-top:.8rem;flex-wrap:wrap}.fu-steps span{font:.66rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(247,240,227,.2);color:rgba(247,240,227,.5);transition:.3s}
 .s1 .fu-steps .a1,.s2 .fu-steps .a2,.s3 .fu-steps .a3,.s4 .fu-steps .a4{border-color:var(--orange);color:var(--paper-2);background:rgba(255,77,0,.18)}
@@ -1307,6 +1416,54 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 .camp-cta.fu-next{background:#1B110B;color:var(--paper-2)}
 @media (max-width:899px){.camp-fu .cs-vis{transform:scale(.6)}.camp-fu .cs-p{font-size:.9rem;line-height:1.45}.camp-fu .cs-h{font-size:clamp(1.9rem,8.4vw,2.7rem)}.camp-fu .cs-l{font-size:.62rem}.fu-why{gap:.45rem}.fu-why div{padding:.7rem}.fu-why span{font-size:.72rem}.fu-vs{gap:.45rem}.fu-vs ul{font-size:.72rem}.fu-vs li:nth-child(n+3){display:none}.fu-verdict{font-size:.74rem;padding:.6rem .7rem}.fu-rows .fu-row small{display:none}.fu-log{font-size:.72rem}}
 </style>
+<style>
+.mu-sea{position:relative;width:min(26rem,100%);aspect-ratio:1/.9}
+.mu-sea i{position:absolute;display:grid;place-items:center;border-radius:50%;font:600 .66rem var(--f-mono);font-style:normal;background:#fff;color:var(--ink-2);box-shadow:0 0 0 1px rgba(35,21,14,.1);animation:mufloat 6s ease-in-out infinite}
+.mu-sea i.btc{background:var(--orange);color:#fff;font:400 1.4rem var(--f-px);box-shadow:0 18px 40px -12px rgba(255,77,0,.6);animation:none;z-index:2}
+@keyframes mufloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.mu-sea .cnt{position:absolute;left:0;bottom:-.4rem;font:.72rem var(--f-mono);color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase}
+.mu-tests{width:min(27rem,100%);display:grid;gap:.5rem}
+.mu-tests .cv-card{width:auto;padding:.8rem 1rem;display:grid;grid-template-columns:2.6rem 1fr;gap:.8rem;align-items:center;opacity:.25;transform:translateX(16px);transition:.45s}
+.s1 .mu-tests .t1,.s1 .mu-tests .t2,.s2 .mu-tests .t3,.s3 .mu-tests .t4,.s4 .mu-tests .t5,.s2 .mu-tests .t1,.s2 .mu-tests .t2,.s3 .mu-tests .t1,.s3 .mu-tests .t2,.s3 .mu-tests .t3,.s4 .mu-tests .cv-card{opacity:1;transform:none}
+.mu-tests .ic{width:2.6rem;height:2.6rem;border-radius:12px;background:var(--ink);color:var(--paper-2);display:grid;place-items:center;font:400 1rem var(--f-px)}
+.mu-tests b{display:block;font-size:.98rem}.mu-tests span{font-size:.8rem;color:var(--ink-2);line-height:1.35}
+.mu-lane{width:min(28rem,100%)}
+.mu-pick{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem}
+.mu-pick button{font:600 .72rem var(--f-mono);border-radius:999px;padding:.45rem .65rem;border:1.5px solid rgba(35,21,14,.25);background:#fff;color:var(--ink);cursor:pointer}
+.mu-pick button.on{background:var(--ink);color:var(--paper-2);border-color:var(--ink)}
+.mu-pick button.btc{border-color:var(--orange);color:var(--orange)}.mu-pick button.btc.on{background:var(--orange);color:#fff}
+.mu-track{position:relative;height:118px;margin:0 .4rem}
+.mu-track .rl{position:absolute;left:0;right:0;height:2px;background:var(--ink)}.mu-track .rl.a{top:92px}.mu-track .rl.b{top:104px}
+.mu-track .sl{position:absolute;left:0;right:0;top:88px;height:20px;background:repeating-linear-gradient(90deg,rgba(35,21,14,.3) 0 4px,transparent 4px 18px)}
+.mu-gate{position:absolute;top:18px;width:46px;margin-left:-23px;height:74px;border:3px solid var(--ink);border-bottom:0;border-radius:23px 23px 0 0;display:grid;place-items:start center;padding-top:.45rem;font:400 .9rem var(--f-px);background:var(--paper-2);transition:.25s}
+.mu-gate.ok{border-color:#2E8B57;background:rgba(46,139,87,.14);color:#2E8B57}.mu-gate.no{border-color:#D93025;background:rgba(217,48,37,.12);color:#D93025}.mu-gate.half{border-color:var(--orange);background:rgba(255,77,0,.12);color:var(--orange)}
+.mu-coin{position:absolute;top:50px;left:-6%;width:40px;height:40px;margin-left:-20px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:600 .62rem var(--f-mono);box-shadow:0 10px 20px -8px rgba(35,21,14,.6);transition:left .5s cubic-bezier(.4,0,.2,1),background .3s;z-index:2}
+.mu-coin.btc{background:var(--orange);font:400 1.1rem var(--f-px)}
+.mu-why{min-height:3.2em;margin-top:.6rem;font-size:.86rem;line-height:1.45;color:var(--ink)}.mu-why b{color:#D93025}.mu-why b.g{color:#2E8B57}
+.mu-score{display:flex;justify-content:space-between;align-items:baseline;margin-top:.4rem;padding-top:.6rem;border-top:1px dashed rgba(35,21,14,.2)}
+.mu-score b{font:400 2rem var(--f-px);color:var(--ink)}.mu-score span{font:.72rem var(--f-mono);color:var(--ink-2);text-transform:uppercase;letter-spacing:.08em}
+.mu-sur{width:min(27rem,100%);display:grid;gap:.6rem}
+.mu-sur .cv-card{width:auto;padding:.9rem 1rem;display:grid;grid-template-columns:3.4rem 1fr;gap:.2rem .9rem;align-items:start;opacity:.3;transform:translateY(10px);transition:.45s}
+.s1 .mu-sur .a1,.s2 .mu-sur .a2,.s3 .mu-sur .a3,.s2 .mu-sur .a1,.s3 .mu-sur .a1,.s3 .mu-sur .a2,.s4 .mu-sur .cv-card{opacity:1;transform:none}
+.mu-sur .tk{grid-row:span 2;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:600 .72rem var(--f-mono)}
+.mu-sur b{font-size:1rem}.mu-sur span{font-size:.82rem;color:var(--ink-2);line-height:1.4}
+.mu-fair{width:min(27rem,100%);display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.mu-fair .cv-card{width:auto;padding:1rem}.mu-fair h4{margin:0 0 .5rem;font-size:1.05rem}.mu-fair ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem;font-size:.82rem;line-height:1.4;color:var(--ink-2)}
+.mu-fair .or h4{color:var(--orange)}
+.mu-fair .ver{grid-column:1/-1;background:var(--ink);color:var(--paper-2);font-size:.9rem;line-height:1.45}
+@media (max-width:899px){.mu-tests span,.mu-sur span{display:none}.mu-tests .cv-card,.mu-sur .cv-card{padding:.55rem .8rem}.mu-pick button{padding:.35rem .5rem;font-size:.64rem}.mu-fair ul{font-size:.72rem}.mu-fair .ver{font-size:.76rem}.mu-sea{width:16rem}}
+</style>
+  <section class="wissel pro-junction" id="wissel-b" data-ch="fix" aria-labelledby="h-wissel-b"><div class="wrap">
+    <div><span class="cs-l" data-wl>Wissel · zijspoor PRO</span><h2 id="h-wissel-b" data-wh>En al die andere munten?</h2>
+    <p data-wp>Er bestaan duizenden andere cryptomunten. Waarom passen ze niet bij "fix the money"? Op dit zijspoor leg je ze langs vijf toetsstenen. Ongeveer 3 minuten.</p>
+    <div class="acts"><button class="hot" type="button" data-go="munten" data-wa>Neem het zijspoor ↓</button><button type="button" data-skip="toekomst" data-wb>Rechtdoor naar wereld 13 →</button></div></div>
+    <div class="rails" data-rails="split" data-a="12" data-b="13" data-s="12a"></div>
+  </div></section>
+  <section class="camp pro-sec" id="munten" data-ch="munten" aria-labelledby="h-munten"><div class="camp-pin" data-camp="munten"></div></section>
+  <section class="pro-rejoin pro-junction" id="rejoin-b" data-ch="munten"><div class="wrap">
+    <div><span class="cs-l" data-rl>Einde zijspoor</span><h2 data-rh>Terug op de hoofdlijn.</h2><p data-rp>Je weet nu waarom bitcoin anders is dan de rest. De trein rijdt verder naar wereld 13: de toekomst.</p></div>
+    <div class="rails" data-rails="merge" data-a="12a" data-b="13"></div></div></section>
+  <script>(function(){ try{ if(localStorage.getItem("tour.pro")==="0") ["wissel-b","munten","rejoin-b"].forEach(function(id){ var e=document.getElementById(id); if(e) e.remove(); }); }catch(e){} })();</script>
   <!-- 14 -->
   <section class="camp camp-fu" id="toekomst" data-ch="toekomst" aria-labelledby="h-toekomst"><div class="camp-pin" data-camp="future"></div></section>
   <section class="camp-cta fu-next" id="toekomst-next" data-ch="toekomst"></section>
@@ -1355,6 +1512,8 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
 </aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="tip glass" id="tip" role="tooltip" hidden></div>
+<div id="jumpFx" aria-hidden="true"></div>
+<div id="sideBadge" role="status"><span class="trk" aria-hidden="true"></span><span class="lbl1" id="sbT">Zijspoor PRO</span><button type="button" id="sbB"><span class="lbl2" id="sbL">Terug naar hoofdlijn</span> →</button></div>
 <div class="worldcard glass" id="worldcard" aria-hidden="true"><span class="wc-n" id="wcN">WERELD 1</span><b class="wc-t" id="wcT">De planeet</b></div>
 
 <template id="more-geld">
@@ -1483,7 +1642,7 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
   <h4 data-i18n="k170">Waarom zo moeilijk?</h4>
   <p data-i18n="k171">Zoeken kost veel werk. Controleren is makkelijk. Wie wil valsspelen, moet al dat werk opnieuw doen. Dat is bijna onmogelijk.</p>
   <h4 data-i18n="k172">Het nadeel</h4>
-  <p data-i18n="k173">Al dat rekenen kost veel stroom. Daar gaat hoofdstuk 11 over.</p>
+  <p data-i18n="k173">Al dat rekenen kost veel stroom. Daar gaat hoofdstuk 10 over.</p>
 </template>
 
 <template id="more-ketting">
@@ -1585,7 +1744,7 @@ const T_TERM=(k,t)=>`<span class="term" tabindex="0" role="button" data-term="${
 const MUS=(o,t)=>`<a class="readmore" href="museum/#obj-${o}" target="_blank" rel="noopener" style="text-decoration:none"><span>In the museum: ${t}</span><span class="arr" aria-hidden="true">↗</span></a>`;
 const EN_HTML={
 k4:`Welcome to the <em>Bitcoin</em> <span class="nw"><em>Tour</em>.</span>`,
-k5:`A journey through seventeen worlds about money nobody can print. There will never be more than 21 million bitcoin. All aboard?`,
+k5:`A journey through sixteen worlds about money nobody can print. There will never be more than 21 million bitcoin. All aboard?`,
 k6:`<span>What is bitcoin?</span><span class="arr" aria-hidden="true">↗</span>`,
 k7:`The ocean · ${T_TERM("walvis","whales")}`,
 k8:`<span class="label">World 2 · The ocean</span>This is where the whales <span class="nw"><em>swim</em>.</span>`,
@@ -1650,7 +1809,7 @@ k77:`Change one block and everything after it <span class="nw"><em>breaks</em>.<
 k78:`Repair it? Then you have to be faster than the whole <span class="nw"><em>world</em>.</span>`,
 k79:`Meanwhile, another block is <span class="nw"><em>added</em>.</span>`,
 k80:MORE,
-k81:`On to world 10`,
+k81:`On to world 9`,
 k82:`The winner gets new <span class="nw"><em>bitcoin</em>.</span>`,
 k83:`That's how new bitcoin appear. But fewer and fewer.`,
 k84:`The staircase · ${T_TERM("halvering","halving")}`,
@@ -1658,7 +1817,7 @@ k85:`Half, every 4 <span class="nw"><em>years</em>.</span>`,
 k86:`until the next ${T_TERM("halvering","halving")}, around March 2028.`,
 k87:MORE,
 k88:`The energy · ${T_TERM("twh","terawatt hours")}`,
-k89:`<span class="label">World 11 · The energy</span>All that guessing takes electricity. A lot of <span class="nw"><em>electricity</em>.</span>`,
+k89:`<span class="label">World 10 · The energy</span>All that guessing takes electricity. A lot of <span class="nw"><em>electricity</em>.</span>`,
 k90:`About 140 to 190 ${T_TERM("twh","terawatt hours")} a year, depending on who measures.`,
 k91:`<span class="label">52.4% sustainable · Cambridge 2025</span>More than half is sustainable: hydro, wind, solar and nuclear. And that share is <span class="nw"><em>growing</em>.</span>`,
 k92:`<span class="label">Moving value</span>Sending a billion uses as much electricity as sending ten dollars. No truck, vault or <span class="nw"><em>plane</em>.</span>`,
@@ -1667,7 +1826,7 @@ k94:`<b>Sustainable: 52.4%</b> in 2025. A preliminary update at the end of 2025 
 k95:`In terawatt hours. Gold: 2021 estimate.`,
 k96:`Source: Cambridge (CCAF), 2025.`,
 k97:MORE,
-k98:`World 12 · 2140`,
+k98:`World 11 · 2140`,
 k99:`That's <span class="nw"><em>bitcoin</em>.</span>`,
 k100:`One ledger that belongs to everyone, and a lottery that never stops. Around 2140 the last bitcoin is added.`,
 k101:`So why does that matter? That's what the last world is about. Keep scrolling.`,
@@ -1728,7 +1887,7 @@ k169:`That keeps it at about 10 minutes per block. 1,160 blocks to go, around 29
 k170:`Why so hard?`,
 k171:`Searching takes a lot of work. Checking is easy. Anyone who wants to cheat has to redo all that work. That's almost impossible.`,
 k172:`The downside`,
-k173:`All that calculating uses a lot of electricity. Chapter 11 is about that.`,
+k173:`All that calculating uses a lot of electricity. Chapter 10 is about that.`,
 k174:`Why it's <em>set in stone</em>`,
 k175:`Every block stores the code of the block before it. Change an old block and that code changes. Then none of the blocks after it match anymore.`,
 k176:`The longest chain wins`,
@@ -1741,7 +1900,7 @@ k182:`Every 210,000 blocks the reward halves. That's roughly every 4 years.`,
 k183:`Year`,k184:`Per block`,k185:`In circulation`,k186:`10.5 mln`,k187:`15.75 mln`,k188:`18.38 mln`,k189:`2024 · now`,k190:`19.69 mln`,k191:`20.34 mln`,k192:`21 mln`,
 k193:`And after 2140?`,
 k194:`Then no new bitcoin are added. Miners then only earn from the fees people pay per payment.`,
-k195:`World 13 · Fix the money`,
+k195:`World 12 · Fix the money`,
 k196:`<span class="label">Principle 1 · The melting euro</span>Since the euro arrived, everything costs over 60% more. If you save, you get poorer every <span class="nw"><em>year</em>.</span>`,
 k197:`<span class="label">Principle 2 · Close to the tap</span>New money reaches banks and asset owners first. By the time it reaches your wages, prices have already <span class="nw"><em>risen</em>.</span>`,
 k198:`<span class="label">Principle 3 · Saving works again</span>Nobody can print more bitcoin. Your savings don't get diluted. Patience is rewarded, not <span class="nw"><em>punished</em>.</span>`,
@@ -1756,7 +1915,7 @@ k206:`inflation in Argentina, 2023`,
 k207:`Sources: CBS Statistics Netherlands (CPI), World Bank Global Findex 2025, Remittance Prices Worldwide (2025), INDEC Argentina.`,
 k208:`Slide through the years`,
 k209:MORE,
-k210:`World 13 · The finale`,
+k210:`World 12 · The finale`,
 k211:`Honest money is the foundation of an honest world. Money nobody can print protects everyone's work. Especially the work of those who have little.`,
 k212:`No silent tax`,
 k213:`Nobody can melt your savings by printing more.`,
@@ -1827,7 +1986,7 @@ k277:`Every four years, the number of new bitcoin halves. That's why many bitcoi
 k278:`<span>See the halving</span><span class="arr" aria-hidden="true">↗</span>`,
 k279:`This is not investment advice. It's about staying calm with price swings.`,
 k280:`Branch line · How to buy bitcoin`,
-k281:`<span class="label">World 15 · Honest first</span>Buying bitcoin is easy. Buying it wisely takes ten minutes. And yes: you can lose <span class="nw"><em>money</em>.</span>`,
+k281:`<span class="label">World 14 · Honest first</span>Buying bitcoin is easy. Buying it wisely takes ten minutes. And yes: you can lose <span class="nw"><em>money</em>.</span>`,
 k282:`<span class="label">Step 1 · Choose an exchange</span>An exchange swaps your money for bitcoin. Choose one that is licensed by the financial <span class="nw"><em>regulator</em>.</span>`,
 k283:`<span class="label">Step 2 · Create an account</span>You show your ID, just like at a bank. Then you deposit money. Start small, say 10 or <span class="nw"><em>25</em>.</span>`,
 k284:`<span class="label">Step 3 · Buy</span>You don't need to buy a whole bitcoin. A tiny piece is real bitcoin <span class="nw"><em>too</em>.</span>`,
@@ -1842,7 +2001,7 @@ k292:`Check that the exchange is licensed by the financial regulator in your cou
 k293:`Follow your money to your own wallet`,
 k294:`<span>Step by step</span><span class="arr" aria-hidden="true">↗</span>`,
 k295:`Branch line · Think in years`,
-k296:`<span class="label">World 16 · Think in years</span>Bitcoin goes up and down. Sometimes a lot. If you know that in advance, you stay <span class="nw"><em>calm</em>.</span>`,
+k296:`<span class="label">World 15 · Think in years</span>Bitcoin goes up and down. Sometimes a lot. If you know that in advance, you stay <span class="nw"><em>calm</em>.</span>`,
 k297:`<span class="label">Rule 1 · A buffer first</span>Keep enough ordinary money aside. Then you never have to sell at a bad <span class="nw"><em>moment</em>.</span>`,
 k298:`<span class="label">Rule 2 · Only what you can spare</span>Only put aside what you won't need for the coming <span class="nw"><em>years</em>.</span>`,
 k299:`<span class="label">Rule 3 · Don't check every day</span>Up close it looks like a storm. From afar you see the <span class="nw"><em>rhythm</em>.</span>`,
@@ -1856,13 +2015,13 @@ k309:`Last stop`,
 k310:`Thanks for riding <span class="nw"><em>along</em>.</span>`,
 k311:`How to buy bitcoin`,
 k312:`Explained honestly, step by step. Even if you've never done anything with crypto.`,
-k313:`To world 15 →`,
-k314:`To world 16 →`,
+k313:`To world 14 →`,
+k314:`To world 15 →`,
 k315:`How to buy bitcoin`,
 k316:`How to buy ₿`
 };
 const EN_TEXT={"Geluid":"Sound","Deel":"Share","Wereld 1 · De planeet":"World 1 · The planet","Momentopname · blok 972.543 · 22 okt 2026":"Snapshot · block 972,543 · 22 Oct 2026","21.000 puntjes":"21,000 dots","Elk puntje is 1.000 bitcoin. Samen is dit alle bitcoin die er ooit komt.":"Each dot is 1,000 bitcoin. Together, this is all the bitcoin there will ever be.","Bestaat al":"Already exists","De rest komt er de komende 100 jaar bij.":"The rest arrives over the next 100 years or so.","Tik op een walvis":"Tap a whale","Stuur een betaling":"Send a payment","Elk lichtpuntje is een computer met een kopie van het kasboek":"Each light is a computer holding a copy of the ledger","Maak een sleutel":"Make a key","Elk kluisje is een adres: iedereen ziet het, alleen de sleutel opent het":"Each locker is an address: anyone can see it, only the key opens it","Enkele":"One","reis":"way","Getekend":"Signed","Pas als je tekent, mag je betaling vertrekken":"Your payment can only leave once you sign","Hoeveel fooi geef je?":"How much fee do you pay?","Elk blokje is een wachtende betaling. Hoger zweven = meer fooi = eerder mee":"Each block is a waiting payment. Floating higher = bigger fee = picked sooner","Doel":"Target","Doel · nullen vooraan":"Target · leading zeros","Pogingen":"Attempts","Gok-nummer (":"Guess number (","Kans per gok":"Chance per guess","1 op 256":"1 in 256","Zo vaak gokte de hele wereld terwijl jij hier was":"How often the whole world guessed while you were here","Draai":"Spin","1 week · 1.072 blokken":"1 week · 1,072 blocks","3 januari 2009":"3 January 2009","Blok 0":"Block 0","Nog 77.457 blokken":"77,457 blocks to go","Elk platform is een halvering. Het getal is de beloning per blok":"Each platform is a halving. The number is the reward per block","Waar komt de stroom vandaan?":"Where does the power come from?","Water, wind, zon":"Hydro, wind, solar","Kernenergie":"Nuclear","Kolen":"Coal","Stroom per jaar":"Electricity per year","Goudsector":"Gold sector","Kleuren = de bronnen uit het paneel. Lichtjes = stroom naar de miners":"Colours match the panel. Lights = power flowing to the miners","Data: mempool.space, momentopname blok 972.543":"Data: mempool.space, snapshot block 972,543","Letters: Geist en Geist Pixel":"Type: Geist and Geist Pixel","Geld dat niemand kan bijdrukken":"Money nobody can print","WERELD 1":"WORLD 1","De planeet":"The planet","Bitcoin start":"Bitcoin starts","21 miljoen":"21 million","Meer komen er nooit":"There will never be more","adressen hebben meer dan 1.000 bitcoin":"addresses hold more than 1,000 bitcoin","2,3 – 3,7 mln":"2.3 – 3.7 mln","bitcoin zijn kwijt, de sleutel is weg":"bitcoin are lost, the key is gone","adressen met meer dan 1.000 bitcoin":"addresses with more than 1,000 bitcoin","± 4,25 mln":"± 4.25 mln","bitcoin in portemonnees met 1.000 tot 10.000":"bitcoin in wallets with 1,000 to 10,000","± 1,1 mln":"± 1.1 mln","bitcoin van Satoshi, nooit bewogen":"Satoshi's bitcoin, never moved","bitcoin kwijt, de sleutel is weg":"bitcoin lost, the key is gone","Duizenden":"Thousands","nodes over de hele wereld":"nodes all over the world","Iedereen":"Anyone","kan een node draaien op een gewone computer":"can run a node on an ordinary computer","78 cijfers":"78 digits","zo lang is het aantal mogelijke sleutels":"that's how long the number of possible keys is","helpdesks die je sleutel terughalen":"help desks that can recover your key","tot het volgende blok":"until the next block","Paar duizend":"A few thousand","betalingen per blok":"payments per block","stroom per jaar, schattingen verschillen":"electricity per year, estimates differ","duurzaam in 2025, en ± 59% volgens een voorlopige update eind 2025":"sustainable in 2025, and ± 59% in a preliminary update at the end of 2025","± 7,8 mld $":"± $7.8 bn","aan waarde per dag verplaatst, eind 2025":"in value moved per day, end of 2025","stroom per jaar voor de goudsector, schatting 2021":"electricity per year for the gold sector, 2021 estimate","Elke 2.016 blokken past het netwerk de moeilijkheid aan.":"Every 2,016 blocks, the network adjusts the difficulty.","blokken, oktober 2026":"blocks, October 2026","6 blokken":"6 blocks","daarna is een betaling zeker":"after that, a payment is final","972.543":"972,543","21.000.000":"21,000,000","1,3 mld":"1.3 bn","6,36%":"6.36%"};
-const EN_ATTR={"Bitcoin Tour, naar het begin":"Bitcoin Tour, back to the start","Geluid aan":"Sound on","Overgang naar wereld 3":"Transition to world 3","Fooi":"Fee","Bord met de uitkomst van de hashfunctie, 64 tekens":"Board showing the hash function output, 64 characters","Hoeveel nullen":"How many zeros","Wiel met het aandeel gewonnen blokken per mining pool, afgelopen week":"Wheel showing the share of blocks won per mining pool, past week","Overgang naar hoofdstuk 10":"Transition to chapter 10","Hoofdstukken":"Chapters"};
+const EN_ATTR={"Bitcoin Tour, naar het begin":"Bitcoin Tour, back to the start","Geluid aan":"Sound on","Overgang naar wereld 3":"Transition to world 3","Fooi":"Fee","Bord met de uitkomst van de hashfunctie, 64 tekens":"Board showing the hash function output, 64 characters","Hoeveel nullen":"How many zeros","Wiel met het aandeel gewonnen blokken per mining pool, afgelopen week":"Wheel showing the share of blocks won per mining pool, past week","Overgang naar hoofdstuk 9":"Transition to chapter 9","Hoofdstukken":"Chapters"};
 
 (function applyLang(){
   document.documentElement.lang=LANG;
@@ -1965,17 +2124,19 @@ const CH=[
   {id:"wachtkamer",n:"06",name:"De wachtkamer",line:"orange",built:true},
   {id:"loterij",n:"07",name:"De mijnhal",line:"orange",built:true},
   {id:"ketting",n:"08",name:"Blockchain",line:"orange",built:true},
-  {id:"contract",n:"09",name:"Smart contracts",line:"orange",built:true},
-  {id:"halvering",n:"10",name:"De trap",line:"orange",built:true},
-  {id:"kosten",n:"11",name:"De energie",line:"orange",built:true},
-  {id:"slot",n:"12",name:"2140",line:"orange",built:true},
-  {id:"fix",n:"13",name:"Fix the money",line:"orange",built:true},
-  {id:"toekomst",n:"14",name:"De toekomst",line:"orange",built:true},
-  {id:"kopen",n:"15",name:"Zo koop je bitcoin",line:"gold",built:true},
-  {id:"jaren",n:"16",name:"Rustig vasthouden",line:"gold",built:true},
-  {id:"zelf",n:"17",name:"Zelf bewaren",line:"gold",kind:"end",built:true}
+  {id:"contract",n:"08a",name:"Smart contracts",line:"orange",pro:true,rejoin:"halvering",built:true},
+  {id:"dao",n:"08b",name:"DAO's",line:"orange",pro:true,rejoin:"halvering",built:true},
+  {id:"halvering",n:"09",name:"De trap",line:"orange",built:true},
+  {id:"kosten",n:"10",name:"De energie",line:"orange",built:true},
+  {id:"slot",n:"11",name:"2140",line:"orange",built:true},
+  {id:"fix",n:"12",name:"Fix the money",line:"orange",built:true},
+  {id:"munten",n:"12a",name:"Andere munten",line:"orange",pro:true,rejoin:"toekomst",built:true},
+  {id:"toekomst",n:"13",name:"De toekomst",line:"orange",built:true},
+  {id:"kopen",n:"14",name:"Zo koop je bitcoin",line:"gold",built:true},
+  {id:"jaren",n:"15",name:"Rustig vasthouden",line:"gold",built:true},
+  {id:"zelf",n:"16",name:"Zelf bewaren",line:"gold",kind:"end",built:true}
 ];
-if(LANG==="en"){ const N={geld:"The planet",walvissen:"The ocean",kasboek:"The network",sleutel:"The vault",betalen:"The station",wachtkamer:"The waiting room",loterij:"The mining hall",ketting:"Blockchain",contract:"Smart contracts",toekomst:"The future",halvering:"The staircase",kosten:"The energy",slot:"2140",fix:"Fix the money",kopen:"How to buy bitcoin",jaren:"Hold steady",zelf:"Self-custody"}; CH.forEach(c=>c.name=N[c.id]||c.name); }
+if(LANG==="en"){ const N={geld:"The planet",walvissen:"The ocean",kasboek:"The network",sleutel:"The vault",betalen:"The station",wachtkamer:"The waiting room",loterij:"The mining hall",ketting:"Blockchain",contract:"Smart contracts",dao:"DAOs",munten:"Other coins",toekomst:"The future",halvering:"The staircase",kosten:"The energy",slot:"2140",fix:"Fix the money",kopen:"How to buy bitcoin",jaren:"Hold steady",zelf:"Self-custody"}; CH.forEach(c=>c.name=N[c.id]||c.name); }
 CH.forEach((c,i)=>c.i=i);
 const byId=Object.fromEntries(CH.map(c=>[c.id,c]));
 const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -2649,6 +2810,116 @@ const GL=(function(){
         const a=t*.05*SPDG+p*1.4; cam.position.set(Math.sin(a)*14+PTR.x*2,1.5+lerp(1,0,p)-PTR.y*1.2,Math.cos(a)*14); cam.lookAt(0,2*W[1],0); }}),{setPP});
   })();
 
+
+  /* --- 14 · De toekomst: nachtstad 2040 --- */
+  const FUT=(function(){
+    const sc=new THREE.Scene(); sc.fog=new THREE.FogExp2(col("#120A06"),.03);
+    const cam=new THREE.PerspectiveCamera(50,1,.1,300);
+    const G=[0,1,2,3,4].map(()=>{ const g=new THREE.Group(); g.userData.mats=[]; sc.add(g); return g; });
+    const LM=(gi,c,o)=>{ const m=lineMat(c,o); G[gi].userData.mats.push(m); return m; };
+    const PM=(gi,c,s,o,add)=>{ const m=ptsMat(c,s,o,add); G[gi].userData.mats.push(m); return m; };
+    const BLUE=C.pink;
+    const box=(a,x,y,z,w,h,d)=>{ const X=[x-w/2,x+w/2],Y=[y,y+h],Z=[z-d/2,z+d/2];
+      for(const yy of Y){ a.push(V(X[0],yy,Z[0]),V(X[1],yy,Z[0]),V(X[1],yy,Z[0]),V(X[1],yy,Z[1]),V(X[1],yy,Z[1]),V(X[0],yy,Z[1]),V(X[0],yy,Z[1]),V(X[0],yy,Z[0])); }
+      for(const xx of X) for(const zz of Z) a.push(V(xx,Y[0],zz),V(xx,Y[1],zz)); return a; };
+    const label=(gi,txt,c,w)=>{ const cv=document.createElement("canvas"); cv.width=512; cv.height=96; const x=cv.getContext("2d");
+      const draw=s=>{ x.clearRect(0,0,512,96); x.fillStyle="#fff"; x.font='500 46px "Geist Mono", monospace'; x.textAlign="center"; x.textBaseline="middle"; x.fillText(s,256,50); };
+      draw(txt); const tex=new THREE.CanvasTexture(cv); const m=new THREE.SpriteMaterial({map:tex,color:c.clone(),transparent:true,depthWrite:false}); m.userData.base=1; G[gi].userData.mats.push(m);
+      const s=new THREE.Sprite(m); s.scale.set(w||4,(w||4)*96/512,1); G[gi].add(s); s.userData.set=v=>{ if(s.userData.v!==v){ s.userData.v=v; draw(v); tex.needsUpdate=true; } }; return s; };
+    /* pod: gestroomlijnde robotaxi uit lijnen (doorsnedes langs de lengte) */
+    const pod=(gi,c)=>{ const g=new THREE.Group(), a=[], prof=[]; const L=4.4;
+      for(let k=0;k<=12;k++){ const u=k/12, x=(u-.5)*L, hgt=.55+.75*Math.pow(Math.sin(Math.PI*Math.min(1,u*1.08)),.7), wd=.95*Math.pow(Math.sin(Math.PI*u),.35)+.05; prof.push([x,hgt,wd]); }
+      prof.forEach(([x,hh,wd],k)=>{ const n=20; for(let i=0;i<n;i++){ const a1=i/n*Math.PI, a2=(i+1)/n*Math.PI; a.push(V(x,.35+Math.sin(a1)*hh,Math.cos(a1)*wd),V(x,.35+Math.sin(a2)*hh,Math.cos(a2)*wd)); }
+        if(k<prof.length-1){ const [x2,h2,w2]=prof[k+1]; for(const q of [0,.25,.5,.75,1]){ const ang=q*Math.PI; a.push(V(x,.35+Math.sin(ang)*hh,Math.cos(ang)*wd),V(x2,.35+Math.sin(ang)*h2,Math.cos(ang)*w2)); } } });
+      g.add(new THREE.LineSegments(geo(a),LM(gi,c,.55)));
+      const wh=[]; for(const [x,z] of [[-1.35,.95],[1.35,.95],[-1.35,-.95],[1.35,-.95]]){ for(let i=0;i<24;i++){ const a1=i/24*Math.PI*2,a2=(i+1)/24*Math.PI*2; wh.push(V(x+Math.cos(a1)*.38,.38+Math.sin(a1)*.38,z),V(x+Math.cos(a2)*.38,.38+Math.sin(a2)*.38,z)); } }
+      g.add(new THREE.LineSegments(geo(wh),LM(gi,PAPER,.7)));
+      const lights=new THREE.Points(geo([V(2.2,.75,.5),V(2.2,.75,-.5),V(-2.2,.8,.45),V(-2.2,.8,-.45)]),PM(gi,C.orange,.5,1,true)); g.add(lights);
+      const strip=[]; for(let i=0;i<30;i++) strip.push(V(-1.9+i*.13,1.25,0)); g.add(new THREE.Points(geo(strip),PM(gi,C.orange,.12,.9,true)));
+      return g; };
+
+    /* 0 · AI-agents: serverzuilen + betaalpulsen */
+    const NA=MOB?14:22, nodes=[];
+    { const a=[]; for(let i=0;i<NA;i++){ const ang=i/NA*Math.PI*2+Math.random()*.2, r=3.2+Math.random()*2.6, h=.8+Math.random()*2.6; const p=V(Math.cos(ang)*r,0,Math.sin(ang)*r); box(a,p.x,-1.6,p.z,.55,h,.55); nodes.push(V(p.x,-1.6+h+.25,p.z)); }
+      G[0].add(new THREE.LineSegments(geo(a),LM(0,PAPER,.32))); G[0].add(new THREE.Points(geo(nodes),PM(0,PAPER,.34,.95,true)));
+      const core=new THREE.Points(geo([V(0,.6,0)]),PM(0,C.orange,1.8,1,true)); G[0].add(core); const ring=[]; for(let i=0;i<64;i++){ const a1=i/64*Math.PI*2,a2=(i+1)/64*Math.PI*2; ring.push(V(Math.cos(a1)*1.1,.6,Math.sin(a1)*1.1),V(Math.cos(a2)*1.1,.6,Math.sin(a2)*1.1)); } G[0].add(new THREE.LineSegments(geo(ring),LM(0,C.orange,.6))); }
+    const PN=MOB?18:36, pulse=Array.from({length:PN},(_,i)=>({a:i%NA,b:(i*7+3)%NA,o:Math.random()})), pp0=new Float32Array(PN*3); const pg0=new THREE.BufferGeometry(); pg0.setAttribute("position",new THREE.BufferAttribute(pp0,3)); G[0].add(new THREE.Points(pg0,PM(0,C.orange,.42,1,true)));
+    { const a=[]; pulse.forEach(q=>{ const A=nodes[q.a], B=V(0,.6,0); for(let k=0;k<12;k++){ const t0=k/12,t1=(k+1)/12; const p0=A.clone().lerp(B,t0), p1=A.clone().lerp(B,t1); p0.y+=Math.sin(t0*Math.PI)*1.4; p1.y+=Math.sin(t1*Math.PI)*1.4; a.push(p0,p1); } }); G[0].add(new THREE.LineSegments(geo(a),LM(0,C.orange,.16))); }
+    const l0=label(0,"⚡ 20 sats",C.orange,2.6); l0.position.set(0,2.6,0);
+
+    /* 1 · garage: bogen, pod, robotarm, laadpaal */
+    const P1=pod(1,PAPER); G[1].add(P1);
+    { const a=[]; for(let k=0;k<6;k++){ const z=-3.6+k*1.45; for(let i=0;i<24;i++){ const a1=i/24*Math.PI,a2=(i+1)/24*Math.PI; a.push(V(Math.cos(a1)*4.6,-0+Math.sin(a1)*3.6,z),V(Math.cos(a2)*4.6,Math.sin(a2)*3.6,z)); } }
+      for(let i=0;i<=8;i++){ const ang=i/8*Math.PI; a.push(V(Math.cos(ang)*4.6,Math.sin(ang)*3.6,-3.6),V(Math.cos(ang)*4.6,Math.sin(ang)*3.6,3.65)); }
+      G[1].add(new THREE.LineSegments(geo(a),LM(1,PAPER,.18)));
+      const fl=[]; for(let x=-4;x<=4;x+=.8) fl.push(V(x,0,-3.6),V(x,0,3.6)); for(let z=-3.6;z<=3.6;z+=.9) fl.push(V(-4.4,0,z),V(4.4,0,z)); G[1].add(new THREE.LineSegments(geo(fl),LM(1,C.orange,.12))); }
+    G[1].rotation.y=-Math.PI/2; P1.rotation.y=Math.PI/2;
+    const arm=new THREE.Group(); arm.position.set(1.6,0,-1.6); G[1].add(arm);
+    const seg1=new THREE.Group(), seg2=new THREE.Group(); arm.add(seg1); seg1.add(new THREE.LineSegments(geo(box([],0,0,0,.35,1.6,.35)),LM(1,PAPER,.8))); seg2.position.y=1.6; seg1.add(seg2);
+    seg2.add(new THREE.LineSegments(geo(box([],0,0,0,.25,1.2,.25)),LM(1,PAPER,.8))); const tip=new THREE.Points(geo([V(0,1.25,0)]),PM(1,C.orange,.55,1,true)); seg2.add(tip);
+    const chg=new THREE.Group(); chg.position.set(-1.9,0,-1.7); G[1].add(chg); chg.add(new THREE.LineSegments(geo(box([],0,0,0,.6,2.2,.4)),LM(1,PAPER,.7)));
+    chg.add(new THREE.Points(geo([V(0,1.7,.21)]),PM(1,C.orange,.7,1,true)));
+    const CBN=MOB?24:44, cbp=new Float32Array(CBN*3); const cbg=new THREE.BufferGeometry(); cbg.setAttribute("position",new THREE.BufferAttribute(cbp,3)); G[1].add(new THREE.Points(cbg,PM(1,C.orange,.2,1,true)));
+    const cbA=V(-1.9,1.1,-1.45), cbB=V(-.6,.9,-.4), cbM=V(-1.4,.1,-.9);
+    const l1=label(1,"0 sats",C.orange,2.6); l1.position.set(0,3.1,0);
+
+    /* 2 · snelweg met kilometerpoorten */
+    const ROAD=60;
+    { const a=[]; for(let z=0;z>-ROAD;z-=1.2){ a.push(V(-.08,0,z),V(-.08,0,z-.6)); } a.push(V(-3,0,6),V(-3,0,-ROAD),V(3,0,6),V(3,0,-ROAD)); G[2].add(new THREE.LineSegments(geo(a),LM(2,PAPER,.35)));
+      const edge=[]; for(let z=6;z>-ROAD;z-=.5){ edge.push(V(-3.2,0,z),V(3.2,0,z)); } G[2].add(new THREE.Points(geo(edge),PM(2,C.orange,.1,.55,true))); }
+    const gates=[]; for(let k=0;k<8;k++){ const z=-6-k*7, a=[]; for(let i=0;i<20;i++){ const a1=i/20*Math.PI,a2=(i+1)/20*Math.PI; a.push(V(Math.cos(a1)*3.6,Math.sin(a1)*3.2,z),V(Math.cos(a2)*3.6,Math.sin(a2)*3.2,z)); }
+      const m=LM(2,PAPER,.3); const l=new THREE.LineSegments(geo(a),m); G[2].add(l); gates.push({z,m}); }
+    const skyline=[]; for(let i=0;i<70;i++){ const side=i%2?1:-1, x=side*(6+Math.random()*10), z=-Math.random()*ROAD, h=1+Math.random()*7; box(skyline,x,0,z,1+Math.random()*1.5,h,1+Math.random()*1.5); } G[2].add(new THREE.LineSegments(geo(skyline),LM(2,PAPER,.1)));
+    const P2=pod(2,PAPER); P2.rotation.y=Math.PI/2; P2.scale.setScalar(.8); G[2].add(P2);
+    const l2=label(2,"0 sats",C.orange,2.4);
+
+    /* 3 · de stad, alles verbonden */
+    const roofs=[]; { const a=[]; const N=MOB?60:110; for(let i=0;i<N;i++){ const x=(Math.random()-.5)*22, z=(Math.random()-.5)*22; if(Math.abs(x)<1.2||Math.abs(z)<1.2) continue; const w=.6+Math.random()*1.2, h=.5+Math.pow(Math.random(),2)*7; box(a,x,0,z,w,h,w); roofs.push(V(x,h,z)); }
+      G[3].add(new THREE.LineSegments(geo(a),LM(3,PAPER,.3))); G[3].add(new THREE.Points(geo(roofs),PM(3,PAPER,.22,.9,true)));
+      const net=[]; roofs.forEach((r,i)=>{ const j=(i*17+5)%roofs.length; if(r.distanceTo(roofs[j])<9){ const B=roofs[j]; for(let k=0;k<8;k++){ const t0=k/8,t1=(k+1)/8; const p0=r.clone().lerp(B,t0), p1=r.clone().lerp(B,t1); p0.y+=Math.sin(t0*Math.PI)*1.6; p1.y+=Math.sin(t1*Math.PI)*1.6; net.push(p0,p1); } } });
+      G[3].add(new THREE.LineSegments(geo(net),LM(3,C.orange,.55)));
+      const st=[]; for(let x=-11;x<=11;x+=2.75) st.push(V(x,0,-11),V(x,0,11)); for(let z=-11;z<=11;z+=2.75) st.push(V(-11,0,z),V(11,0,z)); G[3].add(new THREE.LineSegments(geo(st),LM(3,C.orange,.1))); }
+    const CR=MOB?50:110, crp=new Float32Array(CR*3), crs=Array.from({length:CR},()=>[Math.random(),Math.floor(Math.random()*9),Math.random()<.5]); const crg=new THREE.BufferGeometry(); crg.setAttribute("position",new THREE.BufferAttribute(crp,3)); G[3].add(new THREE.Points(crg,PM(3,C.orange,.22,1,true)));
+    const DR=MOB?20:40, drp=new Float32Array(DR*3), drs=Array.from({length:DR},()=>[Math.random()*Math.PI*2,3+Math.random()*7,2.5+Math.random()*4,.2+Math.random()*.3]); const drg=new THREE.BufferGeometry(); drg.setAttribute("position",new THREE.BufferAttribute(drp,3)); G[3].add(new THREE.Points(drg,PM(3,PAPER,.16,.9,true)));
+
+    /* 4 · twee netten naast elkaar */
+    const ga=Math.PI*(3-Math.sqrt(5));
+    const netBall=(gi,x,c,n)=>{ const pts=[]; for(let i=0;i<n;i++){ const y=1-2*(i+.5)/n, r=Math.sqrt(1-y*y), th=i*ga; pts.push(V(x+Math.cos(th)*r*2.4,y*2.4,Math.sin(th)*r*2.4)); }
+      const g=new THREE.Group(); g.add(new THREE.Points(geo(pts.map(p=>p.clone().sub(V(x,0,0)))),PM(gi,c,.16,.95,true))); const a=[]; pts.forEach((p,i)=>{ const j=(i*13+1)%n; if(p.distanceTo(pts[j])<1.6) a.push(p.clone().sub(V(x,0,0)),pts[j].clone().sub(V(x,0,0))); });
+      g.add(new THREE.LineSegments(geo(a),LM(gi,c,.25))); g.position.x=x; G[gi].add(g); return g; };
+    const bS=netBall(4,-2.9,BLUE,MOB?160:300), bB=netBall(4,2.9,C.orange,MOB?160:300); G[4].scale.setScalar(.72);
+    const cS=label(4,"STABLECOINS",BLUE,3.4); cS.position.set(-3.2,-3.4,0); const cB=label(4,"BITCOIN",C.orange,3); cB.position.set(3.2,-3.4,0);
+    const hub=new THREE.Points(geo([V(-3.2,0,0)]),PM(4,BLUE,.9,.9,true)); G[4].add(hub);
+
+    const fmt=n=>n.toLocaleString(LOC);
+    return addWorld({sel:"#toekomst",dark:true,scene:sc,cam,bg:makeBg("#26140B","#080403",0,"#FF4D00"),
+      update(p,t,op){
+        const mob=innerWidth<900;
+        const W=[0,1,2,3,4].map(i=>{ const a=i*.2, b=i===4?1.2:a+.2; return (i===0?1:sstep(a-.03,a+.03,p))*(1-sstep(b-.03,b+.03,p)); });
+        const lp=i=>clamp((p-i*.2)/.2,0,1);
+        const mob2=innerWidth<900; G.forEach((g,i)=>{ g.visible=W[i]>.01; g.userData.mats.forEach(m=>m.opacity=m.userData.base*op*W[i]*(mob2?.5:1)); });
+        const ox=0, oy=0, VW=innerWidth, VH=innerHeight;
+        cam.setViewOffset(VW,VH,mob?0:-VW*.13,VH*(mob?.2:.12),VW,VH); G[4].scale.setScalar(mob?.42:.72); const mo=mob?.5:1;
+        let cx=0,cy=0,cz=0,lx=0,ly=0,lz=0;
+        if(W[0]>.01){ for(let i=0;i<PN;i++){ const q=pulse[i], f=(q.o+t*.35)%1, A=nodes[q.a]; const P=A.clone().lerp(V(0,.6,0),f); P.y+=Math.sin(f*Math.PI)*1.4; pp0[i*3]=P.x; pp0[i*3+1]=P.y; pp0[i*3+2]=P.z; } pg0.attributes.position.needsUpdate=true;
+          l0.position.y=2.6+Math.sin(t*2)*.1; }
+        if(W[1]>.01){ const q=lp(1); const drive=sstep(0,.25,q); P1.position.set(0,0,lerp(9,0,drive)); seg1.rotation.z=lerp(.2,-.75,sstep(.25,.45,q))+Math.sin(t*2)*.04; seg2.rotation.z=lerp(.3,-.9,sstep(.25,.45,q));
+          const chOn=sstep(.45,.6,q); for(let i=0;i<CBN;i++){ const f=(i/CBN+t*.6)%1, a=cbA.clone().lerp(cbM,f), b=cbM.clone().lerp(cbB,f), P=a.lerp(b,f); cbp[i*3]=P.x; cbp[i*3+1]=chOn>.05?P.y:-50; cbp[i*3+2]=P.z; } cbg.attributes.position.needsUpdate=true;
+          const fs=document.getElementById("fuSats"); l1.userData.set((fs?fs.textContent:"")+(q>.82?" ✓":"")); }
+        if(W[2]>.01){ const q=lp(2), z=-q*50; P2.position.set(.9,0,z); let paid=0; gates.forEach(g=>{ const passed=z<g.z; if(passed) paid++; const d=Math.abs(z-g.z); g.m.color.copy(passed?C.orange:PAPER); g.m.opacity=(passed?.6:.3)*op*W[2]*(1+Math.max(0,1-d/2)); });
+          l2.position.set(.9,2.4,z); l2.userData.set("⚡ "+fmt(paid*2000)+" sats"); }
+        if(W[3]>.01){ for(let i=0;i<CR;i++){ const [o,ln,hz]=crs[i], f=(o+t*.06*(1+ln%3*.3))%1, v=-11+f*22, l=-11+ln*2.75; crp[i*3]=hz?v:l; crp[i*3+1]=.08; crp[i*3+2]=hz?l:v; } crg.attributes.position.needsUpdate=true;
+          for(let i=0;i<DR;i++){ const [a0,r,hh,sp]=drs[i], a=a0+t*sp; drp[i*3]=Math.cos(a)*r; drp[i*3+1]=hh+Math.sin(t*2+i)*.2; drp[i*3+2]=Math.sin(a)*r; } drg.attributes.position.needsUpdate=true; }
+        if(W[4]>.01){ bS.rotation.y=t*.2; bB.rotation.y=-t*.2; hub.material.size=.9*(1+.2*Math.sin(t*3)); }
+        /* camera per scène, zacht overgeblend */
+        const CAMS=[[0,3.6,12.5, 0,.4,0],[9.5,4.2,8.5, 0,.9,0],[5,3.4,9.5, .9,1,-2],[12.5,9.5,12.5, 0,1,0],[0,1,12.5, 0,0,0]];
+        let wsum=0; CAMS.forEach((c,i)=>{ const w=W[i]; if(w<=0) return; wsum+=w; cx+=c[0]*w; cy+=c[1]*w; cz+=c[2]*w; lx+=c[3]*w; ly+=c[4]*w; lz+=c[5]*w; });
+        if(wsum>0){ cx/=wsum; cy/=wsum; cz/=wsum; lx/=wsum; ly/=wsum; lz/=wsum; }
+        if(W[2]>.01){ const z=-lp(2)*50*W[2]; cz+=z; lz+=z; }
+        const sway=Math.sin(t*.12*SPDG)*.6;
+        cam.position.set(cx+ox+sway+PTR.x*1.2, cy+oy-PTR.y*.8, cz); cam.lookAt(lx+ox, ly+oy, lz); }});
+  })();
+
   let visA=1, visB=0, opO=0, visS=0, lastWater=-1, wasIn=false, t=0, w=0, h=0;
   const ptr=PTR;
   addEventListener("pointermove",e=>{ptr.x=e.clientX/innerWidth-.5;ptr.y=e.clientY/innerHeight-.5;},{passive:true});
@@ -2779,16 +3050,20 @@ const GL=(function(){
 })();
 
 /* ============ nav ============ */
+const PRO_ON=(()=>{ try{ return localStorage.getItem("tour.pro")!=="0"; }catch(e){ return true; } })();
+const reach=c=>c.built&&(!c.pro||PRO_ON);
 function indexHTML(cur){
-  return CH.map(c=>`<li><button class="ix-row" type="button" ${c.built?`data-go="${c.id}"`:"disabled"}><span class="ix-n">${c.n}</span><span class="ix-name">${esc(c.name)}</span><span class="ix-tag">${c.built?(c.id===cur?tx("Je bent hier","You are here"):""):tx("Volgt","Coming")}</span></button></li>`).join("");
+  return CH.map(c=>`<li class="${c.pro?"ix-pro":""}"><button class="ix-row" type="button" ${reach(c)?`data-go="${c.id}"`:"disabled"}><span class="ix-n">${c.n}</span><span class="ix-name">${esc(c.name)}${c.pro?' <i class="pro-b">PRO</i>':""}</span><span class="ix-tag">${!c.built?tx("Volgt","Coming"):c.pro&&!PRO_ON?tx("Uit","Off"):c.id===cur?tx("Je bent hier","You are here"):""}</span></button></li>`).join("");
 }
 function buildNav(){
   $("#mmList").innerHTML=CH.map((c,ci)=>{
-    const lbl=`${c.n} · ${esc(c.name)}${c.built?"":tx(" · volgt"," · coming")}`;
-    const dot=c.built?`<button class="dot" type="button" data-go="${c.id}" aria-label="${tx("Ga naar","Go to")} ${c.n}: ${esc(c.name)}"></button>`:`<span class="dot" aria-hidden="true"></span>`;
-    return `<li data-line="${c.line}" data-kind="${c.kind||""}" class="${c.built?"":"ghost"}" style="--i:${ci}">${dot}<span class="lbl"${c.built?` data-go="${c.id}"`:""}>${lbl}</span></li>`;
+    const lbl=`${c.n} · ${esc(c.name)}${c.pro?" · PRO":""}${!c.built?tx(" · volgt"," · coming"):c.pro&&!PRO_ON?tx(" · uit"," · off"):""}`;
+    const dot=reach(c)?`<button class="dot" type="button" data-go="${c.id}" aria-label="${tx("Ga naar","Go to")} ${c.n}: ${esc(c.name)}"></button>`:`<span class="dot" aria-hidden="true"></span>`;
+    const pf=c.pro&&!(CH[ci-1]&&CH[ci-1].pro), pl=c.pro&&!(CH[ci+1]&&CH[ci+1].pro);
+    const sw=(pf?`<svg class="sw" style="top:-1px" viewBox="0 0 13 13"><path d="M1.5 0 C1.5 8, 12.5 4, 12.5 13"/></svg>`:"")+(pl?`<svg class="sw" style="bottom:-1px" viewBox="0 0 13 13"><path d="M12.5 0 C12.5 9, 1.5 5, 1.5 13"/></svg>`:"");
+    return `<li data-line="${c.line}" data-kind="${c.kind||""}" class="${reach(c)?"":"ghost"}${c.pro?" pro":""}${pf?" pf":""}${pl?" pl":""}" style="--i:${ci}">${sw}${dot}<span class="lbl"${reach(c)?` data-go="${c.id}"`:""}>${lbl}</span></li>`;
   }).join("");
-  $("#mbDots").innerHTML=CH.map(c=>`<i class="${c.built?"built":""}"></i>`).join("");
+  $("#mbDots").innerHTML=CH.map(c=>`<i class="${c.built?"built":""}${c.pro?" pro":""}"></i>`).join("");
   $("#index").innerHTML=indexHTML();
 }
 let curId=null;
@@ -2802,8 +3077,9 @@ function track(){
   $$("#mbDots i").forEach((d,i)=>{d.classList.toggle("cur",i===idx);d.classList.toggle("visited",i<idx);});
   $("#mbCode").textContent=byId[id].n; $("#mbName").textContent=byId[id].name;
   curChapter=id; Sound.chapter(id); showWorld(id);
+  { const c=byId[id], sb=$("#sideBadge"); if(sb){ sb.classList.toggle("on",!!(c&&c.pro)); document.body.classList.toggle("on-pro",!!(c&&c.pro)); if(c&&c.pro){ $("#sbT").textContent=tx("Zijspoor PRO · ","PRO side track · ")+c.n; sb.dataset.to=c.rejoin||"halvering"; } } }
 }
-const WORLDS=Object.fromEntries(CH.map((c,i)=>[c.id,[i+1,c.name]]));
+const WORLDS=Object.fromEntries(CH.map(c=>[c.id,[c.n.replace(/^0/,""),c.name]]));
 let lastWorld=null, booted=false;
 function showWorld(id){
   const wv=WORLDS[id]; if(!wv||id===lastWorld) return; lastWorld=id;
@@ -2837,8 +3113,11 @@ document.addEventListener("click",e=>{
   const g=e.target.closest("[data-go]");
   if(g){ e.preventDefault(); if(!$("#drawer").hidden) closeDrawer(true); goTo(g.getAttribute("data-go")); return; }
   const m=e.target.closest("[data-more]"); if(m){ if(m.classList.contains("tip-more")) hideTip(); openMore(m.getAttribute("data-more")); return; }
-  if(e.target.closest("[data-index]")){ openDrawer("Bitcoin Tour · index",`<h3>${tx("Zeventien <em>hoofdstukken</em>","Seventeen <em>chapters</em>")}</h3><ol class="index">${indexHTML(curId)}</ol><h3 style="margin-top:2.6rem">${tx("Woorden<em>lijst</em>","Glossa<em>ry</em>")}</h3><dl class="gloss">${Object.values(GLOSS).sort((a,b)=>a[0].localeCompare(b[0],LANG)).map(g=>`<div><dt>${g[0]}</dt><dd>${g[1]}${g[2]?" "+g[2]:""}</dd></div>`).join("")}</dl>`); return; }
+  if(e.target.closest("[data-index]")){ openDrawer("Bitcoin Tour · index",`<h3>${tx("Zestien <em>werelden</em>","Sixteen <em>worlds</em>")}</h3><div class="pro-sw"><div><b>${tx("Zijlijnen <i class=\"pro-b\">PRO</i>","Side lines <i class=\"pro-b\">PRO</i>")}</b><span>${tx("Extra verdieping, zoals smart contracts en DAO's. Zet uit en je rijdt alleen de hoofdlijn.","Extra depth, like smart contracts and DAOs. Switch off and you only ride the main line.")}</span></div><button type="button" class="sw${PRO_ON?" on":""}" data-protoggle role="switch" aria-checked="${PRO_ON}"><i></i></button></div><ol class="index">${indexHTML(curId)}</ol><h3 style="margin-top:2.6rem">${tx("Woorden<em>lijst</em>","Glossa<em>ry</em>")}</h3><dl class="gloss">${Object.values(GLOSS).sort((a,b)=>a[0].localeCompare(b[0],LANG)).map(g=>`<div><dt>${g[0]}</dt><dd>${g[1]}${g[2]?" "+g[2]:""}</dd></div>`).join("")}</dl>`); return; }
   if(e.target.closest("[data-share]")) share();
+  if(e.target.closest("[data-protoggle]")){ try{ localStorage.setItem("tour.pro",PRO_ON?"0":"1"); }catch(x){} const id=curId&&curId!=="geld"?curId+"&":""; history.replaceState(null,"","#"+id+"lang="+LANG); location.reload(); }
+  if(e.target.closest("#sbB")){ const to=$("#sideBadge").dataset.to; const fx=$("#jumpFx"); if(fx&&!REDUCED){ fx.classList.add("on"); setTimeout(()=>{ goTo(to,true); setTimeout(()=>fx.classList.remove("on"),60); },220); } else goTo(to,true); return; }
+  const sk=e.target.closest("[data-skip]"); if(sk){ e.preventDefault(); const fx=$("#jumpFx"); if(fx&&!REDUCED){ fx.classList.add("on"); setTimeout(()=>{ goTo(sk.dataset.skip,true); setTimeout(()=>fx.classList.remove("on"),60); },220); } else goTo(sk.dataset.skip,true); }
 });
 
 /* ============ lees verder ============ */
@@ -3262,6 +3541,16 @@ async function goLive(){
 
   const AFF="https://bitvavo.com/invite?a=99BD60227B", ESMA="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica";
   const ck='<i class="ck" aria-hidden="true">✓</i>';
+
+  const MU=window.MU=[
+    {k:"BTC",n:"Bitcoin",r:[1,1,1,1,1],w:tx(["21 miljoen, voor altijd.","Geen voorverkoop, geen munten voor de makers.","Geen bedrijf, geen CEO. Satoshi verdween.","De regels veranderen alleen als vrijwel iedereen meedoet.","Beveiligd met echte energie: proof of work."],["21 million, forever.","No presale, no coins for the makers.","No company, no CEO. Satoshi disappeared.","The rules only change if nearly everyone joins in.","Secured by real energy: proof of work."])},
+    {k:"ETH",n:"Ethereum",r:[0,0,.5,0,0],w:tx(["Geen maximum. Er staan er nu zo'n 120 miljoen.","Bij de start in 2014 ging zo'n 72 miljoen vooraf naar kopers, makers en de stichting.","Geen eigenaar, maar de Ethereum Foundation en Vitalik Buterin hebben veel invloed.","De geldregels zijn meerdere keren aangepast, en in 2016 is een hack teruggedraaid.","Sinds 2022 proof of stake: wie al munten heeft, beveiligt het netwerk."],["No maximum. There are now about 120 million.","At launch in 2014, about 72 million went upfront to buyers, makers and the foundation.","No owner, but the Ethereum Foundation and Vitalik Buterin have a lot of influence.","The money rules have been changed several times, and a hack was reversed in 2016.","Proof of stake since 2022: those who already hold coins secure the network."])},
+    {k:"SOL",n:"Solana",r:[0,0,.5,.5,0],w:tx(["Geen maximum: er komen er elk jaar bij, op termijn 1,5% per jaar.","Bij de start in 2020 lag een groot deel bij het team, de stichting en vroege investeerders.","Solana Labs en de Solana Foundation sturen veel.","De inflatie is vastgelegd, maar kan via een stemming veranderen.","Proof of stake: wie munten heeft, beveiligt het netwerk."],["No maximum: more are added every year, eventually 1.5% a year.","At launch in 2020 a large share went to the team, the foundation and early investors.","Solana Labs and the Solana Foundation steer a lot.","Inflation is set, but can be changed by a vote.","Proof of stake: those who hold coins secure the network."])},
+    {k:"XRP",n:"XRP",r:[1,0,0,.5,0],w:tx(["Vast: 100 miljard, allemaal in één keer gemaakt.","In 2012 gingen er 80 miljard naar het bedrijf Ripple en 20 miljard naar de oprichters.","Ripple heeft nog steeds een groot deel en verkoopt maandelijks.","De hoeveelheid ligt vast, het netwerk vertrouwt op een lijst aanbevolen servers.","Geen mining en geen staking: een kleine groep servers beslist."],["Fixed: 100 billion, all created at once.","In 2012, 80 billion went to the company Ripple and 20 billion to the founders.","Ripple still holds a large share and sells monthly.","The amount is fixed; the network relies on a list of recommended servers.","No mining, no staking: a small group of servers decides."])},
+    {k:"BNB",n:"BNB",r:[.5,0,0,0,0],w:tx(["Maximaal 200 miljoen, en Binance verbrandt munten tot 100 miljoen.","In 2017: 50% verkocht, 40% voor het team, 10% voor vroege investeerders.","Gemaakt door en verbonden aan de beurs Binance.","Binance bepaalt hoe en wanneer er munten worden verbrand.","Een kleine groep validators, sterk verbonden aan Binance."],["At most 200 million, and Binance burns coins down to 100 million.","In 2017: 50% sold, 40% for the team, 10% for early investors.","Created by and tied to the exchange Binance.","Binance decides how and when coins are burned.","A small group of validators, closely tied to Binance."])},
+    {k:"ADA",n:"Cardano",r:[1,0,.5,.5,0],w:tx(["Maximaal 45 miljard.","Een groot deel werd vooraf verkocht, en miljarden gingen naar de makers en hun bedrijven.","Opgericht door Charles Hoskinson; de bedrijven erachter hebben veel invloed.","Wijzigingen lopen via stemmingen van tokenhouders.","Proof of stake."],["At most 45 billion.","A large part was sold upfront, and billions went to the makers and their companies.","Founded by Charles Hoskinson; the companies behind it have a lot of influence.","Changes go through votes by token holders.","Proof of stake."])},
+    {k:"DOGE",n:"Dogecoin",r:[0,1,1,0,1],w:tx(["Geen maximum: er komen er elk jaar zo'n 5 miljard bij.","Eerlijke start in 2013: geen voorverkoop, begonnen als grap.","Geen bedrijf erachter.","In 2014 werd de limiet geschrapt. Sindsdien bijdrukken zonder eind.","Proof of work, samen met Litecoin."],["No maximum: about 5 billion are added every year.","Fair start in 2013: no presale, started as a joke.","No company behind it.","In 2014 the limit was scrapped. Since then, endless printing.","Proof of work, together with Litecoin."])},
+    {k:"USDT",n:"Stablecoin (USDT)",r:[0,0,0,0,0],w:tx(["Geen maximum: het bedrijf maakt munten bij als er dollars binnenkomen.","Uitgegeven door één bedrijf: Tether.","Tether kan adressen bevriezen, en doet dat ook.","Het bedrijf bepaalt de regels.","Geen mining: het is een digitale dollar op andermans blockchain."],["No maximum: the company creates coins when dollars come in.","Issued by one company: Tether.","Tether can freeze addresses, and does so.","The company sets the rules.","No mining: it's a digital dollar on someone else's blockchain."])}];
   const V={
     check:()=>`<div class="cv-card cv-clip"><span class="cv-k">${tx("Checklist voor vertrek","Pre-flight checklist")}</span><ul class="cv-list">
       <li class="a1">${ck}<span>${tx("De koers kan flink dalen","The price can drop a lot")}</span></li>
@@ -3328,7 +3617,7 @@ async function goLive(){
       <li class="a4 ok"><b>✓</b><span>${tx("Data binnen · 0,4 seconde","Data received · 0.4 seconds")}</span></li></ul>
       <div class="fu-tot"><span>${tx("Vandaag: 3.812 betalingen","Today: 3,812 payments")}</span><b>${tx("71.240 sats","71,240 sats")}</b></div></div>`,
     garage:()=>`<div class="fu-card fu-gar"><span class="fu-k">${tx("Garage · 03:12 · geen mens aanwezig","Garage · 03:12 · no humans present")}</span>
-      <svg viewBox="0 0 480 200" aria-hidden="true"><line class="road" x1="0" y1="182" x2="480" y2="182"/><g class="car"><path class="body" d="M30 150 q4-34 40-38 l40-26 q10-6 24-6 h70 q16 0 26 10 l26 26 q34 4 36 34 v10 h-262z"/><path class="win" d="M118 92 h44 v26 h-66z M172 92 h22 q10 0 16 8 l14 18 h-52z"/><rect class="lidar" x="150" y="72" width="22" height="9" rx="4"/><circle class="wh" cx="86" cy="162" r="18"/><circle class="wh" cx="236" cy="162" r="18"/></g><g class="bot"><circle cx="350" cy="62" r="16"/><circle class="eye" cx="356" cy="60" r="4"/><path d="M350 78 v58 M350 136 l-14 44 M350 136 l14 44"/><path class="arm" d="M346 96 l-28 22 l-16 -6"/><path d="M354 96 l20 30"/></g><g class="post"><rect x="420" y="70" width="44" height="110" rx="8"/><rect class="scr" x="430" y="84" width="24" height="22" rx="3"/><path class="cable" d="M420 140 C 380 190, 320 190, 296 150"/><path class="bolt" d="M444 112 l-8 16 h7 l-4 14 l12 -19 h-7 l4 -11z"/></g></svg>
+      
       <div class="fu-steps"><span class="a1">${tx("Auto meldt zich","Car checks in")}</span><span class="a2">${tx("Robot: nieuwe band","Robot: new tyre")}</span><span class="a3">${tx("Laden 42 kWh","Charging 42 kWh")}</span><span class="a4">${tx("Auto betaalt","Car pays")}</span></div>
       <div class="fu-bill"><div><span class="fu-k">${tx("Rekening","Bill")}</span><span class="fu-sats" id="fuSats">0 sats</span></div><span class="fu-paid">⚡ ${tx("Betaald door de auto","Paid by the car")}</span></div></div>`,
     meter:()=>`<div class="fu-card fu-mtr"><span class="fu-k">${tx("Robotaxi · betalen per kilometer","Robotaxi · pay per kilometre")}</span>
@@ -3343,6 +3632,48 @@ async function goLive(){
     race:()=>`<div class="fu-vs"><div class="fu-card"><span class="fu-k">${tx("Nu al groot","Already big")}</span><h4>Stablecoins</h4><ul><li>${tx("Stabiel: 1 munt = 1 dollar","Stable: 1 coin = 1 dollar")}</li><li>${tx("Grote spelers: Coinbase (x402), Stripe","Big players: Coinbase (x402), Stripe")}</li><li class="m">${tx("Een bedrijf geeft ze uit en kan ze bevriezen","A company issues them and can freeze them")}</li><li class="m">${tx("Volgt de dollar, ook bij inflatie","Follows the dollar, inflation included")}</li></ul></div>
       <div class="fu-card or"><span class="fu-k">${tx("Neutraal","Neutral")}</span><h4>Bitcoin + Lightning</h4><ul><li>${tx("Van niemand, voor iedereen","Owned by nobody, open to all")}</li><li>${tx("Niet bij te drukken: 21 miljoen","Can't be printed: 21 million")}</li><li>${tx("AI-tools sinds 2026 (L402)","AI tools since 2026 (L402)")}</li><li class="m">${tx("Koers beweegt flink","Price moves a lot")}</li></ul></div>
       <p class="fu-verdict">${tx("Waarschijnlijk worden het er allebei. Maar machines die jarenlang zelf geld beheren, hebben iets nodig dat niemand kan bevriezen of verwateren. Daarin is bitcoin uniek.","Most likely it will be both. But machines that manage money on their own for years need something nobody can freeze or dilute. That is where bitcoin is unique.")}</p></div>`,
+    daovote:()=>`<div class="cv-card dv" id="dv"><div class="dv-prop"><b>${tx("Voorstel #12: 5.000 uit de kas voor een buurtspeeltuin","Proposal #12: 5,000 from the treasury for a playground")}</b></div>
+      <div class="dv-kas"><span class="bc-k">${tx("Kas van de DAO","DAO treasury")}</span><b id="dvKas">50.000</b></div>
+      <div class="dv-mem" id="dvMem">${Array.from({length:10},(_,i)=>`<i class="${i===9?"me":""} ${[1,2,4,6].includes(i)?"y":[3,7,8].includes(i)?"n":""}">${i===9?tx("jij","you"):""}</i>`).join("")}</div>
+      <div class="dv-bar"><i class="y" id="dvY"></i><i class="n" id="dvN"></i></div><div class="dv-st"><span id="dvT">${tx("4 voor · 3 tegen · 3 nog niet","4 for · 3 against · 3 not yet")}</span><span>${tx("nodig: 6 van 10","needed: 6 of 10")}</span></div>
+      <div class="dv-btn"><button type="button" data-dv="y">${tx("Stem voor","Vote for")}</button><button type="button" data-dv="n">${tx("Stem tegen","Vote against")}</button></div>
+      <p class="dv-out" id="dvOut">${tx("Jouw stem kan de doorslag geven.","Your vote could tip the balance.")}</p></div>`,
+    daocases:()=>`<div class="dc">
+      <div class="cv-card a1"><span class="yr">2016</span><b>The DAO <i class="tag bad">${tx("gehackt","hacked")}</i></b><span>${tx("Haalde zo'n 150 miljoen dollar op in ether. Een fout in de code: een aanvaller sluisde een derde weg. Ethereum werd gesplitst om het terug te draaien.","Raised around 150 million dollars in ether. A bug in the code: an attacker drained a third. Ethereum was split to undo it.")}</span></div>
+      <div class="cv-card a2"><span class="yr">2017</span><b>MakerDAO · Sky <i class="tag ok">${tx("draait nog","still running")}</i></b><span>${tx("Leden stemmen over de regels van DAI, een dollar-stablecoin zonder bank erachter. Goed voor miljarden. Sinds 2024 heet het Sky.","Members vote on the rules of DAI, a dollar stablecoin without a bank behind it. Worth billions. Since 2024 it's called Sky.")}</span></div>
+      <div class="cv-card a3"><span class="yr">2021</span><b>ConstitutionDAO <i class="tag mid">${tx("net niet","so close")}</i></b><span>${tx("Tienduizenden mensen zamelden in één week ruim 47 miljoen dollar in om een origineel van de Amerikaanse grondwet te kopen. Ze verloren de veiling, en transactiekosten aten een deel van het geld op.","Tens of thousands raised over 47 million dollars in one week to buy an original of the US Constitution. They lost the auction, and transaction fees ate part of the money.")}</span></div></div>`,
+    btcgov:()=>`<div class="bg3"><div class="row">
+      <div class="grp"><i>&lt;/&gt;</i><b>${tx("Ontwikkelaars","Developers")}</b><span>${tx("Doen voorstellen (BIP's)","Make proposals (BIPs)")}</span></div>
+      <div class="grp"><i>▦</i><b>Miners</b><span>${tx("Maken blokken","Make blocks")}</span></div>
+      <div class="grp users"><i>₿</i><b>${tx("Gebruikers","Users")}</b><span>${tx("Kiezen welke software ze draaien","Choose which software they run")}</span></div></div>
+      <div class="case"><b>2017 · ${tx("de blokgrootte-oorlog","the block size war")}</b> · ${tx("Grote bedrijven en miners spraken af bitcoin te veranderen. Duizenden gebruikers weigerden die software te draaien. De wijziging ging niet door.","Big companies and miners agreed to change bitcoin. Thousands of users refused to run that software. The change didn't happen.")}</div>
+      <p class="rule">${tx("Geen token, geen stemmen kopen","No token, no buying votes")}</p></div>`,
+    daoai:()=>`<div class="cv-card da"><span class="bc-k">${tx("DAO met een AI-agent · logboek","DAO with an AI agent · log")}</span><ul class="fu-log">
+      <li class="a1"><b>1</b><span>${tx("AI-agent analyseert 200 voorstellen","AI agent analyses 200 proposals")}</span></li>
+      <li class="a2"><b>2</b><span>${tx("Agent stelt voor: <em>investeer 2% van de kas</em>","Agent proposes: <em>invest 2% of the treasury</em>")}</span></li>
+      <li class="a3 pay"><b>✓</b><span>${tx("Leden stemmen: 71% voor","Members vote: 71% in favour")}</span></li>
+      <li class="a4 ok"><b>⚡</b><span>${tx("Smart contract voert het uit","Smart contract executes it")}</span></li></ul>
+      <p class="note">${tx("Echt voorbeeld: ai16z (2024) op Solana, aangekondigd als beleggingsclub geleid door AI. Veel hype, flinke koersschommelingen. Sinds 2025 heet het ElizaOS.","Real example: ai16z (2024) on Solana, announced as an investment club led by AI. Lots of hype, big price swings. Since 2025 it's called ElizaOS.")}</p></div>`,
+    daorisk:()=>`<div class="dr">
+      <div class="cv-card"><span class="big">≤ 4</span><div><b>${tx("stemmers bepalen tweederde","voters decide two thirds")}</b><span>${tx("van de besluiten, bleek uit onderzoek naar 50 DAO's. Wie de meeste tokens heeft, beslist.","of the decisions, a study of 50 DAOs found. Whoever holds the most tokens decides.")}</span></div></div>
+      <div class="cv-card"><span class="big">∅</span><div><b>${tx("De meeste leden stemmen nooit","Most members never vote")}</b><span>${tx("Meebeslissen kost tijd en kennis. Dus doen weinigen het.","Taking part costs time and knowledge. So few do.")}</span></div></div>
+      <div class="cv-card"><span class="big">§?</span><div><b>${tx("Wie is aansprakelijk?","Who is liable?")}</b><span>${tx("Juridisch is een DAO vaak een grijs gebied. Gaat het mis, dan is er niemand om aan te spreken.","Legally a DAO is often a grey area. If it goes wrong, there's nobody to hold responsible.")}</span></div></div></div>`,
+    musea:()=>{ const tk=["ETH","SOL","XRP","BNB","ADA","DOGE","USDT","TRX","DOT","AVAX","SHIB","LINK","TON","LTC","PEPE","XLM","SUI","ATOM","UNI","NEAR"]; let h=""; let seed=7;
+      const rnd=()=>{ seed=(seed*9301+49297)%233280; return seed/233280; };
+      tk.forEach((t,i)=>{ const sz=34+rnd()*26; h+=`<i style="left:${(rnd()*82).toFixed(1)}%;top:${(rnd()*78).toFixed(1)}%;width:${sz.toFixed(0)}px;height:${sz.toFixed(0)}px;animation-delay:-${(rnd()*6).toFixed(1)}s;opacity:${(.55+rnd()*.45).toFixed(2)}">${t}</i>`; });
+      return `<div class="mu-sea">${h}<i class="btc" style="left:40%;top:36%;width:92px;height:92px">₿</i><span class="cnt">${tx("Duizenden munten · één bitcoin","Thousands of coins · one bitcoin")}</span></div>`; },
+    mutests:()=>`<div class="mu-tests">${[["21M",tx("Vaste limiet","Fixed limit"),tx("Er komen nooit meer bij dan afgesproken.","Never more than agreed.")],["0",tx("Eerlijke start","Fair start"),tx("Niemand kreeg vooraf een stapel munten.","Nobody got a pile of coins upfront.")],["✕",tx("Geen baas","No boss"),tx("Geen bedrijf of persoon die de dienst uitmaakt.","No company or person calling the shots.")],["§",tx("Vaste regels","Fixed rules"),tx("Niemand kan de geldregels zomaar veranderen.","Nobody can simply change the money rules.")],["▦",tx("Echt werk","Real work"),tx("Beveiligd met energie, niet met wie al rijk is.","Secured by energy, not by who's already rich.")]].map((t,i)=>`<div class="cv-card t${i+1}"><span class="ic">${t[0]}</span><div><b>${t[1]}</b><span>${t[2]}</span></div></div>`).join("")}</div>`,
+    mulane:()=>`<div class="cv-card mu-lane" id="muLane"><span class="bc-k">${tx("De keuring · kies een munt","The test · pick a coin")}</span><div class="mu-pick" style="margin-top:.6rem">${MU.map((c,i)=>`<button type="button" class="${i===0?"btc ":""}" data-mu="${i}">${c.k}</button>`).join("")}</div>
+      <div class="mu-track"><i class="sl"></i><i class="rl a"></i><i class="rl b"></i>${["21M","0","✕","§","▦"].map((g,i)=>`<span class="mu-gate" style="left:${12+i*19}%" data-g="${i}">${g}</span>`).join("")}<span class="mu-coin" id="muCoin">?</span></div>
+      <p class="mu-why" id="muWhy">${tx("Tik een munt aan en stuur hem door de vijf poorten.","Tap a coin and send it through the five gates.")}</p>
+      <div class="mu-score"><span id="muName">—</span><b id="muScore">· / 5</b></div></div>`,
+    musur:()=>`<div class="mu-sur">
+      <div class="cv-card a1"><span class="tk">DOGE</span><b>${tx("Eerlijk begonnen, eindeloos bijgedrukt","Fair start, endless printing")}</b><span>${tx("Geen voorverkoop, wel mining. Maar in 2014 ging de limiet eraf. Elk jaar komen er zo'n 5 miljard bij.","No presale, real mining. But in 2014 the limit was dropped. About 5 billion are added every year.")}</span></div>
+      <div class="cv-card a2"><span class="tk">XRP</span><b>${tx("Een vaste limiet, maar wie heeft ze?","A fixed limit, but who holds them?")}</b><span>${tx("100 miljard, allemaal in één keer gemaakt. 80 miljard ging naar één bedrijf.","100 billion, all created at once. 80 billion went to one company.")}</span></div>
+      <div class="cv-card a3"><span class="tk">ETH</span><b>${tx("De regels kunnen veranderen","The rules can change")}</b><span>${tx("De uitgifte is meerdere keren aangepast. In 2016 werd een hack teruggedraaid door de hele keten te splitsen.","Issuance was changed several times. In 2016 a hack was reversed by splitting the whole chain.")}</span></div></div>`,
+    mufair:()=>`<div class="mu-fair"><div class="cv-card"><h4>${tx("Waar ze goed in zijn","What they're good at")}</h4><ul><li>${tx("Apps en smart contracts bouwen","Building apps and smart contracts")}</li><li>${tx("Snelle, goedkope transacties","Fast, cheap transactions")}</li><li>${tx("Digitale dollars (stablecoins)","Digital dollars (stablecoins)")}</li></ul></div>
+      <div class="cv-card or"><h4>${tx("Wat bitcoin uniek maakt","What makes bitcoin unique")}</h4><ul><li>${tx("Niemand kan bijdrukken","Nobody can print more")}</li><li>${tx("Niemand kreeg een voorsprong","Nobody got a head start")}</li><li>${tx("Niemand is de baas","Nobody is in charge")}</li></ul></div>
+      <div class="cv-card ver">${tx("Andere munten zijn technologie of bedrijfsproducten. Bitcoin is geld dat van niemand is. Alleen dat past bij fix the money.","Other coins are technology or company products. Bitcoin is money that belongs to nobody. Only that fits fix the money.")}</div></div>`,
     jars:()=>`<div class="cv-jars"><div class="jar j1"><i></i><span>${tx("Buffer","Buffer")}<small>${tx("gewoon geld","ordinary money")}</small></span></div><div class="jar j2"><i></i><span>Bitcoin<small>${tx("daarna pas","only after")}</small></span></div></div>`,
     budget:()=>`<div class="cv-card cv-budget"><span class="cv-k">${tx("Jouw maand","Your month")}</span><div class="bb">${[[tx("Huur","Rent"),34],[tx("Boodschappen","Groceries"),22],[tx("Vaste lasten","Bills"),16],[tx("Buffer","Buffer"),14],[tx("Over","Left"),14]].map((s,i)=>`<i class="bs${i}" style="--w:${s[1]}%"><span>${s[0]}</span></i>`).join("")}</div>
       <p class="cv-foot a4">${tx("Alleen het oranje deel is voor bitcoin.","Only the orange part is for bitcoin.")}</p></div>`,
@@ -3355,7 +3686,23 @@ async function goLive(){
       ${[tx("Verdubbel je bitcoin in 24 uur!","Double your bitcoin in 24 hours!"),tx("Support hier. Stuur je inloggegevens om je account te redden.","Support here. Send your login details to save your account."),tx("Gegarandeerd 30% rendement per maand.","Guaranteed 30% return every month.")].map((m,i)=>`<div class="bub a${i+1}"><p>${m}</p><span class="x">✕ ${tx("Oplichting","Scam")}</span></div>`).join("")}</div></div>`
   };
   const C={
-    future:{n:"14",line:"orange",more:"toekomst",hid:"h-toekomst",title:tx("De toekomst · Wanneer machines betalen","The future · When machines pay"),
+    munten:{n:"12a",line:"pro",more:"munten",hid:"h-munten",title:tx("Andere munten · Langs de toetssteen","Other coins · On the touchstone"),
+      stops:tx(["Duizenden","Toetsstenen","Keuring","Verrassingen","Eerlijk"],["Thousands","Touchstones","The test","Surprises","Honest"]),
+      sc:[
+        {l:tx("Stap 1 van 5 · De zee van munten","Step 1 of 5 · The sea of coins"),h:tx("Duizenden munten. Eén vraag.","Thousands of coins. One question."),p:tx("Na bitcoin kwamen er duizenden andere cryptomunten bij. Sommige zijn groot, de meeste verdwijnen weer. Maar de vraag van deze Tour is simpel: is het eerlijk geld dat niemand kan bijdrukken?","After bitcoin came thousands of other cryptocoins. Some are big, most disappear again. But this Tour's question is simple: is it honest money that nobody can print?"),v:"musea"},
+        {l:tx("Stap 2 van 5 · Vijf toetsstenen","Step 2 of 5 · Five touchstones"),h:tx("Zo toets je eerlijk geld.","How to test honest money."),p:tx("Vroeger toetsten goudsmeden goud door het langs een zwarte steen te halen. Wij doen dat met vijf vragen. Geld dat alle vijf haalt, kan niemand naar zijn hand zetten.","Goldsmiths used to test gold by rubbing it on a black stone. We do it with five questions. Money that passes all five can't be bent to anyone's will."),v:"mutests"},
+        {l:tx("Stap 3 van 5 · De keuring","Step 3 of 5 · The test"),h:tx("Stuur een munt door de poorten.","Send a coin through the gates."),p:tx("Kies een munt en kijk bij welke poort hij strandt. Groen is geslaagd, oranje twijfel, rood gezakt. Probeer ze allemaal.","Pick a coin and see at which gate it fails. Green is a pass, orange is doubtful, red is a fail. Try them all."),v:"mulane"},
+        {l:tx("Stap 4 van 5 · Drie verrassingen","Step 4 of 5 · Three surprises"),h:tx("Het zit vaak in één detail.","It's often in one detail."),p:tx("Sommige munten lijken op bitcoin, maar zakken op één cruciaal punt. Een eerlijke start zonder limiet. Een limiet waarbij één bedrijf het meeste heeft. Of regels die steeds kunnen veranderen.","Some coins look like bitcoin, but fail on one crucial point. A fair start with no limit. A limit where one company holds most of it. Or rules that keep changing."),v:"musur"},
+        {l:tx("Stap 5 van 5 · Eerlijk is eerlijk","Step 5 of 5 · Fair is fair"),h:tx("Nuttig is niet hetzelfde als eerlijk geld.","Useful isn't the same as honest money."),p:tx("Veel van deze munten doen nuttige dingen. Maar ze hebben een baas, een voorsprong voor de makers of regels die kunnen veranderen. Als technologie kunnen ze interessant zijn. Als geld voor iedereen past alleen bitcoin bij fix the money.","Many of these coins do useful things. But they have a boss, a head start for the makers or rules that can change. As technology they can be interesting. As money for everyone, only bitcoin fits fix the money."),v:"mufair"}]},
+    dao:{n:"08b",line:"pro",more:"dao",hid:"h-dao",title:tx("DAO's · Organisaties zonder baas","DAOs · Organisations without a boss"),
+      stops:tx(["Stemmen","Voorbeelden","Bitcoin","AI","Eerlijk"],["Voting","Examples","Bitcoin","AI","Honest"]),
+      sc:[
+        {l:tx("Stap 1 van 5 · Wat is een DAO","Step 1 of 5 · What is a DAO"),h:tx("Een vereniging zonder bestuur.","A club without a board."),p:tx("Een DAO is een organisatie waarvan de regels in een smart contract staan. Leden stemmen over voorstellen, en is er een meerderheid, dan voert de code het uit. Geen directeur, geen penningmeester. Probeer het: jouw stem kan de doorslag geven.","A DAO is an organisation whose rules live in a smart contract. Members vote on proposals, and if there's a majority, the code carries it out. No director, no treasurer. Try it: your vote could tip the balance."),v:"daovote"},
+        {l:tx("Stap 2 van 5 · Echte DAO's","Step 2 of 5 · Real DAOs"),h:tx("Van hack tot grondwet.","From hack to constitution."),p:tx("DAO's bestaan sinds 2016. Sommige beheren miljarden, andere gingen hard onderuit. Drie verhalen die laten zien wat er kan, en wat er mis kan gaan.","DAOs have existed since 2016. Some manage billions, others crashed hard. Three stories that show what's possible, and what can go wrong."),v:"daocases"},
+        {l:tx("Stap 3 van 5 · En bitcoin?","Step 3 of 5 · And bitcoin?"),h:tx("Bitcoin heeft geen DAO. Met opzet.","Bitcoin has no DAO. On purpose."),p:tx("De meeste DAO's draaien op Ethereum en laten stemmen met tokens: meer geld is meer stemmen. Bitcoin werkt anders. Er is geen token om mee te stemmen. Elke gebruiker kiest zelf welke software hij draait, en een wijziging gaat alleen door als vrijwel iedereen meedoet.","Most DAOs run on Ethereum and let people vote with tokens: more money means more votes. Bitcoin works differently. There's no token to vote with. Every user chooses which software to run, and a change only goes through if nearly everyone joins in."),v:"btcgov"},
+        {l:tx("Stap 4 van 5 · DAO's en AI","Step 4 of 5 · DAOs and AI"),h:tx("Wat als een AI meebeslist?","What if an AI has a say?"),p:tx("AI-agents kunnen voorstellen lezen, analyseren en zelfs indienen. Een DAO met een AI erin kan dag en nacht werken. Het eerste experiment ging snel viraal, en liet ook zien hoe groot de hype en de risico's zijn.","AI agents can read, analyse and even submit proposals. A DAO with an AI inside can work day and night. The first experiment went viral fast, and also showed how big the hype and the risks are."),v:"daoai"},
+        {l:tx("Stap 5 van 5 · Eerlijk is eerlijk","Step 5 of 5 · Fair is fair"),h:tx("Zonder baas is niet zonder macht.","No boss doesn't mean no power."),p:tx("Een DAO klinkt democratisch, maar in de praktijk beslissen vaak een paar grote tokenhouders. Veel leden stemmen nooit, en juridisch is het vaak onduidelijk wie verantwoordelijk is. Een mooi idee, nog volop in ontwikkeling.","A DAO sounds democratic, but in practice a few big token holders often decide. Many members never vote, and legally it's often unclear who is responsible. A beautiful idea, still very much in development."),v:"daorisk"}]},
+    future:{n:"13",line:"orange",more:"toekomst",hid:"h-toekomst",title:tx("De toekomst · Wanneer machines betalen","The future · When machines pay"),
       stops:tx(["AI-agents","De garage","Per stukje","Waarom bitcoin","Eerlijk"],["AI agents","The garage","Bit by bit","Why bitcoin","Honest"]),
       sc:[
         {l:tx("Stap 1 van 5 · Machines met een portemonnee","Step 1 of 5 · Machines with a wallet"),h:tx("AI gaat zelf betalen.","AI will pay for itself."),p:tx("AI-agents doen steeds vaker zelfstandig klussen: data opvragen, rekenkracht huren, een vertaling kopen. Daarvoor moeten ze kunnen betalen, per vraag, zonder mens ertussen. Het begint al: sinds februari 2026 bestaan er open tools waarmee AI-agents zelf met bitcoin betalen.","AI agents increasingly do jobs on their own: fetching data, renting computing power, buying a translation. For that they need to pay, per request, with no human in between. It has already started: since February 2026 there are open tools that let AI agents pay with bitcoin themselves."),v:"agent"},
@@ -3363,7 +3710,7 @@ async function goLive(){
         {l:tx("Stap 3 van 5 · Betalen per stukje","Step 3 of 5 · Paying bit by bit"),h:tx("Per kilometer. Per seconde. Per antwoord.","Per kilometre. Per second. Per answer."),p:tx("Machines betalen geen maandfactuur, maar per stukje gebruik. Dat zijn bedragen van een fractie van een cent. Met een pinpas of creditcard kost elke betaling meer dan het bedrag zelf. Met Lightning kan het wel.","Machines don't pay a monthly bill, but for every bit they use. Those are amounts of a fraction of a cent. With a debit or credit card, each payment costs more than the amount itself. With Lightning it works."),v:"meter"},
         {l:tx("Stap 4 van 5 · Waarom bitcoin","Step 4 of 5 · Why bitcoin"),h:tx("Geld dat een machine zelf kan beheren.","Money a machine can manage itself."),p:tx("Een machine kan geen bankrekening openen. Hij heeft geen paspoort en kan niet naar een loket. Een sleutel bewaren kan hij wel. Bitcoin werkt zonder toestemming, wereldwijd en altijd. Daarom is het een sterke kandidaat voor het geld van machines.","A machine can't open a bank account. It has no passport and can't go to a counter. Keeping a key, it can. Bitcoin works without permission, worldwide and always. That makes it a strong candidate for the money of machines."),v:"whymach"},
         {l:tx("Stap 5 van 5 · Eerlijk is eerlijk","Step 5 of 5 · Fair is fair"),h:tx("Bitcoin is niet de enige kandidaat.","Bitcoin isn't the only candidate."),p:tx("Veel AI-betalingen lopen nu via stablecoins: digitale dollars van bedrijven. Coinbase, Stripe en anderen bouwen daar hard aan. Hoe het afloopt, weet niemand. Het is een kans, geen zekerheid.","Many AI payments currently run on stablecoins: digital dollars issued by companies. Coinbase, Stripe and others are building hard on that. Nobody knows how it will end. It's an opportunity, not a certainty."),v:"race"}]},
-    contract:{n:"09",line:"orange",more:"contract",hid:"h-contract",title:tx("Smart contracts · Geld met voorwaarden","Smart contracts · Money with conditions"),
+    contract:{n:"08a",line:"pro",more:"contract",hid:"h-contract",title:tx("Smart contracts · Geld met voorwaarden","Smart contracts · Money with conditions"),
       stops:tx(["Automaat","Sleutels","Tijdslot","Lightning","Eerlijk"],["Machine","Keys","Time lock","Lightning","Honest"]),
       sc:[
         {l:tx("Stap 1 van 5 · De automaat","Step 1 of 5 · The machine"),h:tx("Een afspraak die zichzelf uitvoert.","A deal that executes itself."),p:tx("Zo legde Nick Szabo het in 1997 uit: denk aan een snoepautomaat. Klopt de betaling, dan valt het product eruit. Geen winkelier, geen notaris. Dat is een smart contract: code die doet wat is afgesproken.","That's how Nick Szabo explained it in 1997: think of a vending machine. If the payment is right, the product drops out. No shopkeeper, no notary. That is a smart contract: code that does what was agreed."),v:"vend"},
@@ -3378,7 +3725,7 @@ async function goLive(){
         {l:tx("Stap 2 van 4 · De vingerafdruk","Step 2 of 4 · The fingerprint"),h:tx("Elke pagina krijgt een vingerafdruk.","Every page gets a fingerprint."),p:tx("Een computer rekent van elke pagina een unieke code uit: de hash. Dezelfde tekst geeft altijd dezelfde code. Typ zelf iets en verander één letter.","A computer calculates a unique code for every page: the hash. The same text always gives the same code. Type something yourself and change one letter."),v:"fp"},
         {l:tx("Stap 3 van 4 · Probeer te knoeien","Step 3 of 4 · Try to cheat"),h:tx("Verander één bedrag.","Change one amount."),p:tx("Elke pagina draagt de vingerafdruk van de pagina ervoor. Pas in blok 2 een bedrag aan en kijk wat er met de rest gebeurt. Repareren kan, maar dan moet je elk blok erna opnieuw uitrekenen.","Every page carries the fingerprint of the page before it. Change an amount in block 2 and watch what happens to the rest. You can repair it, but then you have to recalculate every block after it."),v:"tamper"},
         {l:tx("Stap 4 van 4 · Duizenden kopieën","Step 4 of 4 · Thousands of copies"),h:tx("En iedereen heeft een kopie.","And everyone has a copy."),p:tx("Duizenden computers bewaren precies dezelfde blockchain. Wijkt jouw versie af, dan negeren ze die gewoon. Zo hoeft niemand elkaar te vertrouwen, en kan niemand valsspelen.","Thousands of computers keep exactly the same blockchain. If your version is different, they simply ignore it. So nobody has to trust anyone, and nobody can cheat."),v:"copies"}]},
-    flight:{n:"15",more:"kopen",hid:"h-kopen",title:tx("Veilig landen · Je eerste bitcoin","Land safely · Your first bitcoin"),
+    flight:{n:"14",more:"kopen",hid:"h-kopen",title:tx("Veilig landen · Je eerste bitcoin","Land safely · Your first bitcoin"),
       stops:tx(["Vertrek","Beurs","Account","Kopen","Beveiligen","Geland"],["Take-off","Exchange","Account","Buy","Secure","Landed"]),
       sc:[
         {l:tx("Voor vertrek","Before take-off"),h:tx("Eerst eerlijk.","Honest first."),p:tx("Bitcoin kopen is makkelijk. Verstandig kopen kost tien minuten. Lees dit eerst.","Buying bitcoin is easy. Buying it wisely takes ten minutes. Read this first."),v:"check"},
@@ -3387,14 +3734,14 @@ async function goLive(){
         {l:tx("Stap 3 van 5 · Kopen","Step 3 of 5 · Buy"),h:tx("Koop een stukje.","Buy a piece."),p:tx("Je hoeft geen hele bitcoin te kopen. Ook een klein stukje is echte bitcoin.","You don't need a whole bitcoin. A tiny piece is real bitcoin too."),v:"buy"},
         {l:tx("Stap 4 van 5 · Beveiligen","Step 4 of 5 · Secure"),h:tx("Beveilig je account.","Secure your account."),p:tx("Je bitcoin staat nu bij de beurs. Prima om mee te beginnen. Bescherm wel je login.","Your bitcoin is now held by the exchange. Fine for a start. Do protect your login."),v:"secure"},
         {l:tx("Stap 5 van 5 · De landing","Step 5 of 5 · The landing"),h:tx("Geland.","Landed."),p:tx("Je eerste bitcoin staat op je account. Zelf bewaren kan later, als je er klaar voor bent.","Your first bitcoin is in your account. Self-custody can come later, when you're ready."),v:"landed"}]},
-    calm:{n:"16",more:"jaren",hid:"h-jaren",title:tx("Rustig vasthouden · Vier regels na je eerste aankoop","Hold steady · Four rules after your first purchase"),
+    calm:{n:"15",more:"jaren",hid:"h-jaren",title:tx("Rustig vasthouden · Vier regels na je eerste aankoop","Hold steady · Four rules after your first purchase"),
       stops:tx(["Buffer","Wat over is","Niet elke dag","Oplichters"],["Buffer","What's left","Not every day","Scammers"]),
       sc:[
         {l:tx("Regel 1 van 4","Rule 1 of 4"),h:tx("Eerst een buffer.","A buffer first."),p:tx("Houd eerst gewoon spaargeld achter de hand voor onverwachte kosten. Dan hoef je je bitcoin nooit te verkopen op een slecht moment.","First keep ordinary savings at hand for unexpected costs. Then you never have to sell your bitcoin at a bad moment."),v:"jars"},
         {l:tx("Regel 2 van 4","Rule 2 of 4"),h:tx("Alleen wat over is.","Only what's left."),p:tx("Huur, boodschappen en je buffer gaan voor. Alleen wat daarna overblijft, zet je in bitcoin.","Rent, groceries and your buffer come first. Only what's left after that goes into bitcoin."),v:"budget"},
         {l:tx("Regel 3 van 4","Rule 3 of 4"),h:tx("Kijk niet elke dag.","Don't check every day."),p:tx("De koers schiet elke dag op en neer. Over jaren zie je pas de echte richting. Wie elke dag kijkt, verkoopt uit paniek. Af en toe kijken is genoeg.","The price jumps up and down every day. Only over years do you see the real direction. Checking daily makes people sell in panic. An occasional look is enough."),v:"chart"},
         {l:tx("Regel 4 van 4","Rule 4 of 4"),h:tx("Trap niet in oplichters.","Don't fall for scammers."),p:tx("Belooft iemand snel rijk worden, of vraagt iemand om je inloggegevens of je 12 woorden? Dan is het een oplichter. Altijd.","Someone promising quick riches, or asking for your login details or your 12 words? That's a scammer. Always."),v:"scam"}]},
-    self:{n:"17",more:"zelf",hid:"h-zelf",title:tx("Zelf bewaren · Voor als je klaar bent","Self-custody · For when you're ready"),
+    self:{n:"16",more:"zelf",hid:"h-zelf",title:tx("Zelf bewaren · Voor als je klaar bent","Self-custody · For when you're ready"),
       stops:tx(["Afweging","Hot","Cold","Woorden","Testen","Gevaren"],["Trade-off","Hot","Cold","Words","Test","Dangers"]),
       sc:[
         {l:tx("Volgende niveau","Next level"),h:tx("Jouw sleutel, jouw verantwoordelijkheid.","Your keys, your responsibility."),p:tx("Zelf bewaren betekent: geen beurs ertussen. Maar ook: geen helpdesk. Fouten zijn niet terug te draaien.","Self-custody means: no exchange in between. But also: no help desk. Mistakes can't be undone."),v:"compare"},
@@ -3417,6 +3764,7 @@ async function goLive(){
   const zx=$("#zelf-next"); if(zx){ zx.innerHTML=`<div class="cta-in wrap small"><span class="cs-l">${tx("Geen haast","No rush")}</span><h2 class="cta-h">${tx("Nog niet klaar?","Not ready yet?")}<br><em>${tx("Dan wacht je gewoon.","Then you simply wait.")}</em></h2><p class="cta-p">${tx("Je bitcoin mag op de beurs blijven tot je er klaar voor bent. In het museum zie je wat er gebeurt als het misgaat.","Your bitcoin can stay on the exchange until you're ready. The museum shows what happens when it goes wrong.")}</p>
     <div class="cta-row"><a class="readmore" href="museum/#obj-016&lang=${LANG}" target="_blank" rel="noopener"><span>${tx("De weggegooide harde schijf","The thrown-away hard drive")}</span><span class="arr" aria-hidden="true">↗</span></a><a class="readmore" href="museum/#obj-018&lang=${LANG}" target="_blank" rel="noopener"><span>${tx("De herstelzin","The recovery phrase")}</span><span class="arr" aria-hidden="true">↗</span></a></div></div>`; }
   const tplK=$("#more-kopen"); if(tplK) tplK.innerHTML=`<h3>${tx("Zo koop je <em>bitcoin</em>","How to buy <em>bitcoin</em>")}</h3><ol class="steps">${[[tx("Lees eerst de eerlijke punten","Read the honest points first"),tx("De koers kan flink dalen. Gebruik alleen geld dat je jaren kunt missen. Niemand vraagt ooit om je inloggegevens.","The price can drop a lot. Only use money you can spare for years. Nobody will ever ask for your login details.")],[tx("Kies een beurs met vergunning","Choose a licensed exchange"),tx("Check in het Europese register (ESMA) of bij de AFM of de beurs een MiCA-vergunning heeft.","Check the EU register (ESMA) or your national regulator to see if the exchange is licensed.")],[tx("Maak een account","Create an account"),tx("Je laat je ID zien, net als bij een bank. Daarna stort je geld, bijvoorbeeld €25 met iDEAL.","You show your ID, just like at a bank. Then you deposit money, for example 25.")],[tx("Koop een stukje","Buy a piece"),tx("Je hoeft geen hele bitcoin te kopen. Let op de kosten per aankoop.","You don't need a whole bitcoin. Watch the cost per purchase.")],[tx("Beveilig je account","Secure your account"),tx("Sterk wachtwoord, tweestapsverificatie aan, login met niemand delen. Een beurs met MiCA-vergunning moet jouw bitcoin gescheiden houden van die van zichzelf.","Strong password, two-step verification on, share your login with nobody. A licensed exchange must keep your bitcoin separate from its own.")]].map(r=>`<li><b>${r[0]}</b><p>${r[1]}</p></li>`).join("")}</ol><p class="soft">${tx("Bron: MiCA, artikel 75 lid 7. Geen beleggingsadvies.","Source: MiCA, Article 75(7). Not investment advice.")}</p>`;
+  if(LANG==="en"){ const W=$("#wissel-a"); if(W){ W.querySelector("[data-wl]").textContent="Junction · PRO side line"; W.querySelector("[data-wh]").textContent="Want to go deeper?"; W.querySelector("[data-wp]").textContent="This is where the side line branches off: smart contracts and DAOs. What else can you build with a blockchain? About 4 minutes. You can also go straight on and come back later via the index."; W.querySelector("[data-wa]").textContent="Take the side line ↓"; W.querySelector("[data-wb]").textContent="Straight on to world 9 →"; } }
   const fx=$("#toekomst-next"); if(fx){ fx.innerHTML=`<div class="cta-in wrap small"><span class="cs-l">${tx("Terug naar nu","Back to now")}</span><h2 class="cta-h">${tx("Machines hebben geld nodig dat ze zelf kunnen beheren.","Machines need money they can manage themselves.")}<br><em>${tx("Bitcoin is daarvoor gebouwd.","Bitcoin was built for that.")}</em></h2><button class="cta-btn" type="button" data-go="kopen"><span>${tx("Zo stap je zelf in","How to get started yourself")}</span><span class="arr" aria-hidden="true">↓</span></button></div>`; }
   let tplF=$("#more-toekomst"); if(!tplF){ tplF=document.createElement("template"); tplF.id="more-toekomst"; document.body.appendChild(tplF); }
   tplF.innerHTML=`<h3>${tx("De <em>toekomst</em>","The <em>future</em>")}</h3><p>${tx("Dit hoofdstuk kijkt vooruit. Wat volgt is deels al echt en deels een verwachting. We zeggen steeds welke van de twee.","This chapter looks ahead. Some of what follows is already real and some is expectation. We always say which.")}</p>
@@ -3425,6 +3773,18 @@ async function goLive(){
     <h4>${tx("Verwachting","Expectation")}</h4><p>${tx("Zelfrijdende auto's en robots die zelf afrekenen bij laadpalen, garages en tolpoorten. Daar wordt al sinds 2019 mee getest, maar het is nog geen dagelijkse praktijk. Of dat met bitcoin, stablecoins of iets anders gebeurt, is open.","Self-driving cars and robots that pay for themselves at chargers, garages and toll gates. This has been tested since 2019, but it is not yet everyday practice. Whether that happens with bitcoin, stablecoins or something else is open.")}</p>
     <h4>${tx("Waarom bitcoin een goede kans maakt","Why bitcoin stands a good chance")}</h4><p>${tx("Een machine heeft geen identiteit, maar kan wel een sleutel bewaren. Bitcoin vraagt niemands toestemming, is altijd open, kan tot op 1 sat worden verdeeld en kan door niemand worden bijgedrukt of bevroren. Voor geld dat machines jarenlang zelf beheren, zijn dat sterke eigenschappen.","A machine has no identity, but it can keep a key. Bitcoin asks nobody's permission, is always open, can be divided down to 1 sat and can't be printed or frozen by anyone. For money that machines manage on their own for years, those are strong properties.")}</p>
     <p class="soft">${tx("Geen beleggingsadvies.","Not investment advice.")}</p>`;
+  let tplD=$("#more-dao"); if(!tplD){ tplD=document.createElement("template"); tplD.id="more-dao"; document.body.appendChild(tplD); }
+  tplD.innerHTML=`<h3>DAO<em>'s</em></h3><p>${tx("DAO staat voor Decentralized Autonomous Organization: een organisatie die draait op smart contracts. Leden hebben meestal tokens, en met die tokens stemmen ze over voorstellen. Wordt een voorstel aangenomen, dan voert de code het automatisch uit, bijvoorbeeld een betaling uit de gezamenlijke kas.","DAO stands for Decentralized Autonomous Organization: an organisation that runs on smart contracts. Members usually hold tokens, and with those tokens they vote on proposals. If a proposal passes, the code carries it out automatically, for example a payment from the shared treasury.")}</p>
+    <h4>${tx("Drie bekende voorbeelden","Three well-known examples")}</h4><p>${tx("<b>The DAO</b> (2016) haalde ongeveer 150 miljoen dollar op, maar een fout in de code liet een aanvaller een groot deel wegsluizen. Om dat terug te draaien werd Ethereum gesplitst. <b>MakerDAO</b> (2017) beheert de regels van de stablecoin DAI en heet sinds 2024 Sky. <b>ConstitutionDAO</b> (november 2021) haalde in een week ruim 47 miljoen dollar op voor een origineel van de Amerikaanse grondwet, maar verloor de veiling bij Sotheby's.","<b>The DAO</b> (2016) raised about 150 million dollars, but a bug in the code let an attacker drain a large part. To undo it, Ethereum was split. <b>MakerDAO</b> (2017) manages the rules of the DAI stablecoin and has been called Sky since 2024. <b>ConstitutionDAO</b> (November 2021) raised over 47 million dollars in a week for an original of the US Constitution, but lost the auction at Sotheby's.")}</p>
+    <h4>${tx("Hoe bitcoin beslist","How bitcoin decides")}</h4><p>${tx("Bitcoin heeft geen DAO en geen stemmen met tokens. Ontwikkelaars doen voorstellen (BIP's), maar niemand kan een wijziging afdwingen. Elke gebruiker kiest zelf welke software hij draait. In 2017 spraken grote bedrijven en miners af de blokgrootte te verdubbelen; omdat veel gebruikers die software weigerden, ging het niet door. Zo blijft bitcoin moeilijk te veranderen, en dat is precies de bedoeling.","Bitcoin has no DAO and no token voting. Developers make proposals (BIPs), but nobody can force a change. Every user chooses which software to run. In 2017 big companies and miners agreed to double the block size; because many users refused that software, it didn't happen. That keeps bitcoin hard to change, which is exactly the point.")}</p>
+    <h4>${tx("DAO's en AI","DAOs and AI")}</h4><p>${tx("In 2024 werd ai16z gelanceerd op Solana, gepresenteerd als een beleggingsclub geleid door een AI-agent. Het groeide razendsnel, de koers schommelde hevig, en in januari 2025 ging het verder als ElizaOS, een platform voor AI-agents. Het laat zien waar het heen kan, maar ook hoeveel hype erbij komt kijken.","In 2024 ai16z launched on Solana, presented as an investment club led by an AI agent. It grew extremely fast, its price swung wildly, and in January 2025 it continued as ElizaOS, a platform for AI agents. It shows where things could go, but also how much hype is involved.")}</p>
+    <h4>${tx("De kanttekeningen","The caveats")}</h4><p>${tx("Onderzoek naar 50 DAO's liet zien dat vier stemmers of minder tweederde van de besluiten bepalen. De meeste tokenhouders stemmen nooit. En juridisch is vaak onduidelijk wie aansprakelijk is als het misgaat.","Research into 50 DAOs found that four voters or fewer decide two thirds of the decisions. Most token holders never vote. And legally it's often unclear who is liable when things go wrong.")}</p>
+    <p class="soft">${tx("Geen beleggingsadvies.","Not investment advice.")}</p>`;
+  let tplM=$("#more-munten"); if(!tplM){ tplM=document.createElement("template"); tplM.id="more-munten"; document.body.appendChild(tplM); }
+  tplM.innerHTML=`<h3>${tx("Andere <em>munten</em>","Other <em>coins</em>")}</h3><p>${tx("We leggen elke munt langs vijf toetsstenen: een vaste limiet, een eerlijke start, geen baas, vaste regels en beveiliging met echt werk. Bitcoin is de enige grote munt die alle vijf haalt.","We test every coin on five touchstones: a fixed limit, a fair start, no boss, fixed rules and security through real work. Bitcoin is the only big coin that passes all five.")}</p>
+    <h4>${tx("De feiten per munt","The facts per coin")}</h4><p>${tx("<b>Ethereum</b>: geen maximum, rond de 120 miljoen ETH; bij de start in 2014 zo'n 72 miljoen vooraf uitgegeven (60 miljoen in de voorverkoop, 12 miljoen aan makers en stichting); sinds 2022 proof of stake. <b>Solana</b>: geen maximum; inflatie begon op 8% en daalt naar 1,5% per jaar; een groot deel van de start-voorraad ging naar insiders. <b>XRP</b>: 100 miljard in één keer gemaakt in 2012, 80 miljard naar Ripple; sinds 2017 staat een deel in escrow. <b>BNB</b>: 200 miljoen in 2017 (50% verkocht, 40% team, 10% investeerders); Binance verbrandt munten richting 100 miljoen. <b>Cardano</b>: maximaal 45 miljard, grotendeels vooraf verkocht of naar de oprichters. <b>Dogecoin</b>: eerlijke start, maar sinds 2014 zonder limiet, zo'n 5 miljard erbij per jaar. <b>Stablecoins</b> zoals USDT: onbeperkt bij te maken door de uitgever, die adressen kan bevriezen.","<b>Ethereum</b>: no maximum, around 120 million ETH; at launch in 2014 about 72 million issued upfront (60 million in the presale, 12 million to makers and foundation); proof of stake since 2022. <b>Solana</b>: no maximum; inflation started at 8% and declines to 1.5% a year; a large part of the initial supply went to insiders. <b>XRP</b>: 100 billion created at once in 2012, 80 billion to Ripple; part has been in escrow since 2017. <b>BNB</b>: 200 million in 2017 (50% sold, 40% team, 10% investors); Binance burns coins towards 100 million. <b>Cardano</b>: at most 45 billion, largely sold upfront or to the founders. <b>Dogecoin</b>: fair start, but no limit since 2014, about 5 billion added each year. <b>Stablecoins</b> like USDT: unlimited issuance by the issuer, who can freeze addresses.")}</p>
+    <h4>${tx("Waarom dit ertoe doet","Why this matters")}</h4><p>${tx("Fix the money draait om geld dat niemand kan manipuleren. Zodra er een baas is, een stapel munten voor de makers of regels die kunnen veranderen, kan iemand het geld naar zijn hand zetten. Dan heb je weer het probleem dat bitcoin oplost.","Fix the money is about money that nobody can manipulate. As soon as there's a boss, a pile of coins for the makers or rules that can change, someone can bend the money to their will. Then you're back to the problem bitcoin solves.")}</p>
+    <p class="soft">${tx("Geen beleggingsadvies. Cijfers per oktober 2026, afgerond.","Not investment advice. Figures as of October 2026, rounded.")}</p>`;
   let tplC=$("#more-contract"); if(!tplC){ tplC=document.createElement("template"); tplC.id="more-contract"; document.body.appendChild(tplC); }
   tplC.innerHTML=`<h3>${tx("Smart <em>contracts</em>","Smart <em>contracts</em>")}</h3><p>${tx("Een smart contract is een afspraak in code. Als de voorwaarden kloppen, voert het netwerk hem uit. Niemand hoeft tussenbeide te komen, en niemand kan het tegenhouden.","A smart contract is an agreement in code. When the conditions are met, the network executes it. Nobody has to step in, and nobody can stop it.")}</p>
     <h4>${tx("Wat bitcoin kan","What bitcoin can do")}</h4><p>${tx("Bitcoin heeft een eenvoudige scripttaal. Daarmee kun je onder meer: meerdere handtekeningen eisen (multisig), geld vastzetten tot een datum of blok (tijdslot), en betaalkanalen openen (Lightning). Sinds de Taproot-update van 2021 kunnen zulke afspraken ook zuiniger en privacyvriendelijker.","Bitcoin has a simple scripting language. With it you can, among other things, require several signatures (multisig), lock money until a date or block (time lock), and open payment channels (Lightning). Since the Taproot upgrade in 2021 such agreements can also be cheaper and more private.")}</p>
@@ -3455,7 +3815,7 @@ async function goLive(){
       plane.style.left=(Math.min(i+lp,N-1)/(N-1)*100)+"%";
       cnt.textContent=flight?clamp(i-1+(k>=3?1:0),0,5):Math.min(N,i+(k>=3?1:0)); };
     pin.addEventListener("click",e=>{ const b=e.target.closest("[data-cv]"); if(!b) return; const ch=b.closest(".cv-chart"); chartManual=b.dataset.cv; ch.classList.toggle("yr",b.dataset.cv==="y"); Sound.tick(.3,0); });
-    if(window.ScrollTrigger&&!REDUCED){ ScrollTrigger.create({trigger:sec,start:"top top",end:`+=${N*85}%`,pin:pin,scrub:true,refreshPriority:pin.dataset.camp==="future"?4.12:pin.dataset.camp==="ledger"?6.5:pin.dataset.camp==="contract"?6.3:flight?4.1:pin.dataset.camp==="calm"?3.9:3.7,onUpdate:s=>set(s.progress)}); set(0); }
+    if(window.ScrollTrigger&&!REDUCED){ ScrollTrigger.create({trigger:sec,start:"top top",end:`+=${N*85}%`,pin:pin,scrub:true,refreshPriority:pin.dataset.camp==="future"?4.12:pin.dataset.camp==="munten"?4.14:pin.dataset.camp==="dao"?6.2:pin.dataset.camp==="ledger"?6.5:pin.dataset.camp==="contract"?6.3:flight?4.1:pin.dataset.camp==="calm"?3.9:3.7,onUpdate:s=>{ set(s.progress); if(pin.dataset.camp==="future") st.wp.toekomst=s.progress; }}); set(0); }
     else { pin.classList.add("static"); scenes.forEach(s=>s.classList.add("on","s1","s2","s3","s4")); }
   });
 })();
@@ -3463,6 +3823,61 @@ async function goLive(){
 
 
 
+
+
+/* ===== zijspoor: rails tekenen ===== */
+(function(){
+  const sleepers=(d,n,cls)=>{ let o=""; for(let i=0;i<n;i++){ o+=`<line class="sl ${cls}" pathLength="1"/>`; } return o; };
+  $$("[data-rails]").forEach(el=>{ const split=el.dataset.rails==="split", A=el.dataset.a, B=el.dataset.b, S=el.dataset.s||"";
+    let sl=""; for(let x=30;x<=430;x+=18) sl+=`<line class="sl" x1="${x}" y1="${split?52:182}" x2="${x}" y2="${split?78:208}"/>`;
+    const side=[]; for(let k=0;k<=24;k++){ const t=k/24; const x=split?150+t*290:30+t*230, y=split?65+Math.pow(Math.sin(t*Math.PI/2),2)*150:65+Math.pow(Math.cos(t*Math.PI/2),2)*0; side.push([x,y]); }
+    const bez=split?"M150 59 C 250 59, 250 209, 350 209 H440":"M30 59 H130 C 230 59, 230 189, 330 189 H440";
+    const bez2=split?"M150 71 C 238 71, 238 221, 350 221 H440":"M30 71 H122 C 222 71, 222 201, 330 201 H440";
+    let ss=""; for(let k=1;k<12;k++){ const t=k/12; const x=split?150+t*200:130+t*200; const y=split?65+(1-Math.cos(t*Math.PI))/2*150:65+(1-Math.cos(t*Math.PI))/2*130; ss+=`<line class="sl or" x1="${x}" y1="${y-13}" x2="${x}" y2="${y+13}"/>`; }
+    const mainY=split?65:195;
+    const path=split?bez:"M30 65 H130 C 230 65, 230 195, 330 195 H440";
+    el.innerHTML=`<svg viewBox="0 0 460 260" aria-hidden="true">${split?sl:sl}${ss}
+      <path class="rl" d="M20 ${mainY-6} H440"/><path class="rl" d="M20 ${mainY+6} H440"/>
+      <path class="rl or" d="${bez}"/><path class="rl or" d="${bez2}"/>
+      ${split?`<text class="lb" x="22" y="${mainY-22}">${A}</text><text class="lb" x="400" y="${mainY-22}">${B}</text><text class="lb or" x="300" y="250">${S}</text>`:`<text class="lb or" x="22" y="40">${A}</text><text class="lb" x="400" y="240">${B}</text>`}
+      ${REDUCED?"":`<g class="tr" style="offset-path:path('${split?"M20 65 H150 C 250 65, 250 215, 350 215 H440":"M20 65 H130 C 230 65, 230 195, 330 195 H440"}')"><rect class="train" x="-22" y="-9" width="44" height="18" rx="7"/><circle class="w" cx="14" cy="0" r="3.5"/></g>`}</svg>`;
+  });
+  if(LANG==="en"){ const W=$("#wissel-b"); if(W){ W.querySelector("[data-wl]").textContent="Junction · PRO side track"; W.querySelector("[data-wh]").textContent="And all those other coins?"; W.querySelector("[data-wp]").textContent="There are thousands of other cryptocoins. Why don't they fit “fix the money”? On this side track you test them on five touchstones. About 3 minutes."; W.querySelector("[data-wa]").textContent="Take the side track ↓"; W.querySelector("[data-wb]").textContent="Straight on to world 13 →"; }
+    $$(".pro-rejoin").forEach(r=>{ r.querySelector("[data-rl]").textContent="End of side track"; r.querySelector("[data-rh]").textContent="Back on the main line."; });
+    const ra=$("#rejoin-a [data-rp]"); if(ra) ra.textContent="You now know smart contracts and DAOs. The train continues to world 9: the halving.";
+    const rb=$("#rejoin-b [data-rp]"); if(rb) rb.textContent="You now know why bitcoin is different from the rest. The train continues to world 13: the future."; }
+  const sbL=$("#sbL"); if(sbL&&LANG==="en") sbL.textContent="Back to main line";
+})();
+/* ===== wereld 12a: andere munten — de keuring ===== */
+(function(){
+  const lane=$("#muLane"); if(!lane) return; let timer=[]; const MU=window.MU;
+  const run=i=>{ timer.forEach(clearTimeout); timer=[]; const c=MU[i], coin=$("#muCoin"), gates=$$(".mu-gate",lane);
+    $$("[data-mu]",lane).forEach(b=>b.classList.toggle("on",+b.dataset.mu===i)); gates.forEach(g=>g.classList.remove("ok","no","half"));
+    coin.classList.toggle("btc",i===0); coin.textContent=i===0?"₿":c.k.slice(0,4); coin.style.transition="none"; coin.style.left="-6%"; void coin.offsetWidth; coin.style.transition="";
+    $("#muName").textContent=c.n; $("#muScore").textContent="· / 5"; $("#muWhy").textContent=tx("Op weg naar de eerste poort…","Heading to the first gate…");
+    let score=0;
+    c.r.forEach((v,g)=>{ timer.push(setTimeout(()=>{ coin.style.left=(12+g*19)+"%"; },g*700+60));
+      timer.push(setTimeout(()=>{ const gate=gates[g]; gate.classList.add(v===1?"ok":v===.5?"half":"no"); score+=v; $("#muScore").textContent=(Math.round(score*10)/10).toString().replace(".",LANG==="en"?".":",")+" / 5";
+        $("#muWhy").innerHTML=`<b class="${v===1?"g":""}">${v===1?"✓":v===.5?"~":"✕"}</b> ${c.w[g]}`; v===1?Sound.tick(.35,0):Sound.tick(.2,0); },g*700+520)); });
+    timer.push(setTimeout(()=>{ coin.style.left="104%"; if(score===5) Sound.chime(.5); },5*700+700));
+  };
+  lane.addEventListener("click",e=>{ const b=e.target.closest("[data-mu]"); if(b) run(+b.dataset.mu); });
+})();
+/* ===== wereld 8b: DAO's ===== */
+(function(){
+  const dv=$("#dv"); if(!dv) return; const fmt=n=>n.toLocaleString(LOC); let mine=null, paid=false;
+  const upd=()=>{ const y=4+(mine==="y"?1:0)+(mine?1:0)*0, yv=4+(mine==="y"?1:0), nv=3+(mine==="n"?1:0), extra=mine==="y"?1:0;
+    const Y=yv+extra; /* één andere twijfelaar volgt jouw voorbeeld */
+    const N=nv+(mine==="n"?1:0);
+    const mem=$$("#dvMem i"); mem.forEach((m,i)=>{ if(i===9){ m.classList.toggle("y",mine==="y"); m.classList.toggle("n",mine==="n"); } if(i===0){ m.classList.toggle("y",mine==="y"); m.classList.toggle("n",mine==="n"); } });
+    $("#dvY").style.width=(Y*10)+"%"; $("#dvN").style.width=(N*10)+"%";
+    $("#dvT").textContent=tx(`${Y} voor · ${N} tegen · ${10-Y-N} nog niet`,`${Y} for · ${N} against · ${10-Y-N} not yet`);
+    const pass=Y>=6; dv.classList.toggle("paid",pass); $("#dvKas").textContent=fmt(pass?45000:50000);
+    $("#dvOut").textContent=!mine?tx("Jouw stem kan de doorslag geven.","Your vote could tip the balance."):pass?tx("Aangenomen. De kas betaalt automatisch 5.000 uit, zonder dat iemand op een knop drukt.","Passed. The treasury pays out 5,000 automatically, without anyone pressing a button."):tx("Verworpen. Het geld blijft in de kas. Ook dat regelt de code.","Rejected. The money stays in the treasury. The code handles that too.");
+    $$("[data-dv]",dv).forEach(b=>b.classList.toggle("on",b.dataset.dv===mine)); };
+  dv.addEventListener("click",e=>{ const b=e.target.closest("[data-dv]"); if(!b) return; mine=mine===b.dataset.dv?null:b.dataset.dv; upd(); (dv.classList.contains("paid")?Sound.chime(.45):Sound.tick(.3,0)); });
+  upd();
+})();
 /* ===== wereld 14: de toekomst ===== */
 (function(){
   const fmt=n=>n.toLocaleString(LOC);
@@ -3626,6 +4041,27 @@ const ready=()=>{ if(GL) GL.stair.redraw(); if(window.ScrollTrigger) ScrollTrigg
 try{ history.scrollRestoration="manual"; }catch(e){}
 addEventListener("hashchange",jump);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(ready); else addEventListener("load",ready);
+})();
+</script>
+
+<script>/* statistiek: GoatCounter, zonder cookies, alleen op bitcointour.nl */
+(function(){ if(!/(^|\.)bitcointour\.nl$/.test(location.hostname)) return; var PAGE="tour";
+  var s=document.createElement("script"); s.async=true; s.setAttribute("data-goatcounter","https://bitcointour.goatcounter.com/count"); s.src="https://gc.zgo.at/count.js"; document.head.appendChild(s);
+  function ev(n){ try{ if(window.goatcounter&&window.goatcounter.count) window.goatcounter.count({path:PAGE+"/"+n,title:n,event:true}); }catch(e){} }
+  document.addEventListener("click",function(e){ var t=e.target.closest&&e.target.closest("a,button"); if(!t) return; var h=t.getAttribute("href")||"", n=null;
+    if(/K8fbvwiKExETBWXmh5t5iP|\/museum\/|^\.\.?\/?museum/.test(h)&&PAGE!=="museum") n="naar-museum";
+    else if(/LTzfAnd8n9J7U3J6jNWUZi|bitboy\//.test(h)&&PAGE!=="bitboy") n="naar-bitboy";
+    else if(t.rel&&/sponsored/.test(t.rel)) n="bitvavo";
+    else if(/#kopen/.test(h)||t.getAttribute("data-go")==="kopen"||t.hasAttribute("data-buy")) n="koopknop";
+    else if(/HPGNPKJHp2HLRRBsspzRwv/.test(h)||(PAGE!=="tour"&&/^\.\.\/(#|$)/.test(h))) n="naar-tour";
+    else if(t.getAttribute("data-go")==="contract") n="zijspoor-a";
+    else if(t.getAttribute("data-go")==="munten") n="zijspoor-b";
+    else if(t.getAttribute("data-skip")==="halvering") n="rechtdoor-a";
+    else if(t.getAttribute("data-skip")==="toekomst") n="rechtdoor-b";
+    else if(t.hasAttribute("data-share")) n="delen";
+    else if(t.hasAttribute("data-play")||t.id==="bStart") n="speel-bitboy";
+    else if(t.hasAttribute("data-protoggle")) n="pro-schakelaar";
+    if(n) ev(n); },true);
 })();
 </script>
 

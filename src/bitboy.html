@@ -571,4 +571,25 @@ else setTimeout(demo,500);
 })();
 </script>
 
+<script>/* statistiek: GoatCounter, zonder cookies, alleen op bitcointour.nl */
+(function(){ if(!/(^|\.)bitcointour\.nl$/.test(location.hostname)) return; var PAGE="bitboy";
+  var s=document.createElement("script"); s.async=true; s.setAttribute("data-goatcounter","https://bitcointour.goatcounter.com/count"); s.src="https://gc.zgo.at/count.js"; document.head.appendChild(s);
+  function ev(n){ try{ if(window.goatcounter&&window.goatcounter.count) window.goatcounter.count({path:PAGE+"/"+n,title:n,event:true}); }catch(e){} }
+  document.addEventListener("click",function(e){ var t=e.target.closest&&e.target.closest("a,button"); if(!t) return; var h=t.getAttribute("href")||"", n=null;
+    if(/K8fbvwiKExETBWXmh5t5iP|\/museum\/|^\.\.?\/?museum/.test(h)&&PAGE!=="museum") n="naar-museum";
+    else if(/LTzfAnd8n9J7U3J6jNWUZi|bitboy\//.test(h)&&PAGE!=="bitboy") n="naar-bitboy";
+    else if(t.rel&&/sponsored/.test(t.rel)) n="bitvavo";
+    else if(/#kopen/.test(h)||t.getAttribute("data-go")==="kopen"||t.hasAttribute("data-buy")) n="koopknop";
+    else if(/HPGNPKJHp2HLRRBsspzRwv/.test(h)||(PAGE!=="tour"&&/^\.\.\/(#|$)/.test(h))) n="naar-tour";
+    else if(t.getAttribute("data-go")==="contract") n="zijspoor-a";
+    else if(t.getAttribute("data-go")==="munten") n="zijspoor-b";
+    else if(t.getAttribute("data-skip")==="halvering") n="rechtdoor-a";
+    else if(t.getAttribute("data-skip")==="toekomst") n="rechtdoor-b";
+    else if(t.hasAttribute("data-share")) n="delen";
+    else if(t.hasAttribute("data-play")||t.id==="bStart") n="speel-bitboy";
+    else if(t.hasAttribute("data-protoggle")) n="pro-schakelaar";
+    if(n) ev(n); },true);
+})();
+</script>
+
 </body></html>
