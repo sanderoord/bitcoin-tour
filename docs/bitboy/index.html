@@ -1,0 +1,570 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Bitboy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@400;500&display=swap">
+<style>@font-face{font-family:"Geist Pixel Square";src:url(data:font/woff2;base64,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) format("woff2");font-display:block}</style>
+<style>
+/* Layout: speelhal-avond. Links de tekst en Bitboy op zijn vloer, rechts de oranje handheld die je echt speelt. Daaronder paspoort, modelblad en doorverwijzingen. Bewust één donker thema, zoals Lijn ₿ en Museum ₿. */
+:root{
+  --void:#0B0604; --ink:#23150E; --paper:#EDE3D1; --paper-2:#F7F0E3; --dim:#BFAE98; --line:rgba(247,240,227,.16);
+  --orange:#FF4D00; --gold:#C8952A;
+  --hh:#E07A2E; --hh-hi:#EF8D41; --hh-lo:#C8641F; --plate:#F3E6C8; --hh-ink:#2B1B12; --lcd:#B4BA9A; --lcd-ink:#1C2018;
+  --f-display:"Geist","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --f-px:"Geist Pixel Square","Geist Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+html{overflow-x:clip}
+[hidden]{display:none!important}
+body{background:var(--void);color:var(--paper-2);font-family:var(--f-display);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+button{font:inherit;color:inherit}
+em{font-family:var(--f-px);font-style:normal;font-weight:400;color:var(--orange);letter-spacing:-.02em}
+.label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--void)}
+
+/* topbalk */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:linear-gradient(180deg,var(--void) 55%,rgba(11,6,4,0))}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:650;font-size:1.05rem;letter-spacing:-.02em;color:var(--paper-2);text-decoration:none}
+.brand svg{width:34px;height:32px;border-radius:7px}
+.acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.chip{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(247,240,227,.35);color:var(--paper-2);border-radius:999px;padding:.62em 1.05em;display:inline-flex;align-items:center;gap:.5em;cursor:pointer;background:rgba(20,12,8,.6);text-decoration:none;white-space:nowrap}
+.chip:hover{background:var(--paper-2);color:var(--ink)}
+.chip.buy{background:var(--orange);border-color:var(--orange);color:var(--ink);font-weight:600}
+.chip.buy:hover{background:var(--paper-2);border-color:var(--paper-2)}
+.chip.lang [data-l]{opacity:.5}.chip.lang [data-l].on{opacity:1;color:var(--orange)}.chip.lang:hover [data-l].on{color:var(--ink)}
+.chip.snd[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.chip.snd .on-t{display:none}.chip.snd[aria-pressed="true"] .on-t{display:inline}.chip.snd[aria-pressed="true"] .off-t{display:none}
+.chip .bs{display:none}
+@media (max-width:720px){.chip.ext{display:none}.chip.buy .bl{display:none}.chip.buy .bs{display:inline}.chip{padding:.55em .75em}.brand span{display:none}.chip.lang [data-l]:not(.on),.chip.lang i{display:none}}
+
+/* held */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:center;padding-block:clamp(24px,5vw,64px) clamp(40px,6vw,88px)}
+.hero h1{font-size:clamp(3rem,8vw,6.6rem);line-height:.92;letter-spacing:-.045em;font-weight:750;margin:.35rem 0 1.1rem;text-wrap:balance}
+.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);max-width:34rem;color:var(--paper);margin:0;text-wrap:pretty}
+.stage{position:relative;height:clamp(200px,24vw,268px);margin-top:clamp(16px,3vw,36px);max-width:36rem}
+.floor{position:absolute;left:0;right:0;bottom:10px;height:1px;background:linear-gradient(90deg,transparent,var(--line) 18%,var(--line) 82%,transparent)}
+.floor::after{content:"Bitboy · ₿-01";position:absolute;right:0;top:8px;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.16em;color:var(--dim);opacity:.7;text-transform:uppercase}
+.hero-bb{all:unset;position:absolute;right:6%;bottom:12px;height:calc(100% - 20px);aspect-ratio:256/312;cursor:pointer;opacity:0;transition:opacity .35s}
+.hero-bb.on{opacity:1}
+.hero-bb:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:12px}
+.bb-spr{position:absolute;inset:0;background-size:400% 300%;background-repeat:no-repeat;transform-origin:45% 100%;will-change:transform;filter:drop-shadow(0 8px 14px rgba(0,0,0,.5))}
+.bb-sh{position:absolute;left:10%;right:24%;bottom:-6px;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.7),transparent)}
+.bb-eye{position:absolute;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;pointer-events:none}
+.bb-pu{position:absolute;left:21%;top:19%;width:58%;height:62%;border-radius:50%;background:#192d1b;transition:transform .12s ease-out}
+.bubble{position:absolute;right:calc(6% + clamp(150px,19vw,214px));bottom:42%;width:min(19rem,calc(100% - 150px));background:rgba(28,16,10,.92);border:1px solid rgba(255,77,0,.45);border-radius:14px 14px 4px 14px;padding:.75rem .95rem .85rem;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.bubble.on{opacity:1;transform:none}
+.bubble .who{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.bubble p{margin:.25rem 0 0;font-size:.98rem;line-height:1.42;min-height:2.8em}
+
+/* handheld */
+.hero-dev{display:grid;gap:12px;justify-items:center;min-width:0}
+.pk-dev{width:min(560px,100%);box-sizing:border-box;background:linear-gradient(165deg,var(--hh-hi) 0%,var(--hh) 45%,var(--hh-lo) 100%);border-radius:22px 22px 22px 70px;padding:16px 20px 20px;color:var(--hh-ink);box-shadow:0 34px 90px rgba(0,0,0,.6),0 0 120px rgba(255,77,0,.12),inset 0 -7px 0 rgba(90,35,8,.35),inset 0 2px 0 rgba(255,214,170,.6),inset 0 0 0 1px rgba(90,35,8,.35)}
+.pk-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:0 6px 12px}
+.pk-brand{font-family:var(--f-px);font-size:1.05rem;letter-spacing:.02em;background:var(--plate);padding:.28em .55em .2em;border-radius:3px;box-shadow:inset 0 0 0 2px var(--hh-ink)}
+.pk-model{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#3A1A08;opacity:.85;text-align:right}
+.pk-bezel{background:linear-gradient(180deg,#3B2A20,#2A1D16);border-radius:12px 12px 12px 34px;padding:14px 16px 10px;box-shadow:inset 0 2px 8px rgba(0,0,0,.7),0 0 0 3px var(--plate),0 0 0 4px rgba(90,35,8,.5)}
+.pk-lcd{position:relative;aspect-ratio:16/9;background:linear-gradient(180deg,#BAC0A0,#A6AC8A);border-radius:4px;overflow:hidden;box-shadow:inset 0 0 22px rgba(0,0,0,.28);isolation:isolate;touch-action:manipulation;cursor:default}
+.pk-lcd::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0 1px,transparent 1px 3px);pointer-events:none}
+.pk-hint{font-family:var(--f-mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,230,200,.55);margin-top:8px;display:flex;justify-content:space-between}
+.lcd-t{position:absolute;font-family:var(--f-px);color:var(--lcd-ink);line-height:1}
+.pk-msg{top:6%;left:4%;font-size:clamp(.66rem,2.3vw,.95rem);letter-spacing:.04em}
+.pk-lost{top:15%;left:4%;font-size:clamp(.56rem,1.8vw,.75rem);opacity:.85}
+.pk-score{top:5%;right:4%;font-size:clamp(1.1rem,4.4vw,1.8rem)}
+.pk-score small{font-size:.5em;opacity:.55}
+.pk-big{inset:22% 0 auto;text-align:center;font-size:clamp(1rem,4vw,1.7rem);letter-spacing:.04em;z-index:2;text-shadow:0 0 0 transparent}
+.pk-big small{display:block;font-size:.5em;margin-top:.5em;opacity:.8}
+.pk-big.blink{animation:blink 1s steps(2,end) infinite}
+@keyframes blink{50%{opacity:0}}
+.pk-lanes{position:absolute;left:3%;right:3%;top:24%;bottom:5%;display:grid;grid-template-columns:repeat(5,1fr);gap:1%}
+.pk-lane{position:relative;display:flex;flex-direction:column;align-items:center;gap:3%;min-width:0}
+.pk-c{display:grid;place-items:center;width:clamp(12px,3.4vw,21px);aspect-ratio:1;border-radius:50%;border:clamp(2px,.55vw,3px) solid var(--lcd-ink);color:var(--lcd-ink);font-family:var(--f-px);font-size:clamp(7px,1.9vw,11px);font-style:normal;opacity:.07;flex:none}
+.pk-c::after{content:"₿"}
+.pk-c.on{opacity:.88}
+.pk-b{display:block;height:52%;aspect-ratio:256/312;margin-top:auto;background-size:400% 300%;background-repeat:no-repeat;mix-blend-mode:multiply;opacity:.08;transition:transform .1s}
+.pk-b.on{opacity:.86}
+.pk-lane.hit .pk-b{transform:translateY(-7%)}
+.pk-x{position:absolute;right:2%;bottom:2%;width:clamp(10px,2.6vw,16px);aspect-ratio:1;border-radius:50%;border:2px solid var(--lcd-ink);opacity:.07}
+.pk-x::after{content:"";position:absolute;left:-30%;right:-30%;top:45%;height:2px;background:var(--lcd-ink);transform:rotate(-45deg)}
+.pk-x.on{opacity:.88}
+.pk-dev.glitch .pk-lcd{animation:gl .38s steps(5,end) forwards}
+@keyframes gl{0%{filter:none;transform:none}20%{filter:invert(1);transform:translateX(-3px) skewX(6deg)}40%{filter:hue-rotate(160deg) saturate(4);transform:translateX(4px)}60%{filter:invert(1) contrast(2);transform:skewX(-8deg)}80%{filter:brightness(3);transform:none}100%{filter:none}}
+.pk-ctrl{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;margin-top:16px;padding:0 6px}
+.pk-pad{display:flex;gap:12px}
+.pk-btn{width:52px;height:52px;border-radius:50%;border:0;background:var(--hh-ink);color:var(--plate);font-family:var(--f-px);font-size:1rem;cursor:pointer;box-shadow:inset 0 -4px 0 rgba(0,0,0,.45),inset 0 2px 0 rgba(255,255,255,.15),0 0 0 3px var(--plate),0 3px 0 4px rgba(90,35,8,.35);touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.pk-btn:active,.pk-btn.down{transform:translateY(2px);box-shadow:inset 0 -2px 0 rgba(0,0,0,.45),0 0 0 3px var(--plate)}
+.pk-mid{display:flex;flex-direction:column;align-items:center;gap:8px}
+.pk-start{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;background:var(--plate);color:var(--hh-ink);border:0;border-radius:999px;padding:.7em 1.4em;cursor:pointer;box-shadow:inset 0 0 0 2px var(--hh-ink),0 3px 0 rgba(90,35,8,.45)}
+.pk-start:hover{background:var(--paper-2)}
+.pk-grill{width:70px;height:22px;background:radial-gradient(circle,rgba(70,25,5,.7) 2px,transparent 2.5px) 0 0/9px 9px}
+.keys{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0;text-align:center}
+.best{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);margin:0;min-height:1.2em}
+.best b{color:var(--orange);font-weight:500}
+.hof{width:min(560px,100%);box-sizing:border-box;border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px;background:linear-gradient(180deg,rgba(255,77,0,.07),rgba(255,77,0,0) 70%)}
+.hof-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.2rem 1rem;margin-bottom:8px}
+.hof-h .label{color:var(--orange)}
+.hof-sub{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.hof-list{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-variant-numeric:tabular-nums}
+.hof-list li{display:grid;grid-template-columns:2.2rem 4.2rem minmax(0,1fr) auto;align-items:baseline;gap:.6rem;padding:.38rem .5rem;border-radius:6px}
+.hof-list li:nth-child(odd){background:rgba(247,240,227,.03)}
+.hof-list .rk{font-family:var(--f-px);color:var(--dim)}
+.hof-list .in{font-family:var(--f-px);font-size:1.1rem;letter-spacing:.12em;color:var(--paper-2)}
+.hof-list .sc{font-family:var(--f-px);font-size:1.05rem;color:var(--orange)}
+.hof-list .sc small{color:var(--dim);font-size:.7em}
+.hof-list .dt{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;color:var(--dim);text-align:right;white-space:nowrap}
+.hof-list li.me{background:rgba(255,77,0,.16);outline:1px solid rgba(255,77,0,.5)}
+.hof-list li.me .in::after{content:" ◂";color:var(--orange);letter-spacing:0;font-size:.8em}
+.hof-list li.gap{background:none;padding:0 .5rem;color:var(--dim);font-family:var(--f-mono)}
+.hof-list li.first .rk,.hof-list li.first .in{color:var(--gold)}
+.hof-note{margin:8px 0 0;font-size:.84rem;color:var(--dim);min-height:1em}
+.pk-big .nm-t{display:block;font-size:.62em;letter-spacing:.06em}
+.pk-big .nm{display:block;font-size:1.5em;letter-spacing:.32em;margin-top:.35em;padding-left:.32em}
+.pk-big .nm u{text-decoration:none;border-bottom:.12em solid var(--lcd-ink);animation:blink .8s steps(2,end) infinite}
+@media (max-width:520px){.pk-dev{padding:14px 14px 16px;border-radius:18px 18px 18px 48px}.pk-model{font-size:.5rem;letter-spacing:.12em}.pk-bezel{padding:10px 10px 8px}.pk-btn{width:46px;height:46px}.pk-grill{display:none}}
+
+/* secties */
+.sec .wrap{padding-block:clamp(48px,7vw,104px);border-top:1px solid var(--line)}
+.sec h2{font-size:clamp(2rem,4.6vw,3.4rem);line-height:1;letter-spacing:-.035em;font-weight:720;margin:.4rem 0 1rem;text-wrap:balance}
+.sec .intro{max-width:40rem;color:var(--paper);margin:0 0 clamp(24px,4vw,44px)}
+
+/* paspoort */
+.pass-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.passport{background:linear-gradient(160deg,#F6EEDC,#E6D8BC);color:var(--hh-ink);border-radius:14px;padding:clamp(16px,2.4vw,26px);box-shadow:0 24px 60px rgba(0,0,0,.45);position:relative;overflow:hidden}
+.passport::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,77,0,.05) 0 2px,transparent 2px 9px);pointer-events:none}
+.pp-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid rgba(43,27,18,.25);padding-bottom:.6rem;margin-bottom:1rem;position:relative}
+.pp-head b{font-family:var(--f-px);font-weight:400;font-size:.95rem;letter-spacing:.02em;color:var(--orange)}
+.pp-body{display:grid;grid-template-columns:clamp(92px,22%,150px) minmax(0,1fr);gap:clamp(14px,2.4vw,26px);position:relative}
+.pp-photo{position:relative;align-self:start}
+.pp-photo svg{width:100%;height:auto;display:block;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(43,27,18,.3)}
+.pp-stamp{position:absolute;left:6%;top:calc(100% + 14px);width:82%;aspect-ratio:1;border-radius:50%;border:3px solid var(--orange);color:var(--orange);display:grid;place-items:center;text-align:center;font-family:var(--f-px);font-size:clamp(.62rem,1.3vw,.82rem);line-height:1.1;transform:rotate(-14deg);opacity:.85;background:rgba(246,238,220,.35)}
+.pp-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 1.2rem;margin:0}
+.pp-fields div{min-width:0}
+.pp-fields dt{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.pp-fields dd{margin:.1rem 0 0;font-weight:600;font-size:.98rem;line-height:1.25}
+.pp-mrz{margin-top:1.2rem;font-family:var(--f-mono);font-size:clamp(.5rem,1.25vw,.78rem);letter-spacing:.12em;line-height:1.5;overflow-x:auto;white-space:pre;position:relative;border-top:1px solid rgba(43,27,18,.25);padding-top:.7rem}
+.traits{list-style:none;margin:0;padding:0;display:grid;gap:1.2rem}
+.traits li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1rem;align-items:baseline;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
+.traits b{font-family:var(--f-px);font-weight:400;color:var(--orange);font-size:1.25rem}
+.traits p{margin:0;color:var(--paper)}
+.traits strong{color:var(--paper-2);font-weight:650}
+
+/* modelblad */
+.sheet{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{position:relative;border:1px solid var(--line);border-radius:10px;padding:12px 12px 10px;background:linear-gradient(180deg,rgba(247,240,227,.035),rgba(247,240,227,0));display:grid;gap:6px}
+.card .fr{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.card .pose{all:unset;position:relative;display:block;width:72%;margin:4px auto 0;aspect-ratio:256/312;cursor:pointer}
+.card .pose:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:8px}
+.card .pose .bb-spr{filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+.card .pose.bounce .bb-spr{animation:bounce .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bounce{0%{transform:none}30%{transform:translateY(-14%) scale(.94,1.08)}60%{transform:translateY(0) scale(1.1,.9)}100%{transform:none}}
+.card h3{margin:0;font-size:1.05rem;font-weight:650;letter-spacing:-.01em}
+.card .dl{justify-self:start;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid rgba(247,240,227,.3);border-radius:999px;padding:.45em .8em;cursor:pointer;color:var(--paper)}
+.card .dl:hover{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.sheet-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.btn{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:.8em 1.3em;cursor:pointer;border:1px solid var(--orange);background:var(--orange);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:.5em}
+.btn.ghost{background:none;color:var(--paper-2);border-color:rgba(247,240,227,.4)}
+.btn:hover{background:var(--paper-2);border-color:var(--paper-2);color:var(--ink)}
+.note{font-size:.85rem;color:var(--dim);margin:0}
+@media (max-width:900px){.sheet{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.sheet{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* waar */
+.find{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.place{display:grid;gap:.6rem;align-content:start;text-decoration:none;color:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:clamp(18px,2.6vw,30px);background:linear-gradient(150deg,rgba(255,77,0,.1),rgba(255,77,0,0) 60%);transition:border-color .2s,transform .2s}
+.place:hover{border-color:var(--orange);transform:translateY(-2px)}
+.place h3{margin:0;font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.03em;font-weight:720}
+.place p{margin:0;color:var(--paper);max-width:30rem}
+.place .go{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-top:.4rem}
+footer .wrap{padding-block:28px 48px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+footer p{margin:0;font-size:.85rem;color:var(--dim);max-width:44rem}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);z-index:50;background:var(--paper-2);color:var(--ink);border-radius:12px;padding:.7rem 1.1rem;font-size:.92rem;opacity:0;pointer-events:none;transition:.3s;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .stage{max-width:none}
+  .pass-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){.find{grid-template-columns:minmax(0,1fr)}.pp-fields{grid-template-columns:minmax(0,1fr)}.bubble{right:calc(4% + 132px);width:auto;left:0}.hero-bb{right:4%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top" id="top"><svg viewBox="19.13 50.69 97.68 92.41" aria-hidden="true"><rect fill="#FF4D00" x="19.13" y="50.69" width="97.68" height="92.41"/><g><path fill="#192d1b" d="M86.81,80.85c-.58-.37-1.25-.19-1.29-.24-.04-.05.13.56.11.35-.15-1.14-1.07-2.15-2.3-1.76-1.71.54-.66,2.15-.99,2.59-.02.03-.49-.37-.68-.44-1.49-.56-3.16.41-3.74,1.89-.14.35.04.44-.02.62-.03.11-.23.07-.42.21-1.31.94-.72,2.77.04,3.94.2.31,1.3,1.3,1.33,1.39.03.09-.11.28-.07.5.03.17.4,1.05.28,1.12-.1.06-1.45-1.35-1.65-1.52-.93-.79-1.97-1.54-3.1-2,2.89-3.92,3.73-9.3,1.55-13.78-1.08-2.22-3.89-4.55-6.26-5.25-5.93-1.76-12.36,1.01-15.46,6.28-1.22,2.08-2.62,5.96.53,7.04.13.04.64.18.69.21,0,.22.08.59.2,1,.31,1.02.82,2.11,1.45,2.97.05.06.29.32.29.34,0,.07-.07.1-.28.16-4.85,1.36-13.01,7.41-6.63,12.38.22.17,1.31.77,1.34.84.07.14.07.76.22.98-1.23,1.05-.72,3.16.58,3.96,1.11.68,3.58.71,4.79.29.06-.02.4-.21.42,0-.51,1.15-.78,2.27-1.05,3.5-.15.66-.72,4.09-.82,4.24-.02.03-.49.12-.6.16-1,.44-1.63,1.18-1.49,2.34.1.78.33.99.02.98-.59.08-1.12,0-1.78.16-1.52.34-3.14,1.8-3.38,3.38-.07.46.07,1.13.03,1.47-.03.28-.4.84-.42,1.33-.06,1.81,2.01,2.84,3.52,3.2,2.73.64,5.59.17,8-1.21.17-.1.83-.68.94-.71.25-.05.63.01.98-.07,1.54-.38,2.82-1.46,2.64-3.18-.02-.2-.31-.5-.31-.53,0-.12.28-.21.26-.5s-.1-1.11-.31-2.12c-.12-.56-.53-.94-.53-.99,0-.04.37-.49.41-.61.26-.86,0-1.73-.73-2.24-.3-.2-.7-.19-.68-.52.06-.82.77-2.89,1.11-3.71.39-.96.93-2.01,1.37-2.94l3.67-.08c.91.77,2.1,2.02,2.6,3.12.21.47.85,2.63.61,2.98-.03.05-.85.33-1.08.48-.54.35-.91,1.18-.82,1.82.03.45.43.77.42.81-.01.07-.63.86-.79,1.1-.7,1.08-.39,2.29-.34,2.35.08.08.17.22.16.38-.02.32-.37.85-.32,1.49.14,1.68,2.8,2.45,4.18,2.36.3-.02.49-.25.74-.22.24.03,1.12.57,1.44.68,2.93,1.04,7.92,1.33,10.09-1.33.93-1.13.42-1.39.26-2.54-.05-.38.1-.99.03-1.48-.35-2.53-2.97-3.79-5.32-3.44-.25.04-1.34.49-1.39.44-.05-.05.32-.65.34-.81.07-.62-.09-1.12-.54-1.55-.17-.16-.77-.45-.79-.5-.07-.16.2-1.56.21-1.86.12-3.78-1.7-5.69-3.7-8.54.7-.82,1.03-1.87,1.15-2.95.03-.26-.05-1.62,0-1.69.06-.07,1.34.71,1.46.76,1.72.72,3.66,1.09,5.37.18,2.01-1.06,3.07-4.68,2.68-6.8.38-.29.74-.88.76-1.35,0-.23-.19-.66-.18-.84,0-.07.55-.98.63-1.28.17-.58.11-1.18.22-1.68.28-1.32,1.8-4.48.15-5.55ZM57.36,96.09s-.57-.16-.82-.24c-.08-.03-.15-.09-.18-.17-.11-.23-.33-.72-.33-.76,0-.12.85-.59,1.21-.79.07-.04.16.01.16.09,0,.48,0,1.81-.04,1.87Z"/><g><g><path fill="#FF4D00" d="M62.81,117c.07-.02.14,0,.17.07.11.24.28.5.39.84.65,2.71-1.01,2.92-2.85,3.74-.31.14-.67.56-.96.72-2.22,1.23-5.13,1.65-7.61.95-5.36-1.53-1.57-8.87,3.84-5.47.25.16,1.41,1.24,1.51,1.22.48-.14-.92-1.31-1.4-1.82-.05-.05,0-.14.08-.11,1.7.6,3.46.85,5.25.42.22-.05,1.25-.42,1.6-.55Z"/><path fill="#FF4D00" d="M63.62,120.8c.23.58-.64,1.52-1.13,1.79-.15.08-1.17.52-1.24.42-.01-.02.17-.36.01-.44-.26-.13-1.05.72-1.3.89-1.58,1.06-3.56,1.76-5.49,1.78-1.51.02-5.41-.55-5.52-2.53-.06-1.04.43-.06.8.23,2.33,1.86,6.81,1.69,9.38.38.46-.24,1.16-.89,1.5-1.05,1.04-.47,1.57-.38,2.57-1.2.03-.03.32-.52.42-.26Z"/><path fill="#FF4D00" d="M72.44,122.45c-1.11-.06-2.86-.85-2.7-2.19.06-.5.73.3.99.44,1.12.6,1.95.44,3.03.74.24.07.98.55,1.35.69,2.79,1.04,6.95,1.27,9.39-.69.12-.09.67-.84.72-.81.52.37-.68,1.62-1.01,1.84-2.9,1.95-7.21,1.21-10.17-.21-.4-.19-1.07-.64-.95-.15.04.16-.08.31-.24.32-.14.01-.28.03-.41.02Z"/><path fill="#192d1b" d="M71.22,71.4c7.6,3.09,5.04,17.94-3.95,17.16-4.6-.4-6.81-5.26-6.49-9.4.39-5.07,5.1-9.93,10.45-7.76ZM66.65,75.87c-3.62-1.55-4.44,7.14-1,7.22,3.08.07,3.27-6.25,1-7.22ZM72.93,76.3c-2.86-1.52-4.03,4.86-2.06,6.29,3.16,2.3,4.41-5.04,2.06-6.29Z"/><path fill="#fbebbb" d="M66.65,75.87c2.27.97,2.08,7.28-1,7.22-3.44-.08-2.61-8.76,1-7.22ZM65.32,78.25c-1.93-.87-1.95,3.3-.57,3.36,1.48.06,1.37-3,.57-3.36Z"/><path fill="#fbebbb" d="M72.93,76.3c2.36,1.26,1.11,8.59-2.06,6.29-1.98-1.43-.8-7.81,2.06-6.29ZM71.6,78.59c-1.79-1-2.01,3.45-.27,3.1.96-.2,1.08-2.64.27-3.1Z"/><path fill="#192d1b" d="M65.32,78.25c.8.36.91,3.42-.57,3.36-1.38-.06-1.35-4.23.57-3.36Z"/><path fill="#192d1b" d="M71.6,78.59c.81.45.69,2.9-.27,3.1-1.74.36-1.53-4.1.27-3.1Z"/></g></g><path fill="#FF4D00" d="M68.18,68.92c9.49,1.81,10.68,14.25,3.42,19.81-.05.04-.59.37-.46.49.21.19,1.47-.44,1.7-.59.32-.2.62-.46.66-.46.72-.1,2.46,1.17,3.05,1.64.2.16,1.87,1.67,1.91,1.8.12.4-.92,1.88-.12,1.7.17-.04,1-1.71,1.3-1.9,1.43,1.06,3.29,1.22,4.92.57,0,1.73-.4,3.72-1.59,5.03-1.45,1.6-3.59,1.21-5.41.49-.22-.09-1.77-.93-1.83-1.05-.14-.28-.13-1.21-.21-1.57-.12-.54-1.06-3.87-1.63-4.02-.32-.08-.31.03-.27.33.1.68.77,2.02.95,2.83.43,1.9.93,6.33-.78,7.65-2.19,1.7-6.78,1.79-9.42,1.45-.51-.07-4.29-.88-4.44-1.15-.04-.07.2-1.35.18-1.68-.06-1.02-.8-2.29-1.54-2.96-.05-.05-.54-.3-.56-.33-.04-.1.11-1.76.1-2.09,0-.32-.21-1.01-.19-1.27,0-.1,1.23-1.13,1.32-1.38.15-.26.65-1.07.03-.92-.08.02-.98,1.04-1.15,1.19-.27.23-.66.57-.97.78-.17.11-1.45.86-1.54.87-.23.02-1.32-1.34-2.02-1.14-.1.03-.15.17-.12.27.03.12,1.47,1.26,1.7,1.57.74,1.01.82,2.04.08,3.09-2.36,3.31-7.06-1-6.35-4.23.56-2.53,6.61-6.71,9.14-6.6.61.03,1.73.86,2.4,1.13.49.2,1.89.4,1.18-.17-.29-.23-1.27-.56-1.68-.8-3.96-2.34-4.5-6.36-3.15-10.56.08-.24.96-1.74.12-1.42-.61.24-1.44,2.56-1.56,3.87-.06.7-.03,1.9-.09,1.98-.15.18-1.15-.38-1.31-.64-1.48-2.32,1.14-6.12,2.76-7.81,2.93-3.05,7.23-4.62,11.48-3.81ZM71.22,71.4c-5.34-2.17-10.06,2.69-10.45,7.76-.32,4.14,1.9,9,6.49,9.4,8.99.78,11.55-14.07,3.95-17.16Z"/><path fill="#fbebbb" d="M53.67,99.79c1.52-.3,2.84-1.73,2.82-3.33,1.04.41.85,1.61.43,2.45-.11.22-.87.98-.37.98.37,0,.96-.9,1.11-1.25.14-.31.24-.72.25-.74.13-.18.88.86.94.97,1.1,2.14-.08,5.38-2.67,5.6-.8.07-.32-.12-.27-.41.08-.43-.39-.07-.64.13-.07.06-.16.11-.25.13-1.53.45-3.31-.73-3.01-2.45.03-.18.2-.38.29-.26.01.02.24,1.27.71,1.42,1.01.37.22-.36.07-.8-.05-.14-.3-.92-.21-1,.06-.06,1.34.14,1.62-.26.05-.07.09-.17,0-.22-.22-.05-.86,0-1.14,0-.57-.01-1.36-.81-.74-.86.3-.02,1.01-.09,1.06-.1Z"/><path fill="#FF4D00" d="M55.88,113.43c.23.26-.42.53-.16,1.07.62,1.31,5.3,1.45,6.33.45.3-.29.17-.95.28-.98.32-.09.86.66.89.92.3,3.22-9.23,2.55-8.64-.38.08-.37,1.05-1.38,1.31-1.08Z"/><path fill="#FF4D00" d="M71.71,113.15c.15.17-.37.5.08.94.97.96,4.4.63,5.54-.01.52-.29.33-.4.51-.78.11-.22.6.23.67.37.94,2.05-3.27,2.46-4.45,2.42-1.03-.04-4.33-.73-3.24-2.33.17-.25.82-.69.89-.62Z"/><path fill="#FF4D00" d="M77.59,116.21c.07-.03.13.06.08.12-.43.42-1.13,1.17-.88,1.4.11.1,1.16-.95,1.32-1.06,2.03-1.4,5.35-1.81,6.59.81,2.11,4.47-4.87,5.14-7.68,4.57-1.16-.23-2.45-1.09-3.27-1.28-.5-.11-1.2-.06-1.75-.21-1.64-.45-2.34-1.52-1.99-3.21.03-.16.72-1.41.82-1.41.08,0,1.22.48,1.5.55,1.76.44,3.58.37,5.27-.29Z"/><path fill="#fbebbb" d="M84.47,80.14c.66.66.27,1.51.09,2.4-.04.22-.57,1.97-.66,2.03-.04.03-.86-.36-.85.09,0,.09,1.43.58,1.57.93.56.08-.13-.62-.14-.7,0-.09.58-1.35.65-1.59.15-.51.14-1.9.75-1.96,1.15-.11.89,2.09.78,2.73-.13.78-.62,1.57-.75,2.24-.41,2.06-.26,3.03-2.55,3.78-.04.01-.95.07-.39.37.56.29,1.74-.13,2.2-.55.19.14-.11.75-.22.91-.82,1.25-4.47.94-5.21-.36-.64-1.12.25-.42.72-.37.21.02.96.06,1.07-.13.21-.34-.55-.29-.73-.35-1.61-.52-3.27-2.07-3.31-3.86-.02-.79.59-1.23,1.31-.91.93.42.46,2.02.54,2.1.23.25.45-.36.48-.38.17-.13,1.37.48,1.58.67.17.15,1.09,1.61.7.22-.1-.35-1.23-1.24-2.04-1.44-.2-.05-.18-.39-.2-.58-.05-.32-.07-.61.16-.7.46-.18.91-.75.92-.77.15-.3.55-.86-.02-.62-.17.07-.54.71-1,.8-2.06.43-1.29-1.71.23-2.15.82-.23,2.29.31,2.25,1.25,0,.19-.33.82-.02.92.65.22.76-1.32.78-1.73.06-1.08-.19-1.09.03-2.05.12-.55.9-.66,1.31-.26Z"/><path fill="#192d1b" d="M70.41,95.1c.14-.96-.59-1.48-1.59-1.83l.33-1.31-.79-.2-.32,1.27c-.21-.05-.42-.1-.64-.15l.32-1.28-.79-.2-.33,1.31c-.17-.04-.34-.08-.51-.12h0s-1.1-.28-1.1-.28l-.21.85s.59.14.58.14c.32.08.38.29.37.46l-.89,3.58c-.04.1-.14.24-.36.19,0,.01-.58-.14-.58-.14l-.39.91,1.03.26c.19.05.38.1.57.15l-.33,1.32.79.2.33-1.31c.22.06.43.11.63.16l-.32,1.3.79.2.33-1.32c1.36.26,2.37.15,2.8-1.07.35-.99-.02-1.56-.73-1.93.52-.12.91-.46,1.01-1.17h0ZM68.59,97.65c-.25.99-1.91.45-2.45.32l.44-1.75c.54.13,2.27.4,2.01,1.43h0ZM68.84,95.09c-.22.9-1.61.44-2.06.33l.4-1.59c.45.11,1.89.32,1.66,1.26Z"/></g></svg><span>Bitboy</span></a>
+  <nav class="acts" aria-label="Menu">
+    <button class="chip snd" id="sndBtn" type="button" aria-pressed="true"><span class="on-t" data-t="sndOn"></span><span class="off-t" data-t="sndOff"></span></button>
+    <button class="chip lang" id="langBtn" type="button"><span data-l="nl">NL</span><i aria-hidden="true">/</i><span data-l="en">EN</span></button>
+    <a class="chip ext" id="toMus" href="../museum/" target="_blank" rel="noopener">Museum ₿ ↗</a>
+    <a class="chip ext" id="toLijn" href="../" target="_blank" rel="noopener">Lijn ₿ ↗</a>
+    <a class="chip buy" id="toBuy" href="../" target="_blank" rel="noopener"><span class="bl" data-t="buy"></span><span class="bs" data-t="buyS"></span></a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="hero-copy">
+    <span class="label" data-t="eyebrow"></span>
+    <h1 data-th="h1"></h1>
+    <p class="lead" data-t="lead"></p>
+    <div class="stage" id="stage">
+      <div class="bubble" id="bubble" aria-live="polite"><span class="who">Bitboy</span><p id="bText"></p></div>
+      <button class="hero-bb" id="heroBB" type="button" data-ta="tap"><span class="bb-sh" aria-hidden="true"></span><span class="bb-spr" id="heroSpr" aria-hidden="true"></span></button>
+      <div class="floor" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="hero-dev">
+    <div class="pk-dev" id="dev">
+      <div class="pk-top"><span class="pk-brand">POCKET ₿</span><span class="pk-model">Bitboy · 21 million series</span></div>
+      <div class="pk-bezel">
+        <div class="pk-lcd" id="lcd" role="img" data-ta="lcdLabel">
+          <span class="lcd-t pk-msg" id="pkMsg">BITBOY</span>
+          <span class="lcd-t pk-lost" id="pkLost"></span>
+          <span class="lcd-t pk-score"><span id="pkScore">00</span><small>/21</small></span>
+          <span class="lcd-t pk-big" id="pkBig"></span>
+          <div class="pk-lanes" id="pkLanes"></div>
+        </div>
+        <div class="pk-hint"><span>LCD · 1 bit</span><span>catch · 21</span></div>
+      </div>
+      <div class="pk-ctrl">
+        <div class="pk-pad"><button class="pk-btn" id="bL" type="button" data-ta="left">◀</button></div>
+        <div class="pk-mid"><button class="pk-start" id="bStart" type="button" data-t="start"></button><span class="pk-grill" aria-hidden="true"></span></div>
+        <div class="pk-pad"><button class="pk-btn" id="bR" type="button" data-ta="right">▶</button></div>
+      </div>
+    </div>
+    <p class="keys" data-t="keys"></p>
+    <p class="best" id="best" aria-live="polite"></p>
+    <section class="hof" id="hof" aria-labelledby="hofT">
+      <div class="hof-h"><span class="label" id="hofT" data-t="hofT"></span><span class="hof-sub" data-t="hofSub"></span></div>
+      <ol class="hof-list" id="hofList"></ol>
+      <p class="hof-note" id="hofNote" aria-live="polite"></p>
+    </section>
+  </div>
+</div></section>
+
+<section class="sec" id="paspoort"><div class="wrap">
+  <span class="label" data-t="ppL"></span>
+  <h2 data-th="ppH"></h2>
+  <div class="pass-grid">
+    <article class="passport" aria-labelledby="ppName">
+      <div class="pp-head"><span data-t="ppState"></span><b>₿-01</b></div>
+      <div class="pp-body">
+        <div class="pp-photo"><svg viewBox="19.13 50.69 97.68 92.41" role="img" data-ta="photo"><rect fill="#FF4D00" x="19.13" y="50.69" width="97.68" height="92.41"/><g><path fill="#192d1b" d="M86.81,80.85c-.58-.37-1.25-.19-1.29-.24-.04-.05.13.56.11.35-.15-1.14-1.07-2.15-2.3-1.76-1.71.54-.66,2.15-.99,2.59-.02.03-.49-.37-.68-.44-1.49-.56-3.16.41-3.74,1.89-.14.35.04.44-.02.62-.03.11-.23.07-.42.21-1.31.94-.72,2.77.04,3.94.2.31,1.3,1.3,1.33,1.39.03.09-.11.28-.07.5.03.17.4,1.05.28,1.12-.1.06-1.45-1.35-1.65-1.52-.93-.79-1.97-1.54-3.1-2,2.89-3.92,3.73-9.3,1.55-13.78-1.08-2.22-3.89-4.55-6.26-5.25-5.93-1.76-12.36,1.01-15.46,6.28-1.22,2.08-2.62,5.96.53,7.04.13.04.64.18.69.21,0,.22.08.59.2,1,.31,1.02.82,2.11,1.45,2.97.05.06.29.32.29.34,0,.07-.07.1-.28.16-4.85,1.36-13.01,7.41-6.63,12.38.22.17,1.31.77,1.34.84.07.14.07.76.22.98-1.23,1.05-.72,3.16.58,3.96,1.11.68,3.58.71,4.79.29.06-.02.4-.21.42,0-.51,1.15-.78,2.27-1.05,3.5-.15.66-.72,4.09-.82,4.24-.02.03-.49.12-.6.16-1,.44-1.63,1.18-1.49,2.34.1.78.33.99.02.98-.59.08-1.12,0-1.78.16-1.52.34-3.14,1.8-3.38,3.38-.07.46.07,1.13.03,1.47-.03.28-.4.84-.42,1.33-.06,1.81,2.01,2.84,3.52,3.2,2.73.64,5.59.17,8-1.21.17-.1.83-.68.94-.71.25-.05.63.01.98-.07,1.54-.38,2.82-1.46,2.64-3.18-.02-.2-.31-.5-.31-.53,0-.12.28-.21.26-.5s-.1-1.11-.31-2.12c-.12-.56-.53-.94-.53-.99,0-.04.37-.49.41-.61.26-.86,0-1.73-.73-2.24-.3-.2-.7-.19-.68-.52.06-.82.77-2.89,1.11-3.71.39-.96.93-2.01,1.37-2.94l3.67-.08c.91.77,2.1,2.02,2.6,3.12.21.47.85,2.63.61,2.98-.03.05-.85.33-1.08.48-.54.35-.91,1.18-.82,1.82.03.45.43.77.42.81-.01.07-.63.86-.79,1.1-.7,1.08-.39,2.29-.34,2.35.08.08.17.22.16.38-.02.32-.37.85-.32,1.49.14,1.68,2.8,2.45,4.18,2.36.3-.02.49-.25.74-.22.24.03,1.12.57,1.44.68,2.93,1.04,7.92,1.33,10.09-1.33.93-1.13.42-1.39.26-2.54-.05-.38.1-.99.03-1.48-.35-2.53-2.97-3.79-5.32-3.44-.25.04-1.34.49-1.39.44-.05-.05.32-.65.34-.81.07-.62-.09-1.12-.54-1.55-.17-.16-.77-.45-.79-.5-.07-.16.2-1.56.21-1.86.12-3.78-1.7-5.69-3.7-8.54.7-.82,1.03-1.87,1.15-2.95.03-.26-.05-1.62,0-1.69.06-.07,1.34.71,1.46.76,1.72.72,3.66,1.09,5.37.18,2.01-1.06,3.07-4.68,2.68-6.8.38-.29.74-.88.76-1.35,0-.23-.19-.66-.18-.84,0-.07.55-.98.63-1.28.17-.58.11-1.18.22-1.68.28-1.32,1.8-4.48.15-5.55ZM57.36,96.09s-.57-.16-.82-.24c-.08-.03-.15-.09-.18-.17-.11-.23-.33-.72-.33-.76,0-.12.85-.59,1.21-.79.07-.04.16.01.16.09,0,.48,0,1.81-.04,1.87Z"/><g><g><path fill="#FF4D00" d="M62.81,117c.07-.02.14,0,.17.07.11.24.28.5.39.84.65,2.71-1.01,2.92-2.85,3.74-.31.14-.67.56-.96.72-2.22,1.23-5.13,1.65-7.61.95-5.36-1.53-1.57-8.87,3.84-5.47.25.16,1.41,1.24,1.51,1.22.48-.14-.92-1.31-1.4-1.82-.05-.05,0-.14.08-.11,1.7.6,3.46.85,5.25.42.22-.05,1.25-.42,1.6-.55Z"/><path fill="#FF4D00" d="M63.62,120.8c.23.58-.64,1.52-1.13,1.79-.15.08-1.17.52-1.24.42-.01-.02.17-.36.01-.44-.26-.13-1.05.72-1.3.89-1.58,1.06-3.56,1.76-5.49,1.78-1.51.02-5.41-.55-5.52-2.53-.06-1.04.43-.06.8.23,2.33,1.86,6.81,1.69,9.38.38.46-.24,1.16-.89,1.5-1.05,1.04-.47,1.57-.38,2.57-1.2.03-.03.32-.52.42-.26Z"/><path fill="#FF4D00" d="M72.44,122.45c-1.11-.06-2.86-.85-2.7-2.19.06-.5.73.3.99.44,1.12.6,1.95.44,3.03.74.24.07.98.55,1.35.69,2.79,1.04,6.95,1.27,9.39-.69.12-.09.67-.84.72-.81.52.37-.68,1.62-1.01,1.84-2.9,1.95-7.21,1.21-10.17-.21-.4-.19-1.07-.64-.95-.15.04.16-.08.31-.24.32-.14.01-.28.03-.41.02Z"/><path fill="#192d1b" d="M71.22,71.4c7.6,3.09,5.04,17.94-3.95,17.16-4.6-.4-6.81-5.26-6.49-9.4.39-5.07,5.1-9.93,10.45-7.76ZM66.65,75.87c-3.62-1.55-4.44,7.14-1,7.22,3.08.07,3.27-6.25,1-7.22ZM72.93,76.3c-2.86-1.52-4.03,4.86-2.06,6.29,3.16,2.3,4.41-5.04,2.06-6.29Z"/><path fill="#fbebbb" d="M66.65,75.87c2.27.97,2.08,7.28-1,7.22-3.44-.08-2.61-8.76,1-7.22ZM65.32,78.25c-1.93-.87-1.95,3.3-.57,3.36,1.48.06,1.37-3,.57-3.36Z"/><path fill="#fbebbb" d="M72.93,76.3c2.36,1.26,1.11,8.59-2.06,6.29-1.98-1.43-.8-7.81,2.06-6.29ZM71.6,78.59c-1.79-1-2.01,3.45-.27,3.1.96-.2,1.08-2.64.27-3.1Z"/><path fill="#192d1b" d="M65.32,78.25c.8.36.91,3.42-.57,3.36-1.38-.06-1.35-4.23.57-3.36Z"/><path fill="#192d1b" d="M71.6,78.59c.81.45.69,2.9-.27,3.1-1.74.36-1.53-4.1.27-3.1Z"/></g></g><path fill="#FF4D00" d="M68.18,68.92c9.49,1.81,10.68,14.25,3.42,19.81-.05.04-.59.37-.46.49.21.19,1.47-.44,1.7-.59.32-.2.62-.46.66-.46.72-.1,2.46,1.17,3.05,1.64.2.16,1.87,1.67,1.91,1.8.12.4-.92,1.88-.12,1.7.17-.04,1-1.71,1.3-1.9,1.43,1.06,3.29,1.22,4.92.57,0,1.73-.4,3.72-1.59,5.03-1.45,1.6-3.59,1.21-5.41.49-.22-.09-1.77-.93-1.83-1.05-.14-.28-.13-1.21-.21-1.57-.12-.54-1.06-3.87-1.63-4.02-.32-.08-.31.03-.27.33.1.68.77,2.02.95,2.83.43,1.9.93,6.33-.78,7.65-2.19,1.7-6.78,1.79-9.42,1.45-.51-.07-4.29-.88-4.44-1.15-.04-.07.2-1.35.18-1.68-.06-1.02-.8-2.29-1.54-2.96-.05-.05-.54-.3-.56-.33-.04-.1.11-1.76.1-2.09,0-.32-.21-1.01-.19-1.27,0-.1,1.23-1.13,1.32-1.38.15-.26.65-1.07.03-.92-.08.02-.98,1.04-1.15,1.19-.27.23-.66.57-.97.78-.17.11-1.45.86-1.54.87-.23.02-1.32-1.34-2.02-1.14-.1.03-.15.17-.12.27.03.12,1.47,1.26,1.7,1.57.74,1.01.82,2.04.08,3.09-2.36,3.31-7.06-1-6.35-4.23.56-2.53,6.61-6.71,9.14-6.6.61.03,1.73.86,2.4,1.13.49.2,1.89.4,1.18-.17-.29-.23-1.27-.56-1.68-.8-3.96-2.34-4.5-6.36-3.15-10.56.08-.24.96-1.74.12-1.42-.61.24-1.44,2.56-1.56,3.87-.06.7-.03,1.9-.09,1.98-.15.18-1.15-.38-1.31-.64-1.48-2.32,1.14-6.12,2.76-7.81,2.93-3.05,7.23-4.62,11.48-3.81ZM71.22,71.4c-5.34-2.17-10.06,2.69-10.45,7.76-.32,4.14,1.9,9,6.49,9.4,8.99.78,11.55-14.07,3.95-17.16Z"/><path fill="#fbebbb" d="M53.67,99.79c1.52-.3,2.84-1.73,2.82-3.33,1.04.41.85,1.61.43,2.45-.11.22-.87.98-.37.98.37,0,.96-.9,1.11-1.25.14-.31.24-.72.25-.74.13-.18.88.86.94.97,1.1,2.14-.08,5.38-2.67,5.6-.8.07-.32-.12-.27-.41.08-.43-.39-.07-.64.13-.07.06-.16.11-.25.13-1.53.45-3.31-.73-3.01-2.45.03-.18.2-.38.29-.26.01.02.24,1.27.71,1.42,1.01.37.22-.36.07-.8-.05-.14-.3-.92-.21-1,.06-.06,1.34.14,1.62-.26.05-.07.09-.17,0-.22-.22-.05-.86,0-1.14,0-.57-.01-1.36-.81-.74-.86.3-.02,1.01-.09,1.06-.1Z"/><path fill="#FF4D00" d="M55.88,113.43c.23.26-.42.53-.16,1.07.62,1.31,5.3,1.45,6.33.45.3-.29.17-.95.28-.98.32-.09.86.66.89.92.3,3.22-9.23,2.55-8.64-.38.08-.37,1.05-1.38,1.31-1.08Z"/><path fill="#FF4D00" d="M71.71,113.15c.15.17-.37.5.08.94.97.96,4.4.63,5.54-.01.52-.29.33-.4.51-.78.11-.22.6.23.67.37.94,2.05-3.27,2.46-4.45,2.42-1.03-.04-4.33-.73-3.24-2.33.17-.25.82-.69.89-.62Z"/><path fill="#FF4D00" d="M77.59,116.21c.07-.03.13.06.08.12-.43.42-1.13,1.17-.88,1.4.11.1,1.16-.95,1.32-1.06,2.03-1.4,5.35-1.81,6.59.81,2.11,4.47-4.87,5.14-7.68,4.57-1.16-.23-2.45-1.09-3.27-1.28-.5-.11-1.2-.06-1.75-.21-1.64-.45-2.34-1.52-1.99-3.21.03-.16.72-1.41.82-1.41.08,0,1.22.48,1.5.55,1.76.44,3.58.37,5.27-.29Z"/><path fill="#fbebbb" d="M84.47,80.14c.66.66.27,1.51.09,2.4-.04.22-.57,1.97-.66,2.03-.04.03-.86-.36-.85.09,0,.09,1.43.58,1.57.93.56.08-.13-.62-.14-.7,0-.09.58-1.35.65-1.59.15-.51.14-1.9.75-1.96,1.15-.11.89,2.09.78,2.73-.13.78-.62,1.57-.75,2.24-.41,2.06-.26,3.03-2.55,3.78-.04.01-.95.07-.39.37.56.29,1.74-.13,2.2-.55.19.14-.11.75-.22.91-.82,1.25-4.47.94-5.21-.36-.64-1.12.25-.42.72-.37.21.02.96.06,1.07-.13.21-.34-.55-.29-.73-.35-1.61-.52-3.27-2.07-3.31-3.86-.02-.79.59-1.23,1.31-.91.93.42.46,2.02.54,2.1.23.25.45-.36.48-.38.17-.13,1.37.48,1.58.67.17.15,1.09,1.61.7.22-.1-.35-1.23-1.24-2.04-1.44-.2-.05-.18-.39-.2-.58-.05-.32-.07-.61.16-.7.46-.18.91-.75.92-.77.15-.3.55-.86-.02-.62-.17.07-.54.71-1,.8-2.06.43-1.29-1.71.23-2.15.82-.23,2.29.31,2.25,1.25,0,.19-.33.82-.02.92.65.22.76-1.32.78-1.73.06-1.08-.19-1.09.03-2.05.12-.55.9-.66,1.31-.26Z"/><path fill="#192d1b" d="M70.41,95.1c.14-.96-.59-1.48-1.59-1.83l.33-1.31-.79-.2-.32,1.27c-.21-.05-.42-.1-.64-.15l.32-1.28-.79-.2-.33,1.31c-.17-.04-.34-.08-.51-.12h0s-1.1-.28-1.1-.28l-.21.85s.59.14.58.14c.32.08.38.29.37.46l-.89,3.58c-.04.1-.14.24-.36.19,0,.01-.58-.14-.58-.14l-.39.91,1.03.26c.19.05.38.1.57.15l-.33,1.32.79.2.33-1.31c.22.06.43.11.63.16l-.32,1.3.79.2.33-1.32c1.36.26,2.37.15,2.8-1.07.35-.99-.02-1.56-.73-1.93.52-.12.91-.46,1.01-1.17h0ZM68.59,97.65c-.25.99-1.91.45-2.45.32l.44-1.75c.54.13,2.27.4,2.01,1.43h0ZM68.84,95.09c-.22.9-1.61.44-2.06.33l.4-1.59c.45.11,1.89.32,1.66,1.26Z"/></g></svg><span class="pp-stamp" aria-hidden="true">21/21<br>MAX</span></div>
+        <dl class="pp-fields" id="ppFields"></dl>
+      </div>
+      <div class="pp-mrz" aria-hidden="true">P&lt;B21BITBOY&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+000000021&lt;B210901036&lt;2140&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;21</div>
+    </article>
+    <ul class="traits" id="traits"></ul>
+  </div>
+</div></section>
+
+<section class="sec" id="houdingen"><div class="wrap">
+  <span class="label" data-t="shL"></span>
+  <h2 data-th="shH"></h2>
+  <p class="intro" data-t="shP"></p>
+  <div class="sheet" id="sheet"></div>
+  <div class="sheet-acts" id="sheetActs" hidden>
+    <button class="btn" type="button" id="dlSheet" data-t="dlSheet"></button>
+    <button class="btn ghost" type="button" id="dlAvatar" data-t="dlAvatar"></button>
+    <p class="note" data-t="dlNote"></p>
+  </div>
+</div></section>
+
+<section class="sec" id="waar"><div class="wrap">
+  <span class="label" data-t="fL"></span>
+  <h2 data-th="fH"></h2>
+  <div class="find">
+    <a class="place" id="plMus" href="../museum/" target="_blank" rel="noopener"><span class="label" data-t="f1L"></span><h3>Museum ₿</h3><p data-t="f1P"></p><span class="go" data-t="f1G"></span></a>
+    <a class="place" id="plLijn" href="../" target="_blank" rel="noopener"><span class="label" data-t="f2L"></span><h3>Lijn ₿</h3><p data-t="f2P"></p><span class="go" data-t="f2G"></span></a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><p data-t="foot"></p><p class="label">Bitboy · ₿-01</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>/* static-hosting shim: downloads fallback, no db/user */
+if(!window.claude){window.claude={use:async function(n){if(n!=="downloads")return null;return{save:async function(o){var u=URL.createObjectURL(o.data),a=document.createElement("a");a.href=u;a.download=o.filename||"download";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);}};}};}
+</script><script>
+(function(){
+"use strict";
+const IMG_BB="img/ec4423900fdd.webp", IMG_BBL="img/d400207fb873.webp", SVG_BODY=`<g><path fill="#192d1b" d="M86.81,80.85c-.58-.37-1.25-.19-1.29-.24-.04-.05.13.56.11.35-.15-1.14-1.07-2.15-2.3-1.76-1.71.54-.66,2.15-.99,2.59-.02.03-.49-.37-.68-.44-1.49-.56-3.16.41-3.74,1.89-.14.35.04.44-.02.62-.03.11-.23.07-.42.21-1.31.94-.72,2.77.04,3.94.2.31,1.3,1.3,1.33,1.39.03.09-.11.28-.07.5.03.17.4,1.05.28,1.12-.1.06-1.45-1.35-1.65-1.52-.93-.79-1.97-1.54-3.1-2,2.89-3.92,3.73-9.3,1.55-13.78-1.08-2.22-3.89-4.55-6.26-5.25-5.93-1.76-12.36,1.01-15.46,6.28-1.22,2.08-2.62,5.96.53,7.04.13.04.64.18.69.21,0,.22.08.59.2,1,.31,1.02.82,2.11,1.45,2.97.05.06.29.32.29.34,0,.07-.07.1-.28.16-4.85,1.36-13.01,7.41-6.63,12.38.22.17,1.31.77,1.34.84.07.14.07.76.22.98-1.23,1.05-.72,3.16.58,3.96,1.11.68,3.58.71,4.79.29.06-.02.4-.21.42,0-.51,1.15-.78,2.27-1.05,3.5-.15.66-.72,4.09-.82,4.24-.02.03-.49.12-.6.16-1,.44-1.63,1.18-1.49,2.34.1.78.33.99.02.98-.59.08-1.12,0-1.78.16-1.52.34-3.14,1.8-3.38,3.38-.07.46.07,1.13.03,1.47-.03.28-.4.84-.42,1.33-.06,1.81,2.01,2.84,3.52,3.2,2.73.64,5.59.17,8-1.21.17-.1.83-.68.94-.71.25-.05.63.01.98-.07,1.54-.38,2.82-1.46,2.64-3.18-.02-.2-.31-.5-.31-.53,0-.12.28-.21.26-.5s-.1-1.11-.31-2.12c-.12-.56-.53-.94-.53-.99,0-.04.37-.49.41-.61.26-.86,0-1.73-.73-2.24-.3-.2-.7-.19-.68-.52.06-.82.77-2.89,1.11-3.71.39-.96.93-2.01,1.37-2.94l3.67-.08c.91.77,2.1,2.02,2.6,3.12.21.47.85,2.63.61,2.98-.03.05-.85.33-1.08.48-.54.35-.91,1.18-.82,1.82.03.45.43.77.42.81-.01.07-.63.86-.79,1.1-.7,1.08-.39,2.29-.34,2.35.08.08.17.22.16.38-.02.32-.37.85-.32,1.49.14,1.68,2.8,2.45,4.18,2.36.3-.02.49-.25.74-.22.24.03,1.12.57,1.44.68,2.93,1.04,7.92,1.33,10.09-1.33.93-1.13.42-1.39.26-2.54-.05-.38.1-.99.03-1.48-.35-2.53-2.97-3.79-5.32-3.44-.25.04-1.34.49-1.39.44-.05-.05.32-.65.34-.81.07-.62-.09-1.12-.54-1.55-.17-.16-.77-.45-.79-.5-.07-.16.2-1.56.21-1.86.12-3.78-1.7-5.69-3.7-8.54.7-.82,1.03-1.87,1.15-2.95.03-.26-.05-1.62,0-1.69.06-.07,1.34.71,1.46.76,1.72.72,3.66,1.09,5.37.18,2.01-1.06,3.07-4.68,2.68-6.8.38-.29.74-.88.76-1.35,0-.23-.19-.66-.18-.84,0-.07.55-.98.63-1.28.17-.58.11-1.18.22-1.68.28-1.32,1.8-4.48.15-5.55ZM57.36,96.09s-.57-.16-.82-.24c-.08-.03-.15-.09-.18-.17-.11-.23-.33-.72-.33-.76,0-.12.85-.59,1.21-.79.07-.04.16.01.16.09,0,.48,0,1.81-.04,1.87Z"/><g><g><path fill="#FF4D00" d="M62.81,117c.07-.02.14,0,.17.07.11.24.28.5.39.84.65,2.71-1.01,2.92-2.85,3.74-.31.14-.67.56-.96.72-2.22,1.23-5.13,1.65-7.61.95-5.36-1.53-1.57-8.87,3.84-5.47.25.16,1.41,1.24,1.51,1.22.48-.14-.92-1.31-1.4-1.82-.05-.05,0-.14.08-.11,1.7.6,3.46.85,5.25.42.22-.05,1.25-.42,1.6-.55Z"/><path fill="#FF4D00" d="M63.62,120.8c.23.58-.64,1.52-1.13,1.79-.15.08-1.17.52-1.24.42-.01-.02.17-.36.01-.44-.26-.13-1.05.72-1.3.89-1.58,1.06-3.56,1.76-5.49,1.78-1.51.02-5.41-.55-5.52-2.53-.06-1.04.43-.06.8.23,2.33,1.86,6.81,1.69,9.38.38.46-.24,1.16-.89,1.5-1.05,1.04-.47,1.57-.38,2.57-1.2.03-.03.32-.52.42-.26Z"/><path fill="#FF4D00" d="M72.44,122.45c-1.11-.06-2.86-.85-2.7-2.19.06-.5.73.3.99.44,1.12.6,1.95.44,3.03.74.24.07.98.55,1.35.69,2.79,1.04,6.95,1.27,9.39-.69.12-.09.67-.84.72-.81.52.37-.68,1.62-1.01,1.84-2.9,1.95-7.21,1.21-10.17-.21-.4-.19-1.07-.64-.95-.15.04.16-.08.31-.24.32-.14.01-.28.03-.41.02Z"/><path fill="#192d1b" d="M71.22,71.4c7.6,3.09,5.04,17.94-3.95,17.16-4.6-.4-6.81-5.26-6.49-9.4.39-5.07,5.1-9.93,10.45-7.76ZM66.65,75.87c-3.62-1.55-4.44,7.14-1,7.22,3.08.07,3.27-6.25,1-7.22ZM72.93,76.3c-2.86-1.52-4.03,4.86-2.06,6.29,3.16,2.3,4.41-5.04,2.06-6.29Z"/><path fill="#fbebbb" d="M66.65,75.87c2.27.97,2.08,7.28-1,7.22-3.44-.08-2.61-8.76,1-7.22ZM65.32,78.25c-1.93-.87-1.95,3.3-.57,3.36,1.48.06,1.37-3,.57-3.36Z"/><path fill="#fbebbb" d="M72.93,76.3c2.36,1.26,1.11,8.59-2.06,6.29-1.98-1.43-.8-7.81,2.06-6.29ZM71.6,78.59c-1.79-1-2.01,3.45-.27,3.1.96-.2,1.08-2.64.27-3.1Z"/><path fill="#192d1b" d="M65.32,78.25c.8.36.91,3.42-.57,3.36-1.38-.06-1.35-4.23.57-3.36Z"/><path fill="#192d1b" d="M71.6,78.59c.81.45.69,2.9-.27,3.1-1.74.36-1.53-4.1.27-3.1Z"/></g></g><path fill="#FF4D00" d="M68.18,68.92c9.49,1.81,10.68,14.25,3.42,19.81-.05.04-.59.37-.46.49.21.19,1.47-.44,1.7-.59.32-.2.62-.46.66-.46.72-.1,2.46,1.17,3.05,1.64.2.16,1.87,1.67,1.91,1.8.12.4-.92,1.88-.12,1.7.17-.04,1-1.71,1.3-1.9,1.43,1.06,3.29,1.22,4.92.57,0,1.73-.4,3.72-1.59,5.03-1.45,1.6-3.59,1.21-5.41.49-.22-.09-1.77-.93-1.83-1.05-.14-.28-.13-1.21-.21-1.57-.12-.54-1.06-3.87-1.63-4.02-.32-.08-.31.03-.27.33.1.68.77,2.02.95,2.83.43,1.9.93,6.33-.78,7.65-2.19,1.7-6.78,1.79-9.42,1.45-.51-.07-4.29-.88-4.44-1.15-.04-.07.2-1.35.18-1.68-.06-1.02-.8-2.29-1.54-2.96-.05-.05-.54-.3-.56-.33-.04-.1.11-1.76.1-2.09,0-.32-.21-1.01-.19-1.27,0-.1,1.23-1.13,1.32-1.38.15-.26.65-1.07.03-.92-.08.02-.98,1.04-1.15,1.19-.27.23-.66.57-.97.78-.17.11-1.45.86-1.54.87-.23.02-1.32-1.34-2.02-1.14-.1.03-.15.17-.12.27.03.12,1.47,1.26,1.7,1.57.74,1.01.82,2.04.08,3.09-2.36,3.31-7.06-1-6.35-4.23.56-2.53,6.61-6.71,9.14-6.6.61.03,1.73.86,2.4,1.13.49.2,1.89.4,1.18-.17-.29-.23-1.27-.56-1.68-.8-3.96-2.34-4.5-6.36-3.15-10.56.08-.24.96-1.74.12-1.42-.61.24-1.44,2.56-1.56,3.87-.06.7-.03,1.9-.09,1.98-.15.18-1.15-.38-1.31-.64-1.48-2.32,1.14-6.12,2.76-7.81,2.93-3.05,7.23-4.62,11.48-3.81ZM71.22,71.4c-5.34-2.17-10.06,2.69-10.45,7.76-.32,4.14,1.9,9,6.49,9.4,8.99.78,11.55-14.07,3.95-17.16Z"/><path fill="#fbebbb" d="M53.67,99.79c1.52-.3,2.84-1.73,2.82-3.33,1.04.41.85,1.61.43,2.45-.11.22-.87.98-.37.98.37,0,.96-.9,1.11-1.25.14-.31.24-.72.25-.74.13-.18.88.86.94.97,1.1,2.14-.08,5.38-2.67,5.6-.8.07-.32-.12-.27-.41.08-.43-.39-.07-.64.13-.07.06-.16.11-.25.13-1.53.45-3.31-.73-3.01-2.45.03-.18.2-.38.29-.26.01.02.24,1.27.71,1.42,1.01.37.22-.36.07-.8-.05-.14-.3-.92-.21-1,.06-.06,1.34.14,1.62-.26.05-.07.09-.17,0-.22-.22-.05-.86,0-1.14,0-.57-.01-1.36-.81-.74-.86.3-.02,1.01-.09,1.06-.1Z"/><path fill="#FF4D00" d="M55.88,113.43c.23.26-.42.53-.16,1.07.62,1.31,5.3,1.45,6.33.45.3-.29.17-.95.28-.98.32-.09.86.66.89.92.3,3.22-9.23,2.55-8.64-.38.08-.37,1.05-1.38,1.31-1.08Z"/><path fill="#FF4D00" d="M71.71,113.15c.15.17-.37.5.08.94.97.96,4.4.63,5.54-.01.52-.29.33-.4.51-.78.11-.22.6.23.67.37.94,2.05-3.27,2.46-4.45,2.42-1.03-.04-4.33-.73-3.24-2.33.17-.25.82-.69.89-.62Z"/><path fill="#FF4D00" d="M77.59,116.21c.07-.03.13.06.08.12-.43.42-1.13,1.17-.88,1.4.11.1,1.16-.95,1.32-1.06,2.03-1.4,5.35-1.81,6.59.81,2.11,4.47-4.87,5.14-7.68,4.57-1.16-.23-2.45-1.09-3.27-1.28-.5-.11-1.2-.06-1.75-.21-1.64-.45-2.34-1.52-1.99-3.21.03-.16.72-1.41.82-1.41.08,0,1.22.48,1.5.55,1.76.44,3.58.37,5.27-.29Z"/><path fill="#fbebbb" d="M84.47,80.14c.66.66.27,1.51.09,2.4-.04.22-.57,1.97-.66,2.03-.04.03-.86-.36-.85.09,0,.09,1.43.58,1.57.93.56.08-.13-.62-.14-.7,0-.09.58-1.35.65-1.59.15-.51.14-1.9.75-1.96,1.15-.11.89,2.09.78,2.73-.13.78-.62,1.57-.75,2.24-.41,2.06-.26,3.03-2.55,3.78-.04.01-.95.07-.39.37.56.29,1.74-.13,2.2-.55.19.14-.11.75-.22.91-.82,1.25-4.47.94-5.21-.36-.64-1.12.25-.42.72-.37.21.02.96.06,1.07-.13.21-.34-.55-.29-.73-.35-1.61-.52-3.27-2.07-3.31-3.86-.02-.79.59-1.23,1.31-.91.93.42.46,2.02.54,2.1.23.25.45-.36.48-.38.17-.13,1.37.48,1.58.67.17.15,1.09,1.61.7.22-.1-.35-1.23-1.24-2.04-1.44-.2-.05-.18-.39-.2-.58-.05-.32-.07-.61.16-.7.46-.18.91-.75.92-.77.15-.3.55-.86-.02-.62-.17.07-.54.71-1,.8-2.06.43-1.29-1.71.23-2.15.82-.23,2.29.31,2.25,1.25,0,.19-.33.82-.02.92.65.22.76-1.32.78-1.73.06-1.08-.19-1.09.03-2.05.12-.55.9-.66,1.31-.26Z"/><path fill="#192d1b" d="M70.41,95.1c.14-.96-.59-1.48-1.59-1.83l.33-1.31-.79-.2-.32,1.27c-.21-.05-.42-.1-.64-.15l.32-1.28-.79-.2-.33,1.31c-.17-.04-.34-.08-.51-.12h0s-1.1-.28-1.1-.28l-.21.85s.59.14.58.14c.32.08.38.29.37.46l-.89,3.58c-.04.1-.14.24-.36.19,0,.01-.58-.14-.58-.14l-.39.91,1.03.26c.19.05.38.1.57.15l-.33,1.32.79.2.33-1.31c.22.06.43.11.63.16l-.32,1.3.79.2.33-1.32c1.36.26,2.37.15,2.8-1.07.35-.99-.02-1.56-.73-1.93.52-.12.91-.46,1.01-1.17h0ZM68.59,97.65c-.25.99-1.91.45-2.45.32l.44-1.75c.54.13,2.27.4,2.01,1.43h0ZM68.84,95.09c-.22.9-1.61.44-2.06.33l.4-1.59c.45.11,1.89.32,1.66,1.26Z"/></g>`;
+const MUSEUM="../museum/", LIJN="../";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const GET=k=>{try{return localStorage.getItem(k);}catch(e){return null;}}, PUT=(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}};
+const H=location.hash.slice(1).toLowerCase();
+let LANG=(H==="en"||H==="nl")?H:(GET("bitboy.lang")||((navigator.language||"en").toLowerCase().indexOf("nl")===0?"nl":"en"));
+const tx=(nl,en)=>LANG==="en"?en:nl;
+
+const T={
+nl:{sndOn:"Geluid aan",sndOff:"Geluid uit",buy:"Zo koop je bitcoin",buyS:"Koop ₿",eyebrow:"Gids van Museum ₿ · sinds blok 0",h1:"Hoi. Ik ben <em>Bitboy</em>.",
+ lead:"Geen gezicht, wel een hoodie. Ik loop met je mee door Museum ₿. Hier mag je zelf spelen: vang de 21 munten die er ooit komen. Mis je er een, dan is hij voorgoed weg.",
+ tap:"Bitboy. Tik voor een grap",lcdLabel:"Scherm van de Pocket ₿",left:"Naar links",right:"Naar rechts",start:"Start",again:"Nog een keer",keys:"← → of tik links en rechts op het scherm · spatie = start",
+ best:"Beste score",lost:"KWIJT",press:"DRUK OP START",maxs:"MAX SUPPLY",
+ ppL:"Paspoort",ppH:"Wie is <em>Bitboy</em>?",ppState:"Paspoort · Republiek 21",photo:"Pasfoto van Bitboy",
+ fields:[["Naam","Bitboy"],["Gezicht","Onbekend, net als Satoshi"],["Geboren","Blok 0 · 3 januari 2009"],["Lievelingsgetal","21"],["Woonplaats","Museum ₿, kelder"],["Beroep","Gids en muntenvanger"],["Kenmerken","Hoodie, witte handschoenen"],["Geldig tot","Rond 2140"]],
+ traits:[["Anoniem.","Geen gezicht, wel een publieke sleutel."],["Zuinig.","Spaart in sats en drukt nooit bij."],["Behulpzaam.","Loopt met je mee door Museum ₿ en vertelt onderweg grappen waar niemand om vroeg."]],
+ shL:"Modelblad",shH:"Alle <em>houdingen</em>",shP:"Twaalf houdingen, zoals hij ze gebruikt in het museum en in de handheld. Tik op een houding om hem te laten bewegen. Zijn ogen volgen je muis.",
+ poses:["Stap","Slenter","Hmm","Sprong","Zit","Ren","Kom op","Wandel","Zwaai","Klaar","Juich","Huppel"],frame:"Frame",dl:"PNG",dlSheet:"Download het hele blad",dlAvatar:"Download de pasfoto (SVG)",dlNote:"Je krijgt eerst een vraag of je het bestand wilt opslaan.",saved:"Opgeslagen",dlFail:"Opslaan lukte niet. Probeer het nog eens.",
+ fL:"Waar je hem tegenkomt",fH:"Twee pagina's, <em>één</em> gids.",f1L:"Zes zalen geschiedenis",f1P:"Bitboy is je gids, van blok 0 tot nu. Hij loopt mee, zegt per zaal één zin en springt bij de halvering.",f1G:"Naar het museum ↗",
+ f2L:"Hoe het werkt",f2P:"De metrolijn achter het museum: hoe bitcoin werkt, stap voor stap, in vijftien hoofdstukken.",f2G:"Naar Lijn ₿ ↗",
+ foot:"Bitboy is het karakter van Lijn ₿ en Museum ₿. De drie pagina's werken los en verwijzen naar elkaar. Het spel bewaart je beste score alleen in je eigen browser.",
+ intro1:"Hoi! Ik ben Bitboy. Gezicht? Heb ik niet. Net als Satoshi.",intro2:"Druk op START. Er vallen 21 munten. Meer komen er nooit.",go:"Daar ga ik!",
+ r21:"21 van 21! Niks kwijt. Jij bewaart beter dan de halve wereld.",rHi:"{c} van 21. {l} kwijt. In het echt is naar schatting 2,3 tot 3,7 miljoen bitcoin voorgoed weg.",rMid:"{c} van 21. {l} munten voorgoed kwijt. Er komen er nooit meer bij. Nog een keer?",rLo:"{c} van 21. Ik heb er buikpijn van. Nog een keer?",
+ hofT:"Hall of fame · top 10",hofSub:"één score per persoon",newRec:"NIEUW RECORD",nameKeys:"◀ ▶ kies een letter · START = volgende · of typ je initialen",hofLoad:"Ranglijst laden…",hofEmpty:"Nog niemand op de lijst. Word de eerste!",hofNoDb:"De ranglijst zie je als je bent ingelogd bij Claude. Je beste score bewaren we in je eigen browser.",hofRO:"Je kijkt mee: deze pagina is voor jou alleen-lezen. Je score blijft in je eigen browser.",hofSaved:"Je staat op de lijst.",hofFail:"Je score kon niet op de ranglijst. Hij staat wel in je eigen browser.",you:"jij",
+ jokes:["Waarom een hoodie? Privacy. En het tocht in de kelder.","Mijn lievelingsgetal is 21. Mijn tweede ook.","Ik ben niet verdwaald. Ik ben gedecentraliseerd.","Geen gezicht, wel een publieke sleutel.","Mijn spaarvarken staat in cold storage. In de vriezer, ja.","Niet zo duwen. Ik doe één blok per tien minuten.","Tik nog eens en ik reken een fooi.","Witte handschoenen, whitepaper. Ik ben heel consequent.","Ik heb maar één hoodie. Schaarste, weet je wel."]},
+en:{sndOn:"Sound on",sndOff:"Sound off",buy:"How to buy bitcoin",buyS:"Buy ₿",eyebrow:"Guide of Museum ₿ · since block 0",h1:"Hi. I'm <em>Bitboy</em>.",
+ lead:"No face, but a hoodie. I walk with you through Museum ₿. Here you get to play: catch the 21 coins that will ever exist. Miss one and it's gone for good.",
+ tap:"Bitboy. Tap for a joke",lcdLabel:"Pocket ₿ screen",left:"Move left",right:"Move right",start:"Start",again:"Play again",keys:"← → or tap left and right on the screen · space = start",
+ best:"Best score",lost:"LOST",press:"PRESS START",maxs:"MAX SUPPLY",
+ ppL:"Passport",ppH:"Who is <em>Bitboy</em>?",ppState:"Passport · Republic of 21",photo:"Passport photo of Bitboy",
+ fields:[["Name","Bitboy"],["Face","Unknown, like Satoshi"],["Born","Block 0 · 3 January 2009"],["Favourite number","21"],["Residence","Museum ₿, basement"],["Occupation","Guide and coin catcher"],["Features","Hoodie, white gloves"],["Valid until","Around 2140"]],
+ traits:[["Anonymous.","No face, but a public key."],["Thrifty.","Saves in sats and never prints more."],["Helpful.","Walks you through Museum ₿, telling jokes nobody asked for."]],
+ shL:"Model sheet",shH:"Every <em>pose</em>",shP:"Twelve poses, as he uses them in the museum and in the handheld. Tap a pose to make him move. His eyes follow your mouse.",
+ poses:["Step","Stroll","Hmm","Jump","Sit","Run","Let's go","Walk","Wave","Ready","Cheer","Skip"],frame:"Frame",dl:"PNG",dlSheet:"Download the whole sheet",dlAvatar:"Download the passport photo (SVG)",dlNote:"You'll be asked whether to save the file first.",saved:"Saved",dlFail:"Saving didn't work. Please try again.",
+ fL:"Where to find him",fH:"Two pages, <em>one</em> guide.",f1L:"Six rooms of history",f1P:"Bitboy is your guide, from block 0 to now. He walks along, says one line per room and jumps at the halving.",f1G:"To the museum ↗",
+ f2L:"How it works",f2P:"The metro line behind the museum: how bitcoin works, step by step, in fifteen chapters.",f2G:"To Lijn ₿ ↗",
+ foot:"Bitboy is the character of Lijn ₿ and Museum ₿. The three pages work on their own and point to each other. The game keeps your best score only in your own browser.",
+ intro1:"Hi! I'm Bitboy. A face? Don't have one. Just like Satoshi.",intro2:"Press START. 21 coins will fall. There will never be more.",go:"Here I go!",
+ r21:"21 out of 21! Nothing lost. You keep coins safer than half the world.",rHi:"{c} out of 21. {l} lost. In real life, an estimated 2.3 to 3.7 million bitcoin are gone for good.",rMid:"{c} out of 21. {l} coins lost forever. No more will ever come. Again?",rLo:"{c} out of 21. That gives me a stomach ache. Again?",
+ hofT:"Hall of fame · top 10",hofSub:"one score per person",newRec:"NEW RECORD",nameKeys:"◀ ▶ pick a letter · START = next · or type your initials",hofLoad:"Loading high scores…",hofEmpty:"Nobody on the list yet. Be the first!",hofNoDb:"You can see the high scores when you're signed in to Claude. We keep your best score in your own browser.",hofRO:"You're watching: this page is read-only for you. Your score stays in your own browser.",hofSaved:"You're on the list.",hofFail:"Your score couldn't go on the high scores. It's saved in your own browser.",you:"you",
+ jokes:["Why the hoodie? Privacy. And the basement is draughty.","My favourite number is 21. So is my second favourite.","I'm not lost. I'm decentralised.","No face. But I do have a public key.","My piggy bank is in cold storage. Yes, the freezer.","Don't rush me. I do one block every ten minutes.","Tap me again and I'll charge a fee.","White gloves, white paper. I'm very consistent.","I only own one hoodie. Scarcity, you know."]}
+};
+const U=k=>(T[LANG]&&T[LANG][k]!=null)?T[LANG][k]:T.nl[k];
+
+/* ---------- geluid ---------- */
+let AC=null, SND=GET("bitboy.snd")!=="0";
+function ac(){ if(!SND) return null; if(!AC){ const C=window.AudioContext||window.webkitAudioContext; if(!C) return null; AC=new C(); } if(AC.state==="suspended") AC.resume(); return AC; }
+function tone(f,d,v,o){ const c=ac(); if(!c) return; o=o||{}; const t=c.currentTime+(o.when||0), os=c.createOscillator(), g=c.createGain(); os.type=o.type||"square"; os.frequency.setValueAtTime(f,t); if(o.glide) os.frequency.exponentialRampToValueAtTime(o.glide,t+d); g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(v,t+.01); g.gain.exponentialRampToValueAtTime(.0001,t+d); os.connect(g); g.connect(c.destination); os.start(t); os.stop(t+d+.05); }
+const S={beep:f=>tone(f||880,.05,.03),coin:()=>{tone(1318.5,.07,.04);tone(1975.5,.12,.04,{when:.07});},miss:()=>tone(150,.22,.05,{glide:80,type:"sawtooth"}),boing:()=>tone(170,.32,.06,{glide:540,type:"triangle"}),talk:()=>[660,880,740,990].forEach((f,i)=>tone(f,.08,.03,{when:i*.06,type:"triangle"})),win:()=>[523,659,784,1046].forEach((f,i)=>tone(f,.16,.045,{when:i*.12})),end:()=>[392,330,262].forEach((f,i)=>tone(f,.2,.045,{when:i*.16}))};
+
+/* ---------- sprite + ogen ---------- */
+const BBEYE=[[[35.35,27.88,7.81,10.58],[46.68,27.08,8.59,10.9]],[[35.94,31.57,7.42,10.26],[47.27,30.45,8.2,10.58]],[[35.16,25.0,7.42,9.94],[47.27,23.4,8.98,11.22]],[[35.35,33.65,6.25,8.65],[45.9,34.94,7.03,9.94]],[[36.91,34.78,7.03,10.26],[48.05,34.62,8.2,11.22]],[[34.57,32.21,6.25,8.97],[44.73,30.45,8.59,10.58]],[[34.18,29.97,7.03,9.62],[44.53,28.37,7.42,9.62]],[[36.33,30.13,6.64,9.29],[46.48,29.49,7.42,9.94]],[[37.3,26.28,6.25,9.29],[47.46,27.4,7.03,10.26]],[[37.3,27.08,6.25,9.62],[47.46,26.92,7.81,9.94]],[[36.13,29.81,7.03,9.29],[46.09,28.85,6.64,9.94]],[[38.48,25.32,5.47,9.29],[48.24,26.12,7.03,10.26]]];
+const posOf=i=>`${(i%4)*100/3}% ${Math.floor(i/4)*50}%`;
+const PTR={x:-1,y:-1,t:0};
+addEventListener("pointermove",e=>{PTR.x=e.clientX;PTR.y=e.clientY;PTR.t=performance.now();},{passive:true});
+addEventListener("pointerdown",e=>{PTR.x=e.clientX;PTR.y=e.clientY;PTR.t=performance.now();},{passive:true});
+function sprite(el,f){ el.style.backgroundImage=`url(${IMG_BB})`; el._eyes=[0,1].map(()=>{ const e=document.createElement("span"); e.className="bb-eye"; const p=document.createElement("i"); p.className="bb-pu"; e.appendChild(p); el.appendChild(e); return e; }); setPose(el,f); return el; }
+function setPose(el,f){ if(el._f===f) return; el._f=f; el.style.backgroundPosition=posOf(f); BBEYE[f].forEach((d,i)=>{ const s=el._eyes[i].style; s.left=d[0]+"%"; s.top=d[1]+"%"; s.width=d[2]+"%"; s.height=d[3]+"%"; }); }
+function look(el,flip,now){
+  el._eyes.forEach((e,i)=>{ let x,y; const r=e.getBoundingClientRect(); if(!r.width) return;
+    if(PTR.t&&now-PTR.t<9000){ const dx=PTR.x-(r.left+r.width/2), dy=PTR.y-(r.top+r.height/2), d=Math.hypot(dx,dy)||1, m=Math.min(1,d/180); x=dx/d*m*46; y=dy/d*m*40; }
+    else { const w=now/1000; x=-26+Math.sin(w*.7)*14; y=6+Math.sin(w*1.3)*8; }
+    if(flip) x=-x; e.firstChild.style.transform=`translate(${x.toFixed(1)}%,${y.toFixed(1)}%)`; });
+}
+
+/* ---------- held-Bitboy ---------- */
+const heroBB=$("#heroBB"), heroSpr=sprite($("#heroSpr"),9), bubble=$("#bubble"), bText=$("#bText");
+let heroOn=false, flying=false, holdPose=9, holdT=0, jumpT=-1e9, jumped=true, landT=-1e9, typeT=0, hideT=0, jokeI=Math.floor(Math.random()*9);
+function typeText(txt){ clearInterval(typeT); if(REDUCED){ bText.textContent=txt; return; } let i=0; bText.textContent=""; typeT=setInterval(()=>{ i+=2; bText.textContent=txt.slice(0,i); if(i>=txt.length) clearInterval(typeT); },22); }
+function say(txt,pose,ms,stay){ typeText(txt); bubble.classList.add("on"); if(pose!=null){ holdPose=pose; holdT=performance.now()+(ms||3200); } S.talk(); clearTimeout(hideT); if(!stay) hideT=setTimeout(()=>bubble.classList.remove("on"),Math.max(6500,txt.length*70)); }
+function jump(){ jumpT=performance.now(); jumped=false; S.boing(); }
+heroBB.addEventListener("click",()=>{ if(flying||!heroOn) return; jump(); const J=U("jokes"); jokeI=(jokeI+1)%J.length; const k=jokeI; setTimeout(()=>say(J[k],[10,8,2,9][k%4],2600),300); });
+function heroTick(now){
+  if(!heroOn||flying) return;
+  let f=9,y=0,sx=1,sy=1; const jt=now-jumpT;
+  if(jt<560){ f=3; y=-Math.sin(jt/560*Math.PI)*18; }
+  else { if(!jumped){ jumped=true; landT=now; } if(now<holdT) f=holdPose; else { const w=Math.sin(now/650); sy=1+w*.014; sx=1-w*.008; } }
+  const lt=now-landT; if(lt<320){ const q=Math.sin((1-lt/320)*Math.PI); sy*=1-.15*q; sx*=1+.11*q; }
+  setPose(heroSpr,f); heroSpr.style.transform=`translateY(${y.toFixed(1)}%) scale(${sx.toFixed(3)},${sy.toFixed(3)})`;
+}
+
+/* ---------- handheld ---------- */
+const LANE_POSE=[10,5,3,7,9], dev=$("#dev"), lanesEl=$("#pkLanes");
+lanesEl.innerHTML=LANE_POSE.map(f=>`<div class="pk-lane"><i class="pk-c" data-r="0"></i><i class="pk-c" data-r="1"></i><i class="pk-c" data-r="2"></i><i class="pk-b" style="background-image:url(${IMG_BBL});background-position:${posOf(f)}"></i><i class="pk-x"></i></div>`).join("");
+const lanes=$$(".pk-lane",lanesEl), elScore=$("#pkScore"), elMsg=$("#pkMsg"), elLost=$("#pkLost"), elBig=$("#pkBig"), bStart=$("#bStart");
+function lcd(pos,coins,miss){ lanes.forEach((ln,i)=>{ ln.querySelector(".pk-b").classList.toggle("on",i===pos); const cs=ln.querySelectorAll(".pk-c"); cs.forEach(c=>c.classList.remove("on")); ln.querySelector(".pk-x").classList.toggle("on",!!(miss&&miss[i])); }); (coins||[]).forEach(c=>lanes[c.lane].querySelector(`.pk-c[data-r="${c.row}"]`).classList.add("on")); }
+function big(html,blink){ elBig.innerHTML=html||""; elBig.classList.toggle("blink",!!blink); }
+function hit(i){ const L=lanes[i]; L.classList.add("hit"); setTimeout(()=>L.classList.remove("hit"),160); }
+
+let mode="idle", timers=[];
+const later=(fn,ms)=>{ const t=setTimeout(fn,ms); timers.push(t); return t; };
+const clearT=()=>{ timers.forEach(clearTimeout); timers=[]; };
+
+/* demo bij binnenkomst (zoals in het museum) */
+function demo(){
+  mode="demo"; heroOn=false; heroBB.classList.remove("on"); big(""); elMsg.textContent="BITBOY"; elLost.textContent=""; elScore.textContent="00";
+  const POS=[4,4,3,3,2,2,1,1,0,0,1,1,2], CATCH={2:[3,1],4:[2,3],6:[1,6],8:[0,10],10:[1,15],12:[2,21]}, T0=500, TK=340;
+  POS.forEach((p,k)=>later(()=>{ const cs=[]; Object.keys(CATCH).forEach(c=>{ c=+c; const r=k-(c-2); if(r>=0&&r<2) cs.push({lane:CATCH[c][0],row:r}); }); lcd(p,cs); if(CATCH[k]){ elScore.textContent=String(CATCH[k][1]).padStart(2,"0"); hit(CATCH[k][0]); } },T0+k*TK));
+  const tE=T0+POS.length*TK;
+  later(()=>{ elMsg.textContent=U("maxs"); },tE);
+  later(()=>{ dev.classList.add("glitch"); },tE+900);
+  later(()=>{ dev.classList.remove("glitch"); flyOut(2,()=>{ mode="idle"; idleScreen(); say(U("intro1"),8,3600); later(()=>say(U("intro2"),9,2400),4800); }); },tE+1250);
+}
+function idleScreen(){ lcd(-1,[]); big(U("press"),true); elMsg.textContent="BITBOY"; elLost.textContent=""; bStart.textContent=U("start"); }
+
+/* vliegen tussen scherm en vloer */
+function flyOut(lane,done){
+  const from=lanes[lane].querySelector(".pk-b").getBoundingClientRect(); lcd(-1,[]);
+  heroOn=true; heroBB.classList.add("on"); setPose(heroSpr,3); heroSpr.style.transform="";
+  if(REDUCED||!heroBB.animate||!from.width){ done&&done(); return; }
+  flying=true; heroBB.style.transition="none"; const to=heroBB.getBoundingClientRect();
+  const s=from.height/to.height, dx=(from.left+from.width/2)-(to.left+to.width/2), dy=from.bottom-to.bottom;
+  const a=heroBB.animate([{transform:`translate(${dx}px,${dy}px) scale(${s})`},{transform:`translate(${dx*.45}px,${Math.min(dy,0)*.45-150}px) scale(${(s+1)/2*1.15})`,offset:.45},{transform:"none"}],{duration:900,easing:"cubic-bezier(.33,0,.4,1)"});
+  heroSpr.animate([{filter:"grayscale(1) brightness(.2)"},{filter:"grayscale(1) brightness(.2)",offset:.12},{filter:"brightness(1.7) saturate(1.3)",offset:.4},{filter:"drop-shadow(0 8px 14px rgba(0,0,0,.5))"}],{duration:900});
+  a.onfinish=()=>{ heroBB.style.transition=""; flying=false; landT=performance.now(); jumped=true; done&&done(); };
+}
+function flyIn(lane,done){
+  bubble.classList.remove("on");
+  if(!heroOn){ done&&done(); return; }
+  const to=lanes[lane].querySelector(".pk-b").getBoundingClientRect(), fr=heroBB.getBoundingClientRect();
+  const finish=()=>{ heroOn=false; heroBB.classList.remove("on"); flying=false; heroBB.style.transition=""; done&&done(); };
+  if(REDUCED||!heroBB.animate||!to.width){ finish(); return; }
+  flying=true; setPose(heroSpr,3); heroBB.style.transition="none";
+  const s=to.height/fr.height, dx=(to.left+to.width/2)-(fr.left+fr.width/2), dy=to.bottom-fr.bottom;
+  const a=heroBB.animate([{transform:"none"},{transform:`translate(${dx*.55}px,${Math.min(dy,0)*.55-150}px) scale(${(s+1)/2*1.15})`,offset:.55},{transform:`translate(${dx}px,${dy}px) scale(${s})`}],{duration:750,easing:"cubic-bezier(.5,0,.6,1)"});
+  heroSpr.animate([{filter:"drop-shadow(0 8px 14px rgba(0,0,0,.5))"},{filter:"brightness(1.7)",offset:.6},{filter:"grayscale(1) brightness(.2)"}],{duration:750,fill:"forwards"}).onfinish=function(){ this.cancel(); };
+  a.onfinish=finish;
+}
+
+/* het spel */
+const G={pos:2,coins:[],spawned:0,caught:0,lost:0,tick:0,next:1,iv:520,miss:[0,0,0,0,0],timer:0,last:-1};
+function startGame(){
+  if(mode==="play"||mode==="fly"||mode==="name") return;
+  clearT(); dev.classList.remove("glitch"); clearTimeout(hideT);
+  const begin=()=>{ Object.assign(G,{pos:2,coins:[],spawned:0,caught:0,lost:0,tick:0,next:1,iv:520,miss:[0,0,0,0,0],last:-1}); mode="play"; big(""); elMsg.textContent="BITBOY"; elLost.textContent=`${U("lost")} 0`; elScore.textContent="00"; bStart.textContent=U("start"); lcd(G.pos,[]); S.beep(990); G.timer=setTimeout(step,G.iv); };
+  if(heroOn){ mode="fly"; say(U("go"),10,900); later(()=>flyIn(2,begin),550); } else begin();
+}
+function step(){
+  if(mode!=="play") return;
+  G.tick++; G.miss=G.miss.map(m=>Math.max(0,m-1));
+  const keep=[];
+  G.coins.forEach(c=>{ if(c.row===2){ if(G.pos===c.lane){ G.caught++; hit(c.lane); S.coin(); } else { G.lost++; G.miss[c.lane]=2; S.miss(); } } else { c.row++; keep.push(c); } });
+  G.coins=keep;
+  if(G.spawned<21&&G.tick>=G.next){ const free=[0,1,2,3,4].filter(l=>l!==G.last&&!G.coins.some(c=>c.lane===l&&c.row===0)); const l=free[Math.floor(Math.random()*free.length)]; G.coins.push({lane:l,row:0}); G.last=l; G.spawned++; const gap=G.spawned<6?3:G.spawned<14?(Math.random()<.5?2:3):2; G.next=G.tick+gap; if(!G.coins.some(c=>c.row>0)) S.beep(660); }
+  G.iv=Math.max(300,520-G.caught*11-G.spawned*3);
+  elScore.textContent=String(G.caught).padStart(2,"0"); elLost.textContent=`${U("lost")} ${G.lost}`;
+  lcd(G.pos,G.coins,G.miss);
+  if(G.spawned>=21&&!G.coins.length){ endGame(); return; }
+  G.timer=setTimeout(step,G.iv);
+}
+function move(d){ if(mode==="name"){ nameStep(d); return; } if(mode!=="play") return; const n=clamp(G.pos+d,0,4); if(n===G.pos) return; G.pos=n; lcd(G.pos,G.coins,G.miss); S.beep(d<0?740:820); }
+function endGame(){
+  mode="fly"; clearTimeout(G.timer);
+  const c=G.caught, l=G.lost; big(`${c}/21<small>${l} ${U("lost")}</small>`); elMsg.textContent=c===21?U("maxs"):"BITBOY";
+  (c===21?S.win:S.end)();
+  const prev=+(GET("bitboy.best")||0), qual=c>0&&c>Math.max(prev,HOF.mine||0);
+  if(c>prev) PUT("bitboy.best",String(c)); showBest();
+  const out=(d)=>{ later(()=>{ dev.classList.add("glitch"); },d); later(()=>{ dev.classList.remove("glitch"); flyOut(G.pos,()=>{ mode="idle"; bStart.textContent=U("again"); const key=c===21?"r21":c>=15?"rHi":c>=8?"rMid":"rLo"; say(U(key).replace("{c}",c).replace("{l}",l),c===21?10:c>=15?8:c>=8?2:4,3800,true); big(`${c}/21<small>${U("press")}</small>`); }); },d+350); };
+  if(qual) later(()=>enterName(c,ini=>{ postScore(ini,c,l); big(`${c}/21<small>${ini}</small>`); out(500); }),1100);
+  else out(1300);
+}
+/* initialen invoeren, zoals bij een arcadekast */
+const CHARS="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+const NM={ini:["A","A","A"],i:0,c:0,done:null};
+function enterName(c,done){ mode="name"; const last=(GET("bitboy.ini")||"AAA").toUpperCase().replace(/[^A-Z0-9]/g,"").padEnd(3,"A").slice(0,3); NM.ini=last.split(""); NM.i=0; NM.c=c; NM.done=done; bStart.textContent="OK"; $(".keys").textContent=U("nameKeys"); drawName(); S.win(); }
+function drawName(){ big(`<span class="nm-t">${U("newRec")} · ${NM.c}/21</span><span class="nm">${NM.ini.map((ch,i)=>i===NM.i?`<u>${ch}</u>`:ch).join("")}</span>`); }
+function nameStep(d){ const k=CHARS.indexOf(NM.ini[NM.i]); NM.ini[NM.i]=CHARS[(k+d+CHARS.length)%CHARS.length]; drawName(); S.beep(d<0?740:820); }
+function nameNext(){ if(NM.i<2){ NM.i++; drawName(); S.beep(990); return; } const ini=NM.ini.join(""); PUT("bitboy.ini",ini); mode="fly"; $(".keys").textContent=U("keys"); bStart.textContent=U("start"); S.coin(); NM.done&&NM.done(ini); }
+function nameType(ch){ NM.ini[NM.i]=ch; if(NM.i<2){ NM.i++; drawName(); S.beep(900); } else { drawName(); nameNext(); } }
+
+/* ranglijst (gedeeld, één score per persoon) */
+const HOF={db:null,uid:null,canW:null,rows:[],mine:0,ready:false};
+const fmtDate=t=>{ try{ return new Date(t).toLocaleDateString(LANG==="en"?"en-GB":"nl-NL",{day:"numeric",month:"short"}); }catch(e){ return ""; } };
+const cleanIni=v=>String(v||"").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,3)||"???";
+function hofRender(){
+  const list=$("#hofList"), note=$("#hofNote");
+  if(!HOF.db){ list.innerHTML=""; note.textContent=HOF.ready?U("hofNoDb"):U("hofLoad"); return; }
+  const rows=HOF.rows.slice().sort((a,b)=>b.score-a.score||a.t-b.t);
+  const myIdx=rows.findIndex(r=>r.id===HOF.uid);
+  const li=(r,i)=>`<li class="${r.id===HOF.uid?"me ":""}${i===0?"first":""}"><span class="rk">${String(i+1).padStart(2,"0")}</span><span class="in">${esc(cleanIni(r.ini))}</span><span class="sc">${r.score}<small>/21</small></span><span class="dt">${r.id===HOF.uid?U("you")+" · ":""}${fmtDate(r.t)}</span></li>`;
+  let html=rows.slice(0,10).map(li).join("");
+  if(myIdx>=10) html+=`<li class="gap" aria-hidden="true">···</li>`+li(rows[myIdx],myIdx);
+  list.innerHTML=html;
+  if(!rows.length) note.textContent=U("hofEmpty"); else if(HOF.canW===false) note.textContent=U("hofRO"); else if(note.dataset.k!=="saved"&&note.dataset.k!=="fail") note.textContent="";
+}
+const esc=v=>String(v).replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+async function hofInit(){
+  let db=null,user=null;
+  try{ if(window.claude&&window.claude.use){ [db,user]=await Promise.all([window.claude.use("db"),window.claude.use("user")]); } }catch(e){}
+  HOF.ready=true;
+  if(!db){ hofRender(); return; }
+  HOF.db=db;
+  try{ HOF.uid=user?await user.id():null; }catch(e){}
+  try{ HOF.canW=user?await user.can("data.write"):null; }catch(e){}
+  if(!HOF.uid) HOF.canW=false;
+  hofRender();
+  try{ db.collection("scores").orderBy("score","desc").limit(200).onSnapshot(snap=>{
+      HOF.rows=snap.docs.filter(d=>d.exists).map(d=>{ const v=d.data()||{}; return {id:d.id,ini:v.ini,score:Math.max(0,Math.min(21,+v.score||0)),t:+v.t||0}; });
+      const m=HOF.rows.find(r=>r.id===HOF.uid); HOF.mine=m?m.score:0; hofRender();
+    },()=>{ HOF.db=null; hofRender(); }); }catch(e){ HOF.db=null; hofRender(); }
+}
+async function postScore(ini,c,l){
+  const note=$("#hofNote");
+  if(!HOF.db||!HOF.uid||HOF.canW===false){ hofRender(); return; }
+  if(c<=HOF.mine) return;
+  try{ await HOF.db.doc("scores/"+HOF.uid).set({ini,score:c,lost:l,t:Date.now()}); note.dataset.k="saved"; note.textContent=U("hofSaved"); }
+  catch(e){ note.dataset.k="fail"; note.textContent=U("hofFail"); }
+  setTimeout(()=>{ delete note.dataset.k; hofRender(); },6000);
+}
+function showBest(){ const b=+(GET("bitboy.best")||0); $("#best").innerHTML=b?`${U("best")}: <b>${b}/21</b>`:""; }
+
+bStart.addEventListener("click",()=>{ ac(); if(mode==="name") nameNext(); else startGame(); });
+const press=(id,d)=>{ const b=$(id); b.addEventListener("pointerdown",e=>{ e.preventDefault(); ac(); b.classList.add("down"); move(d); }); ["pointerup","pointerleave","pointercancel"].forEach(t=>b.addEventListener(t,()=>b.classList.remove("down"))); b.addEventListener("click",e=>{ if(e.detail===0) move(d); }); };
+press("#bL",-1); press("#bR",1);
+$("#lcd").addEventListener("pointerdown",e=>{ if(mode!=="play"&&mode!=="name") return; const r=e.currentTarget.getBoundingClientRect(); move(e.clientX<r.left+r.width/2?-1:1); });
+addEventListener("keydown",e=>{
+  const k=e.key; if(e.target.closest&&e.target.closest("input,textarea,select")) return;
+  if(mode==="name"){ if(/^[a-z0-9]$/i.test(k)){ e.preventDefault(); nameType(k.toUpperCase()); } else if(k==="ArrowLeft"||k==="ArrowDown"){ e.preventDefault(); nameStep(-1); } else if(k==="ArrowRight"||k==="ArrowUp"){ e.preventDefault(); nameStep(1); } else if(k==="Enter"||k===" "){ e.preventDefault(); nameNext(); } else if(k==="Backspace"&&NM.i>0){ e.preventDefault(); NM.i--; drawName(); } return; }
+  if(mode==="play"&&(k==="ArrowLeft"||k==="a"||k==="A")){ e.preventDefault(); move(-1); }
+  else if(mode==="play"&&(k==="ArrowRight"||k==="d"||k==="D")){ e.preventDefault(); move(1); }
+  else if((k===" "||k==="Enter")&&(mode==="idle"||mode==="demo")&&(e.target===document.body||e.target.closest("#dev"))){ e.preventDefault(); ac(); startGame(); }
+});
+
+/* ---------- paspoort, modelblad ---------- */
+function renderStatic(){
+  document.documentElement.lang=LANG;
+  $$("[data-t]").forEach(el=>el.textContent=U(el.dataset.t));
+  $$("[data-th]").forEach(el=>el.innerHTML=U(el.dataset.th));
+  $$("[data-ta]").forEach(el=>el.setAttribute("aria-label",U(el.dataset.ta)));
+  $$("#langBtn [data-l]").forEach(s=>s.classList.toggle("on",s.dataset.l===LANG));
+  $("#langBtn").setAttribute("aria-label",tx("Taal: Nederlands. Switch to English","Language: English. Wissel naar Nederlands"));
+  $("#toBuy").href=LIJN+"#kopen&lang="+LANG; $("#toLijn").href=$("#plLijn").href=LIJN+"#lang="+LANG; $("#toMus").href=$("#plMus").href=MUSEUM+"#lang="+LANG;
+  $("#ppFields").innerHTML=U("fields").map(([a,b])=>`<div><dt>${a}</dt><dd${a==="Naam"||a==="Name"?' id="ppName"':""}>${b}</dd></div>`).join("");
+  $("#traits").innerHTML=U("traits").map(([a,b],i)=>`<li><b>0${i+1}</b><p><strong>${a}</strong> ${b}</p></li>`).join("");
+  $$("#sheet .card").forEach((c,i)=>{ c.querySelector("h3").textContent=U("poses")[i]; c.querySelector(".pose").setAttribute("aria-label",U("poses")[i]); c.querySelector(".dl").textContent=U("dl")+" ↓"; c.querySelector(".fr span").textContent=`${U("frame")} ${String(i+1).padStart(2,"0")}`; });
+  if(mode==="idle"&&!heroOn) idleScreen(); else if(mode==="idle") { big(U("press"),true); bStart.textContent=G.spawned?U("again"):U("start"); }
+  showBest(); if(typeof hofRender==="function"&&HOF) hofRender();
+}
+$("#sheet").innerHTML=Array.from({length:12},(_,i)=>`<div class="card"><div class="fr"><span></span></div><button class="pose" type="button"><span class="bb-spr"></span></button><h3></h3><button class="dl" type="button" data-dl="${i}" hidden></button></div>`).join("");
+const sheetSpr=$$("#sheet .bb-spr").map((el,i)=>sprite(el,i));
+$$("#sheet .pose").forEach((b,i)=>b.addEventListener("click",()=>{ b.classList.remove("bounce"); void b.offsetWidth; b.classList.add("bounce"); S.boing(); }));
+
+/* downloads */
+let DL=null; const atlasImg=new Image(); atlasImg.src=IMG_BB;
+(async()=>{ try{ if(window.claude&&window.claude.use) DL=await window.claude.use("downloads"); }catch(e){ DL=null; } if(DL){ $$("#sheet .dl").forEach(b=>b.hidden=false); $("#sheetActs").hidden=false; } })();
+const toast=(m)=>{ const t=$("#toast"); t.textContent=m; t.classList.add("show"); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove("show"),2600); };
+function drawPose(x,i,ox,oy){
+  x.drawImage(atlasImg,(i%4)*256,Math.floor(i/4)*312,256,312,ox,oy,256,312);
+  BBEYE[i].forEach(d=>{ const cx=ox+d[0]/100*256, cy=oy+d[1]/100*312, rx=d[2]/100*256/2, ry=d[3]/100*312/2; x.save(); x.beginPath(); x.ellipse(cx,cy,rx,ry,0,0,Math.PI*2); x.clip(); x.fillStyle="#192d1b"; x.beginPath(); x.ellipse(cx-rx*.32,cy+ry*.06,rx*.58,ry*.62,0,0,Math.PI*2); x.fill(); x.restore(); });
+}
+async function save(name,blob){ if(!DL) return; try{ const r=await DL.save({filename:name,data:blob}); if(r&&r.status==="saved") toast(U("saved")); }catch(e){ if(e&&e.code!=="declined") toast(U("dlFail")); } }
+const canvasBlob=(w,h,fn)=>new Promise(res=>{ const c=document.createElement("canvas"); c.width=w; c.height=h; fn(c.getContext("2d")); c.toBlob(res,"image/png"); });
+$("#sheet").addEventListener("click",async e=>{ const b=e.target.closest("[data-dl]"); if(!b) return; const i=+b.dataset.dl; const slug=T.nl.poses[i].toLowerCase().replace(/\s+/g,"-"); const blob=await canvasBlob(256,312,x=>drawPose(x,i,0,0)); save(`bitboy-${String(i+1).padStart(2,"0")}-${slug}.png`,blob); });
+$("#dlSheet").addEventListener("click",async()=>{ const blob=await canvasBlob(1024,936,x=>{ for(let i=0;i<12;i++) drawPose(x,i,(i%4)*256,Math.floor(i/4)*312); }); save("bitboy-alle-houdingen.png",blob); });
+$("#dlAvatar").addEventListener("click",()=>{ const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="19.13 50.69 97.68 92.41"><rect fill="#FF4D00" x="19.13" y="50.69" width="97.68" height="92.41"/>${SVG_BODY}</svg>`; save("bitboy-pasfoto.svg",new Blob([svg],{type:"image/svg+xml"})); });
+
+/* taal + geluid */
+$("#langBtn").addEventListener("click",()=>{ LANG=LANG==="nl"?"en":"nl"; PUT("bitboy.lang",LANG); renderStatic(); bubble.classList.remove("on"); });
+const sb=$("#sndBtn"); sb.setAttribute("aria-pressed",SND?"true":"false");
+sb.addEventListener("click",()=>{ SND=!SND; PUT("bitboy.snd",SND?"1":"0"); sb.setAttribute("aria-pressed",SND?"true":"false"); if(SND) S.beep(880); });
+
+/* lus */
+function loop(now){
+  heroTick(now); if(heroOn) look(heroSpr,false,now);
+  sheetSpr.forEach(el=>look(el,false,now));
+  requestAnimationFrame(loop);
+}
+renderStatic(); requestAnimationFrame(loop); hofInit();
+if(REDUCED){ heroOn=true; heroBB.classList.add("on"); idleScreen(); say(U("intro1"),8,3600,false); }
+else setTimeout(demo,500);
+})();
+</script>
+
+</body></html>
