@@ -9,6 +9,7 @@ import base64, hashlib, pathlib, re, shutil
 
 ROOT = pathlib.Path(__file__).parent
 SRC, OUT = ROOT / "src", ROOT / "docs"
+DOMAIN = "bitcointour.nl"  # GitHub Pages custom domain (docs/CNAME)
 
 PAGES = {  # source file -> (artifact id, folder in site)
     "tour":   ("HPGNPKJHp2HLRRBsspzRwv", ""),
@@ -57,6 +58,7 @@ def build():
         left = re.findall(r"claude\.ai/artifact/\w+", html)
         print(f"{name:7} -> {dest.relative_to(ROOT)}/index.html  {len(html)//1024} KB  unmapped links: {sorted(set(left)) or 'none'}")
     (OUT / ".nojekyll").write_text("")
+    (OUT / "CNAME").write_text(DOMAIN + "\n")
 
 
 if __name__ == "__main__":
