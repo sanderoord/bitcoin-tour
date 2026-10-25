@@ -1,5 +1,28 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Museum ₿</title>
+<script>/* live koers: mempool.space, met momentopname als terugval */
+window.PX=(function(){ var P={eur:72078,usd:80742,t:1792950907,live:false,fn:[]};
+  P.on=function(f){ P.fn.push(f); try{ f(P); }catch(e){} };
+  P.paint=function(){ P.fn.forEach(function(f){ try{ f(P); }catch(e){} }); };
+  function pull(){ if(!window.fetch) return; fetch("https://mempool.space/api/v1/prices",{cache:"no-store"}).then(function(r){ return r.json(); }).then(function(d){ if(d&&d.EUR>1000){ P.eur=d.EUR; P.usd=d.USD; P.t=d.time; P.live=true; P.paint(); } }).catch(function(){}); }
+  pull(); setInterval(pull,60000); return P; })();</script>
+<style>
+.chip.px{text-transform:none;gap:.45rem;font-family:var(--f-mono);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.pxdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ink-2,#5B4636);opacity:.5;flex:none}
+.px-on .pxdot{background:#2E8B57;opacity:1;animation:pxpulse 2.4s infinite}
+@keyframes pxpulse{0%,100%{box-shadow:0 0 0 0 rgba(46,139,87,.5)}50%{box-shadow:0 0 0 4px rgba(46,139,87,0)}}
+.pxv{display:inline-flex}.pxv .fl{display:inline-block;min-width:.6em;text-align:center;transform-origin:50% 55%}
+.pxv .fl.flip{animation:pxflip .45s cubic-bezier(.3,.7,.4,1)}
+@keyframes pxflip{0%{transform:rotateX(90deg);opacity:.2}100%{transform:none;opacity:1}}
+.px-live{display:flex;align-items:center;gap:.55rem;font-weight:600}
+.px-note{font-size:.75em;opacity:.7;font-weight:400}
+@media (max-width:600px){.chip.px{display:none}}
+@media (max-width:760px){.chip .txt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+
+@media (max-width:1100px){.chip.px{display:none}}@media (max-width:460px){.top-actions{gap:4px}.topbar .chip{padding:.5em .6em}}@media (max-width:400px){.chip.snd{display:none}}
+
+</style>
+
 <meta name="claude:viewport-fit-sides" content="cover">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -254,7 +277,7 @@ html.no-gl .intro{position:relative;bottom:auto;padding-block:120px 40px}
   <a class="brand" href="#" data-goz="entree" data-ta="brand" aria-label="Museum ₿"><span class="brand-mark">₿</span><span>Museum ₿</span></a>
   <div class="top-actions">
     <button class="chip snd" id="sndBtn" type="button" aria-pressed="false" aria-label="Geluid aan"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z" fill="currentColor" stroke="none"/><path class="w" d="M11 6c.8.8.8 3.2 0 4M13 4c1.8 1.8 1.8 6.2 0 8"/><path class="x" d="M11.5 6.5l3 3m0-3l-3 3"/></svg><span class="txt" data-t="snd">Geluid</span></button>
-    <button class="chip lang" id="langBtn" type="button"><span data-l="nl">NL</span><span aria-hidden="true">/</span><span data-l="en">EN</span></button>
+    <button class="chip lang" id="langBtn" type="button"><span data-l="nl">NL</span><span aria-hidden="true">/</span><span data-l="en">EN</span></button><button class="chip px" type="button" id="pxChip" title=""><i class="pxdot"></i><span class="pxv" id="pxV"></span></button>
     <a class="chip buy" data-buy href="https://claude.ai/artifact/HPGNPKJHp2HLRRBsspzRwv#kopen" target="_blank" rel="noopener"><span aria-hidden="true">₿</span><span class="bl" data-t="buy"></span><span class="bs" data-t="buyS"></span></a>
     <a class="chip solid" data-lijnchip href="https://claude.ai/artifact/HPGNPKJHp2HLRRBsspzRwv" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><span class="txt">Bitcoin Tour</span></a>
     <button class="chip" type="button" data-share><span aria-hidden="true">↑</span><span class="txt" data-t="share">Deel</span></button>
@@ -1263,9 +1286,9 @@ function openObj(id,keepFocus){
     $("#dCode").textContent=U("shopMeta"); }
   else { const raw=OBJ.find(x=>x.id===id); if(!raw) return; const o=O(raw);
     let img=RENDERS[o.id]?`<div class="d-img d-render"><img src="${RENDERS[o.id][0]}" alt="${esc(o.title)}"></div>`:""; if(o.kind==="photo"&&!RENDERS[o.id]) img=`<div class="d-img"><img id="dImg" src="${IMG_C}" alt="${U("photoAlt")}"></div><div class="d-tog"><button class="lk" type="button" data-img="c">${U("orig")}</button><button class="lk" type="button" data-img="b">${U("treat")}</button></div>`;
-    html=`${img}<span class="label" style="display:block;margin-top:1rem">${esc(roomLabel(o.z))}</span><h2>${esc(o.title)}</h2>${o.long.map(p=>`<p>${esc(p)}</p>`).join("")}<div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem"><a class="lk world" href="${lijnUrl(o.world[0])}" target="_blank" rel="noopener">${U("how")}${esc(o.wlabel)} ↗</a><button class="lk" type="button" data-share="obj-${o.id}">${U("shareObj")}</button></div><h4>${U("origin")}</h4><p class="src">${esc(o.src)}</p>`;
+    html=`${img}<span class="label" style="display:block;margin-top:1rem">${esc(roomLabel(o.z))}</span><h2>${esc(o.title)}</h2>${o.long.map(p=>`<p>${esc(p)}</p>`).join("")}${o.kind==="pizza"?`<p class="px-live"><i class="pxdot"></i><span data-pxpizza></span></p>`:""}<div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem"><a class="lk world" href="${lijnUrl(o.world[0])}" target="_blank" rel="noopener">${U("how")}${esc(o.wlabel)} ↗</a><button class="lk" type="button" data-share="obj-${o.id}">${U("shareObj")}</button></div><h4>${U("origin")}</h4><p class="src">${esc(o.src)}</p>`;
     $("#dCode").textContent=`${U("obj")} ${o.id} · ${o.block}${o.date?" · "+o.date:""}`; }
-  $("#dBody").innerHTML=html; det.hidden=false; scrim.hidden=false; document.documentElement.classList.add("locked"); if(lenis) lenis.stop(); if(!keepFocus){ $("#dClose").focus(); Sound.pop(); }
+  $("#dBody").innerHTML=html; if(window.pxPaint) window.pxPaint(); det.hidden=false; scrim.hidden=false; document.documentElement.classList.add("locked"); if(lenis) lenis.stop(); if(!keepFocus){ $("#dClose").focus(); Sound.pop(); }
 }
 function closeObj(){ if(det.hidden) return; det.hidden=true; scrim.hidden=true; detId=null; document.documentElement.classList.remove("locked"); if(lenis) lenis.start(); if(lastF) lastF.focus({preventScroll:true}); }
 $("#dClose").addEventListener("click",closeObj); scrim.addEventListener("click",closeObj);
@@ -1369,6 +1392,25 @@ if(document.fonts&&document.fonts.load){ Promise.all(['40px "Geist Pixel Square"
 })();
 </script>
 
+<script>
+/* live koers: chip, verhalen */
+(function(){ if(!window.PX) return; const P=window.PX, L=()=>(typeof LANG!=="undefined"?LANG==="en":document.documentElement.lang==="en");
+  const f=n=>Math.round(n).toLocaleString(L()?"en-US":"nl-NL");
+  const when=()=>P.live?(L()?"live":"live"):(L()?"snapshot ":"momentopname ")+new Date(P.t*1000).toLocaleDateString(L()?"en-GB":"nl-NL",{day:"numeric",month:"short",year:"numeric"});
+  let mode="sats", prev="";
+  const chip=document.getElementById("pxChip"), v=document.getElementById("pxV");
+  const draw=()=>{ if(!v) return; const txt=mode==="sats"?"€1 = "+f(1e8/P.eur)+" sats":"1 ₿ = € "+f(P.eur);
+    v.innerHTML=[...txt].map((c,i)=>`<span class="fl${prev&&prev[i]!==c?" flip":""}">${c===" "?"&nbsp;":c}</span>`).join(""); prev=txt;
+    chip.classList.toggle("px-on",P.live); chip.title=(L()?"Bitcoin price, ":"Bitcoinkoers, ")+when()+(L()?" · tap to switch · not investment advice":" · tik om te wisselen · geen beleggingsadvies"); };
+  if(chip) chip.addEventListener("click",()=>{ mode=mode==="sats"?"eur":"sats"; prev=""; draw(); });
+  window.pxPaint=()=>{ document.querySelectorAll("[data-pxsats]").forEach(e=>e.textContent=f(+e.dataset.pxsats/P.eur*1e8));
+    document.querySelectorAll("[data-pxeur]").forEach(e=>e.textContent="€ "+f(P.eur));
+    document.querySelectorAll("[data-pxwhen]").forEach(e=>e.textContent=when());
+    document.querySelectorAll("[data-pxfix]").forEach(e=>{ e.textContent=L()?`Bitcoin now: 1 ₿ = € ${f(P.eur)}. There will never be more than 21 million.`:`Bitcoin nu: 1 ₿ = € ${f(P.eur)}. Er komen er nooit meer dan 21 miljoen.`; const p=e.closest(".px-live"); if(p) p.classList.toggle("px-on",P.live); });
+    document.querySelectorAll("[data-pxpizza]").forEach(e=>{ const v=10000*P.eur; e.innerHTML=(L()?`Today that is <b>€ ${f(v/1e6)} million</b>`:`Vandaag is dat <b>€ ${f(v/1e6)} miljoen</b>`)+` <span class="px-note">(${f(10000)} × € ${f(P.eur)} · ${when()})</span>`; const p=e.closest(".px-live"); if(p) p.classList.toggle("px-on",P.live); }); };
+  P.on(()=>{ draw(); window.pxPaint(); });
+})();
+</script>
 <script>/* statistiek: GoatCounter, zonder cookies, alleen op bitcointour.nl */
 (function(){ if(!/(^|\.)bitcointour\.nl$/.test(location.hostname)) return; var PAGE="museum";
   var s=document.createElement("script"); s.async=true; s.setAttribute("data-goatcounter","https://bitcointour.goatcounter.com/count"); s.src="https://gc.zgo.at/count.js"; document.head.appendChild(s);
