@@ -1111,14 +1111,61 @@ html.js .fin-parade li{opacity:0;transform:translateY(24px)}
   <section class="wissel pro-junction" id="wissel-p" data-ch="loterij" aria-labelledby="h-wissel-p"><div class="wrap">
     <div><span class="cs-l" data-wl>Wissel · zijspoor PRO</span><h2 id="h-wissel-p" data-wh>Werk of bezit?</h2>
     <p data-wp>Bitcoin laat miners werken voor elk blok. Veel andere munten laten juist de rijkste houders beslissen. Op dit zijspoor zie je het verschil tussen Proof of Work en Proof of Stake. Ongeveer 3 minuten.</p>
-    <div class="acts"><button class="hot" type="button" data-go="pow" data-wa>Neem het zijspoor ↓</button><button type="button" data-skip="ketting" data-wb>Rechtdoor naar wereld 8 →</button></div></div>
+    <div class="acts"><button class="hot" type="button" data-go="pow" data-wa>Neem het zijspoor ↓</button><button type="button" data-skip="wissel-x" data-wb>Rechtdoor →</button></div></div>
     <div class="rails" data-rails="split" data-a="07" data-b="08" data-s="07a"></div>
   </div></section>
   <section class="camp pro-sec" id="pow" data-ch="pow" aria-labelledby="h-pow"><div class="camp-pin" data-camp="pow"></div></section>
   <section class="pro-rejoin pro-junction" id="rejoin-p" data-ch="pow"><div class="wrap">
-    <div><span class="cs-l" data-rl>Einde zijspoor</span><h2 data-rh>Terug op de hoofdlijn.</h2><p data-rp>Werk komt van buitenaf, bezit niet. Daarom kiest bitcoin voor werk. De trein rijdt verder naar wereld 8: de blockchain.</p></div>
+    <div><span class="cs-l" data-rl>Einde zijspoor</span><h2 data-rh>Terug op de hoofdlijn.</h2><p data-rp>Werk komt van buitenaf, bezit niet. Daarom kiest bitcoin voor werk. Hierna volgt nog één wissel, daarna rijdt de trein naar wereld 8.</p></div>
     <div class="rails" data-rails="merge" data-a="07a" data-b="08"></div></div></section>
   <script>(function(){ try{ if(localStorage.getItem("tour.pro")==="0") ["wissel-p","pow","rejoin-p"].forEach(function(id){ var e=document.getElementById(id); if(e) e.remove(); }); }catch(e){} })();</script>
+<style>
+.ak-l{list-style:none;margin:.6rem 0 0;padding:0;display:grid;gap:.45rem}
+.ak-l li{display:grid;grid-template-columns:1.6rem 1fr;gap:.55rem;align-items:start;font-size:.8rem;line-height:1.4;color:rgba(247,240,227,.82);opacity:.25;transform:translateY(6px);transition:.45s}
+.ak-l li b{display:block;color:var(--paper-2);font-size:.88rem}
+.ak-l li::before{content:"✓";width:1.6rem;height:1.6rem;border-radius:8px;display:grid;place-items:center;background:#E06055;color:#fff;font:600 .8rem var(--f-mono)}
+.ak-l.no li::before{content:"✕";background:#2E8B57}
+.s1 .ak-l li:nth-child(1),.s2 .ak-l li:nth-child(-n+2),.s3 .ak-l li:nth-child(-n+3),.s4 .ak-l li{opacity:1;transform:none}
+.ak-fig{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-top:.7rem}
+.ak-fig div{padding:.6rem .7rem;border-radius:12px;background:rgba(247,240,227,.07);font-size:.72rem;line-height:1.35;color:rgba(247,240,227,.7);opacity:.25;transition:.45s}
+.ak-fig div b{display:block;font:400 1.25rem var(--f-px);color:var(--paper-2);margin-bottom:.15rem;white-space:nowrap}
+.ak-fig div.hot b{color:#FF7A3D}
+.s1 .ak-fig div:nth-child(-n+1),.s2 .ak-fig div:nth-child(-n+2),.s3 .ak-fig div:nth-child(-n+3),.s4 .ak-fig div{opacity:1}
+.ak-note{margin-top:.7rem;font-size:.74rem;line-height:1.45;color:rgba(247,240,227,.7)}
+.ak-ok{margin-top:.7rem;padding:.55rem .75rem;border-radius:12px;background:rgba(46,139,87,.2);color:#7FD3A2;font-size:.78rem;line-height:1.4;opacity:0;transition:.45s}.s3 .ak-ok,.s4 .ak-ok{opacity:1}
+.ak-warn{margin-top:.7rem;padding:.55rem .75rem;border-radius:12px;background:rgba(224,96,85,.16);color:#F2A49B;font-size:.78rem;line-height:1.4}
+.ak-seg{display:flex;gap:.3rem;margin:.55rem 0 .1rem}
+.ak-seg button{flex:1;min-width:0;padding:.42rem .3rem;border-radius:9px;border:1px solid rgba(247,240,227,.25);background:transparent;color:rgba(247,240,227,.8);font:500 .7rem var(--f-mono);letter-spacing:.04em;cursor:pointer}
+.ak-seg button.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.ak-meter{position:relative;height:12px;border-radius:6px;background:rgba(247,240,227,.12);margin:.7rem 0 .25rem;overflow:hidden}
+.ak-meter i{position:absolute;inset:0 auto 0 0;background:#FF7A3D;border-radius:6px;transition:width .2s}
+.ak-meter u{position:absolute;top:-3px;bottom:-3px;left:51%;width:2px;background:var(--paper-2)}
+.ak-meter.hit i{background:#E06055}
+.ak-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;align-items:end;height:110px;margin-top:.8rem}
+.ak-bars div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:.3rem;height:100%;font:.66rem var(--f-mono);color:rgba(247,240,227,.65);text-align:center}
+.ak-bars div i{display:block;width:70%;border-radius:6px 6px 2px 2px;background:var(--paper-2);transform-origin:bottom;transform:scaleY(.05);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.ak-bars div.low i{background:#E06055}
+.s1 .ak-bars div:nth-child(1) i,.s2 .ak-bars div:nth-child(-n+2) i,.s3 .ak-bars div i{transform:none}
+.ak-bars div b{font:400 1rem var(--f-px);color:var(--paper-2)}
+.ak-rows{display:grid;gap:.32rem;margin-top:.7rem}
+.ak-row{display:grid;grid-template-columns:4.6rem 1fr 3rem;gap:.5rem;align-items:center;font:.7rem var(--f-mono);color:rgba(247,240,227,.75)}
+.ak-row i{display:block;height:8px;border-radius:4px;background:rgba(247,240,227,.55);width:0;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.on .ak-row i{width:var(--w)}.ak-row.cn i{background:#E06055}.ak-row b{font-weight:500;color:var(--paper-2);text-align:right}
+@media (max-width:899px){.ak-l li{font-size:.7rem}.ak-l li span{display:none}.ak-fig div{font-size:.62rem}.ak-fig div b{font-size:1rem}.ak-note{font-size:.66rem}.ak-bars{height:80px}}
+</style>
+  <section class="wissel pro-junction" id="wissel-x" data-ch="loterij" aria-labelledby="h-wissel-x"><div class="wrap">
+    <div><span class="cs-l" data-wl>Wissel · zijspoor PRO</span><h2 id="h-wissel-x" data-wh>Kan iemand bitcoin overnemen?</h2>
+    <p data-wp>Wat als iemand meer dan de helft van alle rekenkracht pakt? Of een AI die stiekem miljoenen computers laat minen? Of China dat alles op mining zet? Op dit zijspoor reken je het zelf na. Ongeveer 6 minuten.</p>
+    <div class="acts"><button class="hot" type="button" data-go="aanval" data-wa>Neem het zijspoor ↓</button><button type="button" data-skip="ketting" data-wb>Rechtdoor naar wereld 8 →</button></div></div>
+    <div class="rails" data-rails="split" data-a="07" data-b="08" data-s="07b"></div>
+  </div></section>
+  <section class="camp camp-fu camp-q pro-sec" id="aanval" data-ch="aanval" aria-labelledby="h-aanval"><div class="camp-pin" data-camp="aanval"></div></section>
+  <section class="camp camp-fu camp-q pro-sec" id="zwerm" data-ch="zwerm" aria-labelledby="h-zwerm"><div class="camp-pin" data-camp="zwerm"></div></section>
+  <section class="camp camp-fu camp-q pro-sec" id="staat" data-ch="staat" aria-labelledby="h-staat"><div class="camp-pin" data-camp="staat"></div></section>
+  <section class="pro-rejoin pro-junction" id="rejoin-x" data-ch="staat"><div class="wrap">
+    <div><span class="cs-l" data-rl>Einde zijspoor</span><h2 data-rh>Terug op de hoofdlijn.</h2><p data-rp>Bitcoin is niet onkwetsbaar. Maar een aanval is peperduur, iedereen ziet hem, en je munten stelen kan hij niet. De trein rijdt verder naar wereld 8: de blockchain.</p></div>
+    <div class="rails" data-rails="merge" data-a="07d" data-b="08"></div></div></section>
+  <script>(function(){ try{ if(localStorage.getItem("tour.pro")==="0") ["wissel-x","aanval","zwerm","staat","rejoin-x"].forEach(function(id){ var e=document.getElementById(id); if(e) e.remove(); }); }catch(e){} })();</script>
   <!-- 08 -->
   <section class="chain" id="ketting" data-ch="ketting" aria-labelledby="h-ketting">
     <div class="chain-pin">
@@ -2277,6 +2324,9 @@ const CH=[
   {id:"wachtkamer",n:"06",name:"De wachtkamer",line:"orange",built:true},
   {id:"loterij",n:"07",name:"De mijnhal",line:"orange",built:true},
   {id:"pow",n:"07a",name:"Werk of bezit",line:"orange",pro:true,rejoin:"ketting",built:true},
+  {id:"aanval",n:"07b",name:"De 51%-aanval",line:"orange",pro:true,rejoin:"ketting",built:true},
+  {id:"zwerm",n:"07c",name:"De AI-zwerm",line:"orange",pro:true,rejoin:"ketting",built:true},
+  {id:"staat",n:"07d",name:"Staatsmijnen",line:"orange",pro:true,rejoin:"ketting",built:true},
   {id:"ketting",n:"08",name:"Blockchain",line:"orange",built:true},
   {id:"contract",n:"08a",name:"Smart contracts",line:"orange",pro:true,rejoin:"halvering",built:true},
   {id:"dao",n:"08b",name:"DAO's",line:"orange",pro:true,rejoin:"halvering",built:true},
@@ -2291,7 +2341,7 @@ const CH=[
   {id:"jaren",n:"15",name:"Rustig vasthouden",line:"gold",built:true},
   {id:"zelf",n:"16",name:"Zelf bewaren",line:"gold",kind:"end",built:true}
 ];
-if(LANG==="en"){ const N={geld:"The planet",walvissen:"The ocean",kasboek:"The network",sleutel:"The vault",betalen:"The station",wachtkamer:"The waiting room",loterij:"The mining hall",ketting:"Blockchain",contract:"Smart contracts",dao:"DAOs",pow:"Work or stake",munten:"Other coins",quantum:"Quantum",waarde:"Value",toekomst:"The future",halvering:"The staircase",kosten:"The energy",slot:"2140",fix:"Fix the money",kopen:"How to buy bitcoin",jaren:"Hold steady",zelf:"Self-custody"}; CH.forEach(c=>c.name=N[c.id]||c.name); }
+if(LANG==="en"){ const N={geld:"The planet",walvissen:"The ocean",kasboek:"The network",sleutel:"The vault",betalen:"The station",wachtkamer:"The waiting room",loterij:"The mining hall",ketting:"Blockchain",contract:"Smart contracts",dao:"DAOs",pow:"Work or stake",aanval:"The 51% attack",zwerm:"The AI swarm",staat:"State miners",munten:"Other coins",quantum:"Quantum",waarde:"Value",toekomst:"The future",halvering:"The staircase",kosten:"The energy",slot:"2140",fix:"Fix the money",kopen:"How to buy bitcoin",jaren:"Hold steady",zelf:"Self-custody"}; CH.forEach(c=>c.name=N[c.id]||c.name); }
 CH.forEach((c,i)=>c.i=i);
 const byId=Object.fromEntries(CH.map(c=>[c.id,c]));
 const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -3037,6 +3087,179 @@ const GL=(function(){
         let cx=0,cy=0,cz=0,lx=0,ly=0,lz=0,ws=0; CAMS.forEach((c,i)=>{ const w=W[i]; if(w<=0) return; ws+=w; cx+=c[0]*w; cy+=c[1]*w; cz+=c[2]*w; lx+=c[3]*w; ly+=c[4]*w; lz+=c[5]*w; });
         if(ws>0){ cx/=ws; cy/=ws; cz/=ws; lx/=ws; ly/=ws; lz/=ws; }
         const sway=Math.sin(t*.12*SPDG)*.5; cam.position.set(cx+sway+PTR.x*1.1,cy-PTR.y*.7,cz); cam.lookAt(lx,ly,lz); }});
+  })();
+
+  /* --- 07b-d · zijspoor aanval: gedeelde bouwstenen --- */
+  const mkKit=(fogC)=>{
+    const sc=new THREE.Scene(); sc.fog=new THREE.FogExp2(col(fogC||"#120A06"),.028);
+    const cam=new THREE.PerspectiveCamera(48,1,.1,300);
+    const G=[0,1,2,3,4,5].map(()=>{ const g=new THREE.Group(); g.userData.mats=[]; sc.add(g); return g; });
+    const LM=(gi,c,o)=>{ const m=lineMat(c,o); G[gi].userData.mats.push(m); return m; };
+    const PM=(gi,c,s,o,add)=>{ const m=ptsMat(c,s,o,add); G[gi].userData.mats.push(m); return m; };
+    const ring=(a,r,y,n,cx=0,cz=0)=>{ for(let i=0;i<n;i++){ const a1=i/n*Math.PI*2,a2=(i+1)/n*Math.PI*2; a.push(V(cx+Math.cos(a1)*r,y,cz+Math.sin(a1)*r),V(cx+Math.cos(a2)*r,y,cz+Math.sin(a2)*r)); } return a; };
+    const cube=(a,x,y,z,s,sy,sz)=>{ const h=s/2, hy=(sy||s)/2, hz=(sz||s)/2; const P=[[-h,-hy,-hz],[h,-hy,-hz],[h,hy,-hz],[-h,hy,-hz],[-h,-hy,hz],[h,-hy,hz],[h,hy,hz],[-h,hy,hz]].map(p=>V(x+p[0],y+p[1],z+p[2]));
+      [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]].forEach(([i,j])=>a.push(P[i],P[j])); return a; };
+    const label=(gi,txt,c,w)=>{ const cv=document.createElement("canvas"); cv.width=512; cv.height=96; const x=cv.getContext("2d");
+      const draw=s=>{ x.clearRect(0,0,512,96); x.fillStyle="#fff"; x.font='500 44px "Geist Mono", monospace'; x.textAlign="center"; x.textBaseline="middle"; x.fillText(s,256,50); };
+      draw(txt); const tex=new THREE.CanvasTexture(cv); const m=new THREE.SpriteMaterial({map:tex,color:c.clone(),transparent:true,depthWrite:false}); m.userData.base=1; G[gi].userData.mats.push(m);
+      const s=new THREE.Sprite(m); s.scale.set(w||4,(w||4)*96/512,1); G[gi].add(s); s.userData.set=v=>{ if(s.userData.v!==v){ s.userData.v=v; draw(v); tex.needsUpdate=true; } }; return s; };
+    const fib=(n,r)=>{ const a=[]; for(let i=0;i<n;i++){ const y=1-(i+.5)/n*2, rr=Math.sqrt(1-y*y), th=i*2.399963; a.push(V(Math.cos(th)*rr*r,y*r,Math.sin(th)*rr*r)); } return a; };
+    const weights=p=>[0,1,2,3,4].map(i=>{ const a=i*.2, b=i===4?1.2:a+.2; return (i===0?1:sstep(a-.03,a+.03,p))*(1-sstep(b-.03,b+.03,p)); });
+    const fade=(W,op,mob,extra)=>{ G.forEach((g,i)=>{ const w=i<5?W[i]:extra; g.visible=w>.01; g.userData.mats.forEach(m=>m.opacity=(mob&&m.isSpriteMaterial)?0:m.userData.base*op*w*(mob?.55:1)); }); };
+    const camMix=(W,CAMS,t,cam)=>{ let cx=0,cy=0,cz=0,lx=0,ly=0,lz=0,ws=0; CAMS.forEach((c,i)=>{ const w=W[i]; if(w<=0) return; ws+=w; cx+=c[0]*w; cy+=c[1]*w; cz+=c[2]*w; lx+=c[3]*w; ly+=c[4]*w; lz+=c[5]*w; });
+      if(ws>0){ cx/=ws; cy/=ws; cz/=ws; lx/=ws; ly/=ws; lz/=ws; } const sway=Math.sin(t*.12*SPDG)*.5; cam.position.set(cx+sway+PTR.x*1.1,cy-PTR.y*.7,cz); cam.lookAt(lx,ly,lz); };
+    const view=cam=>{ const mob=innerWidth<900, VW=innerWidth, VH=innerHeight; cam.setViewOffset(VW,VH,mob?0:-VW*.13,VH*(mob?.2:.1),VW,VH); return mob; };
+    return {sc,cam,G,LM,PM,ring,cube,label,fib,weights,fade,camMix,view,RED:col("#E06055"),GRN:col("#3FAE72"),GREY:col("#8A7D70")};
+  };
+
+  /* --- 07b · De 51%-aanval: ring, race, schild, prijskaartje, nasleep --- */
+  const ATK=(function(){
+    const K=mkKit(), {sc,cam,G,LM,PM,ring,cube,label,RED,GRN,GREY}=K;
+    /* 0 · ring van 100 segmenten rekenkracht */
+    const SEG=100, segM=[];
+    for(let i=0;i<SEG;i++){ const a=[], a1=i/SEG*Math.PI*2+.012, a2=(i+1)/SEG*Math.PI*2-.012;
+      for(let k=0;k<4;k++){ const b1=lerp(a1,a2,k/4), b2=lerp(a1,a2,(k+1)/4); [4,4.7].forEach(r=>a.push(V(Math.cos(b1)*r,Math.sin(b1)*r,0),V(Math.cos(b2)*r,Math.sin(b2)*r,0))); }
+      a.push(V(Math.cos(a1)*4,Math.sin(a1)*4,0),V(Math.cos(a1)*4.7,Math.sin(a1)*4.7,0));
+      const m=LM(0,PAPER,.75); G[0].add(new THREE.LineSegments(geo(a),m));
+      const fm=new THREE.MeshBasicMaterial({color:PAPER.clone(),transparent:true,opacity:.1,side:THREE.DoubleSide,depthWrite:false}); fm.userData.base=.1; G[0].userData.mats.push(fm); G[0].add(new THREE.Mesh(new THREE.RingGeometry(4,4.7,3,1,a1,a2-a1),fm)); segM.push([m,fm]); }
+    const ON=MOB?90:180, orb=new Float32Array(ON*3), orbS=Array.from({length:ON},()=>[Math.random()*Math.PI*2,3.1+Math.random()*.6,(Math.random()-.5)*.5,.3+Math.random()*.6]);
+    const og=new THREE.BufferGeometry(); og.setAttribute("position",new THREE.BufferAttribute(orb,3)); G[0].add(new THREE.Points(og,PM(0,C.orange,.12,.9,true)));
+    const lq=label(0,"30%",C.orange,3); const lq2=label(0,"",PAPER,3.4); lq2.position.set(0,-.8,0);
+    /* 1 · de race: eerlijke keten tegen geheime keten */
+    G[0].scale.setScalar(.82); G[1].position.y=-1.3; const BL=8, hon=[], sec=[];
+    const mkB=(gi,c,x,y)=>{ const m=LM(gi,c,.9); const l=new THREE.LineSegments(geo(cube([],0,0,0,.8)),m); l.position.set(x,y,0); G[gi].add(l); return {l,m}; };
+    for(let i=0;i<BL;i++){ hon.push(mkB(1,PAPER,-4.2+i*1.15,1.1)); sec.push(mkB(1,RED,-4.2+i*1.15,-1.1)); }
+    const fork=LM(1,PAPER,.5); G[1].add(new THREE.LineSegments(geo([V(-3.05,1.1,0),V(-2.3,-1.1,0)]),fork));
+    const pay=new THREE.Points(geo([V(-1.9,1.1,0)]),PM(1,C.orange,.7,1,true)); G[1].add(pay);
+    const lH=label(1,tx("eerlijke keten","honest chain"),PAPER,3.2), lS=label(1,tx("geheime keten","secret chain"),RED,3.2), lPay=label(1,tx("betaling aan beurs","payment to exchange"),C.orange,3.4);
+    lH.position.set(-1,2.1,0); lS.position.set(-1,-2.1,0); lPay.position.set(-1.9,2.6,0);
+    /* 2 · het schild van nodes */
+    const ico=new THREE.IcosahedronGeometry(3.4,2), dome=new THREE.LineSegments(new THREE.EdgesGeometry(ico),LM(2,GRN,.45)); G[2].add(dome);
+    const nodesP=[]; { const pos=ico.attributes.position; for(let i=0;i<pos.count;i+=3) nodesP.push(V(pos.getX(i),pos.getY(i),pos.getZ(i))); } const ndM=PM(2,GRN,.2,1,true); G[2].add(new THREE.Points(geo(nodesP),ndM));
+    const coin=[]; ring(coin,1,0,48); ring(coin,.8,0,48); const coinL=new THREE.LineSegments(geo(coin),LM(2,C.orange,.95)); coinL.rotation.x=Math.PI/2; G[2].add(coinL); const lc=label(2,"₿",C.orange,2.6);
+    const AN=MOB?8:14, inv=[]; for(let i=0;i<AN;i++){ const d=V(Math.random()-.5,(Math.random()-.5)*.8,Math.random()-.5).normalize(); const m=LM(2,RED,.9); const l=new THREE.LineSegments(geo(cube([],0,0,0,.45)),m); G[2].add(l); inv.push({d,l,o:Math.random()}); }
+    const lInv=label(2,tx("ongeldig blok","invalid block"),RED,3);
+    /* 3 · prijskaartje: blok machines + bliksem */
+    const GX=MOB?18:28, GY=MOB?8:12, mach=[]; for(let y=0;y<GY;y++) for(let x=0;x<GX;x++) for(let z=0;z<GX;z++) mach.push(V((x-GX/2)*.22,y*.22,(z-GX/2)*.22));
+    mach.sort((a,b)=>a.y-b.y||a.x-b.x); const mg=geo(mach); const mM=PM(3,C.orange,.09,.85,true); G[3].add(new THREE.Points(mg,mM));
+    const frame=new THREE.LineSegments(geo(cube([],-.11,GY*.11-.11,-.11,GX*.22,GY*.22,GX*.22)),LM(3,PAPER,.25)); G[3].add(frame);
+    const bolts=[]; for(let i=0;i<5;i++){ const g=new THREE.BufferGeometry().setFromPoints(Array.from({length:7},()=>V())); const m=LM(3,C.gold,.0); G[3].add(new THREE.Line(g,m)); bolts.push({g,m,x:(Math.random()-.5)*5,z:(Math.random()-.5)*5,next:Math.random()*2}); }
+    const lM=label(3,"",C.orange,3.6), lG=label(3,"",C.gold,3);
+    /* 4 · nasleep: de ring van de aanvaller verliest waarde */
+    const ring4=[]; ring(ring4,4.2,0,96); ring(ring4,4.6,0,96); const r4M=LM(4,RED,.8); const r4=new THREE.LineSegments(geo(ring4),r4M); r4.rotation.x=Math.PI/2; G[4].add(r4);
+    const FN=MOB?120:240, fp=new Float32Array(FN*3), fs=Array.from({length:FN},()=>[Math.random()*Math.PI*2,Math.random(),Math.random()]); const fg=new THREE.BufferGeometry(); fg.setAttribute("position",new THREE.BufferAttribute(fp,3)); G[4].add(new THREE.Points(fg,PM(4,RED,.12,.9,true)));
+    const ch4=[]; for(let i=0;i<9;i++) cube(ch4,-4+i,0,0,.6); G[4].add(new THREE.LineSegments(geo(ch4),LM(4,GRN,.8)));
+    const l4=label(4,tx("waarde van de machines","value of the machines"),RED,4);
+    return addWorld({sel:"#aanval",dark:true,scene:sc,cam,bg:makeBg("#1E120B","#070403",0,"#E06055"),
+      update(p,t,op){
+        const mob=K.view(cam), W=K.weights(p), lp=i=>clamp((p-i*.2)/.2,0,1); K.fade(W,op,mob,0);
+        if(W[0]>.01){ const q=window.AQ||.3, n=Math.round(q*SEG); segM.forEach(([m,fm],i)=>{ const red=i<n; m.color.copy(red?RED:PAPER); m.userData.base=red?.95:.3; fm.color.copy(red?RED:PAPER); fm.userData.base=red?.5+.15*Math.sin(t*3+i*.2):.05; }); G[0].rotation.z=-t*.05*SPDG;
+          for(let i=0;i<ON;i++){ const [a,r,z,s]=orbS[i], aa=a+t*s; orb[i*3]=Math.cos(aa)*r; orb[i*3+1]=Math.sin(aa)*r; orb[i*3+2]=z; } og.attributes.position.needsUpdate=true;
+          lq.userData.set(Math.round(q*100)+"%"); lq.material.color.copy(q>=.5?RED:C.orange); lq2.userData.set(q>=.5?tx("meerderheid","majority"):tx("aanvaller","attacker")); }
+        if(W[1]>.01){ const q=lp(1), hn=Math.min(BL,3+Math.floor(q*4.2)), sn=Math.min(BL,1+Math.floor(q*8.6)), pub=sstep(.72,.82,q);
+          hon.forEach((b,i)=>{ const vis=i<hn?1:0, lost=i>=2&&pub>0?pub:0; b.m.userData.base=vis*(lost?lerp(.9,.12,lost):.9); b.m.color.copy(lost>.5?GREY:PAPER); b.l.rotation.y=t*.4+i; });
+          sec.forEach((b,i)=>{ b.m.userData.base=i>=2&&i<sn?.95:0; b.l.position.y=lerp(-1.1,1.1,pub); b.l.rotation.y=-t*.5+i; });
+          lS.position.y=lerp(-2.1,-.2,pub); lS.userData.set(pub>.5?tx("wordt de echte keten","becomes the real chain"):tx("geheime keten","secret chain"));
+          lPay.userData.set(pub>.5?tx("betaling verdwenen","payment gone"):tx("betaling aan beurs","payment to exchange")); fork.userData.base=.5*(1-pub); lPay.material.color.copy(pub>.5?RED:C.orange); G[1].rotation.y=Math.sin(t*.25)*.18; }
+        if(W[2]>.01){ dome.rotation.y=t*.08; ndM.size=.2*(1+.3*Math.sin(t*3)); coinL.rotation.z=t*.6;
+          let shown=false; inv.forEach(a=>{ const f=(a.o+t*.3)%1, r=f<.6?lerp(13,3.55,f/.6):lerp(3.55,10,(f-.6)/.4); a.l.position.copy(a.d).multiplyScalar(r); a.l.rotation.set(t+a.o*6,t*.7,0); if(!shown&&a.d.x>.2&&f>.5&&f<.8){ shown=true; lInv.position.copy(a.d).multiplyScalar(4.4).add(V(0,.6,0)); } }); }
+        if(W[3]>.01){ const q=lp(3), n=Math.floor(mach.length*sstep(0,.7,q)); mg.setDrawRange(0,Math.max(1,n)); G[3].rotation.y=t*.08+.6;
+          const hr=window.HR||1200, m=hr*1e6/270; lM.userData.set((m/1e6).toLocaleString(LOC,{maximumFractionDigits:1})+tx(" mln machines"," m machines")); lM.position.set(0,GY*.22+.9,0);
+          lG.userData.set(Math.round(m*3.645/1e6)+" GW"); lG.position.set(0,GY*.22+1.7,0);
+          bolts.forEach(b=>{ if(t>b.next){ b.next=t+.4+Math.random()*1.6; const pa=b.g.attributes.position; let x=b.x,y=GY*.22+3.4,z=b.z; for(let k=0;k<7;k++){ pa.setXYZ(k,x,y,z); x+=(Math.random()-.5)*.6; y-=.5; z+=(Math.random()-.5)*.6; } pa.needsUpdate=true; b.hit=t; } b.m.userData.base=Math.max(0,1-(t-(b.hit||-9))*3)*sstep(.2,.5,q); }); }
+        if(W[4]>.01){ const q=lp(4), drain=sstep(.1,.8,q); r4M.userData.base=lerp(.85,.18,drain); r4.scale.setScalar(lerp(1,.75,drain)); r4.rotation.z=t*.1;
+          for(let i=0;i<FN;i++){ const [a,r,o]=fs[i], f=(o+t*.25)%1; fp[i*3]=Math.cos(a)*(4.4*lerp(1,.75,drain)); fp[i*3+1]=-f*6*drain; fp[i*3+2]=Math.sin(a)*(4.4*lerp(1,.75,drain)); } fg.attributes.position.needsUpdate=true;
+          l4.position.set(-1,-2.6,0); l4.userData.set(drain>.5?tx("de aanval kost hemzelf het meest","the attack costs him the most"):tx("waarde van de machines","value of the machines")); }
+        K.camMix(W,[[0,.5,11.5, 0,0,0],[0,1,10, 0,0,0],[4,2.4,10, 0,0,0],[6,7,11, 0,1.6,0],[0,3.6,12.5, 0,-.8,0]],t,cam); }});
+  })();
+
+  /* --- 07c · De AI-zwerm: globe, chip tegen wolk, torens, botnet, pools --- */
+  const ZWM=(function(){
+    const K=mkKit(), {sc,cam,G,LM,PM,ring,cube,label,fib,RED,GRN,GREY}=K;
+    /* 0 · de wereld vol apparaten */
+    const GP=fib(MOB?900:1800,3.6); G[0].add(new THREE.Points(geo(GP),PM(0,PAPER,.07,.5,true)));
+    const INF=GP.filter((_,i)=>i%3===0), infM=PM(0,C.orange,.13,1,true); G[0].add(new THREE.Points(geo(INF),infM));
+    const SN=MOB?120:260, sp=new Float32Array(SN*3), ss=Array.from({length:SN},()=>[INF[Math.floor(Math.random()*INF.length)],Math.random()]);
+    const sgeo=new THREE.BufferGeometry(); sgeo.setAttribute("position",new THREE.BufferAttribute(sp,3)); G[0].add(new THREE.Points(sgeo,PM(0,C.orange,.09,.9,true)));
+    const core=new THREE.Points(geo([V()]),PM(0,C.orange,1.2,1,true)); G[0].add(core);
+    /* 1 · één chip tegen een wolk van pc's */
+    const asic=[]; cube(asic,0,0,0,1.6,1.1,2.4); for(let k=-4;k<=4;k++) asic.push(V(-.8,-.55,k*.26),V(-.8,.55,k*.26)); const aM=LM(1,C.orange,1); const AS=new THREE.LineSegments(geo(asic),aM); AS.position.x=-3.6; G[1].add(AS);
+    const HN=MOB?40:80, hp=new Float32Array(HN*3), hs=Array.from({length:HN},()=>[Math.random(),Math.random()*Math.PI*2]); const hg=new THREE.BufferGeometry(); hg.setAttribute("position",new THREE.BufferAttribute(hp,3)); G[1].add(new THREE.Points(hg,PM(1,C.orange,.14,1,true)));
+    const CN=MOB?3500:9000, cl=[]; for(let i=0;i<CN;i++) cl.push(V(1+Math.random()*5.5,(Math.random()-.5)*4.2,(Math.random()-.5)*4.2)); const clM=PM(1,PAPER,.035,.55,true); G[1].add(new THREE.Points(geo(cl),clM));
+    const l1a=label(1,tx("1 machine","1 machine"),C.orange,3), l1b=label(1,tx("27.000 videokaarten","27,000 graphics cards"),PAPER,4.2); l1a.position.set(-3.6,1.3,0); l1b.position.set(3.75,1.7,0);
+    /* 2 · twee torens: zwerm tegen netwerk */
+    const tower=(x,c)=>{ const g=new THREE.Group(); g.position.x=x; const a=[]; for(let y=0;y<=10;y+=.5) ring(a,.9,y,4); [[.9,0],[-.9,0],[0,.9],[0,-.9]].forEach(([px,pz])=>a.push(V(px,0,pz),V(px,10,pz))); g.add(new THREE.LineSegments(geo(a),LM(2,c,.6))); G[2].add(g); return g; };
+    G[1].position.set(-1.2,-.8,0); G[2].position.y=-2.6; G[3].position.set(-1.2,-1,0); G[4].scale.setScalar(.82); G[4].position.x=1;
+    const tSw=tower(-2.4,C.orange), tNet=tower(2.4,PAPER); const lSw=label(2,"",C.orange,3), lNet=label(2,tx("netwerk","network"),PAPER,3); lNet.position.set(2.4,10.8,0);
+    const gr=[]; ring(gr,6,0,64); G[2].add(new THREE.LineSegments(geo(gr),LM(2,C.orange,.15)));
+    /* 3 · botnets minen Monero */
+    const xmr=[]; ring(xmr,1.1,0,48); ring(xmr,.85,0,48); const xL=new THREE.LineSegments(geo(xmr),LM(3,GREY,.9)); xL.rotation.x=Math.PI/2; xL.position.set(3.4,-1.2,0); G[3].add(xL);
+    const btc=[]; ring(btc,1.1,0,48); ring(btc,.85,0,48); const bL=new THREE.LineSegments(geo(btc),LM(3,C.orange,.9)); bL.rotation.x=Math.PI/2; bL.position.set(3.4,2.2,0); G[3].add(bL);
+    const lX=label(3,"Monero",GREY,2.6), lB=label(3,"Bitcoin",C.orange,2.6); lX.position.set(3.4,-2.7,0); lB.position.set(3.4,3.7,0);
+    const BN=MOB?140:300, bp=new Float32Array(BN*3), bs=Array.from({length:BN},()=>[Math.random(),(Math.random()-.5)*3,(Math.random()-.5)*3,Math.random()<.12]); const bgm=new THREE.BufferGeometry(); bgm.setAttribute("position",new THREE.BufferAttribute(bp,3)); G[3].add(new THREE.Points(bgm,PM(3,C.orange,.1,.9,true)));
+    const swc=fib(MOB?300:600,1.8); const swP=new THREE.Points(geo(swc),PM(3,PAPER,.06,.6,true)); swP.position.set(-3.6,0,0); G[3].add(swP);
+    /* 4 · mining-pools: miners wisselen */
+    const SH=[30,18,13,10,9], HUB=SH.map((s,i)=>{ const a=i/SH.length*Math.PI*2+Math.PI/2; return V(Math.cos(a)*3.6,Math.sin(a)*3.6*.62,0); });
+    const hubL=[]; SH.forEach((s,i)=>{ const a=[]; ring(a,.35+s*.02,0,40); const m=LM(4,i===0?RED:PAPER,.85); const l=new THREE.LineSegments(geo(a),m); l.rotation.x=Math.PI/2; l.position.copy(HUB[i]); G[4].add(l); hubL.push({l,m}); const lb=label(4,(i===0?"pool ":"")+s+"%",i===0?RED:PAPER,2.2); lb.position.copy(HUB[i]).add(V(0,-.95-s*.02,0)); });
+    const MN=MOB?160:320, mp=new Float32Array(MN*3), ms=[]; { let k=0; SH.forEach((s,i)=>{ const n=Math.round(MN*s/80); for(let j=0;j<n&&k<MN;j++,k++) ms.push({h:i,to:i===0?1+(j%4):i,a:Math.random()*Math.PI*2,r:.5+Math.random()*.5,s:.6+Math.random()}); }); while(ms.length<MN) ms.push({h:1,to:1,a:Math.random()*7,r:.6,s:1}); }
+    const mgm=new THREE.BufferGeometry(); mgm.setAttribute("position",new THREE.BufferAttribute(mp,3)); G[4].add(new THREE.Points(mgm,PM(4,C.orange,.1,.95,true)));
+    return addWorld({sel:"#zwerm",dark:true,scene:sc,cam,bg:makeBg("#1E120B","#070403",0,"#C8952A"),
+      update(p,t,op){
+        const mob=K.view(cam), W=K.weights(p), lp=i=>clamp((p-i*.2)/.2,0,1); K.fade(W,op,mob,0);
+        if(W[0]>.01){ G[0].rotation.y=t*.1*SPDG; infM.size=.13*(1+.4*Math.sin(t*3));
+          for(let i=0;i<SN;i++){ const [v,o]=ss[i], f=(o+t*.35)%1; sp[i*3]=v.x*(1-f); sp[i*3+1]=v.y*(1-f); sp[i*3+2]=v.z*(1-f); } sgeo.attributes.position.needsUpdate=true; }
+        if(W[1]>.01){ AS.rotation.y=Math.sin(t*.5)*.3; for(let i=0;i<HN;i++){ const [o,a]=hs[i], f=(o+t*1.6)%1; hp[i*3]=-3.6+Math.cos(a)*f*3; hp[i*3+1]=Math.sin(a)*f*3; hp[i*3+2]=Math.sin(a*2)*f; } hg.attributes.position.needsUpdate=true; clM.size=.035*(1+.15*Math.sin(t*1.3)); G[1].rotation.y=Math.sin(t*.2)*.15; }
+        if(W[2]>.01){ const s=window.ZS||0, h=Math.max(.02,Math.min(1.2,s/(1-s)))*1; tSw.scale.y=lerp(tSw.scale.y,h,.12); lSw.userData.set(tx("zwerm ","swarm ")+(s<.01?(s*100).toLocaleString(LOC,{maximumFractionDigits:3}):(s*100).toLocaleString(LOC,{maximumFractionDigits:1}))+"%"); lSw.position.set(-2.4,tSw.scale.y*10+.8,0); G[2].rotation.y=Math.sin(t*.2)*.25; }
+        if(W[3]>.01){ for(let i=0;i<BN;i++){ const [o,y0,z0,b]=bs[i], f=(o+t*.3)%1; let x,y,z; if(!b){ x=lerp(-3.6,3.4,f); y=lerp(y0*.6,-1.2,f)+Math.sin(f*Math.PI)*1.2; z=lerp(z0*.6,0,f); } else { const g=Math.min(1,f*2); x=lerp(-3.6,2.6,g); y=lerp(y0*.6,2.0,g); z=lerp(z0*.6,0,g); if(f>.5){ const k=(f-.5)*2; x=lerp(2.6,0,k); y=lerp(2,4.5,k); } } bp[i*3]=x; bp[i*3+1]=y; bp[i*3+2]=z; } bgm.attributes.position.needsUpdate=true; xL.rotation.z=t*.8; bL.rotation.z=t*.3; swP.rotation.y=t*.3; }
+        if(W[4]>.01){ const q=lp(4), mv=sstep(.3,.8,q); hubL[0].m.userData.base=lerp(.9,.25,mv); hubL[0].l.scale.setScalar(1+.08*Math.sin(t*6)*(1-mv));
+          ms.forEach((m,i)=>{ const A=HUB[m.h], B=HUB[m.to], k=m.h===0?mv:0, aa=m.a+t*m.s; const cx=lerp(A.x,B.x,k), cy=lerp(A.y,B.y,k)+Math.sin(k*Math.PI)*1.2; mp[i*3]=cx+Math.cos(aa)*m.r; mp[i*3+1]=cy+Math.sin(aa)*m.r*.5; mp[i*3+2]=Math.sin(aa)*m.r*.6; }); mgm.attributes.position.needsUpdate=true; }
+        K.camMix(W,[[0,.6,10.5, 0,0,0],[0,1.4,10.5, 0,0,0],[0,5,21, 0,4.2,0],[0,.8,10.5, 0,.5,0],[0,.5,10, 0,0,0]],t,cam); }});
+  })();
+
+  /* --- 07d · Staatsmijnen: globe met zuilen, 2021, China bouwt, alarm, de fabriek --- */
+  const STA=(function(){
+    const K=mkKit(), {sc,cam,G,LM,PM,ring,cube,label,fib,RED,GRN,GREY}=K, R=2.6, KH=1.7/37.5;
+    const ll=(lat,lon,r)=>{ const ph=(90-lat)*Math.PI/180, th=(lon+180)*Math.PI/180; return V(-r*Math.sin(ph)*Math.cos(th),r*Math.cos(ph),r*Math.sin(ph)*Math.sin(th)); };
+    const globe=G[5]; globe.add(new THREE.Points(geo(fib(MOB?1300:2600,R)),PM(5,PAPER,.06,.45,true)));
+    { const a=[]; for(let la=-60;la<=60;la+=30){ const r=R*Math.cos(la*Math.PI/180); ring(a,r,R*Math.sin(la*Math.PI/180),72); } globe.add(new THREE.LineSegments(geo(a),LM(5,PAPER,.08))); }
+    const CO=[["us",38,-97],["ru",56,100],["cn",33,95],["py",-23,-58],["ae",24,54],["om",21,57],["ca",55,-110],["kz",48,68],["et",9,39],["id",-2,115],["my",4,102]];
+    const N26={us:37.5,ru:16.4,cn:11.7,py:4,ae:3.1,om:3,ca:2.6,kz:2.1,et:2.6,id:2.1,my:1.5}, PRE={us:16.8,ru:6.8,cn:46,py:0,ae:0,om:0,ca:3,kz:8.2,et:0,id:0,my:4.6}, POST={us:35.4,ru:11.2,cn:0,py:0,ae:0,om:0,ca:9.6,kz:18.1,et:0,id:0,my:4.8};
+    const cols={}; CO.forEach(([id,la,lo])=>{ const base=ll(la,lo,R), n=base.clone().normalize(); const a=[]; const u=V(0,1,0).cross(n).normalize(), w=n.clone().cross(u).normalize(), s=.09;
+      [[s,s],[s,-s],[-s,-s],[-s,s]].forEach(([x,y])=>{ const o=u.clone().multiplyScalar(x).add(w.clone().multiplyScalar(y)); a.push(o.clone(),o.clone().add(n)); });
+      const m=LM(5,id==="cn"?RED:C.orange,.95); const l=new THREE.LineSegments(geo(a),m); l.position.copy(base); l.userData.n=n; globe.add(l); const tip=new THREE.Points(geo([n.clone()]),PM(5,id==="cn"?RED:C.orange,.22,1,true)); tip.position.copy(base); globe.add(tip); cols[id]={l,tip,base,n,h:.1}; });
+    const lCn=label(5,"China",RED,2.4);
+    const setH=(id,h)=>{ const c=cols[id]; c.h=lerp(c.h,h,.1); const hh=Math.max(.02,c.h); c.l.scale.set(1,1,1); const pa=c.l.geometry.attributes.position; for(let k=0;k<pa.count;k+=2){ const x0=pa.getX(k),y0=pa.getY(k),z0=pa.getZ(k); pa.setXYZ(k+1,x0+c.n.x*hh,y0+c.n.y*hh,z0+c.n.z*hh); } pa.needsUpdate=true; c.tip.position.copy(c.base).add(c.n.clone().multiplyScalar(hh-1)); };
+    /* 1 · de blokklok */
+    const clk=[]; ring(clk,3.7,0,96); const clkL=new THREE.LineSegments(geo(clk),LM(1,PAPER,.3)); clkL.rotation.x=Math.PI/2; G[1].add(clkL); const hand=new THREE.Points(geo([V(4.6,0,0)]),PM(1,C.orange,.5,1,true)); G[1].add(hand);
+    const l2=label(1,"",PAPER,3.4); let clkA=0;
+    /* 2 · 51%-ring rond China */
+    const thr=[]; ring(thr,.45,0,40); const thM=LM(2,PAPER,.9); const thL=new THREE.LineSegments(geo(thr),thM); G[2].add(thL); const lThr=label(2,"51%",PAPER,1.6); const lSh=label(2,"",RED,2.4);
+    /* 3 · alarm: pulsen vanaf nodes */
+    const NP=MOB?14:26, pulses=[]; for(let i=0;i<NP;i++){ const la=(Math.random()-.5)*130, lo=Math.random()*360-180, b=ll(la,lo,R+.02), n=b.clone().normalize(); const a=[]; ring(a,1,0,32); const m=LM(3,C.gold,.8); const l=new THREE.LineSegments(geo(a),m); l.position.copy(b); l.quaternion.setFromUnitVectors(V(0,1,0),n); G[3].add(l); pulses.push({l,m,o:Math.random()}); }
+    /* 4 · de fabriek: chip + noodrem */
+    const chip=[]; cube(chip,0,0,0,3,.3,3); cube(chip,0,.25,0,1.6,.2,1.6); for(let k=-5;k<=5;k++){ const x=k*.26; chip.push(V(x,0,1.5),V(x,0,2.1),V(x,0,-1.5),V(x,0,-2.1),V(1.5,0,x),V(2.1,0,x),V(-1.5,0,x),V(-2.1,0,x)); } const chM=LM(4,C.orange,.95); const CH4=new THREE.LineSegments(geo(chip),chM); G[4].add(CH4);
+    const FL=MOB?120:260, flp=new Float32Array(FL*3), fls=Array.from({length:FL},()=>[Math.random()*Math.PI*2,Math.random(),(Math.random()-.5)*2]); const flg=new THREE.BufferGeometry(); flg.setAttribute("position",new THREE.BufferAttribute(flp,3)); G[4].add(new THREE.Points(flg,PM(4,C.orange,.1,.9,true)));
+    const lChip=label(4,"SHA-256",C.orange,2.6); lChip.position.set(0,1.4,0); const lBrake=label(4,tx("noodrem","emergency brake"),GRN,3); lBrake.position.set(0,-1.6,0);
+    let rot=0; const cTip=V();
+    return addWorld({sel:"#staat",dark:true,scene:sc,cam,bg:makeBg("#1E120B","#070403",0,"#E06055"),
+      update(p,t,op){
+        const mob=K.view(cam), W=K.weights(p), lp=i=>clamp((p-i*.2)/.2,0,1), wg=W[0]+W[1]+W[2]+W[3]; K.fade(W,op,mob,Math.min(1,wg));
+        if(wg>.01){ const k=KH; let H=N26;
+          if(W[1]>.5){ const q=lp(1), m=sstep(.3,.6,q); H={}; for(const id in PRE) H[id]=lerp(PRE[id],POST[id],m); }
+          if(W[2]>.5||W[3]>.5){ const s=window.CS||.117, sc2=(1-s)/(1-.117); H={}; for(const id in N26) H[id]=id==="cn"?s*100:N26[id]*sc2; }
+          for(const id in cols) setH(id,H[id]*k);
+          const cn=cols.cn; cTip.copy(cn.base).add(cn.n.clone().multiplyScalar(Math.max(.02,cn.h)+.5)); lCn.position.copy(cTip);
+          const face=W[2]+W[3]>.5; if(!face){ rot+=(1/60)*.06*SPDG; } else { const base=2.878+Math.sin(t*.2)*.1, tgt=base+Math.PI*2*Math.round((rot-base)/(Math.PI*2)); rot=lerp(rot,tgt,window.__TEST?1:.1); } globe.rotation.y=rot; globe.rotation.x=lerp(globe.rotation.x,face?-.35:.25,window.__TEST?1:.08); globe.position.y=lerp(globe.position.y,face?-1.3:0,window.__TEST?1:.08); globe.updateMatrixWorld(); }
+        if(W[1]>.01){ const q=lp(1), dip=sstep(.3,.5,q)*(1-sstep(.72,.88,q)); clkA+=(1/60)*lerp(1.2,.55,dip); hand.position.set(Math.cos(clkA)*3.7,Math.sin(clkA)*3.7,0);
+          l2.position.set(-1.6,-3.3,0); l2.userData.set(dip>.5?tx("blokken trager","blocks slower"):q>.88?tx("weer elke 10 min","every 10 min again"):tx("elke 10 minuten","every 10 minutes")); l2.material.color.copy(dip>.5?RED:PAPER); }
+        if(W[2]>.01||W[3]>.01){ const cn=cols.cn, thrPos=cn.base.clone().add(cn.n.clone().multiplyScalar(51*KH)).applyMatrix4(globe.matrixWorld); thL.position.copy(thrPos); thL.quaternion.setFromUnitVectors(V(0,1,0),cn.n.clone().applyQuaternion(globe.quaternion)); lThr.position.copy(thrPos).add(V(.8,0,0));
+          const s=window.CS||.117; lSh.userData.set("China "+Math.round(s*100)+"%"); lSh.position.copy(cTip).applyMatrix4(globe.matrixWorld).add(V(0,.5,0)); lCn.userData.set(""); thM.color.copy(s>=.5?RED:PAPER); }
+        else lCn.userData.set("China");
+        if(W[3]>.01){ pulses.forEach(pp=>{ const f=(pp.o+t*.4)%1; pp.l.scale.setScalar(.05+f*1.1); pp.m.userData.base=(1-f)*.9; }); }
+        if(W[4]>.01){ const q=lp(4), brake=sstep(.45,.75,q); CH4.rotation.y=t*.2; chM.color.copy(brake>.5?GREY:C.orange); chM.userData.base=lerp(.95,.45,brake);
+          for(let i=0;i<FL;i++){ const [a,o,y]=fls[i], f=(o+t*.3)%1, r=lerp(1.6,7,f)*(1-brake*.7); flp[i*3]=Math.cos(a)*r; flp[i*3+1]=y*f; flp[i*3+2]=Math.sin(a)*r; } flg.attributes.position.needsUpdate=true;
+          lChip.userData.set(brake>.5?"SHA-256 → ?":"SHA-256"); lChip.material.color.copy(brake>.5?GREY:C.orange); lBrake.material.opacity*=brake; }
+        K.camMix(W,[[0,1.4,11, 0,.4,0],[0,1,12, 0,0,0],[0,1.8,12.5, 0,1.3,0],[0,2.4,13, 0,1,0],[0,4.5,8.5, 0,0,0]],t,cam); }});
   })();
 
   /* --- 14 · De toekomst: nachtstad 2040 --- */
@@ -3902,6 +4125,78 @@ async function goLive(){
     mufair:()=>`<div class="mu-fair"><div class="cv-card"><h4>${tx("Waar ze goed in zijn","What they're good at")}</h4><ul><li>${tx("Apps en smart contracts bouwen","Building apps and smart contracts")}</li><li>${tx("Snelle, goedkope transacties","Fast, cheap transactions")}</li><li>${tx("Digitale dollars (stablecoins)","Digital dollars (stablecoins)")}</li></ul></div>
       <div class="cv-card or"><h4>${tx("Wat bitcoin uniek maakt","What makes bitcoin unique")}</h4><ul><li>${tx("Niemand kan bijdrukken","Nobody can print more")}</li><li>${tx("Niemand kreeg een voorsprong","Nobody got a head start")}</li><li>${tx("Niemand is de baas","Nobody is in charge")}</li></ul></div>
       <div class="cv-card ver">${tx("Andere munten zijn technologie of bedrijfsproducten. Bitcoin is geld dat van niemand is. Alleen dat past bij fix the money.","Other coins are technology or company products. Bitcoin is money that belongs to nobody. Only that fits fix the money.")}</div></div>`,
+    akrace:()=>`<div class="fu-card q-sl"><span class="fu-k">${tx("Kans op terugdraaien na 6 blokken","Odds of a reversal after 6 blocks")}</span>
+      <div class="qv" style="margin-top:.6rem"><b id="akQ">30%</b><span class="fu-k">${tx("sleep: aandeel aanvaller","drag: attacker's share")}</span></div>
+      <input type="range" min="1" max="60" step="1" value="30" data-ak="q" aria-label="${tx("Aandeel rekenkracht van de aanvaller","Attacker's share of computing power")}">
+      <div class="ak-meter" id="akM"><i style="width:30%"></i><u></u></div>
+      <div class="qm"><div><b id="akP">13,2%</b>${tx("kans dat een betaling met 6 bevestigingen toch verdwijnt","chance a payment with 6 confirmations still disappears")}</div><div><b>51%+</b>${tx("dan wint de aanvaller altijd, het is alleen een kwestie van tijd","then the attacker always wins, it's just a matter of time")}</div></div>
+      <p class="qmsg" id="akMsg"></p></div>`,
+    akcan:()=>`<div class="fu-card"><span class="fu-k">${tx("Met 51% kan de aanvaller","With 51% the attacker can")}</span><ul class="ak-l">
+      <li><div><b>${tx("Eigen betalingen terugdraaien","Undo his own payments")}</b><span>${tx("De double spend: één keer betalen, twee keer uitgeven.","The double spend: pay once, spend twice.")}</span></div></li>
+      <li><div><b>${tx("Betalingen weren","Block payments")}</b><span>${tx("Hij kan weigeren bepaalde transacties in zijn blokken op te nemen.","He can refuse to include certain transactions in his blocks.")}</span></div></li>
+      <li><div><b>${tx("Andere miners buitenspel zetten","Sideline other miners")}</b><span>${tx("Hun blokken negeren, zodat zij geen beloning meer krijgen.","Ignore their blocks so they stop getting rewards.")}</span></div></li></ul>
+      <p class="ak-note">${tx("Dat is ernstig, maar het blijft beperkt tot recente blokken en zijn eigen munten.","That's serious, but it stays limited to recent blocks and his own coins.")}</p></div>`,
+    akcant:()=>`<div class="fu-card"><span class="fu-k">${tx("Zelfs met 99% kan hij níet","Even with 99% he can't")}</span><ul class="ak-l no">
+      <li><div><b>${tx("Jouw munten stelen","Steal your coins")}</b><span>${tx("Daarvoor heeft hij jouw sleutel nodig. Rekenkracht helpt daar niet.","He needs your key for that. Computing power doesn't help.")}</span></div></li>
+      <li><div><b>${tx("Extra bitcoin maken","Create extra bitcoin")}</b><span>${tx("Een blok met een te hoge beloning keurt elke node af. De 21 miljoen blijft.","Every node rejects a block with too big a reward. The 21 million stays.")}</span></div></li>
+      <li><div><b>${tx("De regels veranderen","Change the rules")}</b><span>${tx("Miners maken blokken, maar de nodes beslissen wat geldig is.","Miners make blocks, but nodes decide what's valid.")}</span></div></li>
+      <li><div><b>${tx("Jaren terug herschrijven","Rewrite years back")}</b><span>${tx("Elk oud blok opnieuw minen kost net zoveel rekenwerk als toen, plus alles daarna.","Re-mining every old block costs as much work as back then, plus everything after it.")}</span></div></li></ul>
+      <p class="ak-ok">✓ ${tx("Ongeldige blokken stuiteren af op duizenden nodes, ook die van jou als je er een draait.","Invalid blocks bounce off thousands of nodes, including yours if you run one.")}</p></div>`,
+    akcost:()=>`<div class="fu-card"><span class="fu-k">${tx("Wat een meerderheid kost","What a majority costs")}</span>
+      <div class="ak-fig"><div><b data-hr="m">4,4 ${tx("mln","m")}</b>${tx("machines van het snelste type","machines of the fastest kind")}</div><div class="hot"><b data-hr="eur">€ 27 ${tx("mld","bn")}</b>${tx("alleen al aan hardware","on hardware alone")}</div><div><b data-hr="gw">16 GW</b>${tx("stroom, meer dan heel Nederland (± 13 GW)","of power, more than the whole Netherlands (about 13 GW)")}</div><div class="hot"><b data-hr="uur">€ 810.000</b>${tx("aan stroom, per uur","in electricity, per hour")}</div></div>
+      <p class="ak-note">${tx("Gerekend met","Based on")} <span data-hr="hr">1.200 EH/s</span> ${tx("in het netwerk, de Antminer S21 XP (270 TH/s, 3,6 kW, ± € 6.000) en stroom van € 0,05 per kWh. Zoveel machines bestaan niet eens los te koop.","in the network, the Antminer S21 XP (270 TH/s, 3.6 kW, about €6,000) and power at €0.05 per kWh. That many machines aren't even for sale.")}</p></div>`,
+    akthen:()=>`<div class="fu-card q-sh"><span class="fu-k">${tx("Wat er echt gebeurde","What really happened")}</span><ol>
+      <li><div><b>Ghash.io · 2014</b><span>${tx("Eén mining-pool kwam rond de 50%. Miners stapten zelf over naar andere pools, uit eigenbelang.","One mining pool got close to 50%. Miners moved to other pools themselves, out of self-interest.")}</span></div></li>
+      <li><div><b>Bitcoin Gold · 2018</b><span>${tx("Klein netwerk, wél aangevallen: voor miljoenen dubbel uitgegeven bij beurzen.","Small network, attacked: millions double-spent at exchanges.")}</span></div></li>
+      <li><div><b>Ethereum Classic · 2019, 2020</b><span>${tx("Meerdere aanvallen met gehuurde rekenkracht. Hoe kleiner het netwerk, hoe goedkoper.","Several attacks with rented computing power. The smaller the network, the cheaper.")}</span></div></li>
+      <li><div><b>${tx("De noodrem","The emergency brake")}</b><span>${tx("Als laatste redmiddel kan de gemeenschap het mining-algoritme wijzigen. Omstreden, maar het bestaat.","As a last resort the community can change the mining algorithm. Controversial, but it exists.")}</span></div></li></ol>
+      <p class="ok">✓ ${tx("Bitcoin is het grootste mining-netwerk ter wereld. Juist daardoor is het het duurst om aan te vallen.","Bitcoin is the biggest mining network in the world. That's exactly what makes it the most expensive to attack.")}</p></div>`,
+    zwidea:()=>`<div class="fu-card"><span class="fu-k">${tx("Het plan van de zwerm","The swarm's plan")}</span>
+      <div class="qb"><span class="bit">∞</span><span>${tx("Miljarden telefoons, laptops en gamecomputers zijn online.","Billions of phones, laptops and gaming PCs are online.")}</span></div>
+      <div class="qb"><span class="bit">AI</span><span>${tx("Een AI kaapt ze en laat elk apparaat een klein beetje minen.","An AI hijacks them and has each device mine a little.")}</span></div>
+      <div class="qnum"><b>?</b><span>${tx("haalt de zwerm<br>de 51%?","does the swarm<br>reach 51%?")}</span></div></div>`,
+    zwchip:()=>`<div class="fu-card"><span class="fu-k">${tx("Snelheid in SHA-256","Speed in SHA-256")}</span>
+      <div class="ak-fig"><div><b>270 TH/s</b>${tx("één mining-machine (S21 XP)","one mining machine (S21 XP)")}</div><div><b>± 10 GH/s</b>${tx("een topvideokaart, royaal gerekend","a top graphics card, generously")}</div><div><b>± 0,5 GH/s</b>${tx("een snelle laptop","a fast laptop")}</div><div class="hot"><b>27.000×</b>${tx("zoveel videokaarten voor één machine","that many graphics cards for one machine")}</div></div>
+      <p class="ak-note">${tx("En die ene machine is ook nog tienduizenden keren zuiniger per hash.","And that one machine is also tens of thousands of times more efficient per hash.")}</p></div>`,
+    zwcalc:()=>`<div class="fu-card q-sl"><span class="fu-k">${tx("Gekaapte apparaten","Hijacked devices")}</span>
+      <div class="ak-seg" role="group" aria-label="${tx("Soort apparaat","Device type")}"><button type="button" data-zt="0">${tx("Telefoons","Phones")}</button><button type="button" data-zt="1" class="on">Laptops</button><button type="button" data-zt="2">${tx("Game-pc's","Gaming PCs")}</button></div>
+      <div class="qv" style="margin-top:.5rem"><b id="zwN">100 ${tx("mln","m")}</b><span class="fu-k">${tx("sleep: aantal","drag: number")}</span></div>
+      <input type="range" min="6" max="9.7" step="0.01" value="8" data-zw="n" aria-label="${tx("Aantal gekaapte apparaten","Number of hijacked devices")}">
+      <div class="ak-meter" id="zwM"><i style="width:0%"></i><u></u></div>
+      <div class="qm"><div><b id="zwH">0,05 EH/s</b>${tx("rekenkracht van de zwerm","the swarm's computing power")}</div><div><b id="zwS">0,004%</b>${tx("van het netwerk","of the network")}</div></div>
+      <p class="qmsg" id="zwMsg"></p></div>`,
+    zwbot:()=>`<div class="fu-card"><span class="fu-k">${tx("Waarom botnets geen bitcoin minen","Why botnets don't mine bitcoin")}</span>
+      <div class="qb"><span class="bit" style="color:#7FD3A2">✓</span><span><b style="color:var(--paper-2)">Monero</b> · ${tx("bewust gemaakt voor gewone processors (RandomX). Een gekaapte laptop telt daar mee.","deliberately built for ordinary processors (RandomX). A hijacked laptop counts there.")}</span></div>
+      <div class="qb"><span class="bit" style="color:#F2A49B">✕</span><span><b style="color:var(--paper-2)">Bitcoin</b> · ${tx("alleen gespecialiseerde chips tellen. Een gekaapte laptop levert vrijwel niets op.","only specialised chips count. A hijacked laptop yields almost nothing.")}</span></div>
+      <p class="ak-note">${tx("Het slachtoffer betaalt wel de stroomrekening, en zijn apparaat wordt traag en heet.","The victim does pay the electricity bill, and their device gets slow and hot.")}</p></div>`,
+    zwsmart:()=>`<div class="fu-card q-sh"><span class="fu-k">${tx("Waar AI wél aandacht vraagt","Where AI does need attention")}</span><ol>
+      <li><div><b>${tx("Oplichting","Scams")}</b><span>${tx("AI maakt nep-berichten en nep-stemmen overtuigender. Het grootste risico is dat jij je sleutel weggeeft.","AI makes fake messages and fake voices more convincing. The biggest risk is you giving away your key.")}</span></div></li>
+      <li><div><b>Mining-pools</b><span>${tx("De grootste pool heeft rond de 30%. Miners kunnen binnen minuten wisselen, en met Stratum V2 stellen ze hun blokken zelf samen.","The biggest pool has around 30%. Miners can switch within minutes, and with Stratum V2 they build their own blocks.")}</span></div></li>
+      <li><div><b>${tx("Software-fouten","Software bugs")}</b><span>${tx("De code is open en wordt door veel mensen gecontroleerd. AI helpt ook verdedigers fouten vinden.","The code is open and checked by many people. AI also helps defenders find bugs.")}</span></div></li></ol>
+      <p class="ok">✓ ${tx("Bitcoin overnemen kan AI niet met slimheid. Daar is rekenkracht voor nodig, en die kost chips en stroom.","AI can't take over bitcoin with cleverness. That takes computing power, which costs chips and electricity.")}</p></div>`,
+    stmap:()=>`<div class="fu-card"><span class="fu-k">${tx("Aandeel in de rekenkracht","Share of computing power")}</span>
+      <div class="ak-rows">${[["VS","US",37.5],["Rusland","Russia",16.4],["China","China",11.7],["Paraguay","Paraguay",4.0],["VAE","UAE",3.1],["Oman","Oman",3.0],["Overig","Other",24.3]].map(([n,e,v])=>`<div class="ak-row${n==="China"?" cn":""}"><span>${tx(n,e)}</span><i style="--w:${v/37.5*100}%"></i><b>${v.toLocaleString(LOC)}%</b></div>`).join("")}</div>
+      <p class="ak-note">${tx("Schatting Hashrate Index, januari 2026. Gemeten op basis van stroomnetten en pools, dus ongeveer.","Estimate by Hashrate Index, January 2026. Based on power grids and pools, so approximate.")}</p></div>`,
+    st2021:()=>`<div class="fu-card"><span class="fu-k">${tx("Rekenkracht rond het verbod","Computing power around the ban")}</span>
+      <div class="ak-bars"><div><b>≈ 180</b><i style="height:100%"></i>${tx("mei 2021","May 2021")}</div><div class="low"><b>≈ 85</b><i style="height:47%"></i>${tx("juli 2021","July 2021")}</div><div><b>≈ 180+</b><i style="height:100%"></i>${tx("begin 2022","early 2022")}</div></div>
+      <div class="qnum"><b>−28%</b><span>${tx("moeilijkheid, 3 juli 2021<br>grootste daling ooit","difficulty, 3 July 2021<br>biggest drop ever")}</span></div>
+      <p class="ak-note">${tx("In EH/s, afgerond. Miners verhuisden naar onder meer de VS en Kazachstan.","In EH/s, rounded. Miners moved to the US and Kazakhstan, among others.")}</p></div>`,
+    stbuild:()=>`<div class="fu-card q-sl"><span class="fu-k">${tx("China bouwt bij","China builds more")}</span>
+      <div class="qv" style="margin-top:.5rem"><b id="stS">12%</b><span class="fu-k">${tx("sleep: extra rekenkracht","drag: extra computing power")}</span></div>
+      <input type="range" min="0" max="2400" step="10" value="0" data-st="x" aria-label="${tx("Extra rekenkracht voor China in EH/s","Extra computing power for China in EH/s")}">
+      <div class="ak-meter" id="stM"><i style="width:12%"></i><u></u></div>
+      <div class="qm"><div><b id="stX">+ 0 EH/s</b><span id="stXs">${tx("extra","extra")}</span></div><div><b id="stC">€ 0</b><span id="stCs">${tx("aan machines","in machines")}</span></div></div>
+      <p class="qmsg" id="stMsg"></p></div>`,
+    stalarm:()=>`<div class="fu-card"><span class="fu-k">${tx("Wat iedereen direct ziet","What everyone sees at once")}</span><ul class="ak-l">
+      <li><div><b>${tx("Een sprong in rekenkracht","A jump in computing power")}</b><span>${tx("Hashrate en pools zijn openbaar. Miljoenen nieuwe machines vallen op.","Hashrate and pools are public. Millions of new machines stand out.")}</span></div></li>
+      <li><div><b>${tx("Herschreven en lege blokken","Rewritten and empty blocks")}</b><span>${tx("Elke node ziet het als de keten ineens wordt vervangen.","Every node sees it when the chain is suddenly replaced.")}</span></div></li>
+      <li><div><b>${tx("Een reactie","A response")}</b><span>${tx("Beurzen wachten op meer bevestigingen. Eerlijke miners kunnen bijschakelen.","Exchanges wait for more confirmations. Honest miners can add capacity.")}</span></div></li></ul>
+      <p class="ak-warn">${tx("Weren en terugdraaien: ja. In jouw wallet komen: nee.","Blocking and undoing: yes. Getting into your wallet: no.")}</p></div>`,
+    strisk:()=>`<div class="fu-card q-sh"><span class="fu-k">${tx("Waar het echte risico zit","Where the real risk is")}</span><ol>
+      <li><div><b>${tx("De toelevering","The supply chain")}</b><span>${tx("De meeste mining-chips komen uit China. Er komen makers bij in andere landen, maar langzaam.","Most mining chips come from China. Makers in other countries are emerging, but slowly.")}</span></div></li>
+      <li><div><b>${tx("De noodrem","The emergency brake")}</b><span>${tx("Algoritme vervangen maakt de machines van de aanvaller waardeloos, maar ook die van eerlijke miners. Daarom alleen als laatste redmiddel.","Replacing the algorithm makes the attacker's machines worthless, but honest miners' too. So only as a last resort.")}</span></div></li>
+      <li><div><b>${tx("Spreiding","Spread")}</b><span>${tx("In 2021 had China bijna de helft. Nu is geen enkel land groter dan 40%.","In 2021 China had almost half. Today no single country is above 40%.")}</span></div></li></ol>
+      <p class="ok">✓ ${tx("Bitcoin is niet onkwetsbaar. Maar elke aanval is duur, zichtbaar en tijdelijk, en je sleutel blijft van jou.","Bitcoin isn't invulnerable. But every attack is costly, visible and temporary, and your key stays yours.")}</p></div>`,
     qwhat:()=>`<div class="fu-card"><span class="fu-k">${tx("Bit tegenover qubit","Bit versus qubit")}</span>
       <div class="qb"><span class="bit">0</span><span>${tx("Een gewone bit is 0 óf 1. Zo rekent je laptop.","A normal bit is 0 or 1. That's how your laptop computes.")}</span></div>
       <div class="qb"><span class="qbit"><i></i></span><span>${tx("Een qubit kan 0 én 1 tegelijk zijn, tot je kijkt. Daardoor kan hij sommige sommen veel sneller.","A qubit can be 0 and 1 at once, until you look. That lets it do some calculations much faster.")}</span></div>
@@ -3978,6 +4273,30 @@ async function goLive(){
         {l:tx("Stap 3 van 5 · Proof of Stake","Step 3 of 5 · Proof of Stake"),h:tx("Wie heeft, beslist.","Whoever holds, decides."),p:tx("Bij Proof of Stake zet je munten vast. Hoe meer munten, hoe vaker jij het blok mag maken, en de beloning gaat naar je stapel. Jij begint met nul. Klik en kijk wat er gebeurt.","With Proof of Stake you lock up coins. The more coins, the more often you make the block, and the reward goes onto your pile. You start with zero. Click and see what happens."),v:"ppos"},
         {l:tx("Stap 4 van 5 · Wie krijgt de nieuwe munten?","Step 4 of 5 · Who gets the new coins?"),h:tx("Werk komt van buiten. Bezit niet.","Work comes from outside. Stake doesn't."),p:tx("In Proof of Work kan iedereen met een machine en stroom nieuwe bitcoin verdienen. In Proof of Stake gaan nieuwe munten alleen naar wie er al heeft. De rijksten houden zo voor altijd de meeste zeggenschap.","In Proof of Work, anyone with a machine and electricity can earn new bitcoin. In Proof of Stake, new coins only go to those who already have some. The richest keep the most say forever."),v:"prich"},
         {l:tx("Stap 5 van 5 · Eerlijk is eerlijk","Step 5 of 5 · Fair is fair"),h:tx("Zuinig tegenover zonder baas.","Efficient versus boss-free."),p:tx("Proof of Stake gebruikt veel minder stroom, dat is een echt voordeel. Proof of Work kost energie, maar juist die energie maakt bitcoin moeilijk aan te vallen en open voor iedereen. Voor geld zonder baas kiest bitcoin bewust voor werk.","Proof of Stake uses far less electricity, which is a real advantage. Proof of Work costs energy, but that very energy makes bitcoin hard to attack and open to everyone. For money without a boss, bitcoin deliberately chooses work."),v:"pfair"}]},
+    aanval:{n:"07b",line:"pro",more:"aanval",hid:"h-aanval",title:tx("51% · Kan iemand bitcoin overnemen?","51% · Can someone take over bitcoin?"),
+      stops:tx(["De race","Wat wél","Wat niet","Prijs","En dan?"],["The race","What can","What can't","Price","And then?"]),
+      sc:[
+        {l:tx("Stap 1 van 5 · De race","Step 1 of 5 · The race"),h:tx("Meer rekenkracht dan de rest samen.","More computing power than everyone else combined."),p:tx("Miners racen om elk blok. Wie meer dan de helft van alle rekenkracht heeft, wint op den duur elke race. Dat heet een 51%-aanval. Sleep en zie hoe snel je kans stijgt, met de echte formule uit het whitepaper van Satoshi.","Miners race for every block. Whoever has more than half of all computing power eventually wins every race. That's a 51% attack. Drag and see how fast the odds rise, using the real formula from Satoshi's whitepaper."),v:"akrace"},
+        {l:tx("Stap 2 van 5 · Wat hij wél kan","Step 2 of 5 · What he can do"),h:tx("Zijn eigen betaling terugdraaien.","Undo his own payment."),p:tx("De aanvaller betaalt een beurs en mint ondertussen stiekem een eigen, langere keten zonder die betaling. Die publiceert hij later. Het netwerk volgt de langste geldige keten, dus zijn betaling verdwijnt. Hij heeft het geld terug, en de beurs is het kwijt.","The attacker pays an exchange while secretly mining his own, longer chain without that payment. He publishes it later. The network follows the longest valid chain, so his payment vanishes. He has his money back, and the exchange has lost it."),v:"akcan"},
+        {l:tx("Stap 3 van 5 · Wat hij níet kan","Step 3 of 5 · What he can't"),h:tx("Jouw munten blijven van jou.","Your coins stay yours."),p:tx("Duizenden nodes controleren elk blok zelf. Een blok dat munten verplaatst zonder geldige handtekening, of meer uitkeert dan de beloning, wordt overal geweigerd. Hoeveel rekenkracht er ook achter zit: ongeldig blijft ongeldig.","Thousands of nodes check every block themselves. A block that moves coins without a valid signature, or pays out more than the reward, is rejected everywhere. No matter how much computing power is behind it: invalid stays invalid."),v:"akcant"},
+        {l:tx("Stap 4 van 5 · Het prijskaartje","Step 4 of 5 · The price tag"),h:tx("Duurder dan een klein land.","Costlier than a small country."),p:tx("Om de meerderheid te halen moet je evenveel rekenkracht neerzetten als alle miners ter wereld samen. Dat zijn miljoenen machines die niet eens te koop zijn, en meer stroom dan heel Nederland gebruikt.","To win the majority you have to match the computing power of all the world's miners combined. That's millions of machines you can't even buy, and more electricity than the whole of the Netherlands uses."),v:"akcost"},
+        {l:tx("Stap 5 van 5 · En dan?","Step 5 of 5 · And then?"),h:tx("De aanval schiet zichzelf in de voet.","The attack shoots itself in the foot."),p:tx("Een aanval zie je binnen uren. Beurzen wachten langer of stoppen stortingen. De koers zakt, en daarmee de waarde van de miljarden aan machines van de aanvaller. Kleine munten zijn wél aangevallen. Bitcoin, het grootste netwerk, nog nooit.","You can see an attack within hours. Exchanges wait longer or halt deposits. The price drops, and with it the value of the attacker's billions in machines. Small coins have been attacked. Bitcoin, the biggest network, never."),v:"akthen"}]},
+    zwerm:{n:"07c",line:"pro",more:"zwerm",hid:"h-zwerm",title:tx("AI-zwerm · Overal een klein beetje?","AI swarm · A little bit everywhere?"),
+      stops:tx(["Het idee","De chip","Reken zelf","Botnets","Slimmer?"],["The idea","The chip","Do the maths","Botnets","Smarter?"]),
+      sc:[
+        {l:tx("Stap 1 van 5 · Het idee","Step 1 of 5 · The idea"),h:tx("Een AI die overal een beetje pakt.","An AI that takes a little everywhere."),p:tx("Stel: een slimme AI kaapt stilletjes miljoenen laptops, telefoons en gamecomputers, en laat ze allemaal een beetje minen. Samen zijn ze toch sterker dan een paar hallen vol machines?","Imagine a clever AI quietly hijacks millions of laptops, phones and gaming PCs, and has each of them mine a little. Together they must be stronger than a few halls full of machines?"),v:"zwidea"},
+        {l:tx("Stap 2 van 5 · De chip","Step 2 of 5 · The chip"),h:tx("Eén machine verslaat een stadion vol pc's.","One machine beats a stadium full of PCs."),p:tx("Bitcoin-mining is steeds dezelfde rekensom: SHA-256. Daarvoor bestaan chips die niets anders kunnen, maar dat wel extreem snel en zuinig. Gewone computers zijn alleskunners, en dus kansloos.","Bitcoin mining is the same calculation over and over: SHA-256. There are chips that can do nothing else, but do it extremely fast and efficiently. Ordinary computers are all-rounders, and therefore hopeless."),v:"zwchip"},
+        {l:tx("Stap 3 van 5 · Reken het zelf","Step 3 of 5 · Do the maths"),h:tx("Zelfs miljarden apparaten zijn te weinig.","Even billions of devices aren't enough."),p:tx("Kies hoeveel apparaten de AI kaapt en wat voor apparaten het zijn. We rekenen royaal: alsof elk apparaat dag en nacht op volle kracht mint. Haal je de 51%?","Choose how many devices the AI hijacks and what kind they are. We're generous: as if every device mines at full power day and night. Do you reach 51%?"),v:"zwcalc"},
+        {l:tx("Stap 4 van 5 · Wat botnets wél doen","Step 4 of 5 · What botnets actually do"),h:tx("Ze minen liever iets anders.","They'd rather mine something else."),p:tx("Botnets die stiekem minen bestaan echt. Ze kiezen bijna altijd Monero, een munt die bewust is gemaakt voor gewone processors. Met bitcoin zouden ze bijna niets verdienen.","Botnets that mine in secret really exist. They almost always pick Monero, a coin deliberately designed for ordinary processors. With bitcoin they'd earn next to nothing."),v:"zwbot"},
+        {l:tx("Stap 5 van 5 · Kan AI het slimmer?","Step 5 of 5 · Can AI do it smarter?"),h:tx("Rekenkracht is natuurkunde, geen truc.","Computing power is physics, not a trick."),p:tx("Een slimme AI schrijft sneller code, maar elke hash kost nog steeds chips en stroom. En je sleutel raden lukt ook niet: er zijn meer sleutels dan atomen op aarde. De echte aandachtspunten liggen ergens anders.","A clever AI writes code faster, but every hash still costs chips and electricity. And guessing your key doesn't work either: there are more keys than atoms on Earth. The real points of attention lie elsewhere."),v:"zwsmart"}]},
+    staat:{n:"07d",line:"pro",more:"staat",hid:"h-staat",title:tx("Staatsmijnen · Wat als China alles inzet?","State miners · What if China goes all in?"),
+      stops:tx(["De kaart","2021","China bouwt","Alarm","Echte risico"],["The map","2021","China builds","Alarm","Real risk"]),
+      sc:[
+        {l:tx("Stap 1 van 5 · De kaart","Step 1 of 5 · The map"),h:tx("De rekenkracht zit verspreid over de wereld.","Computing power is spread around the world."),p:tx("Miners gaan waar stroom goedkoop is. Nu staat het meeste in de Verenigde Staten, daarna in Rusland en China. In China is mining verboden, maar er draait toch nog veel.","Miners go where electricity is cheap. Most of it now runs in the United States, followed by Russia and China. Mining is banned in China, but a lot still runs there."),v:"stmap"},
+        {l:tx("Stap 2 van 5 · Het experiment van 2021","Step 2 of 5 · The 2021 experiment"),h:tx("China zette half het netwerk eruit.","China kicked out half the network."),p:tx("In 2021 verbood China mining. Binnen weken viel bijna de helft van alle rekenkracht weg. Blokken kwamen even trager, toen paste de moeilijkheid zich aan. Het netwerk draaide gewoon door, en er ging geen enkele bitcoin verloren.","In 2021 China banned mining. Within weeks almost half of all computing power vanished. Blocks came more slowly for a while, then the difficulty adjusted. The network just kept running, and not a single bitcoin was lost."),v:"st2021"},
+        {l:tx("Stap 3 van 5 · Scenario: China bouwt","Step 3 of 5 · Scenario: China builds"),h:tx("Een staat kán het betalen.","A state can afford it."),p:tx("Eerlijk is eerlijk: dit is het serieuze scenario. Een land met geld, fabrieken en goedkope stroom zou in theorie een meerderheid kunnen bouwen. Sleep en zie wat daarvoor nodig is.","Fair is fair: this is the serious scenario. A country with money, factories and cheap power could in theory build a majority. Drag and see what it would take."),v:"stbuild"},
+        {l:tx("Stap 4 van 5 · Alarm","Step 4 of 5 · Alarm"),h:tx("Een aanval is nooit stil.","An attack is never quiet."),p:tx("Iedereen ziet de rekenkracht groeien, en ook herschreven of lege blokken. Beurzen verhogen het aantal bevestigingen, miners en nodes reageren. China zou betalingen kunnen weren en eigen betalingen terugdraaien. Maar geen munten uit jouw wallet halen.","Everyone sees the computing power grow, and rewritten or empty blocks too. Exchanges raise the number of confirmations, miners and nodes respond. China could block payments and undo its own. But not take coins from your wallet."),v:"stalarm"},
+        {l:tx("Stap 5 van 5 · Het echte risico","Step 5 of 5 · The real risk"),h:tx("De fabriek, niet de vuist.","The factory, not the fist."),p:tx("Het grootste staatsrisico zit in de toelevering: de meeste mining-chips komen uit China. En als het ooit misgaat, heeft de gemeenschap nog een noodrem: het mining-algoritme vervangen. Dan zijn al die machines in één klap waardeloos.","The biggest state risk is the supply chain: most mining chips come from China. And if it ever goes wrong, the community still has an emergency brake: replacing the mining algorithm. Then all those machines are worthless in one stroke."),v:"strisk"}]},
     quantum:{n:"04a",line:"pro",more:"quantum",hid:"h-quantum",title:tx("Quantum · Kraakt dit bitcoin?","Quantum · Does this crack bitcoin?"),
       stops:tx(["Qubits","Kwetsbaar","Mining","Hoe ver","Het schild"],["Qubits","Vulnerable","Mining","How far","The shield"]),
       sc:[
@@ -4125,6 +4444,21 @@ async function goLive(){
     <h4>${tx("De herstelzin","The recovery phrase")}</h4><p>${tx("12 of 24 woorden die je wallet kunnen herstellen. Schrijf ze op papier of stans ze in staal. Bewaar twee kopieën op twee veilige plekken. Nooit digitaal.","12 or 24 words that can restore your wallet. Write them on paper or stamp them in steel. Keep two copies in two safe places. Never digital.")}</p>
     <h4>${tx("Eerlijk over de gevaren","Honest about the dangers")}</h4><p>${tx("Ben je je woorden kwijt, dan ben je je bitcoin kwijt. Vindt iemand anders ze, dan ook. Er is geen helpdesk die het terugdraait. Een verkeerd adres is niet te herstellen. En denk aan je familie: weten zij hoe ze erbij kunnen als jou iets overkomt?","Lose your words and you lose your bitcoin. If someone else finds them, the same. There is no help desk to undo it. A wrong address can't be fixed. And think of your family: do they know how to access it if something happens to you?")}</p>
     <p class="soft">${tx("Geen beleggingsadvies.","Not investment advice.")}</p>`;
+  const akSrc=(a)=>`<p class="soft">${tx("Bronnen","Sources")}: ${a.map(([t,u])=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`).join(" · ")}</p>`;
+  [["aanval",`<h3>${tx("De 51%-<em>aanval</em>","The 51% <em>attack</em>")}</h3><p>${tx("Miners bouwen blokken en racen om wie het volgende mag maken. Het netwerk volgt altijd de langste geldige keten: die met het meeste rekenwerk erin. Wie meer dan de helft van alle rekenkracht heeft, kan op den duur een eigen keten langer maken dan die van de rest.","Miners build blocks and race to make the next one. The network always follows the longest valid chain: the one with the most work in it. Whoever has more than half of all computing power can eventually make their own chain longer than everyone else's.")}</p>
+    <h4>${tx("De formule van Satoshi","Satoshi's formula")}</h4><p>${tx("In hoofdstuk 11 van het whitepaper rekent Satoshi uit hoe groot de kans is dat een aanvaller met een kleiner aandeel toch inhaalt. Met 10% van de rekenkracht is die kans na 6 bevestigingen ongeveer 0,02%. Met 30% al ongeveer 13%, met 40% ruim de helft. Vanaf 50% is het geen kans meer maar zekerheid. Daarom wachten beurzen bij grote bedragen op meer bevestigingen.","In section 11 of the whitepaper Satoshi calculates the odds that an attacker with a smaller share still catches up. With 10% of the computing power the odds after 6 confirmations are about 0.02%. With 30%, about 13%, with 40% just over half. From 50% it's no longer a chance but a certainty. That's why exchanges wait for more confirmations on large amounts.")}</p>
+    <h4>${tx("Wat wél en wat niet","What can and can't happen")}</h4><p>${tx("Een aanvaller kan eigen betalingen terugdraaien (double spend), transacties weren en blokken van anderen negeren. Hij kan geen munten van anderen uitgeven, geen extra bitcoin maken en de regels niet veranderen. Elke node controleert elk blok zelf en weigert ongeldige blokken, hoeveel rekenkracht er ook achter zit.","An attacker can undo his own payments (double spend), block transactions and ignore other people's blocks. He can't spend other people's coins, create extra bitcoin or change the rules. Every node checks every block itself and rejects invalid blocks, no matter how much computing power is behind them.")}</p>
+    <h4>${tx("De kosten","The cost")}</h4><p>${tx("Het netwerk draait nu op ruim 1.000 exahash per seconde. Om dat te evenaren heb je miljoenen machines van de nieuwste generatie nodig, tientallen miljarden euro aan hardware en meer stroom dan Nederland gebruikt. Onderzoekers schatten in 2024 alleen de hardware al op meer dan 20 miljard dollar, en zoveel chips kun je niet eens kopen.","The network now runs at over 1,000 exahashes per second. To match that you need millions of latest-generation machines, tens of billions of euros in hardware and more electricity than the Netherlands uses. Researchers in 2024 put the hardware alone at more than 20 billion dollars, and you can't even buy that many chips.")}</p>
+    <h4>${tx("Echte aanvallen","Real attacks")}</h4><p>${tx("Kleinere munten met hetzelfde soort mining zijn wél aangevallen, zoals Bitcoin Gold (2018) en Ethereum Classic (2019 en 2020). Daar was de rekenkracht klein genoeg om te huren. Bij bitcoin kwam in 2014 de pool Ghash.io dicht bij de helft. Miners stapten toen zelf over naar andere pools.","Smaller coins with the same kind of mining have been attacked, such as Bitcoin Gold (2018) and Ethereum Classic (2019 and 2020). Their computing power was small enough to rent. With bitcoin, the pool Ghash.io came close to half in 2014. Miners then moved to other pools themselves.")}</p>`+akSrc([["Bitcoin whitepaper, §11","https://bitcoin.org/bitcoin.pdf"],["The Block, 2024","https://www.theblock.co/post/277766/bitcoin-ethereum-attacks-economically-unfeasible"],["Hashrate Index · pools","https://hashrateindex.com/blog/top-10-bitcoin-mining-pools-of-2026/"]])],
+  ["zwerm",`<h3>${tx("De AI-<em>zwerm</em>","The AI <em>swarm</em>")}</h3><p>${tx("Het idee klinkt logisch: als een AI miljarden apparaten een klein beetje laat minen, telt dat toch op? Het probleem is de soort rekenkracht. Bitcoin-mining is alleen maar SHA-256, steeds opnieuw. Gespecialiseerde chips (ASICs) doen niets anders en zijn daarin onvoorstelbaar veel sneller.","The idea sounds logical: if an AI has billions of devices mine a little each, surely it adds up? The problem is the kind of computing power. Bitcoin mining is nothing but SHA-256, over and over. Specialised chips (ASICs) do nothing else and are unimaginably faster at it.")}</p>
+    <h4>${tx("De som","The maths")}</h4><p>${tx("Eén Antminer S21 XP doet 270 terahash per seconde. Een topvideokaart doet, royaal gerekend, rond de 10 gigahash, een laptop een fractie daarvan. Zelfs vijf miljard topgamecomputers samen komen op enkele procenten van het netwerk. Zoveel bestaan er niet eens.","One Antminer S21 XP does 270 terahashes per second. A top graphics card does, generously, around 10 gigahashes, a laptop a fraction of that. Even five billion top gaming PCs together reach just a few percent of the network. That many don't even exist.")}</p>
+    <h4>${tx("Wat botnets echt doen","What botnets really do")}</h4><p>${tx("Cryptojacking bestaat: malware die stiekem op je computer mint. Bijna altijd gaat het om Monero, omdat het algoritme van die munt (RandomX, sinds 2019) bewust is ontworpen voor gewone processors.","Cryptojacking exists: malware that secretly mines on your computer. It's almost always Monero, because that coin's algorithm (RandomX, since 2019) was deliberately designed for ordinary processors.")}</p>
+    <h4>${tx("Waar AI wél speelt","Where AI does matter")}</h4><p>${tx("Het grootste AI-risico voor jou is oplichting: overtuigende nepberichten, nepsites en nepstemmen die je je herstelzin laten geven. Geef die nooit aan iemand, ook niet aan een helpdesk.","The biggest AI risk for you is scams: convincing fake messages, fake sites and fake voices that get you to hand over your recovery phrase. Never give it to anyone, not even a help desk.")}</p>`+akSrc([["Bitcoin whitepaper","https://bitcoin.org/bitcoin.pdf"],["Mineshop · S21 XP","https://mineshop.eu/blog/asic-miner/bitmain-antminer-s21-xp-review-2026"]])],
+  ["staat",`<h3>${tx("Staats<em>mijnen</em>","State <em>miners</em>")}</h3><p>${tx("Mining volgt goedkope stroom. Volgens schattingen van Hashrate Index stond begin 2026 ongeveer 37,5% van de rekenkracht in de VS, 16,4% in Rusland en 11,7% in China, ondanks het verbod daar.","Mining follows cheap power. According to Hashrate Index estimates, at the start of 2026 about 37.5% of computing power was in the US, 16.4% in Russia and 11.7% in China, despite the ban there.")}</p>
+    <h4>${tx("Het verbod van 2021","The 2021 ban")}</h4><p>${tx("In mei en juni 2021 verbood China mining. De rekenkracht van het netwerk zakte van rond de 180 naar ongeveer 85 exahash. Op 3 juli 2021 daalde de moeilijkheid met 28%, de grootste aanpassing ooit. Daarna kwamen blokken weer elke tien minuten, en het netwerk groeide verder.","In May and June 2021 China banned mining. The network's computing power fell from around 180 to about 85 exahashes. On 3 July 2021 the difficulty dropped by 28%, the biggest adjustment ever. After that, blocks came every ten minutes again, and the network kept growing.")}</p>
+    <h4>${tx("Kan een staat aanvallen?","Can a state attack?")}</h4><p>${tx("In theorie wel. Een land met geld, chipfabrieken en goedkope stroom zou miljoenen machines kunnen neerzetten. Dan kan het betalingen weren en eigen betalingen terugdraaien. Het kan geen munten uit jouw wallet halen en de regels niet veranderen. En de hele wereld ziet het gebeuren.","In theory, yes. A country with money, chip factories and cheap power could set up millions of machines. Then it could block payments and undo its own payments. It can't take coins from your wallet or change the rules. And the whole world would see it happen.")}</p>
+    <h4>${tx("De noodrem","The emergency brake")}</h4><p>${tx("Als laatste redmiddel kan de gemeenschap een ander mining-algoritme kiezen. Alle bestaande machines worden dan waardeloos, ook die van eerlijke miners. Daarom is dat zwaar omstreden en nog nooit gebeurd, maar het bestaat als afschrikking.","As a last resort the community can choose a different mining algorithm. All existing machines then become worthless, honest miners' included. That's why it's highly controversial and has never happened, but it exists as a deterrent.")}</p>`+akSrc([["Hashrate Index · landen","https://hashrateindex.com/blog/top-10-bitcoin-mining-countries-of-2026/"],["Hashrate Index · −28%","https://hashrateindex.com/blog/bitcoin-difficulty-adjustment-record-downward/"]])]
+  ].forEach(([id,html])=>{ let t=$("#more-"+id); if(!t){ t=document.createElement("template"); t.id="more-"+id; document.body.appendChild(t); } t.innerHTML=html+`<p class="soft">${tx("Geen beleggingsadvies.","Not investment advice.")}</p>`; });
   $$(".camp-pin[data-camp]").forEach(pin=>{
     const D=C[pin.dataset.camp], N=D.sc.length, sec=pin.closest(".camp");
     pin.innerHTML=`<svg class="camp-bg" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">${Array.from({length:9},(_,i)=>`<line x1="600" y1="430" x2="${-400+i*250}" y2="800"/>`).join("")}<line class="hz" x1="0" y1="430" x2="1200" y2="430"/></svg>
@@ -4142,7 +4476,7 @@ async function goLive(){
       plane.style.left=(Math.min(i+lp,N-1)/(N-1)*100)+"%";
       cnt.textContent=flight?clamp(i-1+(k>=3?1:0),0,5):Math.min(N,i+(k>=3?1:0)); };
     pin.addEventListener("click",e=>{ const b=e.target.closest("[data-cv]"); if(!b) return; const ch=b.closest(".cv-chart"); chartManual=b.dataset.cv; ch.classList.toggle("yr",b.dataset.cv==="y"); Sound.tick(.3,0); });
-    if(window.ScrollTrigger&&!REDUCED){ ScrollTrigger.create({trigger:sec,start:"top top",end:`+=${N*85}%`,pin:pin,scrub:true,refreshPriority:pin.dataset.camp==="future"?4.12:pin.dataset.camp==="pow"?7.1:pin.dataset.camp==="quantum"?7.5:pin.dataset.camp==="waarde"?4.16:pin.dataset.camp==="munten"?4.14:pin.dataset.camp==="dao"?6.2:pin.dataset.camp==="ledger"?6.5:pin.dataset.camp==="contract"?6.3:flight?4.1:pin.dataset.camp==="calm"?3.9:3.7,onUpdate:s=>{ set(s.progress); if(pin.dataset.camp==="future") st.wp.toekomst=s.progress; if(pin.dataset.camp==="quantum") st.wp.quantum=s.progress; }}); set(0); }
+    if(window.ScrollTrigger&&!REDUCED){ ScrollTrigger.create({trigger:sec,start:"top top",end:`+=${N*85}%`,pin:pin,scrub:true,refreshPriority:pin.dataset.camp==="future"?4.12:pin.dataset.camp==="pow"?7.1:pin.dataset.camp==="aanval"?7.08:pin.dataset.camp==="zwerm"?7.06:pin.dataset.camp==="staat"?7.04:pin.dataset.camp==="quantum"?7.5:pin.dataset.camp==="waarde"?4.16:pin.dataset.camp==="munten"?4.14:pin.dataset.camp==="dao"?6.2:pin.dataset.camp==="ledger"?6.5:pin.dataset.camp==="contract"?6.3:flight?4.1:pin.dataset.camp==="calm"?3.9:3.7,onUpdate:s=>{ set(s.progress); if(pin.dataset.camp==="future") st.wp.toekomst=s.progress; if(pin.dataset.camp==="quantum") st.wp.quantum=s.progress; if(/^(aanval|zwerm|staat)$/.test(pin.dataset.camp)) st.wp[pin.dataset.camp]=s.progress; }}); set(0); }
     else { pin.classList.add("static"); scenes.forEach(s=>s.classList.add("on","s1","s2","s3","s4")); }
   });
 })();
@@ -4209,6 +4543,52 @@ async function goLive(){
       const step=t=>{ const p=Math.min(1,(t-t0)/1600), e=1-Math.pow(1-p,3); vs.textContent=(tot*e).toLocaleString(LOC,{maximumFractionDigits:p<1?0:8})+" ₿"; if(p<1) requestAnimationFrame(step); else vs.textContent=tot.toLocaleString(LOC,{minimumFractionDigits:8,maximumFractionDigits:8})+" ₿"; }; requestAnimationFrame(step); };
     new MutationObserver(run).observe(sc,{attributes:true,attributeFilter:["class"]}); }
 })();
+/* ===== zijspoor 07b-d: aanval, zwerm, staat ===== */
+(function(){
+  if(!$("#aanval")) return;
+  const f0=n=>Math.round(n).toLocaleString(LOC), f1=(n,d)=>n.toLocaleString(LOC,{maximumFractionDigits:d,minimumFractionDigits:d});
+  const eur=n=>n>=1e9?`€ ${f1(n/1e9,n>=1e10?0:1)} ${tx("mld","bn")}`:n>=1e6?`€ ${f1(n/1e6,n>=1e7?0:1)} ${tx("mln","m")}`:`€ ${f0(n)}`;
+  const big=n=>n>=1e9?`${f1(n/1e9,1)} ${tx("mld","bn")}`:n>=1e6?`${f1(n/1e6,n>=1e7?0:1)} ${tx("mln","m")}`:f0(n);
+  const pct=x=>x<.001?"< 0,1%".replace(",",LOC.startsWith("nl")?",":"."):x<.1?f1(x*100,1)+"%":f0(x*100)+"%";
+  /* machine: Antminer S21 XP */
+  const TH=270, KW=3.645, PRICE=6000, KWH=.05;
+  window.HR=window.HR||1200; /* EH/s, momentopname okt 2026 */
+  const tick=()=>{ const t=performance.now(); if(t-(tick.l||0)>80){ tick.l=t; Sound.tick(.15,0); } };
+  /* kosten-kaart */
+  const paintCost=()=>{ const hr=window.HR, m=hr*1e6/TH;
+    $$('[data-hr="m"]').forEach(e=>e.textContent=big(m));
+    $$('[data-hr="eur"]').forEach(e=>e.textContent=eur(m*PRICE));
+    $$('[data-hr="gw"]').forEach(e=>e.textContent=f0(m*KW/1e6)+" GW");
+    $$('[data-hr="uur"]').forEach(e=>e.textContent=eur(m*KW*KWH));
+    $$('[data-hr="hr"]').forEach(e=>e.textContent=f0(hr)+" EH/s"+(window.HR_LIVE?" (live)":"")); };
+  /* 1 · whitepaper-formule */
+  const atk=(q,z)=>{ const p=1-q; if(q>=p) return 1; const l=z*q/p; let s=1, po=Math.exp(-l); for(let k=0;k<=z;k++){ if(k>0) po*=l/k; s-=po*(1-Math.pow(q/p,z-k)); } return Math.max(0,s); };
+  const sq=$('[data-ak="q"]');
+  if(sq){ const upd=()=>{ const q=+sq.value/100, P=atk(q,6); window.AQ=q; $("#akQ").textContent=f0(q*100)+"%"; $("#akP").textContent=P>=1?"100%":P<.0001?"< 0,01%":f1(P*100,P<.01?2:1)+"%";
+      const M=$("#akM"); M.querySelector("i").style.width=(q*100/60*100)+"%"; M.classList.toggle("hit",q>=.5); M.querySelector("u").style.left=(50/60*100)+"%";
+      const msg=$("#akMsg"); msg.classList.toggle("hit",q>=.5);
+      msg.textContent=q>=.5?tx("Meerderheid. De aanvaller haalt elke keten in, hoe lang je ook wacht.","Majority. The attacker catches up with any chain, however long you wait."):q>=.3?tx("Gevaarlijk: wacht bij grote bedragen op veel meer bevestigingen.","Dangerous: wait for many more confirmations on large amounts."):tx("Na 6 blokken is je betaling vrijwel zeker definitief.","After 6 blocks your payment is almost certainly final."); };
+    sq.addEventListener("input",()=>{ upd(); tick(); }); upd(); }
+  /* 3 · zwerm-rekenmachine */
+  const RATE=[.05,.5,10]; let zt=1; const sz=$('[data-zw="n"]');
+  if(sz){ const upd=()=>{ const n=Math.pow(10,+sz.value), eh=n*RATE[zt]*1e9/1e18, share=eh/(window.HR+eh); window.ZS=share; window.ZN=n;
+      $("#zwN").textContent=big(n); $("#zwH").textContent=(eh<.01?f1(eh,4):eh<1?f1(eh,2):f1(eh,1))+" EH/s"; $("#zwS").textContent=share<.0001?f1(share*100,4)+"%":share<.01?f1(share*100,2)+"%":f1(share*100,1)+"%";
+      const M=$("#zwM"); M.querySelector("i").style.width=Math.max(.6,share*100)+"%";
+      const asics=eh*1e6/TH; $("#zwMsg").textContent=tx(`Evenveel als ${big(Math.max(1,asics))} mining-machines. Voor 51% is ruim ${f0(window.HR)} EH/s nodig.`,`As much as ${big(Math.max(1,asics))} mining machines. 51% needs over ${f0(window.HR)} EH/s.`); };
+    sz.addEventListener("input",()=>{ upd(); tick(); });
+    sz.closest(".fu-card").addEventListener("click",e=>{ const b=e.target.closest("[data-zt]"); if(!b) return; zt=+b.dataset.zt; $$("[data-zt]",b.parentElement).forEach(x=>x.classList.toggle("on",x===b)); upd(); Sound.tick(.3,0); }); upd(); }
+  /* 3 · China bouwt */
+  const ss=$('[data-st="x"]'), CN=.117;
+  if(ss){ const upd=()=>{ const x=+ss.value, hr=window.HR, c0=CN*hr, share=(c0+x)/(hr+x), m=x*1e6/TH; window.CS=share; window.CX=x;
+      $("#stS").textContent=f0(share*100)+"%"; $("#stX").textContent="+ "+f0(x)+" EH/s"; $("#stXs").textContent=x?tx(`${big(m)} machines · ${f0(m*KW/1e6)} GW`,`${big(m)} machines · ${f0(m*KW/1e6)} GW`):tx("extra","extra"); $("#stC").textContent=eur(m*PRICE);
+      const M=$("#stM"); M.querySelector("i").style.width=(share*100)+"%"; M.classList.toggle("hit",share>=.5);
+      const need=Math.ceil(((.51*hr)-c0)/.49/10)*10, msg=$("#stMsg"); msg.classList.toggle("hit",share>=.5);
+      msg.textContent=share>=.5?tx("Meerderheid. Prijs: tientallen miljarden, en de hele wereld kijkt mee.","Majority. Price: tens of billions, and the whole world is watching."):tx(`Nog ${f0(Math.max(0,need-x))} EH/s extra nodig voor 51%. Ondertussen bouwt de rest van de wereld ook bij.`,`Still ${f0(Math.max(0,need-x))} EH/s more needed for 51%. Meanwhile the rest of the world keeps building too.`); };
+    ss.addEventListener("input",()=>{ upd(); tick(); }); window.ST_UPD=upd; upd(); }
+  paintCost();
+  /* live hashrate (mempool.space), terugval: momentopname */
+  if(window.fetch) fetch("https://mempool.space/api/v1/mining/hashrate/3d",{cache:"no-store"}).then(r=>r.json()).then(d=>{ const eh=d&&d.currentHashrate/1e18; if(eh>300&&eh<20000){ window.HR=eh; window.HR_LIVE=true; paintCost(); if(sq) sq.dispatchEvent(new Event("input")); if(sz) sz.dispatchEvent(new Event("input")); if(window.ST_UPD) window.ST_UPD(); } }).catch(()=>{});
+})();
 /* ===== zijspoor: rails tekenen ===== */
 (function(){
   const sleepers=(d,n,cls)=>{ let o=""; for(let i=0;i<n;i++){ o+=`<line class="sl ${cls}" pathLength="1"/>`; } return o; };
@@ -4232,7 +4612,10 @@ async function goLive(){
     const rb=$("#rejoin-b [data-rp]"); if(rb) rb.textContent="You now know why bitcoin is different from the rest. The train continues to world 13: the future."; }
   if(LANG==="en"){ const Q=$("#wissel-q"); if(Q){ Q.querySelector("[data-wl]").textContent="Junction · PRO side track"; Q.querySelector("[data-wh]").textContent="What about quantum computers?"; Q.querySelector("[data-wp]").textContent="“A quantum computer will crack every key.” You hear it a lot. On this side track you'll see what's true about that fear, and how bitcoin arms itself. About 3 minutes."; Q.querySelector("[data-wa]").textContent="Take the side track ↓"; Q.querySelector("[data-wb]").textContent="Straight on to world 5 →"; }
     const P=$("#wissel-p"); if(P){ P.querySelector("[data-wl]").textContent="Junction · PRO side track"; P.querySelector("[data-wh]").textContent="Work or stake?"; P.querySelector("[data-wp]").textContent="Bitcoin makes miners work for every block. Many other coins let the richest holders decide instead. On this side track you'll see the difference between Proof of Work and Proof of Stake. About 3 minutes."; P.querySelector("[data-wa]").textContent="Take the side track ↓"; P.querySelector("[data-wb]").textContent="Straight on to world 8 →"; }
-    const rp=$("#rejoin-p [data-rp]"); if(rp) rp.textContent="Work comes from outside, stake doesn't. That's why bitcoin chooses work. The train continues to world 8: the blockchain.";
+    const rp=$("#rejoin-p [data-rp]"); if(rp) rp.textContent="Work comes from outside, stake doesn't. That's why bitcoin chooses work. One more junction follows, then the train continues to world 8.";
+    if(P) P.querySelector("[data-wb]").textContent="Straight on →";
+    const X=$("#wissel-x"); if(X){ X.querySelector("[data-wl]").textContent="Junction · PRO side track"; X.querySelector("[data-wh]").textContent="Can someone take over bitcoin?"; X.querySelector("[data-wp]").textContent="What if someone grabs more than half of all computing power? Or an AI secretly makes millions of computers mine? Or China puts everything into mining? On this side track you do the maths yourself. About 6 minutes."; X.querySelector("[data-wa]").textContent="Take the side track ↓"; X.querySelector("[data-wb]").textContent="Straight on to world 8 →"; }
+    const rx=$("#rejoin-x [data-rp]"); if(rx) rx.textContent="Bitcoin isn't invulnerable. But an attack is extremely expensive, everyone sees it, and it can't steal your coins. The train continues to world 8: the blockchain.";
     const rq=$("#rejoin-q [data-rp]"); if(rq) rq.textContent="The quantum computer is a serious challenge, not a death sentence. The train continues to world 5: the station.";
     const W=$("#wissel-b"); if(W){ W.querySelector("[data-wh]").textContent="Does bitcoin have any value?"; W.querySelector("[data-wp]").textContent="“Bitcoin is thin air.” And what about all those other coins? On this side track: where bitcoin's value comes from, and why other coins don't fit “fix the money”. About 6 minutes."; }
     const rb=$("#rejoin-b [data-rp]"); if(rb) rb.textContent="You now know where bitcoin's value comes from, and why it's different from the rest. The train continues to world 13: the future."; }
@@ -4281,6 +4664,7 @@ async function goLive(){
       if(v!==shown){ shown=v; sats.textContent=fmt(v)+" sats"; } };
     new MutationObserver(tick).observe(sc,{attributes:true,attributeFilter:["class"]}); tick(); }
   if(window.ScrollTrigger&&$("#quantum")) ScrollTrigger.create({trigger:"#quantum",start:"top 40px",end:"bottom 40px",refreshPriority:7.45,onToggle:st=>document.body.classList.toggle("fu-dark",st.isActive)});
+  if(window.ScrollTrigger&&$("#aanval")) ScrollTrigger.create({trigger:"#aanval",start:"top 40px",endTrigger:"#staat",end:"bottom 40px",refreshPriority:7.02,onToggle:st=>document.body.classList.toggle("fu-dark",st.isActive)});
   if(window.ScrollTrigger&&$("#toekomst")) ScrollTrigger.create({trigger:"#toekomst",start:"top 40px",endTrigger:"#toekomst-next",end:"bottom 40px",refreshPriority:4.11,onToggle:st=>document.body.classList.toggle("fu-dark",st.isActive)});
   const km=$('[data-fu="km"]');
   if(km){ const upd=()=>{ const n=+km.value; $("#fuKm").textContent=n+" km"; $("#fuLn").textContent=fmt(n*2000)+" sats";

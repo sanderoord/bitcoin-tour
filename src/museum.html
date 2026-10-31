@@ -180,6 +180,24 @@ em{font-family:var(--f-px);font-style:normal;font-weight:400;color:var(--orange)
 .talk .opts{display:grid;gap:.4rem}
 .talk .opt{text-align:left;border:1px solid rgba(247,240,227,.3);background:rgba(247,240,227,.04);border-radius:4px;padding:.6rem .8rem;cursor:pointer;font-size:.92rem;display:flex;justify-content:space-between;gap:1rem}
 .talk .opt:hover{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+.pk-xb{position:fixed;top:max(14px,env(safe-area-inset-top,0px));right:max(14px,var(--gr,14px));z-index:2;width:46px;height:46px;border-radius:50%;border:1px solid rgba(247,240,227,.45);background:rgba(20,11,7,.6);color:var(--paper-2);font-size:1.05rem;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px)}
+.pk-xb:hover,.pk-xb:focus-visible{background:var(--paper-2);color:var(--ink);outline:none}
+.pk-title{margin:-2px 6px 10px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#2B1B12;display:none}
+.pk.play .pk-title{display:block}
+.pk-tap{position:absolute;left:0;right:0;bottom:-2.4rem;text-align:center;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,240,227,.7)}
+.pk-dev{position:relative}
+.pk.ready .pk-lcd{cursor:pointer}
+.talk .t-main{display:grid;gap:.4rem}
+.talk .opt.rooms{border-color:rgba(247,240,227,.55)}
+.talk .opt.rooms[aria-expanded="true"] span::after{content:" ▴"}.talk .opt.rooms[aria-expanded="false"] span::after{content:" ▾"}
+.talk .t-rooms{display:grid;gap:.3rem;margin:.1rem 0 0 .6rem;padding-left:.6rem;border-left:2px solid rgba(247,240,227,.18)}
+.talk .t-rooms[hidden]{display:none}
+.talk .t-rooms .opt{padding:.5rem .7rem;font-size:.86rem}
+.talk .t-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.7rem}
+.talk .t-chips button{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:.5em .85em;border-radius:999px;border:1px solid rgba(247,240,227,.3);background:rgba(247,240,227,.04);color:var(--paper);cursor:pointer}
+.talk .t-chips button:hover{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+@media (max-width:899px){.bb-me{inset:-14px}}
+html.pk-lock,html.pk-lock body{overflow:hidden;overscroll-behavior:none}.pk{touch-action:none;overscroll-behavior:contain}
 .talk .opt span{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75;align-self:center}
 @media (max-width:899px){.talk{left:var(--gl);right:var(--gr);width:auto;bottom:calc(60px + env(safe-area-inset-bottom,0px))}}
 
@@ -331,7 +349,9 @@ html.no-gl .intro{position:relative;bottom:auto;padding-block:120px 40px}
   <div class="d-body" id="dBody"></div>
 </aside>
 <div class="pk" id="pk" hidden role="dialog" data-ta="pkLabel">
+  <button class="pk-xb" id="pkX" type="button" aria-label="Sluit"><span aria-hidden="true">✕</span></button>
   <div class="pk-dev">
+    <p class="pk-title" id="pkTitle"></p>
     <div class="pk-top"><span class="pk-brand">POCKET ₿</span><span class="pk-model">Bitboy · 21 million series</span></div>
     <div class="pk-bezel"><div class="pk-lcd" id="pkLcd"><span class="pk-msg" id="pkMsg"></span><span class="pk-lost" id="pkLost"></span><span class="pk-big" id="pkBig"></span><span class="pk-score"><span id="pkScore">00</span><small>/21</small></span><div class="pk-lanes" id="pkLanes"></div></div>
       <div class="pk-hint"><span>LCD · 1 bit</span><span>catch · 21</span></div></div>
@@ -377,7 +397,7 @@ const UI={
   c2h:"Beeld",c2:"Alle objecten zijn digitaal nagemaakt en zo gelabeld. Het zijn geen historische originelen. Teksten, codes en citaten zijn echt.",
   c3h:"Bronnen",c3:"Whitepaper: bitcoin.org. Blokdata: mempool.space. Verder: CoinDesk, CBC, Cointelegraph, Mariblock, FXStreet, NL Times, DNB, AFM. Bloknummers met ± zijn geschat op datum.",
   close:"Sluiten ✕",orig:"Origineel",treat:"Museumbehandeling",origin:"Herkomst",shareObj:"Deel dit stuk",copied:"Link gekopieerd",copy:"Kopieer de link:",taken:"Meegenomen. Bedankt voor je bezoek aan de winkel!",hold:"Houd de afbeelding ingedrukt of klik er met rechts op om hem op te slaan.",holdS:"Lukt opslaan niet? Houd de afbeelding ingedrukt of klik er met rechts op.",
-  free:"gratis · 0 sat",shopMeta:"Giftshop · 0 sat",walk:"Wandeling door het museum",photoAlt:"Stapel papieren, objectbeeld",obj:"Obj.",brand:"Museum ₿, naar de entree",buy:"Zo koop je bitcoin",buyS:"Zo koop je ₿",bbWho:"Bitboy · gids",bbTap:"Bitboy, je gids. Tik voor het menu",joke:"Vertel een grap",jokeS:"grap",replay:"Speel je intro nog eens",bbPage:"Speel het Bitboy-spel ↗",bbPageS:"21 munten · hier en nu",pkClose:"Sluit",pkAgain:"Nog een keer",pkBoard:"Naar de spelpagina ↗",pkBest:"JOUW BESTE",pkRec:"NIEUW RECORD!",pkLost:"KWIJT",pkGo:"Daar ga ik!",pkKeys:"← → of tik links/rechts op het scherm",pkReady:"KLAAR?",replayS:"intro",skip:"Overslaan",pkMax:"MAX SUPPLY",pkLabel:"Intro van Bitboy"},
+  free:"gratis · 0 sat",shopMeta:"Giftshop · 0 sat",walk:"Wandeling door het museum",photoAlt:"Stapel papieren, objectbeeld",obj:"Obj.",brand:"Museum ₿, naar de entree",buy:"Zo koop je bitcoin",buyS:"Zo koop je ₿",bbWho:"Bitboy · gids",bbTap:"Bitboy, je gids. Tik voor het menu",joke:"Vertel een grap",jokeS:"grap",replay:"Speel je intro nog eens",bbPage:"Speel het Bitboy-spel ↗",bbPageS:"21 munten · hier en nu",pkClose:"Sluit",pkAgain:"Nog een keer",pkBoard:"Naar de spelpagina ↗",pkBest:"JOUW BESTE",pkRec:"NIEUW RECORD!",pkLost:"KWIJT",pkGo:"Daar ga ik!",pkKeys:"← → of tik links/rechts op het scherm",pkReady:"KLAAR?",hello:"Hoi, ik ben Bitboy, je gids. Tik op mij voor een rondleiding of een spelletje.",rooms:"Kies een zaal",roomsS:"rondleiding",pkStart:"TIK OM TE STARTEN",pkTitle:"Vang de 21 munten",pkHow:"◀ ▶ of tik links en rechts op het scherm",pkTap:"Tik ergens om verder te gaan",replayS:"intro",skip:"Overslaan",pkMax:"MAX SUPPLY",pkLabel:"Intro van Bitboy"},
  en:{snd:"Sound",sndOn:"Sound on",sndOff:"Sound off",share:"Share",lang:"Language: English. Wissel naar Nederlands",introLabel:"Museum ₿ · Since block 0",introH:"Bitcoin <em>museum</em>.",introP:"From a nine-page pdf to money whole countries run on. The real moments from bitcoin's history, as holograms in an old building. Scroll to step inside.",hint:"Scroll to walk through the museum",
   ai:"Image: AI (Gemini) · sample object",rdr:"Recreated object · not the original",showPhoto:"Show the object",backHolo:"Back to hologram",take:"Take it · free",open:"View",how:"How it works: ",talk:"Talk to me",
   where:"Where would you like to go? I'll take you there.",fact:"Tell me something",factS:"fun fact",bye:"Thanks",byeS:"close",follow:"Follow me to ",toLang:"In het Nederlands, graag",toLangS:"taal",edTo:"Show the wing: ",edS:"wing",
@@ -387,7 +407,7 @@ const UI={
   c2h:"Images",c2:"All objects are digitally recreated and labelled as such. They are not historical originals. Texts, codes and quotes are real.",
   c3h:"Sources",c3:"Whitepaper: bitcoin.org. Block data: mempool.space. Also: CoinDesk, CBC, Cointelegraph, Mariblock, FXStreet, NL Times, DNB, AFM. Block numbers with ± are estimated from the date.",
   close:"Close ✕",orig:"Original",treat:"Museum treatment",origin:"Provenance",shareObj:"Share this piece",copied:"Link copied",copy:"Copy the link:",taken:"Taken. Thanks for visiting the shop!",hold:"Press and hold the image, or right-click it, to save it.",holdS:"Saving doesn't work? Press and hold the image, or right-click it.",
-  free:"free · 0 sat",shopMeta:"Gift shop · 0 sat",walk:"Walk through the museum",photoAlt:"Stack of papers, object image",obj:"Obj.",brand:"Museum ₿, to the entrance",buy:"How to buy bitcoin",buyS:"How to buy ₿",bbWho:"Bitboy · guide",bbTap:"Bitboy, your guide. Tap for the menu",joke:"Tell me a joke",jokeS:"joke",replay:"Play your intro again",bbPage:"Play the Bitboy game ↗",bbPageS:"21 coins · right here",pkClose:"Close",pkAgain:"Play again",pkBoard:"To the game page ↗",pkBest:"YOUR BEST",pkRec:"NEW RECORD!",pkLost:"LOST",pkGo:"Here I go!",pkKeys:"← → or tap left/right on the screen",pkReady:"READY?",replayS:"intro",skip:"Skip",pkMax:"MAX SUPPLY",pkLabel:"Bitboy intro"}
+  free:"free · 0 sat",shopMeta:"Gift shop · 0 sat",walk:"Walk through the museum",photoAlt:"Stack of papers, object image",obj:"Obj.",brand:"Museum ₿, to the entrance",buy:"How to buy bitcoin",buyS:"How to buy ₿",bbWho:"Bitboy · guide",bbTap:"Bitboy, your guide. Tap for the menu",joke:"Tell me a joke",jokeS:"joke",replay:"Play your intro again",bbPage:"Play the Bitboy game ↗",bbPageS:"21 coins · right here",pkClose:"Close",pkAgain:"Play again",pkBoard:"To the game page ↗",pkBest:"YOUR BEST",pkRec:"NEW RECORD!",pkLost:"LOST",pkGo:"Here I go!",pkKeys:"← → or tap left/right on the screen",pkReady:"READY?",hello:"Hi, I'm Bitboy, your guide. Tap me for a tour or a game.",rooms:"Choose a room",roomsS:"tour",pkStart:"TAP TO START",pkTitle:"Catch the 21 coins",pkHow:"◀ ▶ or tap left and right on the screen",pkTap:"Tap anywhere to continue",replayS:"intro",skip:"Skip",pkMax:"MAX SUPPLY",pkLabel:"Bitboy intro"}
 };
 const U=k=>(UI[LANG]&&UI[LANG][k])||UI.nl[k]||k;
 
@@ -1149,38 +1169,49 @@ function bbStop(st){
   if(!key||key===bbSaidKey) return; bbSaidKey=key;
   if(bbSaid.has(key)) return; bbSaid.add(key); bbSay(ln[0],ln[1]);
 }
-$("#bbMe").addEventListener("click",e=>{ e.stopPropagation(); if(bbAnim||!bbOn) return; if(talkOpen>=0){ closeTalk(); return; } bbJump(); openTalk(); });
+$("#bbMe").addEventListener("click",e=>{ e.stopPropagation(); if(GM.on) return; if(pkRun) pkOut(false);
+  if(bbAnim){ try{ bb.getAnimations().concat(bbSpr.getAnimations()).forEach(a=>a.finish()); }catch(x){} bbAnim=false; bb.style.transition=""; bb.style.opacity=""; bb.style.visibility=""; }
+  if(!bbOn) bbShow(); if(talkOpen>=0){ closeTalk(); return; } bbJump(); openTalk(); });
 $("#tClose").addEventListener("click",()=>closeTalk());
 document.addEventListener("pointerdown",e=>{ if(talkOpen<0) return; if(e.target.closest("#talk,#bbMe,#mstat,#bTalk")) return; closeTalk(); });
 addEventListener("keydown",e=>{ if(e.key==="Escape"&&talkOpen>=0&&!pkRun) closeTalk(); });
 
 function talkOpts(){
   const other=ED==="nl"?"int":"nl";
-  return `<button class="opt play" type="button" data-play>${U("bbPage").replace(" ↗","")}<span>${U("bbPageS")}</span></button>`+DEST.map(z=>`<button class="opt" type="button" data-dest="${z}">${esc(Z(z).n?roomLabel(z):Z(z).t)}<span>${esc(Z(z).s||"")}</span></button>`).join("")
+  return `<div class="t-main"><button class="opt play" type="button" data-play>${U("bbPage").replace(" ↗","")}<span>${U("bbPageS")}</span></button><button class="opt rooms" type="button" data-rooms aria-expanded="false" aria-controls="tRooms">${U("rooms")}<span>${U("roomsS")}</span></button></div>`
+   +`<div class="t-rooms" id="tRooms" hidden>`+DEST.map(z=>`<button class="opt" type="button" data-dest="${z}">${esc(Z(z).n?roomLabel(z):Z(z).t)}<span>${esc(Z(z).s||"")}</span></button>`).join("")+`</div>`
+   +`<div class="t-chips"><button type="button" data-joke>${U("jokeS")}</button><button type="button" data-fact>${U("factS")}</button><button type="button" data-replay>${U("replayS")}</button><button type="button" data-lang="${LANG==="nl"?"en":"nl"}" lang="${LANG==="nl"?"en":"nl"}">${LANG==="nl"?"English":"Nederlands"}</button></div>`;
+}
+function talkOptsOld(){
+  return ""
    +`<button class="opt" type="button" data-joke>${U("joke")}<span>${U("jokeS")}</span></button>`
    +`<button class="opt" type="button" data-fact>${U("fact")}<span>${U("factS")}</span></button>`
    +`<button class="opt" type="button" data-replay>${U("replay")}<span>${U("replayS")}</span></button>`
    +`<button class="opt" type="button" data-lang="${LANG==="nl"?"en":"nl"}" lang="${LANG==="nl"?"en":"nl"}">${U("toLang")}<span>${U("toLangS")}</span></button>`
    +`<button class="opt" type="button" data-bye>${U("bye")}<span>${U("byeS")}</span></button>`;
 }
+let planTmp=false;
 function openTalk(){
+  if(innerWidth>=900&&!PLAN_MIN){ PLAN_MIN=true; planTmp=true; renderPlan(); }
   talkOpen=1; bubble.classList.remove("on");
   $("#tWho").textContent=U("bbWho"); $("#tText").textContent=U("where");
   $("#tOpts").innerHTML=talkOpts(); talk.hidden=false; Sound.talk(); bbPose(8,1800);
 }
-function closeTalk(){ if(talk.hidden) return; talk.hidden=true; talkOpen=-1; Sound.pop(); }
+function closeTalk(){ if(talk.hidden) return; talk.hidden=true; talkOpen=-1; Sound.pop(); if(planTmp){ planTmp=false; PLAN_MIN=false; renderPlan(); } }
 $("#bTalk").addEventListener("click",()=>openTalk());
 
 /* Pocket ₿: Bitboy springt uit een oude handheld */
 const PK_LANES=[10,5,3,7,9], PK_POS=[4,4,3,3,2,2,1,1,0,0,1,1,2], PK_CATCH={2:[3,1],4:[2,3],6:[1,6],8:[0,10],10:[1,15],12:[2,21]};
 function pkClear(){ pkT.forEach(clearTimeout); pkT=[]; }
+function pkTapHint(t){ let h=$("#pkTapH"); if(!h){ h=document.createElement("p"); h.id="pkTapH"; h.className="pk-tap"; $(".pk-dev").appendChild(h); } h.textContent=t||""; h.hidden=!t; }
+let pkP0=0;
 function runIntro(){
-  if(pkRun) return; PUT("museum.bb","1"); closeTalk(); bubble.classList.remove("on"); pkClear();
+  if(pkRun) return; pkP0=walkP(); PUT("museum.bb","1"); closeTalk(); bubble.classList.remove("on"); pkClear();
   if(REDUCED){ bbShow(); bbSay(B().intro1,8); return; }
   pkRun=true; bbOn=false; bb.classList.remove("on");
   $("#pkLanes").innerHTML=PK_LANES.map(f=>`<div class="pk-lane"><i class="pk-c" data-r="0"></i><i class="pk-c" data-r="1"></i><i class="pk-c" data-r="2"></i><i class="pk-b" style="background-image:url(${IMG_BBL});background-position:${bbPosOf(f)}"></i></div>`).join("");
   const lanes=$$("#pkLanes .pk-lane"), score=$("#pkScore"); $("#pkMsg").textContent="BITBOY"; score.textContent="00";
-  pk.classList.remove("out","max","glitch"); pk.hidden=false; requestAnimationFrame(()=>requestAnimationFrame(()=>pk.classList.add("in")));
+  pk.classList.remove("out","max","glitch","play","ready"); pk.hidden=false; pkTapHint(U("pkTap")); requestAnimationFrame(()=>requestAnimationFrame(()=>pk.classList.add("in")));
   setTimeout(()=>{ try{ $("#pkSkip").focus({preventScroll:true}); }catch(e){} },60);
   const T0=750, TICK=360;
   PK_POS.forEach((lane,k)=>pkT.push(setTimeout(()=>{
@@ -1208,6 +1239,8 @@ function pkOut(fly){
   a.onfinish=()=>{ bb.style.transition=""; bb.style.opacity=""; bb.style.visibility=""; land(); };
 }
 $("#pkSkip").addEventListener("click",()=>{ if(GM.on) gameClose(); else pkOut(false); });
+$("#pkX").addEventListener("click",e=>{ e.stopPropagation(); if(GM.on) gameClose(); else pkOut(false); });
+pk.addEventListener("click",e=>{ if(!pkRun) return; if(!GM.on){ if(!e.target.closest("button,a")) pkOut(false); return; } if(!e.target.closest(".pk-dev")) gameClose(); });
 /* Bitboy-spel in het museum zelf: vang 21 munten */
 const GM={on:false,mode:"",pos:2,coins:[],spawned:0,caught:0,lost:0,tick:0,next:1,iv:520,miss:[0,0,0,0,0],last:-1,timer:0};
 function gmLcd(){ const lanes=$$("#pkLanes .pk-lane"); lanes.forEach((ln,i)=>{ ln.querySelector(".pk-b").classList.toggle("on",i===GM.pos); ln.querySelectorAll(".pk-c").forEach(c=>c.classList.remove("on")); ln.querySelector(".pk-x").classList.toggle("on",!!GM.miss[i]); }); GM.coins.forEach(c=>lanes[c.lane].querySelector(`.pk-c[data-r="${c.row}"]`).classList.add("on")); }
@@ -1220,8 +1253,9 @@ function playGame(){
   $("#pkSkip").textContent=U("pkClose"); $("#pkAfter").hidden=true; $("#pkKeys").hidden=false; $("#pkKeys").textContent=U("pkKeys"); $("#pkAgain").textContent=U("pkAgain"); $("#pkBoard").textContent=U("pkBoard");
   pk.classList.remove("out","max","glitch"); pk.classList.add("play"); pk.hidden=false; requestAnimationFrame(()=>requestAnimationFrame(()=>pk.classList.add("in")));
   /* Bitboy springt vanuit het museum het scherm in */
+  $("#pkTitle").textContent=U("pkTitle"); $("#pkKeys").textContent=U("pkHow"); pkTapHint(""); if(lenis) lenis.stop(); document.documentElement.classList.add("pk-lock");
   const target=$$("#pkLanes .pk-b")[2];
-  const begin=()=>{ bbOn=false; bb.classList.remove("on"); gmStart(); };
+  const begin=()=>{ bbOn=false; bb.classList.remove("on"); gmReady(); };
   if(REDUCED||!bb.animate||!bbOn){ setTimeout(begin,600); return; }
   bbSay(U("pkGo"),10,900);
   setTimeout(()=>{ const to=target.getBoundingClientRect(), fr=bb.getBoundingClientRect(); if(!to.width){ begin(); return; }
@@ -1231,7 +1265,8 @@ function playGame(){
     bbSpr.animate([{filter:"drop-shadow(0 6px 12px rgba(0,0,0,.5))"},{filter:"brightness(1.8)",offset:.6},{filter:"grayscale(1) brightness(.2)"}],{duration:800});
     a.onfinish=()=>{ bb.style.transition=""; bbAnim=false; Sound.boing&&Sound.boing(); begin(); }; },700);
 }
-function gmStart(){ clearTimeout(GM.timer); Object.assign(GM,{mode:"play",pos:2,coins:[],spawned:0,caught:0,lost:0,tick:0,next:1,iv:520,miss:[0,0,0,0,0],last:-1});
+function gmReady(){ clearTimeout(GM.timer); GM.mode="ready"; GM.pos=2; GM.coins=[]; GM.miss=[0,0,0,0,0]; gmLcd(); gmBig(U("pkStart"),true); pk.classList.add("ready"); try{ $("#pkLcd").focus&&$("#pkX").focus({preventScroll:true}); }catch(e){} }
+function gmStart(){ pk.classList.remove("ready"); clearTimeout(GM.timer); Object.assign(GM,{mode:"play",pos:2,coins:[],spawned:0,caught:0,lost:0,tick:0,next:1,iv:520,miss:[0,0,0,0,0],last:-1});
   gmBig(""); $("#pkAfter").hidden=true; $("#pkScore").textContent="00"; $("#pkLost").textContent=U("pkLost")+" 0"; gmLcd(); Sound.beep(990); GM.timer=setTimeout(gmStep,GM.iv); }
 function gmStep(){ if(GM.mode!=="play") return;
   GM.tick++; GM.miss=GM.miss.map(m=>Math.max(0,m-1)); const keep=[]; const lanes=$$("#pkLanes .pk-lane");
@@ -1247,19 +1282,18 @@ function gmEnd(){ GM.mode="end"; clearTimeout(GM.timer); const c=GM.caught; gmBi
   let best=0; try{ best=+(GET("bitboy.best")||0); if(c>best){ PUT("bitboy.best",String(c)); } }catch(e){} const rec=c>best&&c>0; best=Math.max(best,c);
   gmBig(`${c}/21<small>${rec?U("pkRec"):U("pkBest")+" "+best+"/21"}</small>`);
   $("#pkBoard").href=GAME+"#"+LANG; $("#pkAfter").hidden=false; }
-function gameClose(){ clearTimeout(GM.timer); GM.msg=GM.spawned?(LANG==="en"?`${GM.caught} out of 21. Nice try! Back to the museum.`:`${GM.caught} van de 21. Lekker gespeeld! Terug naar het museum.`):(LANG==="en"?"Next time then. Back to the museum.":"Dan een andere keer. Terug naar het museum."); GM.mode=""; GM.on=false; pk.classList.add("glitch"); Sound.laser();
-  setTimeout(()=>{ pk.classList.remove("play"); $("#pkSkip").textContent=U("skip"); $("#pkAfter").hidden=true; $("#pkKeys").hidden=true; gmBig(""); $("#pkLost").textContent="";
-    const bs=$$("#pkLanes .pk-b"); bs.forEach((b,i)=>b.classList.toggle("on",i===GM.pos)); pkOut(true); },350); }
+function gameClose(){ if(!GM.on) return; clearTimeout(GM.timer); const msg=GM.spawned?(LANG==="en"?`${GM.caught} out of 21. Nice try! Back to the museum.`:`${GM.caught} van de 21. Lekker gespeeld! Terug naar het museum.`):(LANG==="en"?"Next time then. Back to the museum.":"Dan een andere keer. Terug naar het museum."); GM.mode=""; GM.on=false; pkRun=false; pkClear(); Sound.pop(); if(lenis) lenis.start(); document.documentElement.classList.remove("pk-lock");
+  pk.classList.add("out"); setTimeout(()=>{ pk.hidden=true; pk.classList.remove("in","out","max","glitch","play","ready"); $("#pkSkip").textContent=U("skip"); $("#pkAfter").hidden=true; $("#pkKeys").hidden=true; gmBig(""); $("#pkLost").textContent=""; },380);
+  bbAnim=false; bbShow(); bbSpr.style.transform=""; bb.style.transition=""; bb.style.opacity=""; bb.style.visibility=""; bbLandT=performance.now(); bbJump(); setTimeout(()=>{ if(talkOpen<0) bbSay(msg,8,3600); },420); }
 $("#pkAgain").addEventListener("click",()=>{ pk.classList.remove("max"); gmStart(); });
-$("#pkL").addEventListener("click",()=>gmMove(-1)); $("#pkR").addEventListener("click",()=>gmMove(1));
-$("#pkLcd").addEventListener("pointerdown",e=>{ if(!GM.on) return; const r=e.currentTarget.getBoundingClientRect(); gmMove(e.clientX<r.left+r.width/2?-1:1); });
-addEventListener("keydown",e=>{ if(!GM.on) return; if(e.key==="ArrowLeft"||e.key==="a"||e.key==="A"){ e.preventDefault(); gmMove(-1); } else if(e.key==="ArrowRight"||e.key==="d"||e.key==="D"){ e.preventDefault(); gmMove(1); } else if(e.key==="Escape"){ gameClose(); } else if((e.key==="Enter"||e.key===" ")&&GM.mode==="end"){ e.preventDefault(); pk.classList.remove("max"); gmStart(); } });
-addEventListener("keydown",e=>{ if(e.key==="Escape"&&pkRun) pkOut(false); });
+$("#pkL").addEventListener("click",()=>{ if(GM.mode==="ready") gmStart(); else gmMove(-1); }); $("#pkR").addEventListener("click",()=>{ if(GM.mode==="ready") gmStart(); else gmMove(1); });
+$("#pkLcd").addEventListener("pointerdown",e=>{ if(!GM.on) return; if(GM.mode==="ready"){ gmStart(); return; } if(GM.mode==="end"){ pk.classList.remove("max"); gmStart(); return; } const r=e.currentTarget.getBoundingClientRect(); gmMove(e.clientX<r.left+r.width/2?-1:1); });
+addEventListener("keydown",e=>{ if(!GM.on) return; if(e.key==="ArrowLeft"||e.key==="a"||e.key==="A"){ e.preventDefault(); gmMove(-1); } else if(e.key==="ArrowRight"||e.key==="d"||e.key==="D"){ e.preventDefault(); gmMove(1); } else if(e.key==="Escape"){ gameClose(); } else if((e.key==="Enter"||e.key===" ")&&(GM.mode==="end"||GM.mode==="ready")){ e.preventDefault(); pk.classList.remove("max"); gmStart(); } });
+addEventListener("keydown",e=>{ if(e.key==="Escape"&&pkRun&&!GM.on) pkOut(false); });
 function bbInit(){
   bbSpr.style.backgroundImage=`url(${IMG_BB})`; eyesMake(bbSpr); bbFrame(9);
   const deep=Object.keys(H0).some(k=>/^(obj-\d{3}|zaal-\d|winkel)$/.test(k));
-  if(!GET("museum.bb")&&!deep&&IMG_BB.indexOf("data:")===0) setTimeout(()=>{ if(walkP()<.02) runIntro(); else bbShow(); },1300);
-  else setTimeout(bbShow,700);
+  setTimeout(()=>{ bbShow(); if(!GET("museum.bb")&&!deep){ PUT("museum.bb","1"); setTimeout(()=>{ if(talkOpen<0&&!pkRun) bbSay(U("hello"),8,3400); },900); } },700);
 }
 
 /* lus */
@@ -1272,7 +1306,7 @@ function loop(time){
     setStop(lastStop); setZone(s.zone);
     mstat.textContent=roomLabel(s.zone);
     bbTick(p); bbStop(lastStop||(s.zone==="exit"?{z:"exit"}:null));
-    if(pkRun&&p>.04) pkOut(false);
+    if(pkRun&&!GM.on&&Math.abs(p-pkP0)>.03) pkOut(false);
   }
   requestAnimationFrame(loop);
 }
@@ -1343,7 +1377,7 @@ $("#plRes").addEventListener("click",toggleRes);
 canvas.addEventListener("pointermove",e=>{ if(!GL||curZone!=="shop") return; canvas.style.cursor=GL.pickProduct(e.clientX,e.clientY)>=0?"pointer":""; },{passive:true});
 canvas.addEventListener("click",e=>{ if(!GL) return; const pi=GL.pickProduct(e.clientX,e.clientY); if(pi>=0){ openObj(PRODUCTS[pi].id); return; } if(curKey==="001"&&!RENDERS["001"]&&GL.pickPhoto(e.clientX,e.clientY)) toggleRes(); });
 document.addEventListener("click",e=>{
-  if(e.target.closest("[data-planx]")){ PLAN_MIN=!PLAN_MIN; PUT("museum.plan",PLAN_MIN?"min":""); renderPlan(); const px=$("#plan [data-planx]"); if(px) px.focus(); return; }
+  if(e.target.closest("[data-planx]")){ planTmp=false; PLAN_MIN=!PLAN_MIN; PUT("museum.plan",PLAN_MIN?"min":""); renderPlan(); const px=$("#plan [data-planx]"); if(px) px.focus(); return; }
   const lg=e.target.closest("[data-lang]"); if(lg){ setLang(lg.dataset.lang); return; }
   if(e.target.closest("#langBtn")){ setLang(LANG==="nl"?"en":"nl"); return; }
   const ed=e.target.closest("[data-ed]"); if(ed){ setEd(ed.dataset.ed); return; }
@@ -1356,6 +1390,7 @@ document.addEventListener("click",e=>{
   if(e.target.closest("[data-replay]")){ closeTalk(); runIntro(); return; }
   if(e.target.closest("[data-bye]")){ closeTalk(); return; }
   if(e.target.closest("[data-play]")){ playGame(); return; }
+  const rm=e.target.closest("[data-rooms]"); if(rm){ const box=$("#tRooms"), open=box.hidden; box.hidden=!open; rm.setAttribute("aria-expanded",open?"true":"false"); if(open) box.querySelector("button").focus({preventScroll:true}); Sound.tick&&Sound.tick(); return; }
   const gz=e.target.closest("[data-goz]"); if(gz){ e.preventDefault(); flyTo(zoneStart(gz.dataset.goz)); return; }
   const go=e.target.closest("[data-goobj]"); if(go){ e.preventDefault(); const i=objStop(go.dataset.goobj); if(i>=0) flyTo(i); else openObj(go.dataset.goobj); return; }
   const s=e.target.closest("[data-share]"); if(s) share(s.dataset.share||(curKey&&/^\d{3}$/.test(curKey)?"obj-"+curKey:""));
